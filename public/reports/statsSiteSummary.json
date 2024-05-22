@@ -1,0 +1,397 @@
+{
+   "lockViews" : [
+      {
+         "id" : "Lock Views",
+         "data" : [
+            {
+               "y" : 220,
+               "x" : "2024-04-01"
+            },
+            {
+               "y" : 722,
+               "x" : "2024-04-08"
+            },
+            {
+               "x" : "2024-04-15",
+               "y" : 1588
+            },
+            {
+               "x" : "2024-04-22",
+               "y" : 1419
+            },
+            {
+               "x" : "2024-04-29",
+               "y" : 1379
+            },
+            {
+               "y" : 897,
+               "x" : "2024-05-06"
+            }
+         ]
+      }
+   ],
+   "hourlyRequests" : [
+      {
+         "data" : [
+            {
+               "x" : "midnight",
+               "y" : 282
+            },
+            {
+               "x" : "1 am",
+               "y" : 256
+            },
+            {
+               "x" : "2 am",
+               "y" : 356
+            },
+            {
+               "y" : 296,
+               "x" : "3 am"
+            },
+            {
+               "x" : "4 am",
+               "y" : 460
+            },
+            {
+               "x" : "5 am",
+               "y" : 656
+            },
+            {
+               "y" : 846,
+               "x" : "6 am"
+            },
+            {
+               "y" : 1087,
+               "x" : "7 am"
+            },
+            {
+               "y" : 1227,
+               "x" : "8 am"
+            },
+            {
+               "x" : "9 am",
+               "y" : 1500
+            },
+            {
+               "x" : "10 am",
+               "y" : 1013
+            },
+            {
+               "x" : "11 am",
+               "y" : 1015
+            },
+            {
+               "x" : "noon",
+               "y" : 1057
+            },
+            {
+               "y" : 1283,
+               "x" : "1 pm"
+            },
+            {
+               "x" : "2 pm",
+               "y" : 1105
+            },
+            {
+               "y" : 1149,
+               "x" : "3 pm"
+            },
+            {
+               "x" : "4 pm",
+               "y" : 1453
+            },
+            {
+               "y" : 1397,
+               "x" : "5 pm"
+            },
+            {
+               "x" : "6 pm",
+               "y" : 978
+            },
+            {
+               "x" : "7 pm",
+               "y" : 1258
+            },
+            {
+               "x" : "8 pm",
+               "y" : 942
+            },
+            {
+               "y" : 849,
+               "x" : "9 pm"
+            },
+            {
+               "x" : "10 pm",
+               "y" : 755
+            },
+            {
+               "y" : 456,
+               "x" : "11 pm"
+            }
+         ],
+         "id" : "User Time"
+      },
+      {
+         "id" : "Server Time",
+         "data" : [
+            {
+               "y" : 542,
+               "x" : "midnight"
+            },
+            {
+               "y" : 364,
+               "x" : "1 am"
+            },
+            {
+               "y" : 437,
+               "x" : "2 am"
+            },
+            {
+               "y" : 680,
+               "x" : "3 am"
+            },
+            {
+               "x" : "4 am",
+               "y" : 538
+            },
+            {
+               "y" : 582,
+               "x" : "5 am"
+            },
+            {
+               "x" : "6 am",
+               "y" : 660
+            },
+            {
+               "y" : 1181,
+               "x" : "7 am"
+            },
+            {
+               "y" : 1453,
+               "x" : "8 am"
+            },
+            {
+               "x" : "9 am",
+               "y" : 1238
+            },
+            {
+               "x" : "10 am",
+               "y" : 1095
+            },
+            {
+               "y" : 1019,
+               "x" : "11 am"
+            },
+            {
+               "y" : 1141,
+               "x" : "noon"
+            },
+            {
+               "y" : 1082,
+               "x" : "1 pm"
+            },
+            {
+               "y" : 1169,
+               "x" : "2 pm"
+            },
+            {
+               "y" : 1224,
+               "x" : "3 pm"
+            },
+            {
+               "y" : 1311,
+               "x" : "4 pm"
+            },
+            {
+               "y" : 1353,
+               "x" : "5 pm"
+            },
+            {
+               "x" : "6 pm",
+               "y" : 707
+            },
+            {
+               "y" : 944,
+               "x" : "7 pm"
+            },
+            {
+               "x" : "8 pm",
+               "y" : 695
+            },
+            {
+               "x" : "9 pm",
+               "y" : 852
+            },
+            {
+               "y" : 830,
+               "x" : "10 pm"
+            },
+            {
+               "y" : 580,
+               "x" : "11 pm"
+            }
+         ]
+      }
+   ],
+   "lockViewsByBelt" : {
+      "description" : "Lock Views By Belt",
+      "data" : [
+         {
+            "value" : 0.023,
+            "label" : "White",
+            "id" : "White"
+         },
+         {
+            "id" : "Yellow",
+            "label" : "Yellow",
+            "value" : 0.031
+         },
+         {
+            "id" : "Orange",
+            "label" : "Orange",
+            "value" : 0.03
+         },
+         {
+            "value" : 0.096,
+            "id" : "Green",
+            "label" : "Green"
+         },
+         {
+            "label" : "Blue",
+            "id" : "Blue",
+            "value" : 0.104
+         },
+         {
+            "value" : 0.119,
+            "id" : "Purple",
+            "label" : "Purple"
+         },
+         {
+            "id" : "Brown",
+            "label" : "Brown",
+            "value" : 0.081
+         },
+         {
+            "label" : "Red",
+            "id" : "Red",
+            "value" : 0.068
+         },
+         {
+            "value" : 0.176,
+            "id" : "Black",
+            "label" : "Black"
+         },
+         {
+            "value" : 0.031,
+            "id" : "Unranked",
+            "label" : "Unranked"
+         }
+      ]
+   },
+   "trafficTotals" : {
+      "browser" : [
+         {
+            "label" : "Chrome",
+            "id" : "Chrome",
+            "value" : 3848
+         },
+         {
+            "label" : "Safari",
+            "id" : "Safari",
+            "value" : 1675
+         },
+         {
+            "value" : 949,
+            "id" : "Firefox",
+            "label" : "Firefox"
+         },
+         {
+            "id" : "Edge",
+            "label" : "Edge",
+            "value" : 207
+         },
+         {
+            "value" : 153,
+            "label" : "Opera",
+            "id" : "Opera"
+         },
+         {
+            "label" : "Samsung",
+            "id" : "Samsung",
+            "value" : 93
+         },
+         {
+            "value" : 4,
+            "label" : "Other",
+            "id" : "Other"
+         }
+      ],
+      "platform" : [
+         {
+            "label" : "Mac OS X",
+            "id" : "Mac OS X",
+            "value" : 1916
+         },
+         {
+            "id" : "Android",
+            "label" : "Android",
+            "value" : 1799
+         },
+         {
+            "value" : 1347,
+            "label" : "iOS",
+            "id" : "iOS"
+         },
+         {
+            "id" : "Win10.0",
+            "label" : "Win10.0",
+            "value" : 1320
+         },
+         {
+            "value" : 522,
+            "id" : "Linux",
+            "label" : "Linux"
+         },
+         {
+            "value" : 25,
+            "label" : "Other",
+            "id" : "Other"
+         }
+      ]
+   },
+   "totals" : {
+      "description" : "Since Launch",
+      "data" : [
+         {
+            "label" : "Site Vists",
+            "value" : 6929
+         },
+         {
+            "label" : "Lock Views",
+            "value" : 7146
+         },
+         {
+            "label" : "Countries",
+            "value" : 45
+         }
+      ]
+   },
+   "dailyAverages" : {
+      "description" : "Daily Averages",
+      "data" : [
+         {
+            "value" : 59,
+            "label" : "Visitors"
+         },
+         {
+            "label" : "Visits",
+            "value" : 161
+         },
+         {
+            "value" : 185,
+            "label" : "Lock Views"
+         }
+      ]
+   }
+}
