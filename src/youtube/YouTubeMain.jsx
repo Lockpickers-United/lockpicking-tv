@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import LoadingContext from '../youtubeContext/LoadingContextYT.jsx'
 import DataContext from '../app/DataContext.jsx'
 import Channels from './Channels.jsx'
-import SortFilterBarYT from './SortFilterBarYT.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 

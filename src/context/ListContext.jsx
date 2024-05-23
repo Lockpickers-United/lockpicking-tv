@@ -9,17 +9,16 @@ export function ListProvider({children}) {
     const {filters, addFilters, removeFilters} = useContext(FilterContext)
     const expanded = filters.id
 
+
     const handleSetExpanded = useCallback((newValue) => {
-        if (newValue && newValue !== 'beltreqs') {
+
+        console.log('handleSetExpanded',newValue)
+
+        if (newValue) {
             const name = getNameFromId(newValue)
             addFilters([
                 {key: 'id', value: newValue},
                 {key: 'name', value: name},
-            ], true)
-        } else if (newValue === 'beltreqs') {
-            addFilters([
-                {key: 'id', value: newValue},
-                {key: 'name', value: undefined}
             ], true)
         } else {
             removeFilters(['id', 'name'])

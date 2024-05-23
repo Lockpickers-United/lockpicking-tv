@@ -1,7 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react'
-import Accordion from '@mui/material/Accordion'
-import AccordionSummary from '@mui/material/AccordionSummary'
-import AccordionDetails from '@mui/material/AccordionDetails'
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import queryString from 'query-string'
 import Tracker from '../app/Tracker.jsx'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -9,21 +6,13 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import OpenYouTubeLinkButton from './OpenYouTubeLinkButton.jsx'
 import ChannelStats from './ChannelStats.jsx'
 
-
 import {styled} from '@mui/material/styles'
 import Card from '@mui/material/Card'
-import CardHeader from '@mui/material/CardHeader'
-import CardMedia from '@mui/material/CardMedia'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import Collapse from '@mui/material/Collapse'
-import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import {red} from '@mui/material/colors'
-import FavoriteIcon from '@mui/icons-material/Favorite'
-import ShareIcon from '@mui/icons-material/Share'
-import MoreVertIcon from '@mui/icons-material/MoreVert'
+import FilterContext from '../context/FilterContext.jsx'
 
 const ExpandMore = styled((props) => {
     const {expand, ...other} = props
@@ -36,60 +25,90 @@ const ExpandMore = styled((props) => {
     })
 }))
 
+const Channel = ({channel, expanded, onExpand}) => {
 
-const Channel = ({channel, onExpand}) => {
+
+    const [scrolled, setScrolled] = useState(false)
+    const ref = useRef(null)
+
+    const handleChange = useCallback((_, isExpanded) => {
+        console.log('handleChange',isExpanded, expanded)
+        onExpand(!expanded ? channel.id : false)
+    }, [channel.id, expanded, onExpand])
+
+    useEffect(() => {
+        if (expanded && ref && !scrolled) {
+            const isMobile = window.innerWidth <= 600
+            const offset = isMobile ? 70 : 74
+            const {id} = queryString.parse(location.search)
+            const isIdFiltered = id === channel.id
+
+            setScrolled(true)
+
+            setTimeout(() => {
+                window.scrollTo({
+                    left: 0,
+                    top: ref.current.offsetTop - offset*2,
+                    behavior: isIdFiltered ? 'auto' : 'smooth'
+                })
+            }, isIdFiltered ? 0 : 100)
+        } else if (!expanded) {
+            setScrolled(false)
+        }
+    }, [expanded, scrolled, channel.id])
 
     const descriptionLines = channel.description.split('\n')
+    const expandColor = channel.description ? '#bbb' : '#444'
 
-    const style = {
-        marginRight: 20,
-        marginBottom: 20,
-        borderBottom: '1px solid #444',
-        textAlign: 'left'
-    }
+    const link = channel.customUrl
+        ? `https://www.youtube.com/${channel.customUrl}`
+        : `https://www.youtube.com/channel/${channel.id}`
 
     const {width} = useWindowSize()
-    const smallWindow = width <= 480
+    const smallWindow = width <= 500
+    const avatarSize = smallWindow ? 40 : 60
+    const avatarMargin = smallWindow ? '0px 15px 0px 0px' : '0px 0px 5px 0px'
 
-    const [expanded, setExpanded] = React.useState(false)
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded)
-    }
-
+    const headerFlexStyle = smallWindow ? {display: 'flex', placeItems: 'center'} : {placeItems: 'center'}
+    const nameAlign = smallWindow ? 'left' : 'center'
 
     return (
-        <Card sx={{backgroundColor:'rgb(26, 32, 39)'}}>
-            <CardContent syle={{}}>
-                <div style={{height: 60, marginBottom:10}}>
-                    <img src={channel.thumbnail} alt={channel.title} height='60' width='60'
-                         style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
+        <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px'}}  ref={ref}>
+            <CardContent style={{padding: '5px 5px 0px 5px'}}>
+                <div style={headerFlexStyle}>
+                    <div style={{height: avatarSize, margin: avatarMargin}}>
+                        <img src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
+                             style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
+                    </div>
+                    <div style={{
+                        fontSize: '1.2rem',
+                        fontWeight: 600,
+                        textAlign: nameAlign,
+                        flexGrow: 1,
+                        overflow: 'hidden',
+                        height: '1.5rem'
+                    }}>
+                        <a href={link} target='_blank' rel='noopener noreferrer' style={{color:'#fff', textDecoration:'none'}}>
+                            {channel.title}
+                        </a>
+                    </div>
+                    <OpenYouTubeLinkButton channel={channel} fontSize={'small'}/>
                 </div>
-                <div style={{
-                    fontSize: '1.1rem', fontWeight: 600
-                }}>
-                    {channel.title}
-                </div>
-
-                <ChannelStats channel={channel}/>
-
             </CardContent>
-            <CardActions disableSpacing>
-                <OpenYouTubeLinkButton channel={channel} fontSize={'small'}/>
-                <ExpandMore
-                    expand={expanded}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label='show more'
-                >
-                    <ExpandMoreIcon/>
-                </ExpandMore>
+            <CardActions sx={{padding: '0px 5px'}}>
+                <div style={{width: '100%', display: 'flex', placeItems:'center'}}>
+                    <ChannelStats channel={channel}/>
+                    <ExpandMore style={{height:40}}>
+                        <ExpandMoreIcon style={{color: expandColor}} onClick={handleChange}/>
+                    </ExpandMore>
+                </div>
             </CardActions>
+
             <Collapse in={expanded} timeout='auto' unmountOnExit>
-                <CardContent style={{textAlign:'left', padding:5}}>
+                <CardContent style={{textAlign: 'left', padding: 10}}>
                     {channel.description &&
                         descriptionLines.map((line, index) =>
-                            <div key={index} style={{marginLeft: 25}}>
+                            <div key={index} style={{marginLeft: 5}}>
                                 {line}<br/>
                             </div>
                         )
@@ -98,7 +117,6 @@ const Channel = ({channel, onExpand}) => {
                         <div style={{width: '100%', textAlign: 'center', marginBottom: 10, fontStyle: 'italic'}}>
                             no channel details available<br/>
                         </div>
-
                     }
                     <Tracker feature='channel' id={channel.id} title={channel.title}/>
                 </CardContent>

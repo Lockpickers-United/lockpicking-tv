@@ -1,48 +1,39 @@
 import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import VersionChecker from '../app/VersionChecker'
-import MainMenu from './MainMenu'
 import ScrollToTopButton from './ScrollToTopButton'
-import UserMenu from './UserMenu'
-import TopNav from './TopNav.jsx'
-import PendingChecker from '../speedpicks/PendingChecker.jsx'
 import VersionCheckerCode from '../app/VersionCheckerCode.jsx'
-import VersionCheckerLB from '../app/VersionCheckerLB.jsx'
 import Tracker from '../app/Tracker.jsx'
+import LPTVlogo from '../assets/LPTVlogo2-w.jsx'
+import SearchBox from './SearchBox.jsx'
+import SortButton from '../filters/SortButton.jsx'
+import {channelSortFields} from '../data/sortFields'
 
-function Nav({extras, route}) {
+function Nav({extras}) {
     return (
         <React.Fragment>
-            <AppBar position='fixed' sx={{boxShadow: 'none'}}>
-                <Toolbar>
-                    <MainMenu/>
+            <AppBar position='fixed' sx={{}}>
+                <Toolbar style={{padding: 10}}>
 
-                    <div style={{
-                        flexGrow: 1,
-                        minWidth: 150,
-                        fontWeight: 500,
-                        fontSize: '1.5rem',
-                        paddingLeft: 6,
-                        display: 'flex'
-                    }}>
-                        <TopNav route={route}/>
-                        <VersionCheckerCode/>
-
-                        {route === 'lb' &&
-                            <VersionCheckerLB/>
-                        }
+                    <div style={{display: 'flex', width:'100%', marginTop:5}}>
+                        <div style={{marginRight: 20}}>
+                            <LPTVlogo height={40}/>
+                        </div>
+                        <div style={{marginRight: 10, flexGrow: 1}}>
+                            <SearchBox label='Channels'/>
+                        </div>
+                        <div style={{}}>
+                            <SortButton sortValues={channelSortFields}/>
+                        </div>
+                        <div style={{
+                            fontWeight: 500,
+                            fontSize: '1.5rem',
+                        }}>
+                            <VersionCheckerCode/>
+                        </div>
                     </div>
-
                     {extras}
 
-                    {route === 'sp' &&
-                        <React.Fragment>
-                            <PendingChecker/>
-                            <VersionChecker/>
-                        </React.Fragment>
-                    }
-                    <UserMenu/>
 
                 </Toolbar>
             </AppBar>

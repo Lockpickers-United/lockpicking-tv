@@ -9,25 +9,22 @@ function Footer({extras}) {
     const {user} = useContext(AuthContext)
 
     return (
-        <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80}}>
-            <a href='https://discord.gg/lockpicking' target='_blank' rel='noopener noreferrer'>
+        <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80, color:'#121212'}}>
+            <a href='https://discord.gg/lockpicking' target='_blank' rel='noopener noreferrer' style={{color:'#121212'}}>
                 LPU Discord
             </a>
             &nbsp;•&nbsp;
-            <a href='https://www.reddit.com/r/lockpicking/' target='_blank' rel='noopener noreferrer'>
+            <a href='https://www.reddit.com/r/lockpicking/' target='_blank' rel='noopener noreferrer' style={{color:'#121212'}}>
                 Reddit
             </a>
             &nbsp;•&nbsp;
-            <a href='/#/privacy'>
+            <a href='/#/privacy' style={{color:'#121212'}}>
                 Privacy
             </a>
 
             {extras}
 
             <div style={{textAlign: 'center'}}>
-                <ToggleBetaButton/>
-                <FirebaseTestButton/>
-                <br/>
                 {user?.uid === 'ClbjuilBEHgbzO4UZl4y3GStlEz2' &&
                     <div style={{marginTop: '20px', display: 'flex', textAlign: 'center'}}>
                         <div style={{marginRight: 'auto', marginLeft: 'auto'}}>
