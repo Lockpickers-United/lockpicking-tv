@@ -1,9 +1,8 @@
 import React, {useContext, useDeferredValue} from 'react'
 import ListContext from '../context/ListContext'
-import NoEntriesCardLB from '../lockbazaar/NoEntriesCardLB.jsx'
 import ChannelCard from './ChannelCard.jsx'
 
-import {styled} from '@mui/material/styles'
+import {createTheme, styled, ThemeProvider} from '@mui/material/styles'
 import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
 
@@ -22,33 +21,45 @@ function Channels({channels}) {
     const {expanded, setExpanded} = useContext(ListContext)
     const defExpanded = useDeferredValue(expanded)
 
+
+    const theme = createTheme({
+        breakpoints: {
+            values: {
+                xs: 0,
+                sm: 600,
+                md: 800,
+                lg: 1200,
+                xl: 1536
+            }
+        }
+    })
+
+
     return (
 
-
-        <Grid container spacing={{ xs: 1, sm: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} style={{marginTop:8}}>
-
-            <Grid item xs={4} sm={4} md={4}>
-                <Item style={{backgroundColor:'#a3a3a3', boxShadow:'none', padding:10}}>
-                    <LPTVlogo height={170}/>
-                </Item>
-            </Grid>
-
-            {channels.map((channel, index) =>
-
-                <Grid item xs={4} sm={4} md={4} key={index}>
-                    <Item>
-                        <ChannelCard
-                            key={channel.id}
-                            channel={channel}
-                            expanded={channel.id === defExpanded}
-                            onExpand={setExpanded}
-                        />
+        <ThemeProvider theme={theme}>
+            <Grid container spacing={{xs: 1, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}} style={{marginTop: 8}}>
+                <Grid item xs={4} sm={4} md={4}>
+                    <Item style={{backgroundColor: '#a3a3a3', boxShadow: 'none', padding: 10}}>
+                        <LPTVlogo height={170}/>
                     </Item>
                 </Grid>
-            )}
 
-        </Grid>
+                {channels.map((channel, index) =>
+                    <Grid item xs={4} sm={4} md={4} key={index}>
+                        <Item style={{backgroundColor: '#1A2027'}}>
+                            <ChannelCard
+                                key={channel.id}
+                                channel={channel}
+                                expanded={channel.id === defExpanded}
+                                onExpand={setExpanded}
+                            />
+                        </Item>
+                    </Grid>
+                )}
 
+            </Grid>
+        </ThemeProvider>
     )
 }
 

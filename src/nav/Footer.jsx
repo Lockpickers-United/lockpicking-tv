@@ -1,9 +1,7 @@
 import React, {useContext} from 'react'
 import Typography from '@mui/material/Typography'
-import ToggleBetaButton from './ToggleBetaButton'
 import ToggleColorMode from './ToggleColorMode'
 import AuthContext from '../app/AuthContext.jsx'
-import FirebaseTestButton from './FirebaseTestButton.jsx'
 
 function Footer({extras}) {
     const {user} = useContext(AuthContext)

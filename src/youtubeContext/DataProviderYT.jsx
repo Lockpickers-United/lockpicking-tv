@@ -7,7 +7,6 @@ import removeAccents from 'remove-accents'
 
 export function DataProvider({children}) {
 
-    const verbose = false
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sellerId, sort, image, profileUpdated, add, ...filters} = allFilters
     const {allChannels} = useContext(LoadingContext)

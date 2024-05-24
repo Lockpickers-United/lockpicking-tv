@@ -9,8 +9,8 @@ import AppContext from '../app/AppContext'
 import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
 import Button from '@mui/material/Button'
-import LPU_text_logo from '../assets/LPU-text-logo.jsx'
-import LPU_LOCKS_header from '../assets/LPU_LOCKS_header.jsx'
+import LPU_text_logo from '../assets/LPU-text-logo'
+import LPU_LOCKS_header from '../assets/LPU_LOCKS_header'
 import DBContext from '../app/DBContext.jsx'
 
 function MainMenu() {

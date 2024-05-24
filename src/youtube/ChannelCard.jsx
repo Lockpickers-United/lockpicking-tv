@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
+import React, {useCallback, useEffect, useRef, useState} from 'react'
 import queryString from 'query-string'
 import Tracker from '../app/Tracker.jsx'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -12,7 +12,6 @@ import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import Collapse from '@mui/material/Collapse'
 import IconButton from '@mui/material/IconButton'
-import FilterContext from '../context/FilterContext.jsx'
 
 const ExpandMore = styled((props) => {
     const {expand, ...other} = props
@@ -31,8 +30,7 @@ const Channel = ({channel, expanded, onExpand}) => {
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
 
-    const handleChange = useCallback((_, isExpanded) => {
-        console.log('handleChange',isExpanded, expanded)
+    const handleChange = useCallback(() => {
         onExpand(!expanded ? channel.id : false)
     }, [channel.id, expanded, onExpand])
 
@@ -98,8 +96,8 @@ const Channel = ({channel, expanded, onExpand}) => {
             <CardActions sx={{padding: '0px 5px'}}>
                 <div style={{width: '100%', display: 'flex', placeItems:'center'}}>
                     <ChannelStats channel={channel}/>
-                    <ExpandMore style={{height:40}}>
-                        <ExpandMoreIcon style={{color: expandColor}} onClick={handleChange}/>
+                    <ExpandMore style={{height:40}} onClick={handleChange}>
+                        <ExpandMoreIcon style={{color: expandColor}} />
                     </ExpandMore>
                 </div>
             </CardActions>

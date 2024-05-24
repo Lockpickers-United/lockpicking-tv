@@ -5,7 +5,6 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import queryString from 'query-string'
 import Tracker from '../app/Tracker.jsx'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import useWindowSize from '../util/useWindowSize.jsx'
 import OpenYouTubeLinkButton from './OpenYouTubeLinkButton.jsx'
 import ChannelStats from './ChannelStats.jsx'
 
@@ -53,9 +52,6 @@ const Channel = ({channel, expanded, onExpand}) => {
         borderBottom: '1px solid #444',
         textAlign: 'left'
     }
-
-    const {width} = useWindowSize()
-    const smallWindow = width <= 480
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} disableGutters={false}>

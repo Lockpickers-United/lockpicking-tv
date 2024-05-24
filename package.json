@@ -1,12 +1,12 @@
 {
-    "name": "lock-trackers",
+    "name": "lockpicking.tv",
     "version": "0.0.1",
-    "description": "An interactive web app for for tracking LPU #lock-bazaar listings and speed pick times",
+    "description": "lockpicking.tv is a directory of youtube channels dedicated to locks, lockpicking, and lockpickers",
     "main": "index.js",
     "repository": "https://github.com/Lockpickers-United/lock-trackers.git",
     "author": "mgsecure <mg@mgsecure.com>",
     "license": "Unlicense",
-    "homepage": "https://lpulocks.com/",
+    "homepage": "https://lockpicking.tv/",
     "type": "module",
     "scripts": {
         "dev": "vite",

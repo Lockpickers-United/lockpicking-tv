@@ -9,11 +9,7 @@ export function ListProvider({children}) {
     const {filters, addFilters, removeFilters} = useContext(FilterContext)
     const expanded = filters.id
 
-
     const handleSetExpanded = useCallback((newValue) => {
-
-        console.log('handleSetExpanded',newValue)
-
         if (newValue) {
             const name = getNameFromId(newValue)
             addFilters([
