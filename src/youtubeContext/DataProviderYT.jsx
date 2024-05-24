@@ -71,7 +71,7 @@ export function DataProvider({children}) {
 
     const getNameFromId = useCallback(id => {
         const channel = getChannelFromId(id)
-        return channel.title
+        return channel ? channel.title : ''
     }, [getChannelFromId])
 
     const value = useMemo(() => ({

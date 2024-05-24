@@ -71,8 +71,8 @@ const Channel = ({channel, expanded, onExpand}) => {
     const nameAlign = smallWindow ? 'left' : 'center'
 
     return (
-        <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px'}}  ref={ref}>
-            <CardContent style={{padding: '5px 5px 0px 5px'}}>
+        <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px'}} ref={ref}>
+            <CardContent style={{padding: '15px 5px 0px 5px', textAlign:'center'}}>
                 <div style={headerFlexStyle}>
                     <div style={{height: avatarSize, margin: avatarMargin}}>
                         <img src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
@@ -103,7 +103,7 @@ const Channel = ({channel, expanded, onExpand}) => {
             </CardActions>
 
             <Collapse in={expanded} timeout='auto' unmountOnExit>
-                <CardContent style={{textAlign: 'left', padding: 10}}>
+                <CardContent style={{textAlign: 'left', padding: 10, color:'#fff'}}>
                     {channel.description &&
                         descriptionLines.map((line, index) =>
                             <div key={index} style={{marginLeft: 5}}>

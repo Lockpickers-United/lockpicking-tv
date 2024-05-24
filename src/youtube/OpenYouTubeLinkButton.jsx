@@ -2,21 +2,39 @@ import React from 'react'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import YouTubeIcon from '@mui/icons-material/YouTube'
 
-function OpenYouTubeLinkButton({channel, fontSize}) {
+function OpenYouTubeLinkButton({channel, video, fontSize}) {
 
-    const link = channel.customUrl
-        ? `https://www.youtube.com/${channel.customUrl}`
-        : `https://www.youtube.com/channel/${channel.id}`
+    let title
+    let link
+    let icon = <OpenInNewIcon style={{color: '#fff'}} fontSize={fontSize}/>
+
+    if (video) {
+        title = 'View video on YouTube'
+        link = `https://www.youtube.com/watch?v=${video.id}`
+        icon = <YouTubeIcon style={{color: '#fff'}} fontSize={fontSize}/>
+    }
+
+    if (channel) {
+        title = 'View channel on YouTube'
+        link = channel.customUrl
+            ? `https://www.youtube.com/${channel.customUrl}`
+            : `https://www.youtube.com/channel/${channel.id}`
+    }
 
     return (
-        <Tooltip title='View channel on YouTube' arrow disableFocusListener>
-            <IconButton onClick={null} style={{height:40, width:40}}>
-                <a href={link} target='_blank' rel='noopener noreferrer' style={{height: 24}}>
-                    <OpenInNewIcon style={{color:'#fff'}}  fontSize={fontSize}/>
-                </a>
-            </IconButton>
-        </Tooltip>
+        <React.Fragment>
+            {link &&
+                <Tooltip title={title} arrow disableFocusListener>
+                    <IconButton onClick={null} style={{height: 40, width: 40}}>
+                        <a href={link} target='_blank' rel='noopener noreferrer' style={{height: 24}}>
+                            {icon}
+                        </a>
+                    </IconButton>
+                </Tooltip>
+            }
+        </React.Fragment>
     )
 }
 

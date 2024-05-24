@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react'
+import React, {useCallback, useMemo} from 'react'
 import useData from '../util/useData'
 import {youtubeData} from '../data/dataUrls'
 
@@ -26,14 +26,22 @@ export function LoadingProvider({children}) {
         }
     })
 
+    const getChannelFromId = useCallback(channelId => {
+        return allChannels?.find(({id}) => id === channelId)
+    }, [allChannels])
+
+
+
     const allDataLoaded = ((jsonLoaded))
 
     const value = useMemo(() => ({
         allDataLoaded,
-        allChannels
+        allChannels,
+        getChannelFromId
     }), [
         allDataLoaded,
-        allChannels
+        allChannels,
+        getChannelFromId
     ])
 
     return (

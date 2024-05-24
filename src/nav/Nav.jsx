@@ -16,7 +16,7 @@ function Nav({extras}) {
                 <Toolbar style={{padding: 10}}>
 
                     <div style={{display: 'flex', width:'100%', marginTop:5}}>
-                        <div style={{marginRight: 20}}>
+                        <div style={{marginRight: 20, marginLeft:5}}>
                             <LPTVlogo height={40}/>
                         </div>
                         <div style={{marginRight: 10, flexGrow: 1}}>
