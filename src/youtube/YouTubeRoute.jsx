@@ -1,5 +1,4 @@
 import React from 'react'
-import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import {LoadingProvider} from '../youtubeContext/LoadingContextYT.jsx'
@@ -10,25 +9,26 @@ import {ytFilterFields} from '../data/filterFields'
 import YouTubeMain from './YouTubeMain.jsx'
 
 
-function YoutTubeRoute() {
+function YoutTubeRoute({channelSet}) {
 
     document.title = 'LPU Locks - YouTube Directory'
 
     return (
-        <LoadingProvider>
-            <FilterProvider filterFields={ytFilterFields}>
-                <DataProvider>
+        <FilterProvider filterFields={ytFilterFields}>
+            <LoadingProvider channelSet={channelSet}>
+                <DataProvider channelSet={channelSet}>
                     <ListProvider>
                         <Nav title='YouTube Directory' route='yt'/>
 
-                        <div style={{backgroundColor:'#fff'}}><YouTubeMain/></div>
+                        <div style={{backgroundColor: '#ccc'}}>
+                            <YouTubeMain/>
+                        </div>
 
                         <Footer/>
-                        <Tracker feature='youtube'/>
                     </ListProvider>
                 </DataProvider>
-            </FilterProvider>
-        </LoadingProvider>
+            </LoadingProvider>
+        </FilterProvider>
     )
 }
 

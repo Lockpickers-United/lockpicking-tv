@@ -1,16 +1,25 @@
 import React, {useCallback, useMemo} from 'react'
 import useData from '../util/useData'
-import {youtubeData} from '../data/dataUrls'
+import {youtubeData, youtubeDataFull, youtubeDataNew} from '../data/dataUrls'
 
 const LoadingContext = React.createContext({})
-const urls = {youtubeData}
+const urls = {youtubeData, youtubeDataFull, youtubeDataNew}
 
-export function LoadingProvider({children}) {
+export function LoadingProvider({children, channelSet}) {
+
     const {data, loading, error} = useData({urls})
-    const {youtubeData} = data || {}
+    const {youtubeData, youtubeDataFull, youtubeDataNew} = data || {}
     const jsonLoaded = (!loading && !error && !!data)
 
-    const channels = useMemo(() => youtubeData || [], [youtubeData])
+    const featuredChannels = useMemo(() => youtubeData || [], [youtubeData])
+    const fullChannels = useMemo(() => youtubeDataFull || [], [youtubeDataFull])
+    const newChannels = useMemo(() => youtubeDataNew || [], [youtubeDataNew])
+
+    const channels = channelSet === 'featured'
+        ? featuredChannels
+        : channelSet === 'new'
+            ? newChannels
+            : fullChannels
 
     const allChannels = channels.map(channel => {
         return {
@@ -22,6 +31,7 @@ export function LoadingProvider({children}) {
             description: channel.snippet.description,
             thumbnail: channel.snippet.thumbnails.default.url,
             customUrl: channel.snippet.customUrl,
+            publishedAt: channel.snippet.publishedAt,
             fuzzy: channel.snippet.title + ', ' + channel.snippet.customUrl
         }
     })
@@ -31,17 +41,18 @@ export function LoadingProvider({children}) {
     }, [allChannels])
 
 
-
     const allDataLoaded = ((jsonLoaded))
 
     const value = useMemo(() => ({
         allDataLoaded,
         allChannels,
-        getChannelFromId
+        getChannelFromId,
+        channelSet
     }), [
         allDataLoaded,
         allChannels,
-        getChannelFromId
+        getChannelFromId,
+        channelSet
     ])
 
     return (

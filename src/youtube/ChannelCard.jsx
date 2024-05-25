@@ -65,7 +65,7 @@ const Channel = ({channel, expanded, onExpand}) => {
     const {width} = useWindowSize()
     const smallWindow = width <= 500
     const avatarSize = smallWindow ? 40 : 60
-    const avatarMargin = smallWindow ? '0px 15px 0px 0px' : '0px 0px 5px 0px'
+    const avatarMargin = smallWindow ? '0px 15px 0px 10px' : '0px 0px 5px 0px'
 
     const headerFlexStyle = smallWindow ? {display: 'flex', placeItems: 'center'} : {placeItems: 'center'}
     const nameAlign = smallWindow ? 'left' : 'center'
@@ -116,7 +116,6 @@ const Channel = ({channel, expanded, onExpand}) => {
                             no channel details available<br/>
                         </div>
                     }
-                    <Tracker feature='channel' id={channel.id} title={channel.title}/>
                 </CardContent>
             </Collapse>
         </Card>

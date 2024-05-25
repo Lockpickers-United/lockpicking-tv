@@ -11,13 +11,23 @@ function LoadingDisplay() {
                 placeItems: 'center',
                 width: '100%',
                 alignItems: 'center',
-                height: 200,
-                marginRight:'auto',
-                marginLeft:'auto'
+                marginRight: 'auto',
+                marginLeft: 'auto'
             }}>
                 <div style={{
+                    height: 330,
+                    width: 300,
+                    marginTop: 40,
                     marginRight: 'auto',
-                    marginLeft: 'auto'
+                    marginLeft: 'auto',
+                    backgroundImage: 'url(' + '/tv-blank.svg' + ')',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    display: 'flex',
+                    placeItems: 'center',
+                    paddingLeft: 75,
+                    paddingTop: 60
                 }}>
                     <Box sx={{position: 'relative'}}>
                         <CircularProgress
@@ -26,8 +36,8 @@ function LoadingDisplay() {
                                 color: (theme) =>
                                     theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800]
                             }}
-                            size={60}
-                            thickness={4}
+                            size={95}
+                            thickness={6}
                             value={100}
                         />
                         <CircularProgress
@@ -42,8 +52,8 @@ function LoadingDisplay() {
                                     strokeLinecap: 'round'
                                 }
                             }}
-                            size={60}
-                            thickness={4}
+                            size={95}
+                            thickness={6}
                         />
                     </Box>
                 </div>

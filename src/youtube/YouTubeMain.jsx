@@ -1,44 +1,137 @@
-import React, {useContext} from 'react'
+import * as React from 'react'
+import PropTypes from 'prop-types'
+import SwipeableViews from 'react-swipeable-views'
+import {useTheme} from '@mui/material/styles'
+import AppBar from '@mui/material/AppBar'
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import {useNavigate} from 'react-router-dom'
+import {useCallback, useContext} from 'react'
+
+import Channels from './Channels.jsx'
 import LoadingContext from '../youtubeContext/LoadingContextYT.jsx'
 import DataContext from '../app/DataContext.jsx'
-import Channels from './Channels.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
 
-function YouTubeMain() {
-
-    const {allDataLoaded} = useContext(LoadingContext)
-    const {visibleChannels} = useContext(DataContext)
-
-    const {width} = useWindowSize()
-    const smallWindow = width < 560
-    const pagePadding = !smallWindow
-        ? '24px 24px 32px 24px'
-        : '8px 8px 32px 8px'
+function TabPanel(props) {
+    const { children, value, index, ...other } = props
 
     return (
-
-        <div style={{
-            minWidth: '320px', maxWidth: 1700, height:'100%',
-            padding: pagePadding,
-            marginLeft: 'auto', marginRight: 'auto',
-            backgroundColor:'#aaa'
-        }}>
-            {!allDataLoaded &&
-                <LoadingDisplay/>
-            }
-            {(allDataLoaded && visibleChannels) &&
-                <div style={{backgroundColor:'#aaa'}}>
-
-                    <Channels channels={visibleChannels}/>
-                    <div style={{
-                        display: 'block',
-                        clear: 'both',
-                    }}/>
-                </div>
-            }
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`full-width-tabpanel-${index}`}
+            aria-labelledby={`full-width-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box sx={{ p: 3 }}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
         </div>
     )
 }
 
-export default YouTubeMain
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+}
+
+function a11yProps(index) {
+    return {
+        id: `full-width-tab-${index}`,
+        'aria-controls': `full-width-tabpanel-${index}`,
+    }
+}
+
+export default function YouTubeMain() {
+
+    const {allDataLoaded, channelSet} = useContext(LoadingContext)
+    const {visibleChannels} = useContext(DataContext)
+
+
+    const sets = ['new','featured','full']
+    let initialIndex = sets.indexOf(channelSet)
+
+    const theme = useTheme()
+    const [value, setValue] = React.useState(initialIndex)
+
+    const navigate = useNavigate()
+
+    const handleChange = useCallback((event, newValue) => {
+        setValue(newValue)
+
+        const routes =['/new','/featured', '/full']
+        navigate(routes[newValue])
+
+    }, [navigate])
+
+
+    const handleChangeIndex = (index) => {
+        setValue(index)
+    }
+
+    const {width} = useWindowSize()
+    const smallWindow = width <= 800
+    const tabPadding = smallWindow ? 20 : 12
+
+    const newName = smallWindow ? 'New' : 'New & Noteworthy'
+    const featuredName = smallWindow ? 'Featured' : 'Featured Channels'
+    const fullName = smallWindow ? 'Full List' : 'Full Directory'
+
+    return (
+        <Box style={{ backgroundColor: '#2a2a2a', width: '100%', paddingTop:tabPadding}}>
+            <AppBar position="static" style={{placeItems:'center'}}>
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    indicatorColor="secondary"
+                    textColor="inherit"
+                    aria-label="full width tabs example"
+                    style={{}}
+                    selectionFollowsFocus
+                >
+                    <Tab label={newName} {...a11yProps(0)} />
+                    <Tab label={featuredName} {...a11yProps(1)} />
+                    <Tab label={fullName} {...a11yProps(2)} />
+                </Tabs>
+            </AppBar>
+            <SwipeableViews
+                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                index={value}
+                onChangeIndex={handleChangeIndex}
+                style={{padding:'0', backgroundColor:'#ccc'}}
+            >
+                <TabPanel value={value} index={0} dir={theme.direction} style={{padding:0}}>
+                    {!(allDataLoaded && visibleChannels) &&
+                        <LoadingDisplay/>
+                    }
+                    { (allDataLoaded && visibleChannels) &&
+                        <Channels channels={visibleChannels}/>
+                    }
+                </TabPanel>
+                <TabPanel value={value} index={1} dir={theme.direction} style={{padding:0}}>
+                    {!(allDataLoaded && visibleChannels) &&
+                        <LoadingDisplay/>
+                    }
+                    { (allDataLoaded && visibleChannels) &&
+                        <Channels channels={visibleChannels}/>
+                    }
+                </TabPanel>
+                <TabPanel value={value} index={2} dir={theme.direction} style={{padding:0}}>
+                    {!(allDataLoaded && visibleChannels) &&
+                        <LoadingDisplay/>
+                    }
+                        { (allDataLoaded && visibleChannels) &&
+                        <Channels channels={visibleChannels}/>
+                    }
+                </TabPanel>
+            </SwipeableViews>
+        </Box>
+    )
+}

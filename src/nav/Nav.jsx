@@ -12,8 +12,8 @@ import {channelSortFields} from '../data/sortFields'
 function Nav({extras}) {
     return (
         <React.Fragment>
-            <AppBar position='fixed' sx={{}}>
-                <Toolbar style={{padding: 10}}>
+            <AppBar position='fixed' style={{display:'flex', placeItems:'center'}}>
+                <div style={{padding: 10, width:'100%', maxWidth:1200}}>
 
                     <div style={{display: 'flex', width:'100%', marginTop:5}}>
                         <div style={{marginRight: 20, marginLeft:5}}>
@@ -34,8 +34,7 @@ function Nav({extras}) {
                     </div>
                     {extras}
 
-
-                </Toolbar>
+                </div>
             </AppBar>
 
             {/* Dummy toolbar to help content place correctly below this */}

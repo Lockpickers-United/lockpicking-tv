@@ -1,9 +1,8 @@
 import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
-
+import ReactPlayer from 'react-player/youtube'
 import LoadingContext from '../youtubeContext/LoadingContextYT.jsx'
 
 import queryString from 'query-string'
-import Tracker from '../app/Tracker.jsx'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import useWindowSize from '../util/useWindowSize.jsx'
 
@@ -12,7 +11,6 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Collapse from '@mui/material/Collapse'
 import IconButton from '@mui/material/IconButton'
-import {CardMedia} from '@mui/material'
 
 import VideoStats from './VideoStats.jsx'
 
@@ -59,7 +57,6 @@ const Channel = ({video, expanded, onExpand}) => {
     }, [expanded, scrolled, video.id])
 
 
-
     const {getChannelFromId} = useContext(LoadingContext)
 
     const channel = getChannelFromId(video.channelId)
@@ -79,17 +76,22 @@ const Channel = ({video, expanded, onExpand}) => {
 
     const textColor = '#fff'
 
-
     return (
         <Card style={{backgroundColor: '#24244a', boxShadow: 'unset', padding: '0px', color: textColor}} ref={ref}>
             <CardContent style={{padding: '5px 0px 0px 0px', textAlign: 'center'}}>
                 <b>Featured Video</b>
-                <CardMedia
-                    component='iframe'
-                    title='test'
-                    src='https://www.youtube.com/embed/2kbYTGa_O3c'
-                    height='220'
-                />
+                <div style={{width:'100%', height:220}}>
+                    <ReactPlayer
+                        url='https://www.youtube.com/embed/2kbYTGa_O3c'
+                        foo='https://i.ytimg.com/vi/2kbYTGa_O3c/mqdefault.jpg'
+                        width='100%'
+                        height='100%'
+                        light
+                        playing
+                        muted
+                    />
+                </div>
+
                 <div style={headerFlexStyle}>
                     <div style={{height: avatarSize, margin: avatarMargin}}>
                         <img src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
@@ -102,7 +104,7 @@ const Channel = ({video, expanded, onExpand}) => {
                         flexGrow: 1
                     }}>
                         <a href={link} target='_blank' rel='noopener noreferrer'
-                           style={{color: textColor, textDecoration: 'none', fontSize:'1.0rem'}}>
+                           style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
                             {video.title}
                         </a>
                     </div>
@@ -117,7 +119,6 @@ const Channel = ({video, expanded, onExpand}) => {
             <Collapse in={expanded} timeout='auto' unmountOnExit>
                 <CardContent style={{textAlign: 'left', padding: 10, color: textColor}}>
                     <VideoStats video={video}/>
-                    <Tracker feature='video' id={video.id}/>
                 </CardContent>
             </Collapse>
 

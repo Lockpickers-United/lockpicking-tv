@@ -5,18 +5,32 @@ import ErrorBoundary from './ErrorBoundary'
 export default [
     {
         path: '/',
-        loader: () => redirect('/youtube')
+        loader: () => redirect('/featured')
     },
     {
-        path: '/youtube',
+        path: '/featured',
         lazy: async () => {
             const {default: YouTubeRoute} = await import('../youtube/YouTubeRoute.jsx')
-            return {element: <YouTubeRoute/>}
+            return {element: <YouTubeRoute channelSet={'featured'}/>}
+        }
+    },
+    {
+        path: '/new',
+        lazy: async () => {
+            const {default: YouTubeRoute} = await import('../youtube/YouTubeRoute.jsx')
+            return {element: <YouTubeRoute channelSet={'new'}/>}
+        }
+    },
+    {
+        path: '/full',
+        lazy: async () => {
+            const {default: YouTubeRoute} = await import('../youtube/YouTubeRoute.jsx')
+            return {element: <YouTubeRoute channelSet={'full'}/>}
         }
     },
     {
         path: '*',
-        loader: () => redirect('/youtube')
+        loader: () => redirect('/featured')
     },
 ].map(route => ({...route, errorElement: <ErrorBoundary/>}))
 

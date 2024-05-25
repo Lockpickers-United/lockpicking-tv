@@ -4,11 +4,12 @@ import DataContext from '../app/DataContext.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import fuzzysort from 'fuzzysort'
 import removeAccents from 'remove-accents'
+import dayjs from 'dayjs'
 
 export function DataProvider({children}) {
 
     const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sellerId, sort, image, profileUpdated, add, ...filters} = allFilters
+    const {search, id, tab, name, sort, image, add, showAll, ...filters} = allFilters
     const {allChannels} = useContext(LoadingContext)
 
     const filteredChannels = useMemo(() => {
@@ -57,6 +58,9 @@ export function DataProvider({children}) {
                         || a.title.localeCompare(b.title)
                 } else if (sort === 'subscribers') {
                     return b.subscriberCount - a.subscriberCount
+                        || a.title.localeCompare(b.title)
+                } else if (sort === 'new') {
+                    return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
                         || a.title.localeCompare(b.title)
                 } else {
                     return a.title.localeCompare(b.title)
