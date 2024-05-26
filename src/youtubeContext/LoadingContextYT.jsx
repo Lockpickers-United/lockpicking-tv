@@ -1,19 +1,21 @@
 import React, {useCallback, useMemo} from 'react'
 import useData from '../util/useData'
-import {youtubeData, youtubeDataFull, youtubeDataNew} from '../data/dataUrls'
+import {channelData} from '../data/dataUrls'
 
 const LoadingContext = React.createContext({})
-const urls = {youtubeData, youtubeDataFull, youtubeDataNew}
+const urls = {channelData}
 
 export function LoadingProvider({children, channelSet}) {
 
     const {data, loading, error} = useData({urls})
-    const {youtubeData, youtubeDataFull, youtubeDataNew} = data || {}
+    const {channelData} = data || {}
     const jsonLoaded = (!loading && !error && !!data)
 
-    const featuredChannels = useMemo(() => youtubeData || [], [youtubeData])
-    const fullChannels = useMemo(() => youtubeDataFull || [], [youtubeDataFull])
-    const newChannels = useMemo(() => youtubeDataNew || [], [youtubeDataNew])
+    const featuredChannels = useMemo(() => jsonLoaded ? channelData.featuredChannels : [], [jsonLoaded, channelData])
+    const fullChannels = useMemo(() => jsonLoaded ? channelData.fullChannels : [], [jsonLoaded, channelData])
+    const newChannels = useMemo(() => jsonLoaded ? channelData.newChannels : [], [jsonLoaded, channelData])
+
+    console.log(fullChannels)
 
     const channels = channelSet === 'featured'
         ? featuredChannels

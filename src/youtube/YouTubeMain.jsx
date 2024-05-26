@@ -1,6 +1,5 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
-import SwipeableViews from 'react-swipeable-views'
 import {useTheme} from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Tabs from '@mui/material/Tabs'
@@ -17,18 +16,18 @@ import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 
 function TabPanel(props) {
-    const { children, value, index, ...other } = props
+    const {children, value, index, ...other} = props
 
     return (
         <div
-            role="tabpanel"
+            role='tabpanel'
             hidden={value !== index}
             id={`full-width-tabpanel-${index}`}
             aria-labelledby={`full-width-tab-${index}`}
             {...other}
         >
             {value === index && (
-                <Box sx={{ p: 3 }}>
+                <Box sx={{p: 3}}>
                     <Typography>{children}</Typography>
                 </Box>
             )}
@@ -39,13 +38,13 @@ function TabPanel(props) {
 TabPanel.propTypes = {
     children: PropTypes.node,
     index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired
 }
 
 function a11yProps(index) {
     return {
         id: `full-width-tab-${index}`,
-        'aria-controls': `full-width-tabpanel-${index}`,
+        'aria-controls': `full-width-tabpanel-${index}`
     }
 }
 
@@ -54,8 +53,7 @@ export default function YouTubeMain() {
     const {allDataLoaded, channelSet} = useContext(LoadingContext)
     const {visibleChannels} = useContext(DataContext)
 
-
-    const sets = ['new','featured','full']
+    const sets = ['new', 'featured', 'full']
     let initialIndex = sets.indexOf(channelSet)
 
     const theme = useTheme()
@@ -65,16 +63,9 @@ export default function YouTubeMain() {
 
     const handleChange = useCallback((event, newValue) => {
         setValue(newValue)
-
-        const routes =['/new','/featured', '/full']
+        const routes = ['/new', '/featured', '/full']
         navigate(routes[newValue])
-
     }, [navigate])
-
-
-    const handleChangeIndex = (index) => {
-        setValue(index)
-    }
 
     const {width} = useWindowSize()
     const smallWindow = width <= 800
@@ -85,53 +76,53 @@ export default function YouTubeMain() {
     const fullName = smallWindow ? 'Full List' : 'Full Directory'
 
     return (
-        <Box style={{ backgroundColor: '#2a2a2a', width: '100%', paddingTop:tabPadding}}>
-            <AppBar position="static" style={{placeItems:'center'}}>
+        <Box style={{backgroundColor: '#2a2a2a', width: '100%', paddingTop: tabPadding}}>
+            <AppBar position='static'>
                 <Tabs
                     value={value}
                     onChange={handleChange}
-                    indicatorColor="secondary"
-                    textColor="inherit"
-                    aria-label="full width tabs example"
+                    indicatorColor='secondary'
+                    textColor='inherit'
+                    aria-label='full width tabs example'
                     style={{}}
                     selectionFollowsFocus
+                    centered
                 >
-                    <Tab label={newName} {...a11yProps(0)} />
-                    <Tab label={featuredName} {...a11yProps(1)} />
-                    <Tab label={fullName} {...a11yProps(2)} />
+                    <Tab label={newName}{...a11yProps(0)} style={{margin: '0px 5px'}}/>
+                    <Tab label={featuredName} {...a11yProps(1)} style={{margin: '0px 5px'}}/>
+                    <Tab label={fullName} {...a11yProps(2)} style={{margin: '0px 5px'}}/>
                 </Tabs>
             </AppBar>
-            <SwipeableViews
-                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                index={value}
-                onChangeIndex={handleChangeIndex}
-                style={{padding:'0', backgroundColor:'#ccc'}}
-            >
-                <TabPanel value={value} index={0} dir={theme.direction} style={{padding:0}}>
+            <div style={{padding: '0', backgroundColor: '#ccc'}}>
+                <TabPanel value={value} index={0} dir={theme.direction} style={{padding: 0}}>
+                    <React.Fragment>
+
+                        {!(allDataLoaded && visibleChannels) &&
+                            <LoadingDisplay/>
+                        }
+                        {(allDataLoaded && visibleChannels) &&
+                            <Channels channels={visibleChannels}/>
+                        }
+
+                    </React.Fragment>
+                </TabPanel>
+                <TabPanel value={value} index={1} dir={theme.direction} style={{padding: 0}}>
                     {!(allDataLoaded && visibleChannels) &&
                         <LoadingDisplay/>
                     }
-                    { (allDataLoaded && visibleChannels) &&
+                    {(allDataLoaded && visibleChannels) &&
                         <Channels channels={visibleChannels}/>
                     }
                 </TabPanel>
-                <TabPanel value={value} index={1} dir={theme.direction} style={{padding:0}}>
+                <TabPanel value={value} index={2} dir={theme.direction} style={{padding: 0}}>
                     {!(allDataLoaded && visibleChannels) &&
                         <LoadingDisplay/>
                     }
-                    { (allDataLoaded && visibleChannels) &&
+                    {(allDataLoaded && visibleChannels) &&
                         <Channels channels={visibleChannels}/>
                     }
                 </TabPanel>
-                <TabPanel value={value} index={2} dir={theme.direction} style={{padding:0}}>
-                    {!(allDataLoaded && visibleChannels) &&
-                        <LoadingDisplay/>
-                    }
-                        { (allDataLoaded && visibleChannels) &&
-                        <Channels channels={visibleChannels}/>
-                    }
-                </TabPanel>
-            </SwipeableViews>
+            </div>
         </Box>
     )
 }

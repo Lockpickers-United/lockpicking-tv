@@ -6,11 +6,7 @@ if (import.meta.env && import.meta.env.VITE_LOCAL_DATA === 'true') {
     console.info('Attention: App is using LOCAL DATA.')
 }
 
-export const youtubeData = '/data/youtubeData.json'
-export const youtubeDataFull = '/data/youtubeDataFull.json'
-export const youtubeDataNew = '/data/youtubeDataNew.json'
-
-
+export const channelData = '/data/channelData.json'
 
 export const siteFull = '/reports/statsSiteFull.json'
 export const siteSummary = '/reports/statsSiteSummary.json'
