@@ -15,8 +15,6 @@ export function LoadingProvider({children, channelSet}) {
     const fullChannels = useMemo(() => jsonLoaded ? channelData.fullChannels : [], [jsonLoaded, channelData])
     const newChannels = useMemo(() => jsonLoaded ? channelData.newChannels : [], [jsonLoaded, channelData])
 
-    console.log(fullChannels)
-
     const channels = channelSet === 'featured'
         ? featuredChannels
         : channelSet === 'new'

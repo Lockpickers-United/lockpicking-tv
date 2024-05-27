@@ -8,7 +8,7 @@ const ChannelStats = ({video}) => {
     const {width} = useWindowSize()
     const smallWindow = width <= 500
     const statMargin = smallWindow ? 0 : 0
-    const flexStyle = smallWindow ? {display: 'flex',marginTop: 10} : {display: 'flex', marginTop: 6}
+    const flexStyle = smallWindow ? {display: 'flex',marginTop: 0} : {display: 'flex', marginTop: 0}
 
     return (
         <div style={{...flexStyle, width:'100%', textAlign:'center'}}>

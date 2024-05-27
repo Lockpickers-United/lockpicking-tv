@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo, useContext} from 'react'
-import LoadingContext from './LoadingContextYT.jsx'
+import LoadingContext from './LoadingContextPages.jsx'
 import DataContext from '../app/DataContext.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import fuzzysort from 'fuzzysort'
@@ -9,8 +9,8 @@ import dayjs from 'dayjs'
 export function DataProvider({children}) {
 
     const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, add, showAll, ...filters} = allFilters
-    const {allChannels} = useContext(LoadingContext)
+    const {search, id, tab, name, sort, image, add, showAll, page, ...filters} = allFilters
+    const {allDataLoaded, allItems} = useContext(LoadingContext)
 
     const filteredChannels = useMemo(() => {
 
@@ -25,7 +25,7 @@ export function DataProvider({children}) {
             .flat()
 
         // Filter the data
-        return allChannels
+        return allItems
             .filter(datum => {
                 return filterArray.every(({key, value}) => {
                     return Array.isArray(datum[key])
@@ -34,7 +34,7 @@ export function DataProvider({children}) {
                 })
             })
 
-    }, [filters, allChannels])
+    }, [filters, allItems])
 
     const visibleChannels = useMemo(() => {
 
@@ -70,8 +70,8 @@ export function DataProvider({children}) {
     }, [filteredChannels, search, sort])
 
     const getChannelFromId = useCallback(channelId => {
-        return allChannels?.find(({id}) => id === channelId)
-    }, [allChannels])
+        return allItems?.find(({id}) => id === channelId)
+    }, [allItems])
 
     const getNameFromId = useCallback(id => {
         const channel = getChannelFromId(id)

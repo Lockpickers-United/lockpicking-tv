@@ -10,7 +10,7 @@ import {useNavigate} from 'react-router-dom'
 import {useCallback, useContext} from 'react'
 
 import Channels from './Channels.jsx'
-import LoadingContext from '../youtubeContext/LoadingContextYT.jsx'
+import LoadingContext from '../youtubeContext/LoadingContextChannels.jsx'
 import DataContext from '../app/DataContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'

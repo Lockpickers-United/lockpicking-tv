@@ -29,6 +29,13 @@ export default [
         }
     },
     {
+        path: '/pages',
+        lazy: async () => {
+            const {default: PagesRoute} = await import('../youtube/PagesRoute.jsx')
+            return {element: <PagesRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/featured')
     },

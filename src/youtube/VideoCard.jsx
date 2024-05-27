@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import ReactPlayer from 'react-player/youtube'
-import LoadingContext from '../youtubeContext/LoadingContextYT.jsx'
+import LoadingContext from '../youtubeContext/LoadingContextPages.jsx'
 
 import queryString from 'query-string'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -26,7 +26,7 @@ const ExpandMore = styled((props) => {
 }))
 
 
-const Channel = ({video, expanded, onExpand}) => {
+const VideoCard = ({video, expanded, onExpand}) => {
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
@@ -58,7 +58,6 @@ const Channel = ({video, expanded, onExpand}) => {
 
 
     const {getChannelFromId} = useContext(LoadingContext)
-
     const channel = getChannelFromId(video.channelId)
 
     const {width} = useWindowSize()
@@ -69,26 +68,26 @@ const Channel = ({video, expanded, onExpand}) => {
     const headerFlexStyle = smallWindow
         ? {display: 'flex', placeItems: 'center', padding: 10}
         : {display: 'flex', placeItems: 'center', padding: 10}
-    const nameAlign = smallWindow ? 'left' : 'center'
-    const link = channel.customUrl
-        ? `https://www.youtube.com/${channel.customUrl}`
-        : `https://www.youtube.com/channel/${channel.id}`
+    const nameAlign = smallWindow ? 'left' : 'left'
+    const link = `https://www.youtube.com/channel/${channel.id}`
 
     const textColor = '#fff'
 
+    const videoUrl = `https://www.youtube.com/embed/${video.id}`
+
     return (
         <Card style={{backgroundColor: '#24244a', boxShadow: 'unset', padding: '0px', color: textColor}} ref={ref}>
-            <CardContent style={{padding: '5px 0px 0px 0px', textAlign: 'center'}}>
-                <b>Featured Video</b>
+            <CardContent style={{padding: '5px 0px 5px 0px', textAlign: 'center'}}>
                 <div style={{width:'100%', height:220}}>
                     <ReactPlayer
-                        url='https://www.youtube.com/embed/2kbYTGa_O3c'
-                        foo='https://i.ytimg.com/vi/2kbYTGa_O3c/mqdefault.jpg'
+                        url={videoUrl}
                         width='100%'
                         height='100%'
                         light
-                        playing
+                        playing={expanded}
                         muted
+                        onReady={handleChange}
+
                     />
                 </div>
 
@@ -108,23 +107,11 @@ const Channel = ({video, expanded, onExpand}) => {
                             {video.title}
                         </a>
                     </div>
-                    <div style={{}}>
-                        <ExpandMore style={{height: 40}} onClick={handleChange}>
-                            <ExpandMoreIcon style={{color: '#ddd'}}/>
-                        </ExpandMore>
-                    </div>
                 </div>
+                <VideoStats video={video}/>
             </CardContent>
-
-            <Collapse in={expanded} timeout='auto' unmountOnExit>
-                <CardContent style={{textAlign: 'left', padding: 10, color: textColor}}>
-                    <VideoStats video={video}/>
-                </CardContent>
-            </Collapse>
-
-
         </Card>
     )
 }
 
-export default Channel
+export default VideoCard
