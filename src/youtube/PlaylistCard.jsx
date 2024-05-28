@@ -8,25 +8,24 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 
-import VideoStats from './VideoStats.jsx'
+const PlaylistCard = ({playlist, expanded, onExpand}) => {
 
-const VideoCard = ({video, expanded, onExpand}) => {
+    console.log('playlist',playlist)
 
-    console.log('video',video)
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
 
     const handleChange = useCallback(() => {
-        onExpand(!expanded ? video.id : false)
-    }, [video.id, expanded, onExpand])
+        onExpand(!expanded ? playlist.id : false)
+    }, [playlist.id, expanded, onExpand])
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
             const {id} = queryString.parse(location.search)
-            const isIdFiltered = id === video.id
+            const isIdFiltered = id === playlist.id
 
             setScrolled(true)
 
@@ -40,11 +39,11 @@ const VideoCard = ({video, expanded, onExpand}) => {
         } else if (!expanded) {
             setScrolled(false)
         }
-    }, [expanded, scrolled, video.id])
+    }, [expanded, scrolled, playlist.id])
 
 
     const {getChannelFromId} = useContext(LoadingContext)
-    const channel = getChannelFromId(video.channelId)
+    const channel = getChannelFromId(playlist.channelId)
 
     const {width} = useWindowSize()
     const smallWindow = width <= 500
@@ -59,12 +58,12 @@ const VideoCard = ({video, expanded, onExpand}) => {
 
     const textColor = '#fff'
 
-    const videoUrl = `https://www.youtube.com/embed/${video.id}`
+    const videoUrl = `https://www.youtube.com/embed/${playlist.id}`
 
     return (
         <Card style={{backgroundColor: '#24244a', boxShadow: 'unset', padding: '0px', color: textColor}} ref={ref}>
             <CardContent style={{padding: '5px 0px 5px 0px', textAlign: 'center'}}>
-                <div style={{width:'100%', height:220}}>
+                <div style={{width: '100%', height: 220}}>
                     <ReactPlayer
                         url={videoUrl}
                         width='100%'
@@ -73,8 +72,14 @@ const VideoCard = ({video, expanded, onExpand}) => {
                         playing={expanded}
                         muted
                         onReady={handleChange}
-
                     />
+
+                    <iframe width='560' height='315'
+                            src='https://www.youtube.com/embed/videoseries?si=CBhmWNga0yQpuQc7&amp;list=PL66CD42F86F3A1F85'
+                            title='YouTube video player' frameBorder='0'
+                            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                            referrerPolicy='strict-origin-when-cross-origin' allowFullScreen>
+                    </iframe>
                 </div>
 
                 <div style={headerFlexStyle}>
@@ -90,14 +95,13 @@ const VideoCard = ({video, expanded, onExpand}) => {
                     }}>
                         <a href={link} target='_blank' rel='noopener noreferrer'
                            style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
-                            {video.title}
+                            {playlist.title}
                         </a>
                     </div>
                 </div>
-                <VideoStats video={video}/>
             </CardContent>
         </Card>
     )
 }
 
-export default VideoCard
+export default PlaylistCard

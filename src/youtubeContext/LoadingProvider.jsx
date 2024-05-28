@@ -15,8 +15,6 @@ export function LoadingProvider({children, channelSet}) {
     const {pagesData, channelData} = data || {}
     const jsonLoaded = (!loading && !error && !!data)
 
-    console.log('pagesData', pagesData)
-
     const pageNavData = useMemo(() => (jsonLoaded
         ? pagesData?.map(page => {
             return {
@@ -45,8 +43,6 @@ export function LoadingProvider({children, channelSet}) {
         }
     })
 
-    console.log(allItems)
-
     const featuredChannels = useMemo(() => jsonLoaded ? channelData.featuredChannels : [], [jsonLoaded, channelData])
     const fullChannels = useMemo(() => jsonLoaded ? channelData.fullChannels : [], [jsonLoaded, channelData])
     const newChannels = useMemo(() => jsonLoaded ? channelData.newChannels : [], [jsonLoaded, channelData])
@@ -60,6 +56,7 @@ export function LoadingProvider({children, channelSet}) {
     const allChannels = channels.map(channel => {
         return {
             id: channel.channelId,
+            kind: channel.kind,
             viewCount: parseInt(channel.statistics.viewCount),
             subscriberCount: parseInt(channel.statistics.subscriberCount),
             videoCount: parseInt(channel.statistics.videoCount),
@@ -76,8 +73,7 @@ export function LoadingProvider({children, channelSet}) {
         return allChannels?.find(({id}) => id === channelId)
     }, [allChannels])
 
-
-    const allDataLoaded = ((jsonLoaded))
+    const allDataLoaded = (jsonLoaded)
 
     const value = useMemo(() => ({
         allDataLoaded,

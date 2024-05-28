@@ -26,7 +26,6 @@ const ExpandMore = styled((props) => {
 
 const Channel = ({channel, expanded, onExpand}) => {
 
-
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
 

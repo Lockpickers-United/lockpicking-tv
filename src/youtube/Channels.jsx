@@ -70,9 +70,8 @@ function Channels({channels}) {
                         }
 
                         {channels.map((channel, index) =>
-                            <Grid item xs={4} sm={4} md={4} key={index}>
+                            <Grid item xs={4} sm={4} md={4} key={channel.id}>
                                 <ChannelCard
-                                    key={channel.id}
                                     channel={channel}
                                     expanded={channel.id === defExpanded}
                                     onExpand={setExpanded}

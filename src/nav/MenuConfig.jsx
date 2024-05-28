@@ -9,7 +9,6 @@ import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
 function MenuConfig() {
 
     const {pageNavData} = useContext(LoadingContext)
-    console.log('pageNavData', pageNavData)
 
     const channelItems = [
         {
@@ -33,7 +32,7 @@ function MenuConfig() {
         return {
             title: page.title,
             icon: <KeyboardArrowRightIcon fontSize='small'/>,
-            path: `/pages?page=${page.id}`
+            path: `/pages?page=${page.id}&id=0`
         }
 
     })

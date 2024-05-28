@@ -14,6 +14,7 @@ import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
 import DataContext from '../app/DataContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import FilterContext from '../context/FilterContext.jsx'
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props
@@ -52,6 +53,7 @@ export default function YouTubeMain() {
 
     const {allDataLoaded, channelSet} = useContext(LoadingContext)
     const {visibleChannels} = useContext(DataContext)
+    const navigate = useNavigate()
 
     const sets = ['new', 'featured', 'full']
     let initialIndex = sets.indexOf(channelSet)
@@ -59,7 +61,9 @@ export default function YouTubeMain() {
     const theme = useTheme()
     const [value, setValue] = React.useState(initialIndex)
 
-    const navigate = useNavigate()
+    if (value !== sets.indexOf(channelSet)) {
+        setValue(sets.indexOf(channelSet))
+    }
 
     const handleChange = useCallback((event, newValue) => {
         setValue(newValue)

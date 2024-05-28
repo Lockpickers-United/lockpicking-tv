@@ -10,12 +10,16 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import Nav from '../nav/Nav.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
+import ItemCard from './ItemCard.jsx'
+import PlaylistCard from './PlaylistCard.jsx'
 
 function PagesMain({items}) {
 
     const {allItems, allDataLoaded} = useContext(LoadingContext)
     const {expanded, setExpanded} = useContext(ListContext)
     const defExpanded = useDeferredValue(expanded)
+
+    console.log('defExpanded', defExpanded)
 
     document.title = 'lockpicking.tv - Section Name'
 
@@ -31,22 +35,8 @@ function PagesMain({items}) {
         }
     })
 
-    const video = {
-        'channelId': 'UCKdlgO_jR6G5Zf2b3rWRdEA',
-        'id': '2kbYTGa_O3c',
-        'title': 'LockPicking Lawyer Stopped Into My Live!',
-        'thumbnail': 'https://i.ytimg.com/vi/2kbYTGa_O3c/mqdefault.jpg',
-        'thumbnailHigh': 'https://i.ytimg.com/vi/2kbYTGa_O3c/hqdefault.jpg',
-        'publishedAt': '2024-05-18T00:56:23Z',
-        'viewCount': '816',
-        'likeCount': '57',
-        'favoriteCount': '0',
-        'commentCount': '24'
-    }
-
     const {width} = useWindowSize()
     const smallWindow = width <= 800
-    const featureWidth = smallWindow ? 4 : 4
     //TODO change width on video play?
 
     const xsWindow = width <= 560
@@ -54,8 +44,6 @@ function PagesMain({items}) {
         ? '24px 24px 32px 24px'
         : '28px 8px 32px 8px'
 
-
-    const featuredVideo = false
 
     if (!allDataLoaded) {
         return <LoadingDisplay/>
@@ -74,23 +62,29 @@ function PagesMain({items}) {
                     <ThemeProvider theme={theme}>
                         <Grid container spacing={{xs: 1, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
                               style={{}}>
-                            {(featuredVideo) &&
-                                <Grid item xs={8} sm={4} md={featureWidth}>
-                                    <VideoCard
-                                        video={video}
-                                        expanded={video.id === defExpanded}
-                                        onExpand={setExpanded}
-                                    />
-                                </Grid>
-                            }
-
                             {allItems.map((item, index) =>
-                                <Grid item xs={4} sm={4} md={4} key={index}>
-                                    <VideoCard
-                                        video={item}
-                                        expanded={item.id === defExpanded}
-                                        onExpand={setExpanded}
-                                    />
+                                <Grid item xs={4} sm={4} md={4} key={item.id}>
+                                    {item.kind === 'youtube#video' &&
+                                        <VideoCard
+                                            video={item}
+                                            expanded={item.id === defExpanded}
+                                            onExpand={setExpanded}
+                                        />
+                                    }
+                                    {item.kind === 'youtube#channel' &&
+                                        <ChannelCard
+                                            channel={item}
+                                            expanded={item.id === defExpanded}
+                                            onExpand={setExpanded}
+                                        />
+                                    }
+                                    {item.kind === 'youtube#playlist' &&
+                                        <PlaylistCard
+                                            playlist={item}
+                                            expanded={item.id === defExpanded}
+                                            onExpand={setExpanded}
+                                        />
+                                    }
                                 </Grid>
                             )}
                         </Grid>
