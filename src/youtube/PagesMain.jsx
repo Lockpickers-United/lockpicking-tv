@@ -7,14 +7,17 @@ import Grid from '@mui/material/Grid'
 
 import VideoCard from './VideoCard.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
-import LoadingContext from '../youtubeContext/LoadingContextPages.jsx'
+import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import Nav from '../nav/Nav.jsx'
+import LoadingDisplay from '../util/LoadingDisplay.jsx'
 
 function PagesMain({items}) {
 
     const {allItems, allDataLoaded} = useContext(LoadingContext)
     const {expanded, setExpanded} = useContext(ListContext)
     const defExpanded = useDeferredValue(expanded)
+
+    document.title = 'lockpicking.tv - Section Name'
 
     const theme = createTheme({
         breakpoints: {
@@ -55,7 +58,7 @@ function PagesMain({items}) {
     const featuredVideo = false
 
     if (!allDataLoaded) {
-        return null
+        return <LoadingDisplay/>
     }
     return (
         <React.Fragment>

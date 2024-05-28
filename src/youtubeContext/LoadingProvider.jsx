@@ -1,15 +1,51 @@
-import React, {useCallback, useMemo} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import useData from '../util/useData'
-import {channelData} from '../data/dataUrls'
+import {pagesData, channelData} from '../data/dataUrls'
+import FilterContext from '../context/FilterContext.jsx'
 
-const LoadingContext = React.createContext({})
-const urls = {channelData}
+import LoadingContext from './LoadingContext.jsx'
+
+const urls = {pagesData, channelData}
 
 export function LoadingProvider({children, channelSet}) {
 
+    const {filters} = useContext(FilterContext)
+    const {page} = filters
     const {data, loading, error} = useData({urls})
-    const {channelData} = data || {}
+    const {pagesData, channelData} = data || {}
     const jsonLoaded = (!loading && !error && !!data)
+
+    console.log('pagesData', pagesData)
+
+    const pageNavData = useMemo(() => (jsonLoaded
+        ? pagesData?.map(page => {
+            return {
+                title: page.title,
+                id: page.sectionId
+            }
+        })
+        : []
+    ),[jsonLoaded, pagesData])
+
+    const getPageFromId = ((id) => {
+        return pagesData?.find(page => page.sectionId === id)
+    })
+
+    const pageData = jsonLoaded
+        ? getPageFromId(page)
+            ? getPageFromId(page)
+            : pagesData[1]
+        : null
+
+    const items = jsonLoaded ? pageData.items : []
+    const allItems = items.map((item) => {
+        return {
+            ...item,
+            fuzzy: item.title
+        }
+    })
+
+    console.log(allItems)
 
     const featuredChannels = useMemo(() => jsonLoaded ? channelData.featuredChannels : [], [jsonLoaded, channelData])
     const fullChannels = useMemo(() => jsonLoaded ? channelData.fullChannels : [], [jsonLoaded, channelData])
@@ -47,12 +83,16 @@ export function LoadingProvider({children, channelSet}) {
         allDataLoaded,
         allChannels,
         getChannelFromId,
-        channelSet
+        channelSet,
+        allItems,
+        pageNavData
     }), [
         allDataLoaded,
         allChannels,
         getChannelFromId,
-        channelSet
+        channelSet,
+        allItems,
+        pageNavData
     ])
 
     return (

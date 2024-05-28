@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import ReactPlayer from 'react-player/youtube'
-import LoadingContext from '../youtubeContext/LoadingContextPages.jsx'
+import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 
 import queryString from 'query-string'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'

@@ -17,7 +17,9 @@ function LoadingDisplay() {
             }}>
                 <div style={{
                     width: 272,
-                    paddingLeft: 20
+                    paddingLeft: 20,
+                    marginRight: 'auto',
+                    marginLeft: 'auto'
                 }}>
                     <img src={TvStatic} alt='Loading' width='272' height='300'/>
                 </div>

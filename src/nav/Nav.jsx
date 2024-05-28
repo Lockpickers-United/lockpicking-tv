@@ -8,6 +8,7 @@ import LPTVlogo from '../assets/LPTVlogo2-w.jsx'
 import SearchBox from './SearchBox.jsx'
 import SortButton from '../filters/SortButton.jsx'
 import {channelSortFields} from '../data/sortFields'
+import MainMenu from './MainMenu.jsx'
 
 function Nav({extras}) {
     return (
@@ -17,7 +18,7 @@ function Nav({extras}) {
 
                     <div style={{display: 'flex', width:'100%', marginTop:5}}>
                         <div style={{marginRight: 20, marginLeft:5}}>
-                            <LPTVlogo height={40}/>
+                            <MainMenu/>
                         </div>
                         <div style={{marginRight: 10, flexGrow: 1}}>
                             <SearchBox label='Channels'/>

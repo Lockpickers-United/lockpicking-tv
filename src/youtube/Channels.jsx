@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid'
 
 import VideoCard from './VideoCard.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
-import LoadingContext from '../youtubeContext/LoadingContextChannels.jsx'
+import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
 
 function Channels({channels}) {
 

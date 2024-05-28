@@ -7,13 +7,15 @@ import Tooltip from '@mui/material/Tooltip'
 import {useHotkeys} from 'react-hotkeys-hook'
 import AppContext from '../app/AppContext'
 import MainMenuItem from './MainMenuItem'
-import menuConfig from './menuConfig'
+import MenuConfig from './MenuConfig.jsx'
 import Button from '@mui/material/Button'
-import LPU_text_logo from '../assets/LPU-text-logo'
-import LPU_LOCKS_header from '../assets/LPU_LOCKS_header'
+import LPTVlogo from '../assets/LPTVlogo2-w'
+import LPTVheader from '../assets/LPTVlogo-tvset'
 import DBContext from '../app/DBContext.jsx'
 
 function MainMenu() {
+
+    const menuConfig = MenuConfig()
     const {beta} = useContext(AppContext)
     const {admin} = useContext(DBContext)
     const [open, setOpen] = useState(false)
@@ -36,7 +38,7 @@ function MainMenu() {
                 <Button edge='start' color='inherit' onClick={openDrawer}
                             style={{ height: '30px', minWidth: '30px', margin:0, padding:0}}
                 >
-                    <LPU_text_logo fill='#fff' style={{height: 30, padding:0, margin:0}}/>
+                    <LPTVlogo height={40}/>
                 </Button>
             </Tooltip>
 
@@ -53,9 +55,9 @@ function MainMenu() {
                         backgroundColor: '#292929',
                         borderBottom: '1px solid #000'
                     }}>
-                        <div style={{margin: '4px 0px 8px 10px'}}>
-                            <LPU_LOCKS_header fill={'#fff'} style={{height: 50}}/>
-                        </div>
+                            <div style = {{marginRight: 'auto', marginLeft: 'auto',}}>
+                                <LPTVheader fill={'#fff'} style={{width: 110, position:'relative'}}/>
+                            </div>
                     </MenuItem>
 
                     {menuConfig
