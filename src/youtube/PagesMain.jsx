@@ -10,16 +10,13 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import Nav from '../nav/Nav.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
-import ItemCard from './ItemCard.jsx'
 import PlaylistCard from './PlaylistCard.jsx'
 
-function PagesMain({items}) {
+function PagesMain() {
 
     const {allItems, allDataLoaded} = useContext(LoadingContext)
     const {expanded, setExpanded} = useContext(ListContext)
     const defExpanded = useDeferredValue(expanded)
-
-    console.log('defExpanded', defExpanded)
 
     document.title = 'lockpicking.tv - Section Name'
 
@@ -39,7 +36,6 @@ function PagesMain({items}) {
     const smallWindow = width <= 800
     //TODO change width on video play?
 
-    const xsWindow = width <= 560
     const pagePadding = !smallWindow
         ? '24px 24px 32px 24px'
         : '28px 8px 32px 8px'
@@ -60,9 +56,9 @@ function PagesMain({items}) {
                 <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
 
                     <ThemeProvider theme={theme}>
-                        <Grid container spacing={{xs: 1, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
+                        <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
                               style={{}}>
-                            {allItems.map((item, index) =>
+                            {allItems.map((item) =>
                                 <Grid item xs={4} sm={4} md={4} key={item.id}>
                                     {item.kind === 'youtube#video' &&
                                         <VideoCard

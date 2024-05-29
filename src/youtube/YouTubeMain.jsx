@@ -14,7 +14,6 @@ import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
 import DataContext from '../app/DataContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
-import FilterContext from '../context/FilterContext.jsx'
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props

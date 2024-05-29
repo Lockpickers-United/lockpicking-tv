@@ -69,7 +69,7 @@ function Channels({channels}) {
                             </Grid>
                         }
 
-                        {channels.map((channel, index) =>
+                        {channels.map((channel) =>
                             <Grid item xs={4} sm={4} md={4} key={channel.id}>
                                 <ChannelCard
                                     channel={channel}

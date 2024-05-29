@@ -10,7 +10,7 @@ export function DataProvider({children}) {
 
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, add, showAll, page, ...filters} = allFilters
-    const {allDataLoaded, allItems} = useContext(LoadingContext)
+    const {allItems} = useContext(LoadingContext)
 
     const filteredChannels = useMemo(() => {
 

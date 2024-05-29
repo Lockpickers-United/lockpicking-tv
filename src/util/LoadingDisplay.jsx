@@ -1,7 +1,4 @@
 import React from 'react'
-import CircularProgress from '@mui/material/CircularProgress'
-import Box from '@mui/material/Box'
-import {circularProgressClasses} from '@mui/material'
 import TvStatic from '../assets/tv-static-300-8.gif'
 
 function LoadingDisplay() {

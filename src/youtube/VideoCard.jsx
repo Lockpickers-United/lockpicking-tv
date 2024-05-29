@@ -12,8 +12,6 @@ import VideoStats from './VideoStats.jsx'
 
 const VideoCard = ({video, expanded, onExpand}) => {
 
-    console.log('video',video)
-
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
 
@@ -42,20 +40,21 @@ const VideoCard = ({video, expanded, onExpand}) => {
         }
     }, [expanded, scrolled, video.id])
 
-
     const {getChannelFromId} = useContext(LoadingContext)
     const channel = getChannelFromId(video.channelId)
 
     const {width} = useWindowSize()
     const smallWindow = width <= 500
     const avatarSize = smallWindow ? 40 : 60
-    const avatarMargin = smallWindow ? '0px 15px 0px 0px' : '0px 0px 5px 0px'
+    const avatarMargin = smallWindow ? '0px 10px 0px 0px' : '0px 10px 5px 0px'
 
     const headerFlexStyle = smallWindow
         ? {display: 'flex', placeItems: 'center', padding: 10}
         : {display: 'flex', placeItems: 'center', padding: 10}
     const nameAlign = smallWindow ? 'left' : 'left'
-    const link = `https://www.youtube.com/channel/${channel.id}`
+
+    const channelLink = `https://www.youtube.com/channel/${channel.id}`
+    const titleLink = `https://www.youtube.com/watch?v=${video.id}`
 
     const textColor = '#fff'
 
@@ -79,16 +78,26 @@ const VideoCard = ({video, expanded, onExpand}) => {
 
                 <div style={headerFlexStyle}>
                     <div style={{height: avatarSize, margin: avatarMargin}}>
-                        <img src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
-                             style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
+                        <a href={channelLink} target='_blank' rel='noopener noreferrer'
+                           style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
+                            <img src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
+                                 style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
+                        </a>
                     </div>
                     <div style={{
                         fontSize: '1.1rem',
+                        lineHeight: '1.3rem',
                         fontWeight: 600,
                         textAlign: nameAlign,
                         flexGrow: 1
                     }}>
-                        <a href={link} target='_blank' rel='noopener noreferrer'
+                        <div style={{fontSize:'0.95rem', fontWeight:400, marginBottom:3}}>
+                            <a href={channelLink} target='_blank' rel='noopener noreferrer'
+                               style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
+                                {video.channelOwner}
+                            </a>
+                        </div>
+                        <a href={titleLink} target='_blank' rel='noopener noreferrer'
                            style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
                             {video.title}
                         </a>
