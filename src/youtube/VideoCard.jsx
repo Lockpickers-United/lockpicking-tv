@@ -61,7 +61,7 @@ const VideoCard = ({video, expanded, onExpand}) => {
     const videoUrl = `https://www.youtube.com/embed/${video.id}`
 
     return (
-        <Card style={{backgroundColor: '#24244a', boxShadow: 'unset', padding: '0px', color: textColor}} ref={ref}>
+        <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px', color: textColor}} ref={ref}>
             <CardContent style={{padding: '5px 0px 5px 0px', textAlign: 'center'}}>
                 <div style={{width:'100%', height:220}}>
                     <ReactPlayer
@@ -70,7 +70,7 @@ const VideoCard = ({video, expanded, onExpand}) => {
                         height='100%'
                         light
                         playing={expanded}
-                        muted
+                        muted={false}
                         onReady={handleChange}
 
                     />

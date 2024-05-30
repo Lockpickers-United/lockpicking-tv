@@ -7,18 +7,19 @@ import {DataProvider} from '../youtubeContext/DataProviderChannels.jsx'
 import {ListProvider} from '../context/ListContext.jsx'
 import {ytFilterFields} from '../data/filterFields'
 import YouTubeMain from './YouTubeMain.jsx'
+import {channelSortFields} from '../data/sortFields'
+import SortButton from '../filters/SortButton.jsx'
 
 
 function YoutTubeRoute({channelSet}) {
 
-    document.title = 'LPU Locks - YouTube Directory'
-
+    const extras = <SortButton sortValues={channelSortFields}/>
     return (
         <FilterProvider filterFields={ytFilterFields}>
             <LoadingProvider channelSet={channelSet}>
                 <DataProvider channelSet={channelSet}>
                     <ListProvider>
-                        <Nav title='YouTube Directory' route='yt'/>
+                        <Nav title='YouTube Directory' route='yt' extras={extras}/>
 
                         <div style={{backgroundColor: '#ccc'}}>
                             <YouTubeMain/>

@@ -11,14 +11,16 @@ import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import Nav from '../nav/Nav.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import PlaylistCard from './PlaylistCard.jsx'
+import DataContext from '../app/DataContext.jsx'
 
 function PagesMain() {
+    const {visibleItems} = useContext(DataContext)
 
-    const {allItems, allDataLoaded} = useContext(LoadingContext)
+    const {pageData, allDataLoaded} = useContext(LoadingContext)
     const {expanded, setExpanded} = useContext(ListContext)
     const defExpanded = useDeferredValue(expanded)
 
-    document.title = 'lockpicking.tv - Section Name'
+    document.title = 'lockpicking.tv - ' + pageData?.title
 
     const theme = createTheme({
         breakpoints: {
@@ -46,7 +48,7 @@ function PagesMain() {
     }
     return (
         <React.Fragment>
-            <Nav title='lockpicking.tv - Page Name' route='pg'/>
+            <Nav title='lockpicking.tv - {pageData.title}' route='pg'/>
 
             <div style={{
                 minWidth: '320px', height: '100%',
@@ -54,11 +56,15 @@ function PagesMain() {
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 0
             }}>
                 <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
+                    <div style={{color:'#222', lineHeight:'1.3rem', marginBottom:20}}>
+                        <span style={{fontSize:'1.1rem', fontWeight:600}}>{pageData.title}</span><br/>
+                    {pageData.description}
+                    </div>
 
                     <ThemeProvider theme={theme}>
                         <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
                               style={{}}>
-                            {allItems.map((item) =>
+                            {visibleItems.map((item) =>
                                 <Grid item xs={4} sm={4} md={4} key={item.id}>
                                     {item.kind === 'youtube#video' &&
                                         <VideoCard

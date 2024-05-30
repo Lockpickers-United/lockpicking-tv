@@ -9,7 +9,7 @@ function Tracker({feature, ...extraParams}) {
     const page = window.location.href.replace(/.*\/#\/(\w+)\?*.*/,'$1')
     const query = querystring.stringify({trk: feature, r: randomStuff, w: screen.width, ref, page, ...extraParams})
     const url = `https://data.lpulocks.com/i/${file}?${query}`
-    //return <img alt='LPU Locks' src={url} width={0} height={0}/>
+    //return <img alt='lockpicking.tv' src={url} width={0} height={0}/>
 }
 
 const files = {

@@ -5,7 +5,7 @@ import ErrorBoundary from './ErrorBoundary'
 export default [
     {
         path: '/',
-        loader: () => redirect('/featured')
+        loader: () => redirect('/featured?guide=true')
     },
     {
         path: '/featured',
@@ -37,7 +37,7 @@ export default [
     },
     {
         path: '*',
-        loader: () => redirect('/featured')
+        loader: () => redirect('/featured?guide=true')
     },
 ].map(route => ({...route, errorElement: <ErrorBoundary/>}))
 

@@ -5,9 +5,7 @@ import ScrollToTopButton from './ScrollToTopButton'
 import VersionCheckerCode from '../app/VersionCheckerCode.jsx'
 import Tracker from '../app/Tracker.jsx'
 import SearchBox from './SearchBox.jsx'
-import SortButton from '../filters/SortButton.jsx'
-import {channelSortFields} from '../data/sortFields'
-import MainMenu from './MainMenu.jsx'
+import GuideMenu from '../youtube/GuideMenu.jsx'
 
 function Nav({extras}) {
     return (
@@ -15,24 +13,25 @@ function Nav({extras}) {
             <AppBar position='fixed' style={{display:'flex', placeItems:'center'}}>
                 <div style={{padding: 10, width:'100%', maxWidth:1200}}>
 
-                    <div style={{display: 'flex', width:'100%', marginTop:5}}>
-                        <div style={{marginRight: 20, marginLeft:5}}>
-                            <MainMenu/>
+                    <div style={{display: 'flex', width: '100%', marginTop: 5}}>
+                        <div style={{marginRight: 20, marginLeft: 5}}>
+                            <GuideMenu/>
                         </div>
                         <div style={{marginRight: 10, flexGrow: 1}}>
-                            <SearchBox label='Channels'/>
-                        </div>
-                        <div style={{}}>
-                            <SortButton sortValues={channelSortFields}/>
+                            <SearchBox label=''/>
                         </div>
                         <div style={{
                             fontWeight: 500,
-                            fontSize: '1.5rem',
+                            fontSize: '1.5rem'
                         }}>
                             <VersionCheckerCode/>
                         </div>
+                        <div style={{}}>
+                            {extras}
+                        </div>
+
                     </div>
-                    {extras}
+
 
                 </div>
             </AppBar>

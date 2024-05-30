@@ -126,7 +126,7 @@ const nonFilters = [
     'image',
     'profileUpdated',
     'sellerId',
-    'add',
+    'guide',
     'page'
 ]
 

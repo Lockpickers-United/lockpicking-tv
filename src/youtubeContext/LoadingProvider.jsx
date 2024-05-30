@@ -81,6 +81,7 @@ export function LoadingProvider({children, channelSet}) {
         getChannelFromId,
         channelSet,
         allItems,
+        pageData,
         pageNavData
     }), [
         allDataLoaded,
@@ -88,6 +89,7 @@ export function LoadingProvider({children, channelSet}) {
         getChannelFromId,
         channelSet,
         allItems,
+        pageData,
         pageNavData
     ])
 

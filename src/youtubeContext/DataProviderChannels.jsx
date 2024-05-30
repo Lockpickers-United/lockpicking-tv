@@ -9,7 +9,7 @@ import dayjs from 'dayjs'
 export function DataProvider({children}) {
 
     const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, add, showAll, page, ...filters} = allFilters
+    const {search, id, tab, name, sort, image, guide, showAll, page, ...filters} = allFilters
     const {allChannels} = useContext(LoadingContext)
 
     const filteredChannels = useMemo(() => {

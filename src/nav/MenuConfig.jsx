@@ -3,8 +3,8 @@ import LPU_logo from '../assets/LPU_logo'
 import GradeIcon from '@mui/icons-material/Grade'
 import BabyChangingStationIcon from '@mui/icons-material/BabyChangingStation'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 
 function MenuConfig() {
 
@@ -29,12 +29,12 @@ function MenuConfig() {
     ]
 
     const pageItems = pageNavData.map( page => {
+        const safeName =  page.title.replace(/[\s/]/g, '_').replace(/\W/g, '')
         return {
             title: page.title,
-            icon: <KeyboardArrowRightIcon fontSize='small'/>,
-            path: `/pages?page=${page.id}&id=0`
+            icon: <PlayCircleOutlineIcon fontSize='small'/>,
+            path: `/pages?page=${page.id}&name=${safeName}`
         }
-
     })
 
     return (
@@ -56,8 +56,8 @@ function MenuConfig() {
                         path: 'https://lpulocks.com/'
                     },
                     {
-                        title: 'Reddit',
-                        path: 'https://www.reddit.com/r/lockpicking/'
+                        title: 'LPU YouTube',
+                        path: 'https://www.youtube.com/channel/UCHEPEHbo6kAxsxvIePE9kRw'
                     }
                 ]
             }

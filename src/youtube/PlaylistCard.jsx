@@ -1,5 +1,4 @@
-import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
-import ReactPlayer from 'react-player/youtube'
+import React, {useContext, useEffect, useRef, useState} from 'react'
 import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 
 import queryString from 'query-string'
@@ -7,18 +6,18 @@ import useWindowSize from '../util/useWindowSize.jsx'
 
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
+import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay'
+import Button from '@mui/material/Button'
 
-const PlaylistCard = ({playlist, expanded, onExpand}) => {
-
-    console.log('playlist',playlist)
-
+const PlaylistCard = ({playlist, expanded}) => {
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
 
-    const handleChange = useCallback(() => {
-        onExpand(!expanded ? playlist.id : false)
-    }, [playlist.id, expanded, onExpand])
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {
@@ -48,52 +47,65 @@ const PlaylistCard = ({playlist, expanded, onExpand}) => {
     const {width} = useWindowSize()
     const smallWindow = width <= 500
     const avatarSize = smallWindow ? 40 : 60
-    const avatarMargin = smallWindow ? '0px 15px 0px 0px' : '0px 0px 5px 0px'
+    const avatarMargin = smallWindow ? '0px 10px 0px 0px' : '0px 10px 5px 0px'
 
     const headerFlexStyle = smallWindow
         ? {display: 'flex', placeItems: 'center', padding: 10}
         : {display: 'flex', placeItems: 'center', padding: 10}
     const nameAlign = smallWindow ? 'left' : 'left'
-    const link = `https://www.youtube.com/channel/${channel.id}`
+    const channelUrl = `https://www.youtube.com/channel/${channel?.id}`
+    const playlistUrl = `https://www.youtube.com/playlist?list=${playlist.id}`
 
     const textColor = '#fff'
 
-    const videoUrl = `https://www.youtube.com/embed/${playlist.id}`
-
     return (
-        <Card style={{backgroundColor: '#24244a', boxShadow: 'unset', padding: '0px', color: textColor}} ref={ref}>
+        <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px', color: textColor}} ref={ref}>
             <CardContent style={{padding: '5px 0px 5px 0px', textAlign: 'center'}}>
-                <div style={{width: '100%', height: 220}}>
-                    <ReactPlayer
-                        url={videoUrl}
-                        width='100%'
-                        height='100%'
-                        light
-                        playing={expanded}
-                        muted
-                        onReady={handleChange}
-                    />
 
-                    <iframe width='560' height='315'
-                            src='https://www.youtube.com/embed/videoseries?si=CBhmWNga0yQpuQc7&amp;list=PL66CD42F86F3A1F85'
-                            title='YouTube video player' frameBorder='0'
-                            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                            referrerPolicy='strict-origin-when-cross-origin' allowFullScreen>
-                    </iframe>
+                <div style={{
+                    height: 200,
+                    marginTop: 5,
+                    marginRight: 'auto',
+                    marginLeft: 'auto',
+                    backgroundImage: `url(${playlist.thumbnail})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
+                    display: 'flex',
+                    placeItems: 'center',
+                    backgroundColor: '#000'
+                }}>
+                    <Button variant='filled' startIcon={<PlaylistPlayIcon/>}
+                            style={{
+                                backgroundColor: '#000',
+                                marginRight: 'auto',
+                                marginLeft: 'auto',
+                                border: '1px solid #bbb',
+                                borderRadius: 10
+                            }}
+                            onClick={() => {openInNewTab(playlistUrl)}}>
+                        {playlist.itemCount} videos
+                    </Button>
                 </div>
-
                 <div style={headerFlexStyle}>
                     <div style={{height: avatarSize, margin: avatarMargin}}>
-                        <img src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
+                        <img src={channel?.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
                              style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
                     </div>
                     <div style={{
                         fontSize: '1.1rem',
+                        lineHeight: '1.3rem',
                         fontWeight: 600,
                         textAlign: nameAlign,
                         flexGrow: 1
                     }}>
-                        <a href={link} target='_blank' rel='noopener noreferrer'
+                        <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 3}}>
+                            <a href={channelUrl} target='_blank' rel='noopener noreferrer'
+                               style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
+                                {channel?.title}
+                            </a>
+                        </div>
+                        <a href={playlistUrl} target='_blank' rel='noopener noreferrer'
                            style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
                             {playlist.title}
                         </a>

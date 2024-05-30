@@ -9,10 +9,10 @@ import dayjs from 'dayjs'
 export function DataProvider({children}) {
 
     const {filters: allFilters} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, add, showAll, page, ...filters} = allFilters
+    const {search, id, tab, name, sort, image, guide, showAll, page, ...filters} = allFilters
     const {allItems} = useContext(LoadingContext)
 
-    const filteredChannels = useMemo(() => {
+    const filteredItems = useMemo(() => {
 
         // Filters as an array
         const filterArray = Object.keys(filters)
@@ -36,30 +36,21 @@ export function DataProvider({children}) {
 
     }, [filters, allItems])
 
-    const visibleChannels = useMemo(() => {
+    const visibleItems = useMemo(() => {
 
         // If there is a search term, fuzzy match that
         const searched = search
-            ? fuzzysort.go(removeAccents(search), filteredChannels, {keys: fuzzySortKeys, threshold: -25000})
+            ? fuzzysort.go(removeAccents(search), filteredItems, {keys: fuzzySortKeys, threshold: -25000})
                 .map(result => ({
                     ...result.obj,
                     score: result.score
                 }))
-            : filteredChannels
+            : filteredItems
 
         // console.log('searched', searched)
 
         return searched.sort((a, b) => {
-                if (sort === 'views') {
-                    return b.viewCount - a.viewCount
-                        || a.title.localeCompare(b.title)
-                } else if (sort === 'videos') {
-                    return b.videoCount - a.videoCount
-                        || a.title.localeCompare(b.title)
-                } else if (sort === 'subscribers') {
-                    return b.subscriberCount - a.subscriberCount
-                        || a.title.localeCompare(b.title)
-                } else if (sort === 'new') {
+                if (sort === 'new') {
                     return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
                         || a.title.localeCompare(b.title)
                 } else {
@@ -67,24 +58,24 @@ export function DataProvider({children}) {
                 }
             })
 
-    }, [filteredChannels, search, sort])
+    }, [search, filteredItems, sort])
 
-    const getChannelFromId = useCallback(channelId => {
+    const getItemFromId = useCallback(channelId => {
         return allItems?.find(({id}) => id === channelId)
     }, [allItems])
 
     const getNameFromId = useCallback(id => {
-        const channel = getChannelFromId(id)
+        const channel = getItemFromId(id)
         return channel ? channel.title : ''
-    }, [getChannelFromId])
+    }, [getItemFromId])
 
     const value = useMemo(() => ({
-        visibleChannels,
-        getChannelFromId,
+        visibleItems,
+        getItemFromId,
         getNameFromId
     }), [
-        visibleChannels,
-        getChannelFromId,
+        visibleItems,
+        getItemFromId,
         getNameFromId
     ])
 

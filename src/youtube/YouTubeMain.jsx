@@ -54,8 +54,9 @@ export default function YouTubeMain() {
     const {visibleChannels} = useContext(DataContext)
     const navigate = useNavigate()
 
-    const sets = ['new', 'featured', 'full']
+    const sets = ['featured', 'new', 'full']
     let initialIndex = sets.indexOf(channelSet)
+
 
     const theme = useTheme()
     const [value, setValue] = React.useState(initialIndex)
@@ -64,9 +65,12 @@ export default function YouTubeMain() {
         setValue(sets.indexOf(channelSet))
     }
 
+    const titleNames = ['Featured Channels', 'New & Noteworthy', 'Full Directory']
+    document.title = 'lockpicking.tv - ' + titleNames[value]
+
     const handleChange = useCallback((event, newValue) => {
         setValue(newValue)
-        const routes = ['/new', '/featured', '/full']
+        const routes = ['/featured', '/new', '/full']
         navigate(routes[newValue])
     }, [navigate])
 
@@ -91,8 +95,8 @@ export default function YouTubeMain() {
                     selectionFollowsFocus
                     centered
                 >
-                    <Tab label={newName}{...a11yProps(0)} style={{margin: '0px 5px'}}/>
-                    <Tab label={featuredName} {...a11yProps(1)} style={{margin: '0px 5px'}}/>
+                    <Tab label={featuredName} {...a11yProps(0)} style={{margin: '0px 5px'}}/>
+                    <Tab label={newName}{...a11yProps(1)} style={{margin: '0px 5px'}}/>
                     <Tab label={fullName} {...a11yProps(2)} style={{margin: '0px 5px'}}/>
                 </Tabs>
             </AppBar>
