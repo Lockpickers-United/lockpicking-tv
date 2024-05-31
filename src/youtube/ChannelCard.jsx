@@ -115,6 +115,7 @@ const Channel = ({channel, expanded, onExpand}) => {
                             no channel details available<br/>
                         </div>
                     }
+                    <Tracker feature='channel' id={channel.id}/>
                 </CardContent>
             </Collapse>
         </Card>

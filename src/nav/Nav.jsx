@@ -25,6 +25,7 @@ function Nav({extras}) {
                             fontSize: '1.5rem'
                         }}>
                             <VersionCheckerCode/>
+                            <Tracker feature='nav'/>
                         </div>
                         <div style={{}}>
                             {extras}
@@ -40,7 +41,6 @@ function Nav({extras}) {
             <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)'}}/>
 
             <ScrollToTopButton/>
-            <Tracker feature='nav'/>
 
         </React.Fragment>
     )

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 
 import queryString from 'query-string'
@@ -8,16 +8,24 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay'
 import Button from '@mui/material/Button'
+import {useNavigate} from 'react-router-dom'
 
 const PlaylistCard = ({playlist, expanded}) => {
+    const navigate = useNavigate()
+
+    const {getSectionFromPlaylistId} = useContext(LoadingContext)
+    const playlistPage = getSectionFromPlaylistId(playlist.id)
+
+    const playlistPageUrl = playlistPage.parentId
+        ? `/pages?page=${playlistPage.sectionId}&name=${playlistPage.sectionName}`
+        : null
+
+    const handleClick = useCallback(() => {
+        navigate(playlistPageUrl)
+    },[navigate, playlistPageUrl])
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
-
-    const openInNewTab = (url) => {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
-    }
 
     useEffect(() => {
         if (expanded && ref && !scrolled) {
@@ -56,7 +64,7 @@ const PlaylistCard = ({playlist, expanded}) => {
         : {display: 'flex', placeItems: 'center', padding: 10}
     const nameAlign = smallWindow ? 'left' : 'left'
     const channelUrl = `https://www.youtube.com/channel/${channel?.id}`
-    const playlistUrl = `https://www.youtube.com/playlist?list=${playlist.id}`
+    //const playlistUrl = `https://www.youtube.com/playlist?list=${playlist.id}`
 
     const textColor = '#fff'
 
@@ -79,15 +87,15 @@ const PlaylistCard = ({playlist, expanded}) => {
                 }}>
                     <Button variant='filled' startIcon={<PlaylistPlayIcon/>}
                             style={{
-                                backgroundColor: '#000',
+                                backgroundColor: '#1b3872',
                                 marginRight: 'auto',
                                 marginLeft: 'auto',
                                 border: '1px solid #bbb',
-                                borderRadius: 10
+                                borderRadius: 10,
+                                boxShadow:'1px 1px #1b3872'
                             }}
-                            onClick={() => {
-                                openInNewTab(playlistUrl)
-                            }}>
+                            onClick={() => {handleClick()}}
+                    >
                         {playlist.itemCount} {playlistItemText}
                     </Button>
                 </div>
@@ -109,8 +117,8 @@ const PlaylistCard = ({playlist, expanded}) => {
                                 {channel?.title}
                             </a>
                         </div>
-                        <a href={playlistUrl} target='_blank' rel='noopener noreferrer'
-                           style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
+                        <a onClick={()=>{handleClick()}}
+                           style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem', cursor:'pointer'}}>
                             {playlist.title}
                         </a>
                     </div>

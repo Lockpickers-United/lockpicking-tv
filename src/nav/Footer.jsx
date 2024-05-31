@@ -15,10 +15,6 @@ function Footer({extras}) {
             <a href='https://www.reddit.com/r/lockpicking/' target='_blank' rel='noopener noreferrer' style={{color:'#121212'}}>
                 Reddit
             </a>
-            &nbsp;•&nbsp;
-            <a href='/#/privacy' style={{color:'#121212'}}>
-                Privacy
-            </a>
 
             {extras}
 

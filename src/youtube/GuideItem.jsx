@@ -49,6 +49,7 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
         ? '#171717'
         : isCurrentRoute ? '#2e6787' : '#333'
 
+    const hoverColor = isCurrentRoute ? 'inherit' : '#5a5a5a'
 
     const channelNumber = child || children
         ? 900 + index
@@ -87,7 +88,14 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
                     <Button
                         onClick={handleClick}
                         fullWidth={true}
-                        style={{justifyContent: 'flex-start', width: '100%', margin: 0, borderRadius: 0, color: '#fff'}}
+                        sx={{
+                            justifyContent: 'flex-start',
+                            width: '100%', margin: 0, borderRadius: 0,
+                            color: '#fff',
+                            '&:hover': {
+                                backgroundColor: hoverColor
+                            }
+                        }}
                     >
                         {title}
                     </Button>

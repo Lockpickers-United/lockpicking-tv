@@ -14,6 +14,7 @@ import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
 import DataContext from '../app/DataContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import Tracker from '../app/Tracker.jsx'
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props
@@ -103,14 +104,13 @@ export default function YouTubeMain() {
             <div style={{padding: '0', backgroundColor: '#ccc'}}>
                 <TabPanel value={value} index={0} dir={theme.direction} style={{padding: 0}}>
                     <React.Fragment>
-
                         {!(allDataLoaded && visibleChannels) &&
                             <LoadingDisplay/>
                         }
                         {(allDataLoaded && visibleChannels) &&
                             <Channels channels={visibleChannels}/>
                         }
-
+                        <Tracker feature='page' name={'featured'}/>
                     </React.Fragment>
                 </TabPanel>
                 <TabPanel value={value} index={1} dir={theme.direction} style={{padding: 0}}>
@@ -120,6 +120,7 @@ export default function YouTubeMain() {
                     {(allDataLoaded && visibleChannels) &&
                         <Channels channels={visibleChannels}/>
                     }
+                    <Tracker feature='page' name={'new'}/>
                 </TabPanel>
                 <TabPanel value={value} index={2} dir={theme.direction} style={{padding: 0}}>
                     {!(allDataLoaded && visibleChannels) &&
@@ -128,6 +129,7 @@ export default function YouTubeMain() {
                     {(allDataLoaded && visibleChannels) &&
                         <Channels channels={visibleChannels}/>
                     }
+                    <Tracker feature='page' name={'full'}/>
                 </TabPanel>
             </div>
         </Box>

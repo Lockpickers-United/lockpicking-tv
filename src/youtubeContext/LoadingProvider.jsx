@@ -26,9 +26,13 @@ export function LoadingProvider({children, channelSet}) {
         : []
     ),[jsonLoaded, pagesData])
 
-    const getPageFromId = ((id) => {
+    const getPageFromId = useCallback((id) => {
         return pagesData?.find(page => page.sectionId === id)
-    })
+    },[pagesData])
+
+    const getSectionFromPlaylistId = useCallback((id) => {
+        return pagesData?.find(page => page.playlistId === id)
+    },[pagesData])
 
     const pageData = jsonLoaded
         ? getPageFromId(page)
@@ -83,6 +87,8 @@ export function LoadingProvider({children, channelSet}) {
         channelSet,
         allItems,
         pageData,
+        getPageFromId,
+        getSectionFromPlaylistId,
         pageNavData
     }), [
         allDataLoaded,
@@ -91,6 +97,8 @@ export function LoadingProvider({children, channelSet}) {
         channelSet,
         allItems,
         pageData,
+        getPageFromId,
+        getSectionFromPlaylistId,
         pageNavData
     ])
 

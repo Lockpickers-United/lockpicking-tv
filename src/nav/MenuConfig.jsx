@@ -6,6 +6,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook'
 import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 
 function MenuConfig() {
 
@@ -29,19 +30,23 @@ function MenuConfig() {
         }
     ]
 
-    const pageItems = pageNavData.map(page => {
-        const safeName = page.title.replace(/[\s/]/g, '_').replace(/\W/g, '')
+    const pageItems = pageNavData
+        .filter(page => {
+            return page.id.substring(0, 3) !== 'pl_'
+        })
+        .map(page => {
+            const safeName = page.title.replace(/[\s/]/g, '_').replace(/\W/g, '')
 
-        const pageIcon = page.type === 'multipleplaylists'
-            ? <PlaylistPlayIcon fontSize='small'/>
-            : <PlayCircleOutlineIcon fontSize='small'/>
+            const pageIcon = page.type === 'multipleplaylists'
+                ? <PlaylistPlayIcon fontSize='small'/>
+                : <PlayCircleOutlineIcon fontSize='small'/>
 
-        return {
-            title: page.title,
-            icon: pageIcon,
-            path: `/pages?page=${page.id}&name=${safeName}`
-        }
-    })
+            return {
+                title: page.title,
+                icon: pageIcon,
+                path: `/pages?page=${page.id}&name=${safeName}`
+            }
+        })
 
     return (
         [
@@ -54,14 +59,17 @@ function MenuConfig() {
                 expanded: true,
                 children: [
                     {
+                        icon: <OpenInNewIcon fontSize='small' color='disabled'/>,
                         title: 'LPUbelts.com',
                         path: 'https://lpubelts.com/'
                     },
                     {
+                        icon: <OpenInNewIcon fontSize='small' color='disabled'/>,
                         title: 'LPUlocks.com',
                         path: 'https://lpulocks.com/'
                     },
                     {
+                        icon: <OpenInNewIcon fontSize='small' color='disabled'/>,
                         title: 'LPU YouTube',
                         path: 'https://www.youtube.com/channel/UCHEPEHbo6kAxsxvIePE9kRw'
                     }

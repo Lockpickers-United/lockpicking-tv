@@ -5,6 +5,7 @@ import {DataProvider} from '../youtubeContext/DataProviderPages.jsx'
 import {ListProvider} from '../context/ListContext.jsx'
 import {ytFilterFields} from '../data/filterFields'
 import PagesMain from './PagesMain.jsx'
+import Footer from '../nav/Footer.jsx'
 
 function PagesRoute() {
 
@@ -14,6 +15,8 @@ function PagesRoute() {
                 <DataProvider>
                     <ListProvider>
                         <PagesMain/>
+                        <Footer/>
+
                     </ListProvider>
                 </DataProvider>
             </LoadingProvider>

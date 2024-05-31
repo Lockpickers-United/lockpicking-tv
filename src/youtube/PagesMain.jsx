@@ -1,4 +1,4 @@
-import React, {useContext, useDeferredValue} from 'react'
+import React, {useCallback, useContext, useDeferredValue} from 'react'
 import ListContext from '../context/ListContext'
 import ChannelCard from './ChannelCard.jsx'
 
@@ -12,11 +12,33 @@ import Nav from '../nav/Nav.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import PlaylistCard from './PlaylistCard.jsx'
 import DataContext from '../app/DataContext.jsx'
+import {useNavigate} from 'react-router-dom'
 
 function PagesMain() {
     const {visibleItems} = useContext(DataContext)
+    const navigate = useNavigate()
 
-    const {pageData, allDataLoaded} = useContext(LoadingContext)
+    const {pageData, getPageFromId, allDataLoaded} = useContext(LoadingContext)
+
+    const parent = pageData?.parentId
+        ? getPageFromId(pageData.parentId)
+        : null
+    const parentUrl = parent
+        ? `/pages?page=${parent.sectionId}&name=${parent.sectionName}`
+        : null
+    const handleClick = useCallback(() => {
+        navigate(parentUrl)
+    },[navigate, parentUrl])
+
+    const parentLink = parent
+        ? <span><a onClick={() => handleClick()} style={{
+            color: '#1745a7',
+            textDecoration: 'underline',
+            cursor: 'pointer'
+        }}>{parent.title}</a> &gt; </span>
+        : null
+
+
     const {expanded, setExpanded} = useContext(ListContext)
     const defExpanded = useDeferredValue(expanded)
 
@@ -56,9 +78,10 @@ function PagesMain() {
                 marginLeft: 'auto', marginRight: 'auto', marginTop: 0
             }}>
                 <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
-                    <div style={{color:'#222', lineHeight:'1.3rem', marginBottom:20}}>
-                        <span style={{fontSize:'1.1rem', fontWeight:600}}>{pageData.title}</span><br/>
-                    {pageData.description}
+                    <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
+
+                        <span style={{fontSize: '1.1rem', fontWeight: 600}}>{parentLink} {pageData.title}</span><br/>
+                        {pageData.description}
                     </div>
 
                     <ThemeProvider theme={theme}>
