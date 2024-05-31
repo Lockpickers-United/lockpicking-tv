@@ -54,7 +54,7 @@ export function DataProvider({children}) {
                     return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
                         || a.title.localeCompare(b.title)
                 } else {
-                    return a.title.localeCompare(b.title)
+                    return 1
                 }
             })
 

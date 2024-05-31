@@ -5,6 +5,7 @@ import BabyChangingStationIcon from '@mui/icons-material/BabyChangingStation'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
+import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay'
 
 function MenuConfig() {
 
@@ -19,20 +20,25 @@ function MenuConfig() {
         {
             title: 'New & Noteworthy',
             icon: <BabyChangingStationIcon fontSize='small'/>,
-            path: '/new',
+            path: '/new'
         },
         {
             title: 'Full Directory',
             icon: <MenuBookIcon fontSize='small'/>,
-            path: '/full',
+            path: '/full'
         }
     ]
 
-    const pageItems = pageNavData.map( page => {
-        const safeName =  page.title.replace(/[\s/]/g, '_').replace(/\W/g, '')
+    const pageItems = pageNavData.map(page => {
+        const safeName = page.title.replace(/[\s/]/g, '_').replace(/\W/g, '')
+
+        const pageIcon = page.type === 'multipleplaylists'
+            ? <PlaylistPlayIcon fontSize='small'/>
+            : <PlayCircleOutlineIcon fontSize='small'/>
+
         return {
             title: page.title,
-            icon: <PlayCircleOutlineIcon fontSize='small'/>,
+            icon: pageIcon,
             path: `/pages?page=${page.id}&name=${safeName}`
         }
     })

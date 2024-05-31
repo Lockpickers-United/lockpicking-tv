@@ -19,7 +19,8 @@ export function LoadingProvider({children, channelSet}) {
         ? pagesData?.map(page => {
             return {
                 title: page.title,
-                id: page.sectionId
+                id: page.sectionId,
+                type: page.type
             }
         })
         : []

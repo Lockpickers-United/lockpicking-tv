@@ -65,7 +65,7 @@ function GuideMenu() {
                         <div style={{marginLeft:5}}>
                             <LPTVheader fill={'#fff'} style={{width: 110, position: 'relative'}}/>
                         </div>
-                        <div style={{width: 200, marginLeft: 30, marginRight:5, paddingTop: 32, lineHeight: '1.3rem'}}>
+                        <div style={{width: 200, marginLeft: 30, marginRight:10, paddingTop: 32, lineHeight: '1.3rem'}}>
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>lockpicking.tv</span><br/>
                             Showcasing video content from across the locksport community.
                         </div>

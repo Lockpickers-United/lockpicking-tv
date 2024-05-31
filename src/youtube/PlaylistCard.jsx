@@ -40,9 +40,11 @@ const PlaylistCard = ({playlist, expanded}) => {
         }
     }, [expanded, scrolled, playlist.id])
 
-
     const {getChannelFromId} = useContext(LoadingContext)
     const channel = getChannelFromId(playlist.channelId)
+    const playlistItemText = playlist.itemCount > 1
+        ? 'videos'
+        : 'video'
 
     const {width} = useWindowSize()
     const smallWindow = width <= 500
@@ -83,8 +85,10 @@ const PlaylistCard = ({playlist, expanded}) => {
                                 border: '1px solid #bbb',
                                 borderRadius: 10
                             }}
-                            onClick={() => {openInNewTab(playlistUrl)}}>
-                        {playlist.itemCount} videos
+                            onClick={() => {
+                                openInNewTab(playlistUrl)
+                            }}>
+                        {playlist.itemCount} {playlistItemText}
                     </Button>
                 </div>
                 <div style={headerFlexStyle}>

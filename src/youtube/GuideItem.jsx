@@ -61,9 +61,11 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
     return (
         <React.Fragment>
             {separator &&
-                <React.Fragment>
-                    <div style={{height: 15}}/>
-                </React.Fragment>
+                <TableRow>
+                    <TableCell>
+                        <div style={{height: 1}}/>
+                    </TableCell>
+                </TableRow>
             }
 
             <TableRow
@@ -80,7 +82,8 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
                         }
                     </div>
                 </TableCell>
-                <TableCell sx={{border: '4px solid #000', borderRight: '8px solid #000', padding: 0}} style={{backgroundColor}}>
+                <TableCell sx={{border: '4px solid #000', borderRight: '8px solid #000', padding: 0}}
+                           style={{backgroundColor}}>
                     <Button
                         onClick={handleClick}
                         fullWidth={true}
