@@ -63,7 +63,7 @@ const VideoCard = ({video, expanded, onExpand}) => {
     return (
         <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px', color: textColor}} ref={ref}>
             <CardContent style={{padding: '5px 0px 5px 0px', textAlign: 'center'}}>
-                <div style={{width:'100%', height:220}}>
+                <div style={{width: '100%', height: 220}}>
                     <ReactPlayer
                         url={videoUrl}
                         width='100%'
@@ -72,7 +72,7 @@ const VideoCard = ({video, expanded, onExpand}) => {
                         playing={expanded}
                         muted={false}
                         onReady={handleChange}
-
+                        controls
                     />
                 </div>
 
@@ -91,7 +91,7 @@ const VideoCard = ({video, expanded, onExpand}) => {
                         textAlign: nameAlign,
                         flexGrow: 1
                     }}>
-                        <div style={{fontSize:'0.95rem', fontWeight:400, marginBottom:3}}>
+                        <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 3}}>
                             <a href={channelLink} target='_blank' rel='noopener noreferrer'
                                style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
                                 {video.channelOwner}
