@@ -93,7 +93,7 @@ const VideoCard = ({video, expanded, onExpand}) => {
                     }}>
                         <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 3}}>
                             <a href={channelLink} target='_blank' rel='noopener noreferrer'
-                               style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
+                               style={{color: textColor, textDecoration: 'none', fontSize: '0.9rem'}}>
                                 {video.channelOwner}
                             </a>
                         </div>

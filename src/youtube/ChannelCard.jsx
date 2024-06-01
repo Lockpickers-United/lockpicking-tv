@@ -74,8 +74,11 @@ const Channel = ({channel, expanded, onExpand}) => {
             <CardContent style={{padding: '15px 5px 0px 5px', textAlign:'center'}}>
                 <div style={headerFlexStyle}>
                     <div style={{height: avatarSize, margin: avatarMargin}}>
-                        <img src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
-                             style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
+                        <a href={link} target='_blank' rel='noopener noreferrer' style={{color:'#fff', textDecoration:'none'}}>
+                            <img
+                            src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
+                            style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
+                        </a>
                     </div>
                     <div style={{
                         fontSize: '1.2rem',
