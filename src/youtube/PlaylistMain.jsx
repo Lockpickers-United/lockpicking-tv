@@ -13,7 +13,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import {useNavigate} from 'react-router-dom'
 
-function PagesMain() {
+function PlaylistMain() {
     const {visibleItems} = useContext(DataContext)
     const navigate = useNavigate()
 
@@ -169,4 +169,4 @@ function PagesMain() {
     )
 }
 
-export default PagesMain
+export default PlaylistMain

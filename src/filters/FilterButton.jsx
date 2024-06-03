@@ -3,7 +3,6 @@ import Tooltip from '@mui/material/Tooltip'
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 import IconButton from '@mui/material/IconButton'
 import Badge from '@mui/material/Badge'
-import AuthContext from '../app/AuthContext'
 import FilterContext from '../context/FilterContext'
 import FilterByField from './FilterByField'
 import Stack from '@mui/material/Stack'
@@ -14,7 +13,6 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 
 function FilterButton({onFiltersChanged, extraFilters = []}) {
-    const {isLoggedIn} = useContext(AuthContext)
     const {beta} = useContext(AppContext)
     const {filterCount, addFilters, filterFields} = useContext(FilterContext)
     //const [open, setOpen] = useState(false)
@@ -75,7 +73,7 @@ function FilterButton({onFiltersChanged, extraFilters = []}) {
                 <Stack direction='column' style={{minWidth: 250}}>
                     {filterFields
                         .filter(field => {
-                            return (!field.beta || beta) && (!field.userBased || isLoggedIn)
+                            return (!field.beta || beta) && (!field.userBased)
                         })
                         .map((field, index) =>
                             <MenuItem key={index}>

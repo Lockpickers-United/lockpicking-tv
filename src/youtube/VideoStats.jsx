@@ -3,13 +3,16 @@ import Typography from '@mui/material/Typography'
 import React from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
 
-const ChannelStats = ({video}) => {
+const VideoStats = ({video}) => {
 
     const {width} = useWindowSize()
     const smallWindow = width <= 500
     const statMargin = smallWindow ? 0 : 0
     const flexStyle = smallWindow ? {display: 'flex',marginTop: 0} : {display: 'flex', marginTop: 0}
 
+    if (!video) {
+        return null
+    }
     return (
         <div style={{...flexStyle, width:'100%', textAlign:'center'}}>
             <FieldValue
@@ -50,4 +53,4 @@ const ChannelStats = ({video}) => {
 
 }
 
-export default ChannelStats
+export default VideoStats

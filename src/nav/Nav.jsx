@@ -6,13 +6,14 @@ import VersionCheckerCode from '../app/VersionCheckerCode.jsx'
 import Tracker from '../app/Tracker.jsx'
 import SearchBox from './SearchBox.jsx'
 import GuideMenu from '../youtube/GuideMenu.jsx'
+import PlaylistMainVideo from '../youtube/PlaylistMainVideo.jsx'
 
-function Nav({extras}) {
+function Nav({extras,displayVideo}) {
+
     return (
         <React.Fragment>
-            <AppBar position='fixed' style={{display:'flex', placeItems:'center'}}>
+            <AppBar position='fixed' style={{display:'flex', placeItems:'center'}} id='appBar'>
                 <div style={{padding: 10, width:'100%', maxWidth:1200}}>
-
                     <div style={{display: 'flex', width: '100%', marginTop: 5}}>
                         <div style={{marginRight: 20, marginLeft: 5}}>
                             <GuideMenu/>
@@ -30,11 +31,11 @@ function Nav({extras}) {
                         <div style={{}}>
                             {extras}
                         </div>
-
                     </div>
-
-
                 </div>
+                { displayVideo===0 &&
+                <PlaylistMainVideo video={displayVideo}/>
+                }
             </AppBar>
 
             {/* Dummy toolbar to help content place correctly below this */}

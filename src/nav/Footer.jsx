@@ -1,10 +1,8 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import Typography from '@mui/material/Typography'
 import ToggleColorMode from './ToggleColorMode'
-import AuthContext from '../app/AuthContext.jsx'
 
 function Footer({extras}) {
-    const {user} = useContext(AuthContext)
 
     return (
         <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80, color:'#121212'}}>
@@ -19,7 +17,7 @@ function Footer({extras}) {
             {extras}
 
             <div style={{textAlign: 'center'}}>
-                {user?.uid === 'ClbjuilBEHgbzO4UZl4y3GStlEz2' &&
+                {0===1 &&
                     <div style={{marginTop: '20px', display: 'flex', textAlign: 'center'}}>
                         <div style={{marginRight: 'auto', marginLeft: 'auto'}}>
                             <ToggleColorMode/>

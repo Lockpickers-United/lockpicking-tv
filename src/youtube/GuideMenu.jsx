@@ -8,7 +8,6 @@ import MenuConfig from '../nav/MenuConfig.jsx'
 import Button from '@mui/material/Button'
 import LPTVlogo from '../assets/LPTVlogo2-w'
 import LPTVheader from '../assets/LPTVlogo-tvset'
-import DBContext from '../app/DBContext.jsx'
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import GuideItem from './GuideItem.jsx'
 import dayjs from 'dayjs'
@@ -22,7 +21,6 @@ function GuideMenu() {
     const {guide} = filters
 
     const {beta} = useContext(AppContext)
-    const {admin} = useContext(DBContext)
     const [open, setOpen] = useState(guide)
     const [openTitle, setOpenTitle] = useState('More from LPU') // TODO: don't do this once there are more
     const now = dayjs().format('h:mma')
@@ -84,7 +82,6 @@ function GuideMenu() {
                                 <TableBody>
                                     {menuConfig
                                         .filter(menuItem => beta || !menuItem.beta)
-                                        .filter(menuItem => admin || !menuItem.admin)
                                         .map((menuItem, index) =>
                                             <GuideItem
                                                 key={index}

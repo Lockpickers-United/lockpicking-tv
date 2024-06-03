@@ -10,6 +10,9 @@ const ChannelStats = ({channel}) => {
     const statMargin = smallWindow ? 0 : 0
     const flexStyle = smallWindow ? {display: 'flex',marginTop: 10} : {display: 'flex', marginTop: 6}
 
+    if (!channel) {
+        return null
+    }
     return (
         <div style={{...flexStyle, width:'100%', textAlign:'center'}}>
             <FieldValue

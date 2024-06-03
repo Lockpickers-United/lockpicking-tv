@@ -1,7 +1,6 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import {useTheme} from '@mui/material/styles'
-import AppBar from '@mui/material/AppBar'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
@@ -77,15 +76,15 @@ export default function YouTubeMain() {
 
     const {width} = useWindowSize()
     const smallWindow = width <= 800
-    const tabPadding = smallWindow ? 20 : 12
+    const tabPadding = smallWindow ? 7 : 4
 
     const newName = smallWindow ? 'New' : 'New & Noteworthy'
     const featuredName = smallWindow ? 'Featured' : 'Featured Channels'
     const fullName = smallWindow ? 'Full List' : 'Full Directory'
 
     return (
-        <Box style={{backgroundColor: '#2a2a2a', width: '100%', paddingTop: tabPadding}}>
-            <AppBar position='static'>
+        <div style={{backgroundColor: '#2a2a2a', width: '100%', paddingTop: tabPadding}}>
+            <div>
                 <Tabs
                     value={value}
                     onChange={handleChange}
@@ -100,7 +99,7 @@ export default function YouTubeMain() {
                     <Tab label={newName}{...a11yProps(1)} style={{margin: '0px 5px'}}/>
                     <Tab label={fullName} {...a11yProps(2)} style={{margin: '0px 5px'}}/>
                 </Tabs>
-            </AppBar>
+            </div>
             <div style={{padding: '0', backgroundColor: '#ccc'}}>
                 <TabPanel value={value} index={0} dir={theme.direction} style={{padding: 0}}>
                     <React.Fragment>
@@ -132,6 +131,6 @@ export default function YouTubeMain() {
                     <Tracker feature='page' name={'full'}/>
                 </TabPanel>
             </div>
-        </Box>
+        </div>
     )
 }
