@@ -1,12 +1,10 @@
 import React, {useCallback, useContext, useDeferredValue, useEffect, useState} from 'react'
-import ChannelCard from './ChannelCard.jsx'
 import DataContext from '../app/DataContext.jsx'
 import Grid from '@mui/material/Grid'
 import ListContext from '../context/ListContext'
 import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
-import PlaylistCard from './PlaylistCard.jsx'
 import PlaylistItemCard from './PlaylistItemCard.jsx'
 import PlaylistMainVideo from './PlaylistMainVideo.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -119,8 +117,9 @@ function PlaylistMain() {
                     <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
                         <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
 
-                            <span
-                                style={{fontSize: '1.1rem', fontWeight: 600}}>{parentLink} {pageData.title}</span><br/>
+                            <span style={{fontSize: '1.1rem', fontWeight: 600}}>
+                                {parentLink} {pageData.title}
+                            </span><br/>
                             {pageData.description}
                         </div>
 
@@ -129,33 +128,15 @@ function PlaylistMain() {
                                   style={{}}>
                                 {visibleItems.map((item, index) =>
                                     <Grid item xs={4} sm={4} md={4} key={item.id}>
-                                        {item.kind === 'youtube#video' &&
-                                            <PlaylistItemCard
-                                                video={item}
-                                                expanded={item.id === defExpanded}
-                                                onExpand={setExpanded}
-                                                handlePlaylistClick={handlePlaylistClick}
-                                                index={index}
-                                                playing={playing}
-                                                setPlaying={setPlaying}
-                                            />
-                                        }
-                                        {item.kind === 'youtube#channel' &&
-                                            <ChannelCard
-                                                channel={item}
-                                                expanded={item.id === defExpanded}
-                                                onExpand={setExpanded}
-                                                index={index}
-                                            />
-                                        }
-                                        {item.kind === 'youtube#playlist' &&
-                                            <PlaylistCard
-                                                playlist={item}
-                                                expanded={item.id === defExpanded}
-                                                onExpand={setExpanded}
-                                                index={index}
-                                            />
-                                        }
+                                        <PlaylistItemCard
+                                            video={item}
+                                            expanded={item.id === defExpanded}
+                                            onExpand={setExpanded}
+                                            handlePlaylistClick={handlePlaylistClick}
+                                            index={index}
+                                            playing={playing}
+                                            setPlaying={setPlaying}
+                                        />
                                     </Grid>
                                 )}
                             </Grid>

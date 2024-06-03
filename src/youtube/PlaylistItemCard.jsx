@@ -23,24 +23,25 @@ const PlaylistItemCard = ({video, handlePlaylistClick, index, playing}) => {
         <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px', color: textColor}}>
             <CardContent style={{padding: '5px 0px 5px 0px', textAlign: 'center'}}>
                 <div style={{display: 'flex', padding: 10}}>
-                    <div style={{
-                        borderRadius: '50%',
-                        border: '2px solid #ddd',
-                        height: avatarSize,
-                        width: avatarSize,
-                        minWidth: avatarSize,
-                        margin: avatarMargin,
-                        justifyContent: 'center',
-                        alignContent: 'center',
-                        flexDirection: 'column',
-                        backgroundColor: backgroundColor
-                    }}>
-                        <a onClick={() => {
-                            handlePlaylistClick(video, index)
-                        }} style={{color: textColor, textDecoration: 'none', fontSize: '1.1rem'}}>
+                    <a onClick={() => {
+                        handlePlaylistClick(video, index)
+                    }} style={{color: textColor, textDecoration: 'none', cursor: 'pointer', fontSize: '1.1rem'}}>
+                        <div style={{
+                            borderRadius: '50%',
+                            border: '2px solid #ddd',
+                            height: avatarSize,
+                            width: avatarSize,
+                            minWidth: avatarSize,
+                            margin: avatarMargin,
+                            justifyContent: 'center',
+                            alignContent: 'center',
+                            flexDirection: 'column',
+                            backgroundColor: backgroundColor
+                        }}>
+
                             {index + 1}
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                     <div style={{
                         fontSize: '1.1rem',
                         lineHeight: '1.3rem',
@@ -50,7 +51,7 @@ const PlaylistItemCard = ({video, handlePlaylistClick, index, playing}) => {
                     }}>
                         <a onClick={() => {
                             handlePlaylistClick(video, index)
-                        }} style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
+                        }} style={{color: textColor, textDecoration: 'none', cursor: 'pointer', fontSize: '1.0rem'}}>
                             {video.title}
                         </a>
                         <div style={{marginTop: 3}}>

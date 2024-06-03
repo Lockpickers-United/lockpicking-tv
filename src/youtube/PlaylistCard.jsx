@@ -17,7 +17,7 @@ const PlaylistCard = ({playlist, expanded}) => {
     const playlistPage = getSectionFromPlaylistId(playlist.id)
 
     const playlistPageUrl = playlistPage?.parentId
-        ? `/pages?page=${playlistPage.sectionId}&name=${playlistPage.sectionName}`
+        ? `/playlist?page=${playlistPage.sectionId}&name=${playlistPage.sectionName}`
         : null
 
     const handleClick = useCallback(() => {
@@ -113,7 +113,7 @@ const PlaylistCard = ({playlist, expanded}) => {
                     }}>
                         <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 3}}>
                             <a href={channelUrl} target='_blank' rel='noopener noreferrer'
-                               style={{color: textColor, textDecoration: 'none', fontSize: '0.9rem'}}>
+                               style={{color: textColor, textDecoration: 'none', cursor:'pointer', fontSize: '0.9rem'}}>
                                 {channel?.title}
                             </a>
                         </div>

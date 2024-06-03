@@ -6,7 +6,7 @@ import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from '../youtubeContext/DataProviderChannels.jsx'
 import {ListProvider} from '../context/ListContext.jsx'
 import {ytFilterFields} from '../data/filterFields'
-import YouTubeMain from './YouTubeMain.jsx'
+import ChannelsMain from './ChannelsMain.jsx'
 import {channelSortFields} from '../data/sortFields'
 import SortButton from '../filters/SortButton.jsx'
 
@@ -22,7 +22,7 @@ function YoutTubeRoute({channelSet}) {
                         <Nav title='YouTube Directory' route='yt' extras={extras}/>
 
                         <div style={{backgroundColor: '#ccc'}}>
-                            <YouTubeMain/>
+                            <ChannelsMain/>
                         </div>
 
                         <Footer/>

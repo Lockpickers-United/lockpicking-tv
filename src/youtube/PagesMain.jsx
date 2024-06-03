@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useDeferredValue, useEffect, useState} from 'react'
+import React, {useCallback, useContext, useDeferredValue} from 'react'
 import ChannelCard from './ChannelCard.jsx'
 import DataContext from '../app/DataContext.jsx'
 import Grid from '@mui/material/Grid'
@@ -7,8 +7,7 @@ import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
 import PlaylistCard from './PlaylistCard.jsx'
-import PlaylistItemCard from './PlaylistItemCard.jsx'
-import PlaylistMainVideo from './PlaylistMainVideo.jsx'
+import VideoCard from './VideoCard.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import {useNavigate} from 'react-router-dom'
@@ -35,16 +34,6 @@ function PagesMain() {
         }}>{parent.title}</a> &gt; </span>
         : null
 
-    const [mainItem, setMainItem] = useState(visibleItems[0])
-    const [index, setIndex] = useState(0) //eslint-disable-line
-    const [playing, setPlaying] = useState(mainItem?.id)
-
-    const handlePlaylistClick = useCallback((item, index) => {
-        setPlaying(item.id)
-        setMainItem(item)
-        setIndex(index)
-    }, [])
-
     const {expanded, setExpanded} = useContext(ListContext)
     const defExpanded = useDeferredValue(expanded)
 
@@ -69,38 +58,9 @@ function PagesMain() {
         ? '24px 24px 32px 24px'
         : '28px 8px 32px 8px'
 
-    const widths = [440, 600, 800, 1200, 9999]
-    const widthIndex = widths.indexOf(widths.find(option => {
-        return option >= width
-    }))
-    const appBarHeights = [407, 430, 530, 640, 640]
-    const [appBarHeight, setAppBarHeight] = useState(appBarHeights[widthIndex])
-    if (document.getElementById('mainPlayer') && appBarHeight !== document.getElementById('mainPlayer').offsetHeight) {
-        setAppBarHeight(document.getElementById('mainPlayer').offsetHeight)
-    }
-
-    const [init, setInit] = useState(false)
-    useEffect(() => {
-        if (!init || !mainItem) {
-            setMainItem(visibleItems[0])
-            setPlaying(visibleItems[0]?.id)
-            setIndex(0)
-        }
-        setInit(true)
-    }, [appBarHeight, init, mainItem, visibleItems])
-
     return (
         <React.Fragment>
-            <Nav title='lockpicking.tv - {pageData.title}' route='pg' displayVideo={mainItem}/>
-
-            {(mainItem?.kind === 'youtube#video' && (pageData?.kind === 'singleplaylist' || pageData?.type === 'singleplaylist')) &&
-                <React.Fragment>
-                    <PlaylistMainVideo
-                        video={mainItem}
-                    />
-                    <div style={{height: appBarHeight}} id='spacerDiv'/>
-                </React.Fragment>
-            }
+            <Nav title='lockpicking.tv - {pageData.title}' route='pg'/>
 
             {(!allDataLoaded || !visibleItems) &&
                 <div style={{marginTop: 30}}>
@@ -109,18 +69,16 @@ function PagesMain() {
             }
 
             {(allDataLoaded && visibleItems) &&
-
                 <div style={{
                     minWidth: '320px', height: '100%',
                     padding: pagePadding,
                     marginLeft: 'auto', marginRight: 'auto', marginTop: 0
                 }}>
-
                     <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
                         <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
-
-                            <span
-                                style={{fontSize: '1.1rem', fontWeight: 600}}>{parentLink} {pageData.title}</span><br/>
+                            <span style={{fontSize: '1.1rem', fontWeight: 600}}>
+                                {parentLink} {pageData.title}
+                            </span><br/>
                             {pageData.description}
                         </div>
 
@@ -130,14 +88,11 @@ function PagesMain() {
                                 {visibleItems.map((item, index) =>
                                     <Grid item xs={4} sm={4} md={4} key={item.id}>
                                         {item.kind === 'youtube#video' &&
-                                            <PlaylistItemCard
+                                            <VideoCard
                                                 video={item}
                                                 expanded={item.id === defExpanded}
                                                 onExpand={setExpanded}
-                                                handlePlaylistClick={handlePlaylistClick}
                                                 index={index}
-                                                playing={playing}
-                                                setPlaying={setPlaying}
                                             />
                                         }
                                         {item.kind === 'youtube#channel' &&

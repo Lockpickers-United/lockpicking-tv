@@ -48,7 +48,7 @@ function a11yProps(index) {
     }
 }
 
-export default function YouTubeMain() {
+export default function ChannelsMain() {
 
     const {allDataLoaded, channelSet} = useContext(LoadingContext)
     const {visibleChannels} = useContext(DataContext)

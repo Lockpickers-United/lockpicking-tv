@@ -10,21 +10,21 @@ export default [
     {
         path: '/featured',
         lazy: async () => {
-            const {default: YouTubeRoute} = await import('../youtube/YouTubeRoute.jsx')
+            const {default: YouTubeRoute} = await import('../youtube/ChannelsRoute.jsx')
             return {element: <YouTubeRoute channelSet={'featured'}/>}
         }
     },
     {
         path: '/new',
         lazy: async () => {
-            const {default: YouTubeRoute} = await import('../youtube/YouTubeRoute.jsx')
+            const {default: YouTubeRoute} = await import('../youtube/ChannelsRoute.jsx')
             return {element: <YouTubeRoute channelSet={'new'}/>}
         }
     },
     {
         path: '/full',
         lazy: async () => {
-            const {default: YouTubeRoute} = await import('../youtube/YouTubeRoute.jsx')
+            const {default: YouTubeRoute} = await import('../youtube/ChannelsRoute.jsx')
             return {element: <YouTubeRoute channelSet={'full'}/>}
         }
     },
@@ -33,6 +33,13 @@ export default [
         lazy: async () => {
             const {default: PagesRoute} = await import('../youtube/PagesRoute.jsx')
             return {element: <PagesRoute/>}
+        }
+    },
+    {
+        path: '/playlist',
+        lazy: async () => {
+            const {default: PlaylistRoute} = await import('../youtube/PlaylistRoute.jsx')
+            return {element: <PlaylistRoute/>}
         }
     },
     {

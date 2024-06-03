@@ -39,7 +39,7 @@ function Nav({extras,displayVideo}) {
             </AppBar>
 
             {/* Dummy toolbar to help content place correctly below this */}
-            <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)'}}/>
+            <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)', minHeight:61}}/>
 
             <ScrollToTopButton/>
 
