@@ -50,8 +50,8 @@ function a11yProps(index) {
 
 export default function ChannelsMain() {
 
-    const {allDataLoaded, channelSet} = useContext(LoadingContext)
-    const {visibleChannels} = useContext(DataContext)
+    const {allDataLoaded} = useContext(LoadingContext)
+    const {visibleChannels, channelSet} = useContext(DataContext)
     const navigate = useNavigate()
 
     const sets = ['featured', 'new', 'full']

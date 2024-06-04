@@ -1,5 +1,4 @@
 import React from 'react'
-import {LoadingProvider} from '../youtubeContext/LoadingProvider.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from '../youtubeContext/DataProviderPages.jsx'
 import {ListProvider} from '../context/ListContext.jsx'
@@ -11,14 +10,12 @@ function PlaylistRoute() {
 
     return (
         <FilterProvider filterFields={ytFilterFields}>
-            <LoadingProvider>
                 <DataProvider>
                     <ListProvider>
                         <PlaylistMain/>
                         <Footer/>
                     </ListProvider>
                 </DataProvider>
-            </LoadingProvider>
         </FilterProvider>
     )
 }

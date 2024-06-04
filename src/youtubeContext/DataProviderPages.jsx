@@ -10,7 +10,22 @@ export function DataProvider({children}) {
 
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, guide, showAll, page, ...filters} = allFilters
-    const {allItems} = useContext(LoadingContext)
+    const {pagesData, getPageFromId, allDataLoaded} = useContext(LoadingContext)
+
+    const pageData = allDataLoaded
+        ? getPageFromId(page)
+            ? getPageFromId(page)
+            : pagesData[1]
+        : null
+
+    const items = allDataLoaded ? pageData.items : []
+    const mappedItems = items.map((item) => {
+        return {
+            ...item,
+            fuzzy: item.title
+        }
+    })
+
 
     const filteredItems = useMemo(() => {
 
@@ -25,7 +40,7 @@ export function DataProvider({children}) {
             .flat()
 
         // Filter the data
-        return allItems
+        return mappedItems
             .filter(datum => {
                 return filterArray.every(({key, value}) => {
                     return Array.isArray(datum[key])
@@ -34,7 +49,7 @@ export function DataProvider({children}) {
                 })
             })
 
-    }, [filters, allItems])
+    }, [filters, mappedItems])
 
     const visibleItems = useMemo(() => {
 
@@ -61,8 +76,8 @@ export function DataProvider({children}) {
     }, [search, filteredItems, sort])
 
     const getItemFromId = useCallback(channelId => {
-        return allItems?.find(({id}) => id === channelId)
-    }, [allItems])
+        return mappedItems?.find(({id}) => id === channelId)
+    }, [mappedItems])
 
     const getNameFromId = useCallback(id => {
         const channel = getItemFromId(id)
@@ -71,10 +86,12 @@ export function DataProvider({children}) {
 
     const value = useMemo(() => ({
         visibleItems,
+        pageData,
         getItemFromId,
         getNameFromId
     }), [
         visibleItems,
+        pageData,
         getItemFromId,
         getNameFromId
     ])

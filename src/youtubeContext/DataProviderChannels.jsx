@@ -6,11 +6,33 @@ import fuzzysort from 'fuzzysort'
 import removeAccents from 'remove-accents'
 import dayjs from 'dayjs'
 
-export function DataProvider({children}) {
+export function DataProvider({children, channelSet}) {
 
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, guide, showAll, page, ...filters} = allFilters
-    const {allChannels} = useContext(LoadingContext)
+    const {allChannels, featuredChannels, newChannels} = useContext(LoadingContext)
+
+    const channels = channelSet === 'featured'
+        ? featuredChannels
+        : channelSet === 'new'
+            ? newChannels
+            : allChannels
+
+    const mappedChannels = channels.map(channel => {
+        return {
+            id: channel.channelId,
+            kind: channel.kind,
+            viewCount: parseInt(channel.statistics.viewCount),
+            subscriberCount: parseInt(channel.statistics.subscriberCount),
+            videoCount: parseInt(channel.statistics.videoCount),
+            title: channel.snippet.title,
+            description: channel.snippet.description,
+            thumbnail: channel.snippet.thumbnails.default.url,
+            customUrl: channel.snippet.customUrl,
+            publishedAt: channel.snippet.publishedAt,
+            fuzzy: channel.snippet.title + ', ' + channel.snippet.customUrl
+        }
+    })
 
     const filteredChannels = useMemo(() => {
 
@@ -25,7 +47,7 @@ export function DataProvider({children}) {
             .flat()
 
         // Filter the data
-        return allChannels
+        return mappedChannels
             .filter(datum => {
                 return filterArray.every(({key, value}) => {
                     return Array.isArray(datum[key])
@@ -34,7 +56,7 @@ export function DataProvider({children}) {
                 })
             })
 
-    }, [filters, allChannels])
+    }, [filters, mappedChannels])
 
     const visibleChannels = useMemo(() => {
 
@@ -81,11 +103,13 @@ export function DataProvider({children}) {
     const value = useMemo(() => ({
         visibleChannels,
         getChannelFromId,
-        getNameFromId
+        getNameFromId,
+        channelSet
     }), [
         visibleChannels,
         getChannelFromId,
-        getNameFromId
+        getNameFromId,
+        channelSet
     ])
 
     return (

@@ -1,19 +1,17 @@
 import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
-import LoadingContext from '../youtubeContext/LoadingContext.jsx'
-
-import queryString from 'query-string'
-import useWindowSize from '../util/useWindowSize.jsx'
-
+import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
+import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay'
-import Button from '@mui/material/Button'
+import queryString from 'query-string'
+import useWindowSize from '../util/useWindowSize.jsx'
 import {useNavigate} from 'react-router-dom'
 
 const PlaylistCard = ({playlist, expanded}) => {
     const navigate = useNavigate()
 
-    const {getSectionFromPlaylistId} = useContext(LoadingContext)
+    const {getSectionFromPlaylistId,getChannelFromId} = useContext(LoadingContext)
     const playlistPage = getSectionFromPlaylistId(playlist.id)
 
     const playlistPageUrl = playlistPage?.parentId
@@ -48,7 +46,6 @@ const PlaylistCard = ({playlist, expanded}) => {
         }
     }, [expanded, scrolled, playlist.id])
 
-    const {getChannelFromId} = useContext(LoadingContext)
     const channel = getChannelFromId(playlist.channelId)
     const playlistItemText = playlist.itemCount > 1
         ? 'videos'
@@ -114,7 +111,7 @@ const PlaylistCard = ({playlist, expanded}) => {
                         <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 3}}>
                             <a href={channelUrl} target='_blank' rel='noopener noreferrer'
                                style={{color: textColor, textDecoration: 'none', cursor:'pointer', fontSize: '0.9rem'}}>
-                                {channel?.title}
+                                {channel?.snippet.title}
                             </a>
                         </div>
                         <a onClick={()=>{handleClick()}}

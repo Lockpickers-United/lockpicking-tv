@@ -41,10 +41,14 @@ function MenuConfig() {
                 ? <PlaylistPlayIcon fontSize='small'/>
                 : <PlayCircleOutlineIcon fontSize='small'/>
 
+            const pageRoute = page.type === 'multipleplaylists'
+                ? 'pages'
+                : 'playlist'
+
             return {
                 title: page.title,
                 icon: pageIcon,
-                path: `/pages?page=${page.id}&name=${safeName}`
+                path: `/${pageRoute}?page=${page.id}&name=${safeName}`
             }
         })
 

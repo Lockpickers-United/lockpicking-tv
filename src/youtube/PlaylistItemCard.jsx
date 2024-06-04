@@ -56,7 +56,7 @@ const PlaylistItemCard = ({video, handlePlaylistClick, index, playing}) => {
                         </a>
                         <div style={{marginTop: 3}}>
                             <a href={channelLink} target='_blank' rel='noopener noreferrer'
-                               style={{color: textColor, textDecoration: 'none', fontSize: '0.9rem', fontWeight: 400}}>
+                               style={{color: textColor, textDecoration: 'none', fontSize: '0.83rem', fontWeight: 400}}>
                                 By: {video.channelOwner}
                             </a>
                         </div>

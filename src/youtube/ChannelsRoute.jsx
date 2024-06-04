@@ -1,7 +1,6 @@
 import React from 'react'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
-import {LoadingProvider} from '../youtubeContext/LoadingProvider.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from '../youtubeContext/DataProviderChannels.jsx'
 import {ListProvider} from '../context/ListContext.jsx'
@@ -16,8 +15,7 @@ function YoutTubeRoute({channelSet}) {
     const extras = <SortButton sortValues={channelSortFields}/>
     return (
         <FilterProvider filterFields={ytFilterFields}>
-            <LoadingProvider channelSet={channelSet}>
-                <DataProvider channelSet={channelSet}>
+                <DataProvider channelSet={channelSet} channels={channelSet}>
                     <ListProvider>
                         <Nav title='YouTube Directory' route='yt' extras={extras}/>
 
@@ -28,7 +26,6 @@ function YoutTubeRoute({channelSet}) {
                         <Footer/>
                     </ListProvider>
                 </DataProvider>
-            </LoadingProvider>
         </FilterProvider>
     )
 }

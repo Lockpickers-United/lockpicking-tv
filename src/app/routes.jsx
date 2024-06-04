@@ -10,22 +10,22 @@ export default [
     {
         path: '/featured',
         lazy: async () => {
-            const {default: YouTubeRoute} = await import('../youtube/ChannelsRoute.jsx')
-            return {element: <YouTubeRoute channelSet={'featured'}/>}
+            const {default: ChannelsRoute} = await import('../youtube/ChannelsRoute.jsx')
+            return {element: <ChannelsRoute channelSet={'featured'}/>}
         }
     },
     {
         path: '/new',
         lazy: async () => {
-            const {default: YouTubeRoute} = await import('../youtube/ChannelsRoute.jsx')
-            return {element: <YouTubeRoute channelSet={'new'}/>}
+            const {default: ChannelsRoute} = await import('../youtube/ChannelsRoute.jsx')
+            return {element: <ChannelsRoute channelSet={'new'}/>}
         }
     },
     {
         path: '/full',
         lazy: async () => {
-            const {default: YouTubeRoute} = await import('../youtube/ChannelsRoute.jsx')
-            return {element: <YouTubeRoute channelSet={'full'}/>}
+            const {default: ChannelsRoute} = await import('../youtube/ChannelsRoute.jsx')
+            return {element: <ChannelsRoute channelSet={'full'}/>}
         }
     },
     {

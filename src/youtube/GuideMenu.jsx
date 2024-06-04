@@ -19,9 +19,8 @@ function GuideMenu() {
 
     const {filters} = useContext(FilterContext)
     const {guide} = filters
-
     const {beta} = useContext(AppContext)
-    const [open, setOpen] = useState(guide)
+    const [open, setOpen] = useState(!!guide)
     const [openTitle, setOpenTitle] = useState('More from LPU') // TODO: don't do this once there are more
     const now = dayjs().format('h:mma')
 

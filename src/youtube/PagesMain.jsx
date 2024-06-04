@@ -13,10 +13,10 @@ import {createTheme, ThemeProvider} from '@mui/material/styles'
 import {useNavigate} from 'react-router-dom'
 
 function PagesMain() {
-    const {visibleItems} = useContext(DataContext)
+    const {visibleItems, pageData} = useContext(DataContext)
     const navigate = useNavigate()
 
-    const {pageData, getPageFromId, allDataLoaded} = useContext(LoadingContext)
+    const {getPageFromId, allDataLoaded} = useContext(LoadingContext)
 
     const parent = pageData?.parentId
         ? getPageFromId(pageData.parentId)

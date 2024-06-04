@@ -10,12 +10,17 @@ import PlaylistMainVideo from './PlaylistMainVideo.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import {useNavigate} from 'react-router-dom'
+import FilterContext from '../context/FilterContext.jsx'
 
 function PlaylistMain() {
-    const {visibleItems} = useContext(DataContext)
+    const {visibleItems, pageData} = useContext(DataContext)
     const navigate = useNavigate()
+    const {filters} = useContext(FilterContext)
+    const {page} = filters
 
-    const {pageData, getPageFromId, allDataLoaded} = useContext(LoadingContext)
+    const [currentPage, setCurrentPage] = useState(page)
+
+    const {getPageFromId, allDataLoaded} = useContext(LoadingContext)
 
     const parent = pageData?.parentId
         ? getPageFromId(pageData.parentId)
@@ -79,13 +84,14 @@ function PlaylistMain() {
 
     const [init, setInit] = useState(false)
     useEffect(() => {
-        if (!init || !mainItem) {
+        if (!init || !mainItem || (currentPage !== page )) {
             setMainItem(visibleItems[0])
             setPlaying(visibleItems[0]?.id)
             setIndex(0)
+            setCurrentPage(page)
+            setInit(true)
         }
-        setInit(true)
-    }, [appBarHeight, init, mainItem, visibleItems])
+    }, [appBarHeight, index, init, mainItem, visibleItems, page, currentPage])
 
     return (
         <React.Fragment>
