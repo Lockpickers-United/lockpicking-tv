@@ -61,7 +61,7 @@ const PlaylistMainVideo = ({video}) => {
                         url={videoUrl}
                         width='100%'
                         height='100%'
-                        light
+                        light={false}
                         muted={false}
                         controls
                     />

@@ -11,7 +11,7 @@ import {useNavigate} from 'react-router-dom'
 const PlaylistCard = ({playlist, expanded}) => {
     const navigate = useNavigate()
 
-    const {getSectionFromPlaylistId,getChannelFromId} = useContext(LoadingContext)
+    const {getSectionFromPlaylistId, getChannelFromId} = useContext(LoadingContext)
     const playlistPage = getSectionFromPlaylistId(playlist.id)
 
     const playlistPageUrl = playlistPage?.parentId
@@ -20,7 +20,7 @@ const PlaylistCard = ({playlist, expanded}) => {
 
     const handleClick = useCallback(() => {
         navigate(playlistPageUrl)
-    },[navigate, playlistPageUrl])
+    }, [navigate, playlistPageUrl])
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
@@ -89,9 +89,11 @@ const PlaylistCard = ({playlist, expanded}) => {
                                 marginLeft: 'auto',
                                 border: '1px solid #bbb',
                                 borderRadius: 10,
-                                boxShadow:'1px 1px #1b3872'
+                                boxShadow: '1px 1px #1b3872'
                             }}
-                            onClick={() => {handleClick()}}
+                            onClick={() => {
+                                handleClick()
+                            }}
                     >
                         {playlist.itemCount} {playlistItemText}
                     </Button>
@@ -108,16 +110,18 @@ const PlaylistCard = ({playlist, expanded}) => {
                         textAlign: nameAlign,
                         flexGrow: 1
                     }}>
-                        <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 3}}>
-                            <a href={channelUrl} target='_blank' rel='noopener noreferrer'
-                               style={{color: textColor, textDecoration: 'none', cursor:'pointer', fontSize: '0.9rem'}}>
-                                {channel?.snippet.title}
-                            </a>
-                        </div>
-                        <a onClick={()=>{handleClick()}}
-                           style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem', cursor:'pointer'}}>
+                        <a onClick={() => {
+                            handleClick()
+                        }}
+                           style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem', cursor: 'pointer'}}>
                             {playlist.title}
                         </a>
+                        <div style={{marginTop: 0}}>
+                            <a href={channelUrl} target='_blank' rel='noopener noreferrer'
+                               style={{color: textColor, textDecoration: 'none', fontSize: '0.83rem', fontWeight: 400}}>
+                                By: {channel?.snippet.title}
+                            </a>
+                        </div>
                     </div>
                 </div>
             </CardContent>

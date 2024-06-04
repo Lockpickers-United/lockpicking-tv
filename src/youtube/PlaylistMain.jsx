@@ -89,6 +89,7 @@ function PlaylistMain() {
             setPlaying(visibleItems[0]?.id)
             setIndex(0)
             setCurrentPage(page)
+            document.getElementById('grid').scroll(0, appBarHeight)
             setInit(true)
         }
     }, [appBarHeight, index, init, mainItem, visibleItems, page, currentPage])
@@ -131,7 +132,7 @@ function PlaylistMain() {
 
                         <ThemeProvider theme={theme}>
                             <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
-                                  style={{}}>
+                                  style={{}} id='grid'>
                                 {visibleItems.map((item, index) =>
                                     <Grid item xs={4} sm={4} md={4} key={item.id}>
                                         <PlaylistItemCard
