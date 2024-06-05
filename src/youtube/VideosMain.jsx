@@ -1,0 +1,161 @@
+import React, {useCallback, useContext, useEffect, useState} from 'react'
+import DataContext from '../app/DataContext.jsx'
+import Grid from '@mui/material/Grid'
+import LoadingContext from '../youtubeContext/LoadingContext.jsx'
+import LoadingDisplay from '../util/LoadingDisplay.jsx'
+import Nav from '../nav/Nav.jsx'
+import VideoCard from './VideoCard.jsx'
+import PlaylistMainVideo from './PlaylistMainVideo.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
+import {createTheme, ThemeProvider} from '@mui/material/styles'
+import FilterContext from '../context/FilterContext.jsx'
+import SortButton from '../filters/SortButton.jsx'
+import {videoSortFields} from '../data/sortFields'
+
+function VideosMain() {
+
+    function cl(variableString, newLine) {  //eslint-disable-line
+        const variableValue = eval(variableString)
+        console.log(variableString, variableValue)
+        if (newLine) { console.log('\n') }
+    }
+
+    const {visibleItems} = useContext(DataContext)
+    const {filters} = useContext(FilterContext)
+    const {page} = filters
+
+    const pageTitle = page === 'popular'
+        ? 'Popular Videos'
+        : 'New Videos'
+
+    const pageDescription = page === 'popular'
+        ? 'The most popular videos from each of our Featured Channels.'
+        : 'New videos from our Featured Channels.'
+
+
+    cl('visibleItems.length')
+
+    const [currentPage, setCurrentPage] = useState(undefined)
+
+    const {allDataLoaded} = useContext(LoadingContext)
+
+    const [mainItem, setMainItem] = useState(visibleItems[0])
+    const [index, setIndex] = useState(0)
+    const [playing, setPlaying] = useState(mainItem?.id) //eslint-disable-line
+
+    const handlePlaylistClick = useCallback((item, index) => {
+        setPlaying(item.id)
+        setMainItem(item)
+        setIndex(index)
+    }, [])
+
+    const [expanded, setExpanded] = useState(false)
+
+    document.title = `lockpicking.tv - ${pageTitle}`
+
+    const theme = createTheme({
+        breakpoints: {
+            values: {
+                xs: 0,
+                sm: 600,
+                md: 800,
+                lg: 1200,
+                xl: 1536
+            }
+        }
+    })
+
+    const {width} = useWindowSize()
+    const smallWindow = width <= 600
+    const pagePadding = !smallWindow
+        ? '24px 24px 32px 24px'
+        : '28px 8px 32px 8px'
+
+    const [playerHeight, setPlayerHeight] = useState(0)
+
+    const playerOnlyHeight =  document.getElementById('playerCard') ?  document.getElementById('playerCard').offsetHeight : 1
+    const videoStatsHeight =  expanded ?  56 : 0
+    const fullHeight = playerOnlyHeight + videoStatsHeight
+
+    if (document.getElementById('spacerDiv') && playerHeight !== fullHeight) {
+        setPlayerHeight(fullHeight)
+        document.getElementById('spacerDiv').height = fullHeight
+        window.scrollTo(0, 0)
+    }
+
+    const [init, setInit] = useState(false)
+    useEffect(() => {
+        if (!init || !mainItem || (currentPage !== page )) {
+            setMainItem(visibleItems[0])
+            setPlaying(visibleItems[0]?.id)
+            setIndex(0)
+            setCurrentPage(page)
+            setInit(true)
+        }
+    }, [index, init, mainItem, visibleItems, page, currentPage])
+
+    const navExtras = <SortButton sortValues={videoSortFields}/>
+
+
+    return (
+        <div id='fullPage'>
+            <Nav title='lockpicking.tv - {pageData.title}' route='vid' extras={navExtras}/>
+
+            {(!allDataLoaded || !visibleItems) &&
+                <div style={{marginTop: 30}}>
+                    <LoadingDisplay/>
+                </div>
+            }
+
+            {(mainItem?.kind === 'youtube#video') &&
+                <React.Fragment>
+                    <PlaylistMainVideo
+                        video={mainItem}
+                        expanded={expanded}
+                        setExpanded={setExpanded}
+                    />
+                    <div style={{height: playerHeight, transition: 'all .3s ease-in-out'}} id='spacerDiv'/>
+                </React.Fragment>
+            }
+
+            {(allDataLoaded && visibleItems) &&
+
+                <div style={{
+                    minWidth: '320px', height: '100%',
+                    padding: pagePadding,
+                    marginLeft: 'auto', marginRight: 'auto', marginTop: 0
+                }}>
+
+                    <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
+                        <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
+
+                            <span style={{fontSize: '1.1rem', fontWeight: 600}}>
+                                {pageTitle}
+                            </span><br/>
+                            {pageDescription}
+                        </div>
+
+                        <ThemeProvider theme={theme}>
+                            <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
+                                  style={{}} id='grid'>
+                                {visibleItems.map((item, index) =>
+                                    <Grid item xs={4} sm={4} md={4} key={item.id}>
+                                        <VideoCard
+                                            video={item}
+                                            handlePlaylistClick={handlePlaylistClick}
+                                            index={index}
+                                        />
+                                    </Grid>
+                                )}
+                            </Grid>
+                        </ThemeProvider>
+                        <div style={{display: 'block', clear: 'both'}}/>
+                    </div>
+                </div>
+            }
+        </div>
+
+    )
+}
+
+export default VideosMain

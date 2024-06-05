@@ -1,9 +1,9 @@
 import React from 'react'
 import {FilterProvider} from '../context/FilterContext.jsx'
-import {DataProvider} from '../youtubeContext/DataProviderPages.jsx'
+import {DataProvider} from '../youtubeContext/DataProviderVideos.jsx'
 import {ListProvider} from '../context/ListContext.jsx'
 import {channelFilterFields} from '../data/filterFields'
-import PlaylistMain from './PlaylistMain.jsx'
+import VideosMain from './VideosMain.jsx'
 import Footer from '../nav/Footer.jsx'
 
 function PlaylistRoute() {
@@ -12,7 +12,7 @@ function PlaylistRoute() {
         <FilterProvider filterFields={channelFilterFields}>
                 <DataProvider>
                     <ListProvider>
-                        <PlaylistMain/>
+                        <VideosMain/>
                         <Footer/>
                     </ListProvider>
                 </DataProvider>

@@ -36,6 +36,13 @@ export default [
         }
     },
     {
+        path: '/videos',
+        lazy: async () => {
+            const {default: VideosRoute} = await import('../youtube/VideosRoute.jsx')
+            return {element: <VideosRoute/>}
+        }
+    },
+    {
         path: '/playlist',
         lazy: async () => {
             const {default: PlaylistRoute} = await import('../youtube/PlaylistRoute.jsx')

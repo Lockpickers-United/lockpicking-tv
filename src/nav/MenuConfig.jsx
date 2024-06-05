@@ -7,6 +7,8 @@ import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import NewReleasesIcon from '@mui/icons-material/NewReleases'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 
 function MenuConfig() {
 
@@ -28,6 +30,20 @@ function MenuConfig() {
             icon: <MenuBookIcon fontSize='small'/>,
             path: '/full'
         }
+    ]
+
+    const videoItems = [
+        {
+            title: 'New Videos',
+            icon: <NewReleasesIcon fontSize='small'/>,
+            path: '/videos?page=newVideos'
+        },
+        {
+            title: 'Popular Videos',
+            icon: <FavoriteIcon fontSize='small'/>,
+            path: '/videos?page=popular'
+        }
+
     ]
 
     const pageItems = pageNavData
@@ -55,6 +71,7 @@ function MenuConfig() {
     return (
         [
             ...channelItems,
+            ...videoItems,
             ...pageItems,
             {
                 title: 'More from LPU',

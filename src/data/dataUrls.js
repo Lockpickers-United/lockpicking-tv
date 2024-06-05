@@ -8,6 +8,7 @@ if (import.meta.env && import.meta.env.VITE_LOCAL_DATA === 'true') {
 
 export const channelData = '/data/channelData.json'
 export const pagesData = '/data/pagesData.json'
+export const videoData = '/data/videoData.json'
 
 export const siteFull = '/reports/statsSiteFull.json'
 export const siteSummary = '/reports/statsSiteSummary.json'

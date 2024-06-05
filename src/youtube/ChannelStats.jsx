@@ -10,6 +10,10 @@ const ChannelStats = ({channel}) => {
     const statMargin = smallWindow ? 0 : 0
     const flexStyle = smallWindow ? {display: 'flex',marginTop: 10} : {display: 'flex', marginTop: 6}
 
+    function abbreviate(number) {
+        return new Intl.NumberFormat( 'en-US', { maximumFractionDigits: 1,notation: 'compact' , compactDisplay: 'short' }).format(number)
+    }
+
     if (!channel) {
         return null
     }
@@ -21,8 +25,8 @@ const ChannelStats = ({channel}) => {
                     style={{
                         fontSize: '0.95rem',
                         lineHeight: 1.25
-                    }}>{channel.subscriberCount.toLocaleString()}</Typography>}
-                headerStyle={{color: '#bbb'}}
+                }}>{abbreviate(channel.subscriberCount)}</Typography>}
+            headerStyle={{color: '#bbb'}}
                 textStyle={{color: '#eee'}}
                 style={{marginRight: statMargin, flexGrow:1}}
             />
@@ -32,7 +36,7 @@ const ChannelStats = ({channel}) => {
                     style={{
                         fontSize: '0.95rem',
                         lineHeight: 1.25
-                    }}>{channel.videoCount.toLocaleString()}</Typography>}
+                    }}>{abbreviate(channel.videoCount)}</Typography>}
                 headerStyle={{color: '#bbb'}}
                 textStyle={{color: '#eee'}}
                 style={{marginRight: statMargin, flexGrow:1}}
@@ -43,7 +47,7 @@ const ChannelStats = ({channel}) => {
                     style={{
                         fontSize: '0.95rem',
                         lineHeight: 1.25
-                    }}>{channel.viewCount.toLocaleString()}</Typography>}
+                    }}>{abbreviate(channel.viewCount)}</Typography>}
                 headerStyle={{color: '#bbb'}}
                 textStyle={{color: '#eee'}}
                 style={{marginRight: 0, flexGrow:1}}

@@ -4,7 +4,7 @@ import Nav from '../nav/Nav'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from '../youtubeContext/DataProviderChannels.jsx'
 import {ListProvider} from '../context/ListContext.jsx'
-import {ytFilterFields} from '../data/filterFields'
+import {channelFilterFields} from '../data/filterFields'
 import ChannelsMain from './ChannelsMain.jsx'
 import {channelSortFields} from '../data/sortFields'
 import SortButton from '../filters/SortButton.jsx'
@@ -14,7 +14,7 @@ function YoutTubeRoute({channelSet}) {
 
     const extras = <SortButton sortValues={channelSortFields}/>
     return (
-        <FilterProvider filterFields={ytFilterFields}>
+        <FilterProvider filterFields={channelFilterFields}>
                 <DataProvider channelSet={channelSet} channels={channelSet}>
                     <ListProvider>
                         <Nav title='YouTube Directory' route='yt' extras={extras}/>
