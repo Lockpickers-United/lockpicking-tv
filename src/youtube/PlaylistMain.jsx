@@ -1,7 +1,6 @@
-import React, {useCallback, useContext, useDeferredValue, useEffect, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useState} from 'react'
 import DataContext from '../app/DataContext.jsx'
 import Grid from '@mui/material/Grid'
-import ListContext from '../context/ListContext'
 import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
@@ -18,7 +17,7 @@ function PlaylistMain() {
     const {filters} = useContext(FilterContext)
     const {page} = filters
 
-    const [currentPage, setCurrentPage] = useState(page)
+    const [currentPage, setCurrentPage] = useState(undefined)
 
     const {getPageFromId, allDataLoaded} = useContext(LoadingContext)
 
@@ -48,8 +47,7 @@ function PlaylistMain() {
         setIndex(index)
     }, [])
 
-    const {expanded, setExpanded} = useContext(ListContext)
-    const defExpanded = useDeferredValue(expanded)
+    const [expanded, setExpanded] = useState(false)
 
     document.title = 'lockpicking.tv - ' + pageData?.title
 
@@ -67,19 +65,20 @@ function PlaylistMain() {
 
     const {width} = useWindowSize()
     const smallWindow = width <= 600
-
     const pagePadding = !smallWindow
         ? '24px 24px 32px 24px'
         : '28px 8px 32px 8px'
 
-    const widths = [440, 600, 800, 1200, 9999]
-    const widthIndex = widths.indexOf(widths.find(option => {
-        return option >= width
-    }))
-    const appBarHeights = [407, 430, 530, 640, 640]
-    const [appBarHeight, setAppBarHeight] = useState(appBarHeights[widthIndex])
-    if (document.getElementById('mainPlayer') && appBarHeight !== document.getElementById('mainPlayer').offsetHeight) {
-        setAppBarHeight(document.getElementById('mainPlayer').offsetHeight)
+    const [playerHeight, setPlayerHeight] = useState(0)
+
+    const playerOnlyHeight =  document.getElementById('playerCard') ?  document.getElementById('playerCard').offsetHeight : 1
+    const videoStatsHeight =  expanded ?  56 : 0
+    const fullHeight = playerOnlyHeight + videoStatsHeight
+
+    if (document.getElementById('spacerDiv') && playerHeight !== fullHeight) {
+        setPlayerHeight(fullHeight)
+        document.getElementById('spacerDiv').height = fullHeight
+        window.scrollTo(0, 0)
     }
 
     const [init, setInit] = useState(false)
@@ -89,21 +88,22 @@ function PlaylistMain() {
             setPlaying(visibleItems[0]?.id)
             setIndex(0)
             setCurrentPage(page)
-            document.getElementById('grid').scroll(0, appBarHeight)
             setInit(true)
         }
-    }, [appBarHeight, index, init, mainItem, visibleItems, page, currentPage])
+    }, [index, init, mainItem, visibleItems, page, currentPage])
 
     return (
-        <React.Fragment>
+        <div id='fullPage'>
             <Nav title='lockpicking.tv - {pageData.title}' route='pg' displayVideo={mainItem}/>
 
             {(mainItem?.kind === 'youtube#video' && (pageData?.kind === 'singleplaylist' || pageData?.type === 'singleplaylist')) &&
                 <React.Fragment>
                     <PlaylistMainVideo
                         video={mainItem}
+                        expanded={expanded}
+                        setExpanded={setExpanded}
                     />
-                    <div style={{height: appBarHeight}} id='spacerDiv'/>
+                    <div style={{height: playerHeight, transition: 'all .3s ease-in-out'}} id='spacerDiv'/>
                 </React.Fragment>
             }
 
@@ -137,8 +137,6 @@ function PlaylistMain() {
                                     <Grid item xs={4} sm={4} md={4} key={item.id}>
                                         <PlaylistItemCard
                                             video={item}
-                                            expanded={item.id === defExpanded}
-                                            onExpand={setExpanded}
                                             handlePlaylistClick={handlePlaylistClick}
                                             index={index}
                                             playing={playing}
@@ -152,7 +150,7 @@ function PlaylistMain() {
                     </div>
                 </div>
             }
-        </React.Fragment>
+        </div>
 
     )
 }

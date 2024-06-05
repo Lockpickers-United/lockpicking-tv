@@ -1,12 +1,16 @@
-import React, {useContext} from 'react'
+import React, {useCallback, useContext} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import ReactPlayer from 'react-player/youtube'
 import VideoStats from './VideoStats.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import {styled} from '@mui/material/styles'
+import IconButton from '@mui/material/IconButton'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import Collapse from '@mui/material/Collapse'
 
-const PlaylistMainVideo = ({video}) => {
+const PlaylistMainVideo = ({video, expanded, setExpanded}) => {
 
     if (!video) {
         return null
@@ -15,15 +19,27 @@ const PlaylistMainVideo = ({video}) => {
     const {getChannelFromId} = useContext(LoadingContext)
     const channel = getChannelFromId(video?.channelId)
 
-    const {width} = useWindowSize()
+    const ExpandMore = styled((props) => {
+        const {expand, ...other} = props
+        return <IconButton {...other} />
+    })(({theme, expand}) => ({
+        transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+        marginLeft: 'auto',
+        transition: theme.transitions.create('transform', {
+            duration: theme.transitions.duration.shortest
+        })
+    }))
 
+    const handleChange = useCallback(() => {
+        setExpanded(!expanded)
+    }, [expanded, setExpanded])
+
+    const {width} = useWindowSize()
     const widths = [440, 600, 800, 1200, 9999]
     const widthIndex = widths.indexOf(widths.find(option => {
         return option >= width
     }))
     const videoSizes = [[220, 440], [247, 440], [337, 600], [450, 800], [450, 800]]
-
-    // videoSizes[widthIndex][0]
 
     const smallWindow = width <= 600
     const avatarSize = smallWindow ? 50 : 50
@@ -51,7 +67,7 @@ const PlaylistMainVideo = ({video}) => {
             width: '100%',
             borderRadius: 0
         }}>
-            <CardContent style={{padding: '8px 0px 5px 0px', textAlign: 'center'}}>
+            <CardContent style={{padding: '8px 0px 5px 0px', textAlign: 'center'}} id='playerCard'>
                 <div style={{
                     height: videoSizes[widthIndex][0],
                     maxWidth: videoSizes[widthIndex][1],
@@ -82,7 +98,7 @@ const PlaylistMainVideo = ({video}) => {
                     }}>
                         <a href={channelLink} target='_blank' rel='noopener noreferrer'
                            style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
-                            <img src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
+                            <img src={channel.snippet.thumbnails.default.url} alt='icon' height={avatarSize} width={avatarSize}
                                  style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
                         </a>
                     </div>
@@ -103,11 +119,22 @@ const PlaylistMainVideo = ({video}) => {
                                 By: {video.channelOwner}
                             </a>
                         </div>
-
                     </div>
+                    <div style={{width: 40, display: 'flex', placeItems: 'center'}}>
+                        <ExpandMore style={{height: 40}} onClick={handleChange}>
+                            <ExpandMoreIcon/>
+                        </ExpandMore>
+                    </div>
+
                 </div>
-                <VideoStats video={video}/>
             </CardContent>
+            <Collapse in={expanded} timeout='auto' unmountOnExit>
+                <CardContent style={{textAlign: 'left', padding: '0px 0px 10px 0px', color:'#fff'}} id='videoStats'>
+                    <VideoStats video={video}/>
+                </CardContent>
+            </Collapse>
+
+
         </Card>
     )
 }

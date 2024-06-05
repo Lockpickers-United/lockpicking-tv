@@ -53,7 +53,7 @@ const PlaylistCard = ({playlist, expanded}) => {
 
     const {width} = useWindowSize()
     const smallWindow = width <= 500
-    const avatarSize = smallWindow ? 40 : 60
+    const avatarSize = smallWindow ? 40 : 50
     const avatarMargin = smallWindow ? '0px 10px 0px 0px' : '0px 10px 5px 0px'
 
     const headerFlexStyle = smallWindow
@@ -100,7 +100,7 @@ const PlaylistCard = ({playlist, expanded}) => {
                 </div>
                 <div style={headerFlexStyle}>
                     <div style={{height: avatarSize, margin: avatarMargin}}>
-                        <img src={channel?.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
+                        <img src={channel?.snippet.thumbnails.default.url} alt='icon' height={avatarSize} width={avatarSize}
                              style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
                     </div>
                     <div style={{

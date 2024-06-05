@@ -38,7 +38,6 @@ const PlaylistItemCard = ({video, handlePlaylistClick, index, playing}) => {
                             flexDirection: 'column',
                             backgroundColor: backgroundColor
                         }}>
-
                             {index + 1}
                         </div>
                     </a>

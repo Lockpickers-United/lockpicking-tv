@@ -6,14 +6,13 @@ import VersionCheckerCode from '../app/VersionCheckerCode.jsx'
 import Tracker from '../app/Tracker.jsx'
 import SearchBox from './SearchBox.jsx'
 import GuideMenu from '../youtube/GuideMenu.jsx'
-import PlaylistMainVideo from '../youtube/PlaylistMainVideo.jsx'
 
-function Nav({extras,displayVideo}) {
+function Nav({extras}) {
 
     return (
         <React.Fragment>
-            <AppBar position='fixed' style={{display:'flex', placeItems:'center'}} id='appBar'>
-                <div style={{padding: 10, width:'100%', maxWidth:1200}}>
+            <AppBar position='fixed' style={{display: 'flex', placeItems: 'center'}} id='appBar'>
+                <div style={{padding: 10, width: '100%', maxWidth: 1200}}>
                     <div style={{display: 'flex', width: '100%', marginTop: 5}}>
                         <div style={{marginRight: 20, marginLeft: 5}}>
                             <GuideMenu/>
@@ -33,13 +32,10 @@ function Nav({extras,displayVideo}) {
                         </div>
                     </div>
                 </div>
-                { displayVideo===0 &&
-                <PlaylistMainVideo video={displayVideo}/>
-                }
             </AppBar>
 
             {/* Dummy toolbar to help content place correctly below this */}
-            <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)', minHeight:61}}/>
+            <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)', minHeight: 61}}/>
 
             <ScrollToTopButton/>
 
