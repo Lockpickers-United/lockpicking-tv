@@ -63,7 +63,7 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
         <React.Fragment>
             {separator &&
                 <TableRow>
-                    <TableCell>
+                    <TableCell style={{padding: 0}}>
                         <div style={{height: 1}}/>
                     </TableCell>
                 </TableRow>

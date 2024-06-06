@@ -3,10 +3,12 @@ import Stack from '@mui/material/Stack'
 import AppContext from '../app/AppContext'
 import MenuConfig from '../nav/MenuConfig.jsx'
 import LPTVheader from '../assets/LPTVlogo-tvset'
-import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
-import GuideItem from './GuideItem.jsx'
+import {Drawer, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
+import GuidePageItem from './GuidePageItem.jsx'
 import dayjs from 'dayjs'
-import {useContext, useState} from 'react'
+import {useCallback, useContext, useState} from 'react'
+import useWindowSize from '../util/useWindowSize.jsx'
+import FilterContext from '../context/FilterContext.jsx'
 
 export default function GuideMain() {
 
@@ -14,23 +16,73 @@ export default function GuideMain() {
     const {beta} = useContext(AppContext)
     const [openTitle, setOpenTitle] = useState('More from LPU') // TODO: don't do this once there are more
 
-    const now = dayjs().format('h:mma')
+    const {filters} = useContext(FilterContext)
+    const {guide} = filters
+
+    const {width} = useWindowSize()
+    const smallWindow = width <= 800
+    const showGuide = !!guide && !smallWindow
+
+    const [open, setOpen] = useState(showGuide)
+
+    const openDrawer = useCallback(() => {
+        setOpen(true)
+        // Clear current focus to prevent weird issues on mobile
+        document.activeElement.blur()
+    }, [])
+
+    const closeDrawer = useCallback(() => setOpen(false), [])
+
+    const now = dayjs()
+    const nowString = now.format('h:mma')
+    const minute = now.minute()
+    const nextMinutes = minute < 30
+        ? 30 - minute
+        : 60 - minute
+    const times = [
+        now.add(nextMinutes, 'minute').format('h:mma'),
+        now.add(nextMinutes + 30, 'minute').format('h:mma'),
+        now.add(nextMinutes + 60, 'minute').format('h:mma')
+    ]
+
+    const single = smallWindow
+    const headerPadding = smallWindow ? '22px 10px 10px 10px' : '22px 50px 10px 10px'
+
+    const introCopy = smallWindow
+        ? 'Showcasing video content from across the locksport community. Remember, never pick a lock in use & never pick a lock you don\'t own.'
+        : 'This site is an educational resource for those involved in the hobby of lockpicking and lock manipulation. ' +
+        'Please note that it is illegal in many areas for non-professional to pick locks that are actively securing something. ' +
+        'Respect the cardinal rules of locksport: never pick a lock in use, never pick a lock you don\'t own.'
+
+    //const handleGuideClose = useCallback(() => setGuideOpen(false),[setGuideOpen])
 
     return (
+        <Drawer
+            anchor='top'
+            open={open}
+            onOpen={openDrawer}
+            onClose={closeDrawer}
+        >
+
         <Stack direction='column' style={{minWidth: 250}}>
-            <div style={{
-                padding: '12px 0px 6px 10px',
+            <div onClick={closeDrawer} style={{
+                padding: headerPadding,
                 margin: '0px',
                 backgroundColor: '#292929',
                 borderBottom: '1px solid #000',
-                display:'flex'
+                display: 'flex',
+                alignItems: 'center'
             }}>
-                <div style={{marginLeft:5}}>
-                    <LPTVheader fill={'#fff'} style={{width: 110, position: 'relative'}}/>
+                <div style={{marginLeft: 5, paddingTop: 0}}>
+                    <LPTVheader style={{width: 110, position: 'relative'}}/>
                 </div>
-                <div style={{width: 200, marginLeft: 30, marginRight:10, paddingTop: 32, lineHeight: '1.3rem'}}>
+                <div style={{
+                    width: '100%',
+                    marginLeft: 30,
+                    lineHeight: '1.3rem'
+                }}>
                     <span style={{fontSize: '1.1rem', fontWeight: 600}}>lockpicking.tv</span><br/>
-                    Showcasing video content from across the locksport community.
+                    {introCopy}
                 </div>
             </div>
 
@@ -41,20 +93,34 @@ export default function GuideMain() {
                         <TableHead>
                             <TableRow>
                                 <TableCell sx={{padding: '0px 0px 0px 14px', fontWeight: 600}}>Today</TableCell>
-                                <TableCell sx={{padding: '0px 0px 0px 10px', fontWeight: 600}}>{now}</TableCell>
+                                {!single &&
+                                    <TableCell
+                                        sx={{padding: '0px 0px 0px 10px', fontWeight: 600, display: 'flex', border: 0}}>
+                                        <div style={{width: '25%'}}>{nowString}</div>
+                                        <div style={{width: '25%'}}>{times[0]}</div>
+                                        <div style={{width: '25%'}}>{times[1]}</div>
+                                        <div style={{width: '25%'}}>{times[2]}</div>
+                                    </TableCell>
+                                }
+                                {single &&
+                                    <TableCell sx={{padding: '0px 0px 0px 10px', fontWeight: 600, display: 'flex'}}>
+                                        <div style={{width: '100'}}>{nowString}</div>
+                                    </TableCell>
+                                }
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {menuConfig
                                 .filter(menuItem => beta || !menuItem.beta)
                                 .map((menuItem, index) =>
-                                    <GuideItem
+                                    <GuidePageItem
                                         key={index}
                                         menuItem={menuItem}
                                         openTitle={openTitle}
                                         onOpen={setOpenTitle}
-                                        onClose={null}
+                                        onClose={closeDrawer}
                                         index={index}
+                                        single={single}
                                     />
                                 )}
                         </TableBody>
@@ -64,5 +130,7 @@ export default function GuideMain() {
                 <div style={{height: 6}}/>
 
             </div>
-        </Stack>    )
+        </Stack>
+        </Drawer>
+            )
 }

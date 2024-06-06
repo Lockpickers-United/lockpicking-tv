@@ -68,12 +68,20 @@ const PlaylistMainVideo = ({video, expanded, setExpanded}) => {
             borderRadius: 0
         }}>
             <CardContent style={{padding: '8px 0px 5px 0px', textAlign: 'center'}} id='playerCard'>
+                <div style={{width: '100%', display: 'flex', placeItems: 'center'}}>
+                    <span style={{marginLeft:10}}>video player</span>
+                    <ExpandMore style={{height: 40}} onClick={handleChange} expand={expanded}>
+                        <ExpandMoreIcon/>
+                    </ExpandMore>
+                </div>
+            </CardContent>
+            <Collapse in={expanded} timeout='auto' unmountOnExit>
                 <div style={{
                     height: videoSizes[widthIndex][0],
                     maxWidth: videoSizes[widthIndex][1],
                     marginRight: 'auto', marginLeft: 'auto'
                 }}>
-                    <ReactPlayer
+                <ReactPlayer
                         url={videoUrl}
                         width='100%'
                         height='100%'
@@ -82,7 +90,6 @@ const PlaylistMainVideo = ({video, expanded, setExpanded}) => {
                         controls
                     />
                 </div>
-
                 <div style={headerFlexStyle}>
                     <div style={{
                         borderRadius: '50%',
@@ -120,16 +127,8 @@ const PlaylistMainVideo = ({video, expanded, setExpanded}) => {
                             </a>
                         </div>
                     </div>
-                    <div style={{width: 40, display: 'flex', placeItems: 'center'}}>
-                        <ExpandMore style={{height: 40}} onClick={handleChange}>
-                            <ExpandMoreIcon/>
-                        </ExpandMore>
-                    </div>
-
                 </div>
-            </CardContent>
-            <Collapse in={expanded} timeout='auto' unmountOnExit>
-                <CardContent style={{textAlign: 'left', padding: '0px 0px 10px 0px', color:'#fff'}} id='videoStats'>
+                <CardContent style={{textAlign: 'left', padding: '0px 0px 10px 0px', color: '#fff'}} id='videoStats'>
                     <VideoStats video={video}/>
                 </CardContent>
             </Collapse>

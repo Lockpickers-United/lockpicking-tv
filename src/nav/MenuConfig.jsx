@@ -30,6 +30,7 @@ function MenuConfig() {
 
     const channelItems = [
         {
+            separator: true,
             title: 'Featured Channels',
             icon: <GradeIcon fontSize='small'/>,
             path: '/featured'
@@ -50,8 +51,10 @@ function MenuConfig() {
         .filter(page => {
             return page.id.substring(0, 3) !== 'pl_'
         })
-        .map(page => {
+        .map((page, index) => {
             const safeName = page.title.replace(/[\s/]/g, '_').replace(/\W/g, '')
+
+            const separator = index === 0
 
             const pageIcon = page.type === 'multipleplaylists'
                 ? <PlaylistPlayIcon fontSize='small'/>
@@ -63,6 +66,7 @@ function MenuConfig() {
 
             return {
                 title: page.title,
+                separator: separator,
                 icon: pageIcon,
                 path: `/${pageRoute}?page=${page.id}&name=${safeName}`
             }
@@ -77,6 +81,7 @@ function MenuConfig() {
                 title: 'More from LPU',
                 icon: <LPU_logo style={{height: 20}}/>,
                 separator: true,
+                full: true,
                 expanded: true,
                 children: [
                     {

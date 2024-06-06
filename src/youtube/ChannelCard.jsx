@@ -98,7 +98,7 @@ const Channel = ({channel, expanded, onExpand}) => {
             <CardActions sx={{padding: '0px 5px'}}>
                 <div style={{width: '100%', display: 'flex', placeItems:'center'}}>
                     <ChannelStats channel={channel}/>
-                    <ExpandMore style={{height:40}} onClick={handleChange}>
+                    <ExpandMore style={{height:40}} onClick={handleChange} expand={expanded}>
                         <ExpandMoreIcon style={{color: expandColor}} />
                     </ExpandMore>
                 </div>

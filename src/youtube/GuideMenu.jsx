@@ -12,6 +12,7 @@ import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '
 import GuideItem from './GuideItem.jsx'
 import dayjs from 'dayjs'
 import FilterContext from '../context/FilterContext.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 function GuideMenu() {
 
@@ -19,8 +20,14 @@ function GuideMenu() {
 
     const {filters} = useContext(FilterContext)
     const {guide} = filters
+
+    const {width} = useWindowSize()
+    const smallWindow = width <= 800
+
+    const showGuide = !!guide && smallWindow
+
     const {beta} = useContext(AppContext)
-    const [open, setOpen] = useState(!!guide)
+    const [open, setOpen] = useState(showGuide)
     const [openTitle, setOpenTitle] = useState('More from LPU') // TODO: don't do this once there are more
     const now = dayjs().format('h:mma')
 
@@ -29,10 +36,10 @@ function GuideMenu() {
 
     const openDrawer = useCallback(() => {
         setOpen(true)
-
         // Clear current focus to prevent weird issues on mobile
         document.activeElement.blur()
     }, [])
+
     const closeDrawer = useCallback(() => setOpen(false), [])
 
     return (

@@ -6,10 +6,11 @@ import VersionCheckerCode from '../app/VersionCheckerCode.jsx'
 import Tracker from '../app/Tracker.jsx'
 import SearchBox from './SearchBox.jsx'
 import GuideMenu from '../youtube/GuideMenu.jsx'
+import GuideMain from '../youtube/GuideMain.jsx'
 
 function Nav({extras}) {
 
-    return (
+        return (
         <React.Fragment>
             <AppBar position='fixed' style={{display: 'flex', placeItems: 'center'}} id='appBar'>
                 <div style={{padding: 10, width: '100%', maxWidth: 1200}}>
@@ -38,6 +39,8 @@ function Nav({extras}) {
             <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)', minHeight: 61}}/>
 
             <ScrollToTopButton/>
+
+                <GuideMain/>
 
         </React.Fragment>
     )
