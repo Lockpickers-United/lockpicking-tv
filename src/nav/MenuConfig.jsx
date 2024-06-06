@@ -14,6 +14,20 @@ function MenuConfig() {
 
     const {pageNavData} = useContext(LoadingContext)
 
+    const videoItems = [
+        {
+            title: 'New Videos',
+            icon: <NewReleasesIcon fontSize='small'/>,
+            path: '/videos?page=newVideos'
+        },
+        {
+            title: 'Popular Videos',
+            icon: <FavoriteIcon fontSize='small'/>,
+            path: '/videos?page=popular'
+        }
+
+    ]
+
     const channelItems = [
         {
             title: 'Featured Channels',
@@ -30,20 +44,6 @@ function MenuConfig() {
             icon: <MenuBookIcon fontSize='small'/>,
             path: '/full'
         }
-    ]
-
-    const videoItems = [
-        {
-            title: 'New Videos',
-            icon: <NewReleasesIcon fontSize='small'/>,
-            path: '/videos?page=newVideos'
-        },
-        {
-            title: 'Popular Videos',
-            icon: <FavoriteIcon fontSize='small'/>,
-            path: '/videos?page=popular'
-        }
-
     ]
 
     const pageItems = pageNavData
@@ -70,8 +70,8 @@ function MenuConfig() {
 
     return (
         [
-            ...channelItems,
             ...videoItems,
+            ...channelItems,
             ...pageItems,
             {
                 title: 'More from LPU',

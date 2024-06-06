@@ -57,7 +57,6 @@ export default function ChannelsMain() {
     const sets = ['featured', 'new', 'full']
     let initialIndex = sets.indexOf(channelSet)
 
-
     const theme = useTheme()
     const [value, setValue] = React.useState(initialIndex)
 

@@ -14,12 +14,6 @@ import {videoSortFields} from '../data/sortFields'
 
 function VideosMain() {
 
-    function cl(variableString, newLine) {  //eslint-disable-line
-        const variableValue = eval(variableString)
-        console.log(variableString, variableValue)
-        if (newLine) { console.log('\n') }
-    }
-
     const {visibleItems} = useContext(DataContext)
     const {filters} = useContext(FilterContext)
     const {page} = filters
@@ -29,11 +23,8 @@ function VideosMain() {
         : 'New Videos'
 
     const pageDescription = page === 'popular'
-        ? 'The most popular videos from each of our Featured Channels.'
-        : 'New videos from our Featured Channels.'
-
-
-    cl('visibleItems.length')
+        ? 'The most popular videos from each of our New & Featured Channels.'
+        : 'The latest videos from our New & Featured Channels.'
 
     const [currentPage, setCurrentPage] = useState(undefined)
 
@@ -92,10 +83,9 @@ function VideosMain() {
             setCurrentPage(page)
             setInit(true)
         }
-    }, [index, init, mainItem, visibleItems, page, currentPage])
+    }, [index, init, mainItem, visibleItems, page, currentPage, playerHeight, fullHeight])
 
     const navExtras = <SortButton sortValues={videoSortFields}/>
-
 
     return (
         <div id='fullPage'>

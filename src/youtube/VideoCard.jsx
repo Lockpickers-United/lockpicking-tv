@@ -58,14 +58,25 @@ const VideoCard = ({video, handlePlaylistClick, index}) => {
                         <div style={{marginTop: 3}}>
                             <a href={channelLink} target='_blank' rel='noopener noreferrer'
                                style={{color: textColor, textDecoration: 'none', fontSize: '0.83rem', fontWeight: 400}}>
-                                {videoAge}, by {video.channelOwner}
+                                {videoAge}, by <b>{video.channelOwner}</b>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div style={{display: 'flex', marginLeft: 20}}>
-                    <img src={video.thumbnail} height='120' alt='Video preview'/>
-                    <VideoStats video={video} vertical={true}/>
+                <div style={{display: 'flex', marginLeft: 10}}>
+
+                    <div style={{
+                        flexGrow: 1,
+                        backgroundImage: `url(${video.thumbnail})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'contain',
+                        backgroundRepeat: 'no-repeat',
+                        height: 130
+                    }} onClick={() => {
+                        handlePlaylistClick(video, index)
+                    }}>
+                    </div>
+                    <div style={{margin: '0px 10px'}}><VideoStats video={video} vertical={true}/></div>
                 </div>
             </CardContent>
         </Card>

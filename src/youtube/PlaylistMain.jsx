@@ -10,6 +10,8 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import {useNavigate} from 'react-router-dom'
 import FilterContext from '../context/FilterContext.jsx'
+import SortButton from '../filters/SortButton.jsx'
+import {videoSortFields} from '../data/sortFields'
 
 function PlaylistMain() {
     const {visibleItems, pageData} = useContext(DataContext)
@@ -92,9 +94,11 @@ function PlaylistMain() {
         }
     }, [index, init, mainItem, visibleItems, page, currentPage])
 
+    const navExtras = <SortButton sortValues={videoSortFields}/>
+
     return (
         <div id='fullPage'>
-            <Nav title='lockpicking.tv - {pageData.title}' route='pg' displayVideo={mainItem}/>
+            <Nav title='lockpicking.tv - {pageData.title}' route='pg' displayVideo={mainItem} extras={navExtras}/>
 
             {(mainItem?.kind === 'youtube#video' && (pageData?.kind === 'singleplaylist' || pageData?.type === 'singleplaylist')) &&
                 <React.Fragment>

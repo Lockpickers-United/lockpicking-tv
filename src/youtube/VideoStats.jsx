@@ -10,8 +10,16 @@ const VideoStats = ({video, vertical}) => {
     const statMargin = smallWindow ? 0 : 0
     const flexStyle = vertical ? {marginTop: 0} : {display: 'flex', marginTop: 0}
 
+    const textStyle = vertical
+        ? {fontSize: '0.9rem', lineHeight: 1.1}
+        : {fontSize: '0.95rem', lineHeight: 1.25}
+
     function abbreviate(number) {
-        return new Intl.NumberFormat( 'en-US', { maximumFractionDigits: 1, notation: 'compact' , compactDisplay: 'short' }).format(number)
+        return new Intl.NumberFormat('en-US', {
+            maximumFractionDigits: 1,
+            notation: 'compact',
+            compactDisplay: 'short'
+        }).format(number)
     }
 
     if (!video) {
@@ -21,25 +29,17 @@ const VideoStats = ({video, vertical}) => {
         <div style={{...flexStyle, width: '100%', textAlign: 'center'}}>
             {video.viewCount &&
                 <FieldValue
-                name='views'
-                value={<Typography
-                    style={{
-                        fontSize: '0.95rem',
-                        lineHeight: 1.25
-                    }}>{abbreviate(video.viewCount)}</Typography>}
-                headerStyle={{color: '#bbb'}}
-                textStyle={{color: '#eee'}}
-                style={{marginRight: statMargin, flexGrow: 1}}
-            />
+                    name='views'
+                    value={<Typography style={textStyle}>{abbreviate(video.viewCount)}</Typography>}
+                    headerStyle={{color: '#bbb'}}
+                    textStyle={{color: '#eee'}}
+                    style={{marginRight: statMargin, flexGrow: 1}}
+                />
             }
             {video.likeCount &&
                 <FieldValue
                     name='likes'
-                    value={<Typography
-                        style={{
-                            fontSize: '0.95rem',
-                            lineHeight: 1.25
-                        }}>{abbreviate(video.likeCount)}</Typography>}
+                    value={<Typography style={textStyle}>{abbreviate(video.likeCount)}</Typography>}
                     headerStyle={{color: '#bbb'}}
                     textStyle={{color: '#eee'}}
                     style={{marginRight: statMargin, flexGrow: 1}}
@@ -47,16 +47,12 @@ const VideoStats = ({video, vertical}) => {
             }
             {video.commentCount &&
                 <FieldValue
-                name='comments'
-                value={<Typography
-                    style={{
-                        fontSize: '0.95rem',
-                        lineHeight: 1.25
-                    }}>{abbreviate(video.commentCount)}</Typography>}
-                headerStyle={{color: '#bbb'}}
-                textStyle={{color: '#eee'}}
-                style={{marginRight: 0, flexGrow: 1}}
-            />
+                    name='comments'
+                    value={<Typography style={textStyle}>{abbreviate(video.commentCount)}</Typography>}
+                    headerStyle={{color: '#bbb'}}
+                    textStyle={{color: '#eee'}}
+                    style={{marginRight: 0, flexGrow: 1}}
+                />
             }
         </div>
     )

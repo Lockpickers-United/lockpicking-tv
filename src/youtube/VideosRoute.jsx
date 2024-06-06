@@ -6,7 +6,7 @@ import {channelFilterFields} from '../data/filterFields'
 import VideosMain from './VideosMain.jsx'
 import Footer from '../nav/Footer.jsx'
 
-function PlaylistRoute() {
+function VideosRoute() {
 
     return (
         <FilterProvider filterFields={channelFilterFields}>
@@ -20,4 +20,4 @@ function PlaylistRoute() {
     )
 }
 
-export default PlaylistRoute
+export default VideosRoute

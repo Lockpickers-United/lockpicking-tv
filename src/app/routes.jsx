@@ -5,7 +5,7 @@ import ErrorBoundary from './ErrorBoundary'
 export default [
     {
         path: '/',
-        loader: () => redirect('/featured?guide=true')
+        loader: () => redirect('/videos?page=newVideos&guide=true')
     },
     {
         path: '/featured',
@@ -50,8 +50,15 @@ export default [
         }
     },
     {
+        path: '/guide',
+        lazy: async () => {
+            const {default: GuideRoute} = await import('../youtube/GuideRoute.jsx')
+            return {element: <GuideRoute/>}
+        }
+    },
+    {
         path: '*',
-        loader: () => redirect('/featured?guide=true')
+        loader: () => redirect('/videos?page=newVideos&guide=true')
     },
 ].map(route => ({...route, errorElement: <ErrorBoundary/>}))
 

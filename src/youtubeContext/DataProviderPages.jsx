@@ -27,6 +27,7 @@ export function DataProvider({children}) {
     })
 
 
+
     const filteredItems = useMemo(() => {
 
         // Filters as an array
@@ -65,15 +66,28 @@ export function DataProvider({children}) {
         // console.log('searched', searched)
 
         return searched.sort((a, b) => {
-                if (sort === 'new') {
-                    return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
-                        || a.title.localeCompare(b.title)
-                } else {
-                    return 1
-                }
-            })
+            if (sort === 'views') {
+                return parseInt(b.viewCount) - parseInt(a.viewCount)
+                    || a.title.localeCompare(b.title)
+            } else if (sort === 'likes') {
+                return parseInt(b.likeCount) - parseInt(a.likeCount)
+                    || a.title.localeCompare(b.title)
+            } else if (sort === 'comments') {
+                return parseInt(b.commentCount) - parseInt(a.commentCount)
+                    || a.title.localeCompare(b.title)
+            } else if (sort === 'channel') {
+                return a.channelOwner.localeCompare(b.channelOwner)
+                    || parseInt(b.commentCount) - parseInt(a.commentCount)
+            } else if (sort === 'new') {
+                return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
+                    || a.title.localeCompare(b.title)
+            } else {
+                return 1
+            }
+        })
 
     }, [search, filteredItems, sort])
+
 
     const getItemFromId = useCallback(channelId => {
         return mappedItems?.find(({id}) => id === channelId)

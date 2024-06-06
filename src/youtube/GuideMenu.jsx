@@ -91,8 +91,6 @@ function GuideMenu() {
                                                 index={index}
                                             />
                                         )}
-
-
                                 </TableBody>
                             </Table>
                         </TableContainer>

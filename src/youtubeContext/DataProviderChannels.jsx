@@ -30,6 +30,7 @@ export function DataProvider({children, channelSet}) {
             thumbnail: channel.snippet.thumbnails.default.url,
             customUrl: channel.snippet.customUrl,
             publishedAt: channel.snippet.publishedAt,
+            latestVideo: channel.latestVideo,
             fuzzy: channel.snippet.title + ', ' + channel.snippet.customUrl
         }
     })
@@ -83,6 +84,9 @@ export function DataProvider({children, channelSet}) {
                         || a.title.localeCompare(b.title)
                 } else if (sort === 'new') {
                     return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
+                        || a.title.localeCompare(b.title)
+                } else if (sort === 'latest') {
+                    return Math.floor(dayjs(b.latestVideo).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.latestVideo).valueOf() / 60000) * 60000
                         || a.title.localeCompare(b.title)
                 } else {
                     return a.title.localeCompare(b.title)

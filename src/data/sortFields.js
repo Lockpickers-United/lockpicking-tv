@@ -3,9 +3,9 @@ export const channelSortFields = [
     {label: 'Subscribers', value: 'subscribers'},
     {label: 'Videos', value: 'videos'},
     {label: 'Views', value: 'views'},
+    {label: 'Latest Video', value: 'latest'},
     {label: 'New Channels', value: 'new'},
 ]
-
 
 export const videoSortFields = [
     {label: 'Default', value: undefined},
