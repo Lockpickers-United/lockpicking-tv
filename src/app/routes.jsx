@@ -8,24 +8,10 @@ export default [
         loader: () => redirect('/videos?page=newVideos&guide=true')
     },
     {
-        path: '/featured',
+        path: '/channels',
         lazy: async () => {
             const {default: ChannelsRoute} = await import('../youtube/ChannelsRoute.jsx')
-            return {element: <ChannelsRoute channelSet={'featured'}/>}
-        }
-    },
-    {
-        path: '/new',
-        lazy: async () => {
-            const {default: ChannelsRoute} = await import('../youtube/ChannelsRoute.jsx')
-            return {element: <ChannelsRoute channelSet={'new'}/>}
-        }
-    },
-    {
-        path: '/full',
-        lazy: async () => {
-            const {default: ChannelsRoute} = await import('../youtube/ChannelsRoute.jsx')
-            return {element: <ChannelsRoute channelSet={'full'}/>}
+            return {element: <ChannelsRoute/>}
         }
     },
     {

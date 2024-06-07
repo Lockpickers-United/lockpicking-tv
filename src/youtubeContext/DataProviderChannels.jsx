@@ -6,15 +6,16 @@ import fuzzysort from 'fuzzysort'
 import removeAccents from 'remove-accents'
 import dayjs from 'dayjs'
 
-export function DataProvider({children, channelSet}) {
+export function DataProvider({children}) {
 
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, guide, showAll, page, ...filters} = allFilters
     const {allChannels, featuredChannels, newChannels} = useContext(LoadingContext)
 
-    const channels = channelSet === 'featured'
+    const channelSet = page
+    const channels = page === 'featured'
         ? featuredChannels
-        : channelSet === 'new'
+        : page === 'new'
             ? newChannels
             : allChannels
 

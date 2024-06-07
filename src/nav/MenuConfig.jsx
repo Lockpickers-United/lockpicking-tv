@@ -33,17 +33,17 @@ function MenuConfig() {
             separator: true,
             title: 'Featured Channels',
             icon: <GradeIcon fontSize='small'/>,
-            path: '/featured'
+            path: '/channels?page=featured'
         },
         {
             title: 'New & Noteworthy',
             icon: <BabyChangingStationIcon fontSize='small'/>,
-            path: '/new'
+            path: '/channels?page=new'
         },
         {
             title: 'Full Directory',
             icon: <MenuBookIcon fontSize='small'/>,
-            path: '/full'
+            path: '/channels?page=full'
         }
     ]
 

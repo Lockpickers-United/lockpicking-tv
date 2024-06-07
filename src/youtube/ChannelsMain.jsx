@@ -5,7 +5,6 @@ import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import {useNavigate} from 'react-router-dom'
 import {useCallback, useContext} from 'react'
 
 import Channels from './Channels.jsx'
@@ -14,6 +13,7 @@ import DataContext from '../app/DataContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Tracker from '../app/Tracker.jsx'
+import FilterContext from '../context/FilterContext.jsx'
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props
@@ -51,27 +51,29 @@ function a11yProps(index) {
 export default function ChannelsMain() {
 
     const {allDataLoaded} = useContext(LoadingContext)
-    const {visibleChannels, channelSet} = useContext(DataContext)
-    const navigate = useNavigate()
+    const {visibleChannels} = useContext(DataContext)
+
+    const {filters, setFilters} = useContext(FilterContext)
+    const {page} = filters
 
     const sets = ['featured', 'new', 'full']
-    let initialIndex = sets.indexOf(channelSet)
+    let initialIndex = sets.indexOf(page) >0 ? sets.indexOf(page) : 0
 
     const theme = useTheme()
     const [value, setValue] = React.useState(initialIndex)
 
-    if (value !== sets.indexOf(channelSet)) {
-        setValue(sets.indexOf(channelSet))
+    if (value !== sets.indexOf(page)) {
+        setValue(sets.indexOf(page))
     }
 
     const titleNames = ['Featured Channels', 'New & Noteworthy', 'Full Directory']
     document.title = 'lockpicking.tv - ' + titleNames[value]
 
     const handleChange = useCallback((event, newValue) => {
-        setValue(newValue)
-        const routes = ['/featured', '/new', '/full']
-        navigate(routes[newValue])
-    }, [navigate])
+        setValue(1)
+        const pages = ['featured', 'new', 'full']
+        setFilters({page: pages[newValue]})
+    }, [setFilters])
 
     const {width} = useWindowSize()
     const smallWindow = width <= 800
@@ -108,7 +110,7 @@ export default function ChannelsMain() {
                         {(allDataLoaded && visibleChannels) &&
                             <Channels channels={visibleChannels}/>
                         }
-                        <Tracker feature='page' name={'featured'}/>
+                        <Tracker feature='channels' name={'featured'}/>
                     </React.Fragment>
                 </TabPanel>
                 <TabPanel value={value} index={1} dir={theme.direction} style={{padding: 0}}>
@@ -118,7 +120,7 @@ export default function ChannelsMain() {
                     {(allDataLoaded && visibleChannels) &&
                         <Channels channels={visibleChannels}/>
                     }
-                    <Tracker feature='page' name={'new'}/>
+                    <Tracker feature='channels' name={'new'}/>
                 </TabPanel>
                 <TabPanel value={value} index={2} dir={theme.direction} style={{padding: 0}}>
                     {!(allDataLoaded && visibleChannels) &&
@@ -127,7 +129,7 @@ export default function ChannelsMain() {
                     {(allDataLoaded && visibleChannels) &&
                         <Channels channels={visibleChannels}/>
                     }
-                    <Tracker feature='page' name={'full'}/>
+                    <Tracker feature='channels' name={'full'}/>
                 </TabPanel>
             </div>
         </div>

@@ -11,6 +11,7 @@ import {createTheme, ThemeProvider} from '@mui/material/styles'
 import FilterContext from '../context/FilterContext.jsx'
 import SortButton from '../filters/SortButton.jsx'
 import {videoSortFields} from '../data/sortFields'
+import Tracker from '../app/Tracker.jsx'
 
 function VideosMain() {
 
@@ -88,64 +89,66 @@ function VideosMain() {
     const navExtras = <SortButton sortValues={videoSortFields}/>
 
     return (
-        <div id='fullPage'>
-            <Nav title='lockpicking.tv - {pageData.title}' route='vid' extras={navExtras}/>
+        <React.Fragment>
+            <div id='fullPage'>
+                <Nav title='lockpicking.tv - {pageData.title}' route='vid' extras={navExtras}/>
 
-            {(!allDataLoaded || !visibleItems) &&
-                <div style={{marginTop: 30}}>
-                    <LoadingDisplay/>
-                </div>
-            }
+                {(!allDataLoaded || !visibleItems) &&
+                    <div style={{marginTop: 30}}>
+                        <LoadingDisplay/>
+                    </div>
+                }
 
-            {(mainItem?.kind === 'youtube#video') &&
-                <React.Fragment>
-                    <PlaylistMainVideo
-                        video={mainItem}
-                        expanded={expanded}
-                        setExpanded={setExpanded}
-                    />
-                    <div style={{height: playerHeight, transition: 'all 0.4s'}} id='spacerDiv'/>
-                </React.Fragment>
-            }
+                {(mainItem?.kind === 'youtube#video') &&
+                    <React.Fragment>
+                        <PlaylistMainVideo
+                            video={mainItem}
+                            expanded={expanded}
+                            setExpanded={setExpanded}
+                        />
+                        <div style={{height: playerHeight, transition: 'all 0.4s'}} id='spacerDiv'/>
+                    </React.Fragment>
+                }
 
-            {(allDataLoaded && visibleItems) &&
+                {(allDataLoaded && visibleItems) &&
 
-                <div style={{
-                    minWidth: '320px', height: '100%',
-                    padding: pagePadding,
-                    marginLeft: 'auto', marginRight: 'auto', marginTop: 0
-                }}>
+                    <div style={{
+                        minWidth: '320px', height: '100%',
+                        padding: pagePadding,
+                        marginLeft: 'auto', marginRight: 'auto', marginTop: 0
+                    }}>
 
-                    <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
-                        <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
+                        <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
+                            <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
 
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>
                                 {pageTitle}
                             </span><br/>
-                            {pageDescription}
+                                {pageDescription}
+                            </div>
+
+                            <ThemeProvider theme={theme}>
+                                <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
+                                      style={{}} id='grid'>
+                                    {visibleItems.map((item, index) =>
+                                        <Grid item xs={4} sm={4} md={4} key={item.id}>
+                                            <VideoCard
+                                                video={item}
+                                                handlePlaylistClick={handlePlaylistClick}
+                                                index={index}
+                                                listType='videos'
+                                            />
+                                        </Grid>
+                                    )}
+                                </Grid>
+                            </ThemeProvider>
+                            <div style={{display: 'block', clear: 'both'}}/>
                         </div>
-
-                        <ThemeProvider theme={theme}>
-                            <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
-                                  style={{}} id='grid'>
-                                {visibleItems.map((item, index) =>
-                                    <Grid item xs={4} sm={4} md={4} key={item.id}>
-                                        <VideoCard
-                                            video={item}
-                                            handlePlaylistClick={handlePlaylistClick}
-                                            index={index}
-                                            listType='videos'
-                                        />
-                                    </Grid>
-                                )}
-                            </Grid>
-                        </ThemeProvider>
-                        <div style={{display: 'block', clear: 'both'}}/>
                     </div>
-                </div>
-            }
-        </div>
-
+                }
+            </div>
+            <Tracker feature='videos' page={pageTitle}/>
+        </React.Fragment>
     )
 }
 

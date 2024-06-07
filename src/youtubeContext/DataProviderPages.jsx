@@ -26,8 +26,6 @@ export function DataProvider({children}) {
         }
     })
 
-
-
     const filteredItems = useMemo(() => {
 
         // Filters as an array

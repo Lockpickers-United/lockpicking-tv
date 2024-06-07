@@ -6,6 +6,10 @@ function Footer({extras}) {
 
     return (
         <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80, color:'#121212'}}>
+            <a href='https://www.youtube.com/@LockPickersUnited' target='_blank' rel='noopener noreferrer' style={{color:'#121212'}}>
+                LPU YouTube
+            </a>
+            &nbsp;•&nbsp;
             <a href='https://discord.gg/lockpicking' target='_blank' rel='noopener noreferrer' style={{color:'#121212'}}>
                 LPU Discord
             </a>
@@ -26,8 +30,6 @@ function Footer({extras}) {
                 }
             </div>
         </Typography>
-
-
     )
 }
 

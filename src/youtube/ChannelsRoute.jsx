@@ -10,14 +10,14 @@ import {channelSortFields} from '../data/sortFields'
 import SortButton from '../filters/SortButton.jsx'
 
 
-function YoutTubeRoute({channelSet}) {
+function ChannelRoute() {
 
     const extras = <SortButton sortValues={channelSortFields}/>
     return (
         <FilterProvider filterFields={channelFilterFields}>
-                <DataProvider channelSet={channelSet} channels={channelSet}>
+                <DataProvider>
                     <ListProvider>
-                        <Nav title='YouTube Directory' route='yt' extras={extras}/>
+                        <Nav title='YouTube Directory' route='channels' extras={extras}/>
 
                         <div style={{backgroundColor: '#ccc'}}>
                             <ChannelsMain/>
@@ -30,4 +30,4 @@ function YoutTubeRoute({channelSet}) {
     )
 }
 
-export default YoutTubeRoute
+export default ChannelRoute
