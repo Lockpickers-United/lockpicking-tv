@@ -7,10 +7,12 @@ import VideoStats from './VideoStats.jsx'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
-const VideoCard = ({video, handlePlaylistClick, index}) => {
+const VideoCard = ({video, handlePlaylistClick, index, playing, listType}) => {
 
-    const {getChannelFromId} = useContext(LoadingContext)
-    const channel = getChannelFromId(video.channelId)
+    const {getChannelFromId, getPlaylistVideoFromId} = useContext(LoadingContext)
+    const channel = getChannelFromId(video?.channelId)
+    const fullVideo = getPlaylistVideoFromId(video?.id)
+    //console.log(fullVideo)
 
     const {width} = useWindowSize()
     const smallWindow = width <= 500
@@ -18,10 +20,11 @@ const VideoCard = ({video, handlePlaylistClick, index}) => {
     const avatarMargin = smallWindow ? '3px 15px 0px 0px' : '3px 15px 5px 0px'
 
     const channelLink = `https://www.youtube.com/channel/${channel.id}`
+    const backgroundColor = playing === video.id ? '#374ca2' : '#1A2027'
     const textColor = '#fff'
 
     dayjs.extend(relativeTime)
-    const videoAgeString = dayjs().to(dayjs(video.publishedAt))
+    const videoAgeString = fullVideo? dayjs().to(dayjs(fullVideo.publishedAt)) : dayjs().to(dayjs(video.publishedAt))
     //const videoAgeString = dayjs().to(dayjs('2024-06-05T16:00:20Z'))
     const videoAge = videoAgeString.replace(/^(an|a)/, '1')
 
@@ -29,20 +32,40 @@ const VideoCard = ({video, handlePlaylistClick, index}) => {
         <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px', color: textColor}}>
             <CardContent style={{padding: '5px 0px 5px 0px', textAlign: 'center'}}>
                 <div style={{display: 'flex', padding: 10}}>
-                    <div style={{height: avatarSize, margin: avatarMargin}}>
-                        <a href={channelLink} target='_blank' rel='noopener noreferrer'
-                           style={{color: '#fff', textDecoration: 'none'}}>
-                            <img
-                                src={channel.snippet.thumbnails.default.url} alt='icon' height={avatarSize}
-                                width={avatarSize}
-                                style={{
-                                    borderRadius: '50%',
-                                    overflow: 'hidden',
-                                    fontSize: '.7rem',
-                                    minWidth: avatarSize
-                                }}/>
+                    {listType === 'videos' &&
+                        <div style={{height: avatarSize, margin: avatarMargin}}>
+                            <a href={channelLink} target='_blank' rel='noopener noreferrer'
+                               style={{color: '#fff', textDecoration: 'none'}}>
+                                <img
+                                    src={channel.snippet.thumbnails.default.url} alt='icon' height={avatarSize}
+                                    width={avatarSize}
+                                    style={{
+                                        borderRadius: '50%',
+                                        overflow: 'hidden',
+                                        fontSize: '.7rem',
+                                        minWidth: avatarSize
+                                    }}/>
+                            </a>
+                        </div>
+                    }
+                    {listType === 'playlist' &&
+                        <a onClick={() => {
+                            handlePlaylistClick(video, index)
+                        }} style={{color: textColor, textDecoration: 'none', cursor: 'pointer', fontSize: '1.1rem'}}>
+                            <div style={{
+                                borderRadius: '50%',
+                                border: '2px solid #ddd',
+                                height: avatarSize,
+                                width: avatarSize,
+                                minWidth: avatarSize,
+                                margin: avatarMargin,
+                                alignContent: 'center',
+                                backgroundColor: backgroundColor
+                            }}>
+                                {index + 1}
+                            </div>
                         </a>
-                    </div>
+                    }
                     <div style={{
                         fontSize: '1.1rem',
                         lineHeight: '1.3rem',

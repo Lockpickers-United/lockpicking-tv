@@ -28,6 +28,10 @@ export function LoadingProvider({children}) {
         return pagesData?.find(page => page.sectionId === id)
     }, [pagesData])
 
+    const getPlaylistVideoFromId = useCallback((id) => {
+        return videoData?.playlistVideos.find(video => video.id === id)
+    }, [videoData])
+
     const getSectionFromPlaylistId = useCallback((id) => {
         return pagesData?.find(page => page.playlistId === id)
     }, [pagesData])
@@ -77,6 +81,7 @@ export function LoadingProvider({children}) {
         pagesData,
         pageNavData,
         getPageFromId,
+        getPlaylistVideoFromId,
         getSectionFromPlaylistId,
         allVideos,
         newVideos,
@@ -90,6 +95,7 @@ export function LoadingProvider({children}) {
         pagesData,
         pageNavData,
         getPageFromId,
+        getPlaylistVideoFromId,
         getSectionFromPlaylistId,
         allVideos,
         newVideos,

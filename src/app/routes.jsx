@@ -50,13 +50,6 @@ export default [
         }
     },
     {
-        path: '/guide',
-        lazy: async () => {
-            const {default: GuideRoute} = await import('../youtube/GuideRoute.jsx')
-            return {element: <GuideRoute/>}
-        }
-    },
-    {
         path: '*',
         loader: () => redirect('/videos?page=newVideos&guide=true')
     },

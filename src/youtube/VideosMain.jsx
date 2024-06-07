@@ -33,14 +33,14 @@ function VideosMain() {
     const [mainItem, setMainItem] = useState(visibleItems[0])
     const [index, setIndex] = useState(0)
     const [playing, setPlaying] = useState(mainItem?.id) //eslint-disable-line
+    const [expanded, setExpanded] = useState(false)
 
     const handlePlaylistClick = useCallback((item, index) => {
         setPlaying(item.id)
         setMainItem(item)
         setIndex(index)
+        setExpanded(true)
     }, [])
-
-    const [expanded, setExpanded] = useState(false)
 
     document.title = `lockpicking.tv - ${pageTitle}`
 
@@ -64,26 +64,26 @@ function VideosMain() {
 
     const [playerHeight, setPlayerHeight] = useState(0)
 
-    const playerOnlyHeight =  document.getElementById('playerCard') ?  document.getElementById('playerCard').offsetHeight : 1
-    const videoStatsHeight =  expanded ?  56 : 0
+    const playerOnlyHeight = document.getElementById('mainPlayer') ? document.getElementById('mainPlayer').offsetHeight : 1
+    const videoStatsHeight = expanded ? 1 : 0
     const fullHeight = playerOnlyHeight + videoStatsHeight
 
     if (document.getElementById('spacerDiv') && playerHeight !== fullHeight) {
-        setPlayerHeight(fullHeight)
-        document.getElementById('spacerDiv').height = fullHeight
-        window.scrollTo(0, 0)
+        setTimeout(() => {
+            setPlayerHeight(fullHeight)
+        }, 500)
     }
 
     const [init, setInit] = useState(false)
     useEffect(() => {
-        if (!init || !mainItem || (currentPage !== page )) {
+        if (!init || !mainItem || (currentPage !== page)) {
             setMainItem(visibleItems[0])
             setPlaying(visibleItems[0]?.id)
             setIndex(0)
             setCurrentPage(page)
             setInit(true)
         }
-    }, [index, init, mainItem, visibleItems, page, currentPage, playerHeight, fullHeight])
+    }, [index, init, mainItem, visibleItems, page, currentPage, playerHeight, fullHeight, expanded])
 
     const navExtras = <SortButton sortValues={videoSortFields}/>
 
@@ -104,7 +104,7 @@ function VideosMain() {
                         expanded={expanded}
                         setExpanded={setExpanded}
                     />
-                    <div style={{height: playerHeight, transition: 'all .3s ease-in-out'}} id='spacerDiv'/>
+                    <div style={{height: playerHeight, transition: 'all 0.4s'}} id='spacerDiv'/>
                 </React.Fragment>
             }
 
@@ -134,6 +134,7 @@ function VideosMain() {
                                             video={item}
                                             handlePlaylistClick={handlePlaylistClick}
                                             index={index}
+                                            listType='videos'
                                         />
                                     </Grid>
                                 )}

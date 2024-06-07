@@ -59,7 +59,6 @@ function GuidePageItem({menuItem, openTitle, onOpen, onClose, child, index, sing
         : null
 
     const rand = title.length < 20 ? (Math.floor(Math.random() * 2) + 1) * 25 : 50
-    console.log(title, title.length)
     const randString = `${rand}%`
 
     return (

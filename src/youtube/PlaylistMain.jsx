@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid'
 import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
-import PlaylistItemCard from './PlaylistItemCard.jsx'
+import VideoCard from './VideoCard.jsx'
 import PlaylistMainVideo from './PlaylistMainVideo.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
@@ -40,16 +40,16 @@ function PlaylistMain() {
         : null
 
     const [mainItem, setMainItem] = useState(visibleItems[0])
-    const [index, setIndex] = useState(0) //eslint-disable-line
-    const [playing, setPlaying] = useState(mainItem?.id)
+    const [index, setIndex] = useState(0)
+    const [playing, setPlaying] = useState(mainItem?.id) //eslint-disable-line
+    const [expanded, setExpanded] = useState(false)
 
     const handlePlaylistClick = useCallback((item, index) => {
         setPlaying(item.id)
         setMainItem(item)
         setIndex(index)
+        setExpanded(true)
     }, [])
-
-    const [expanded, setExpanded] = useState(false)
 
     document.title = 'lockpicking.tv - ' + pageData?.title
 
@@ -73,26 +73,26 @@ function PlaylistMain() {
 
     const [playerHeight, setPlayerHeight] = useState(0)
 
-    const playerOnlyHeight =  document.getElementById('playerCard') ?  document.getElementById('playerCard').offsetHeight : 1
-    const videoStatsHeight =  expanded ?  56 : 0
+    const playerOnlyHeight = document.getElementById('mainPlayer') ? document.getElementById('mainPlayer').offsetHeight : 1
+    const videoStatsHeight = expanded ? 1 : 0
     const fullHeight = playerOnlyHeight + videoStatsHeight
 
     if (document.getElementById('spacerDiv') && playerHeight !== fullHeight) {
-        setPlayerHeight(fullHeight)
-        document.getElementById('spacerDiv').height = fullHeight
-        window.scrollTo(0, 0)
+        setTimeout(() => {
+            setPlayerHeight(fullHeight)
+        }, 500)
     }
 
     const [init, setInit] = useState(false)
     useEffect(() => {
-        if (!init || !mainItem || (currentPage !== page )) {
+        if (!init || !mainItem || (currentPage !== page)) {
             setMainItem(visibleItems[0])
             setPlaying(visibleItems[0]?.id)
             setIndex(0)
             setCurrentPage(page)
             setInit(true)
         }
-    }, [index, init, mainItem, visibleItems, page, currentPage])
+    }, [index, init, mainItem, visibleItems, page, currentPage, playerHeight, fullHeight, expanded])
 
     const navExtras = <SortButton sortValues={videoSortFields}/>
 
@@ -107,7 +107,7 @@ function PlaylistMain() {
                         expanded={expanded}
                         setExpanded={setExpanded}
                     />
-                    <div style={{height: playerHeight, transition: 'all .3s ease-in-out'}} id='spacerDiv'/>
+                    <div style={{height: playerHeight, transition: 'all 0.4s'}} id='spacerDiv'/>
                 </React.Fragment>
             }
 
@@ -127,7 +127,6 @@ function PlaylistMain() {
 
                     <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
                         <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
-
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>
                                 {parentLink} {pageData.title}
                             </span><br/>
@@ -139,12 +138,13 @@ function PlaylistMain() {
                                   style={{}} id='grid'>
                                 {visibleItems.map((item, index) =>
                                     <Grid item xs={4} sm={4} md={4} key={item.id}>
-                                        <PlaylistItemCard
+                                        <VideoCard
                                             video={item}
                                             handlePlaylistClick={handlePlaylistClick}
                                             index={index}
                                             playing={playing}
                                             setPlaying={setPlaying}
+                                            listType='playlist'
                                         />
                                     </Grid>
                                 )}

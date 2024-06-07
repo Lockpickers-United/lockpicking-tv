@@ -9,6 +9,7 @@ import {styled} from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Collapse from '@mui/material/Collapse'
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 
 const PlaylistMainVideo = ({video, expanded, setExpanded}) => {
 
@@ -58,83 +59,93 @@ const PlaylistMainVideo = ({video, expanded, setExpanded}) => {
     const videoUrl = `https://www.youtube.com/embed/${video.id}`
 
     return (
-        <Card id='mainPlayer' style={{
-            backgroundColor: '#1A2027',
-            boxShadow: 'unset',
-            padding: '0px',
-            color: textColor,
-            position: 'fixed',
-            width: '100%',
-            borderRadius: 0
-        }}>
-            <CardContent style={{padding: '8px 0px 5px 0px', textAlign: 'center'}} id='playerCard'>
-                <div style={{width: '100%', display: 'flex', placeItems: 'center'}}>
-                    <span style={{marginLeft:10}}>video player</span>
-                    <ExpandMore style={{height: 40}} onClick={handleChange} expand={expanded}>
-                        <ExpandMoreIcon/>
-                    </ExpandMore>
-                </div>
-            </CardContent>
-            <Collapse in={expanded} timeout='auto' unmountOnExit>
-                <div style={{
-                    height: videoSizes[widthIndex][0],
-                    maxWidth: videoSizes[widthIndex][1],
-                    marginRight: 'auto', marginLeft: 'auto'
-                }}>
-                <ReactPlayer
-                        url={videoUrl}
-                        width='100%'
-                        height='100%'
-                        light={true}
-                        muted={false}
-                        controls
-                    />
-                </div>
-                <div style={headerFlexStyle}>
-                    <div style={{
-                        borderRadius: '50%',
-                        height: avatarSize,
-                        width: avatarSize,
-                        minWidth: avatarSize,
-                        margin: avatarMargin,
-                        verticalAlign: 'center',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignContent: 'center',
-                        flexDirection: 'column'
-                    }}>
-                        <a href={channelLink} target='_blank' rel='noopener noreferrer'
-                           style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
-                            <img src={channel.snippet.thumbnails.default.url} alt='icon' height={avatarSize} width={avatarSize}
-                                 style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
-                        </a>
+        <React.Fragment>
+            <Card id='mainPlayer' style={{
+                backgroundColor: '#29323f',
+                padding: '0px',
+                color: textColor,
+                position: 'fixed',
+                width: '100%',
+                borderRadius: 0
+            }}>
+                <CardContent style={{padding: '8px 0px 5px 0px', textAlign: 'center'}} id='playerCard'>
+                    <div style={{width: '100%', display: 'flex', placeItems: 'center'}}>
+                        <IconButton onClick={handleChange}>
+                            <PlayCircleOutlineIcon />
+                        </IconButton>
+                        <span style={{marginLeft: 0, fontWeight:500}}>video player</span>
+                        <ExpandMore style={{height: 40}} onClick={handleChange} expand={expanded}>
+                            <ExpandMoreIcon/>
+                        </ExpandMore>
                     </div>
+                </CardContent>
+                <Collapse in={expanded} timeout='auto' id='collapse' unmountOnExit>
                     <div style={{
-                        fontSize: '1.1rem',
-                        lineHeight: '1.3rem',
-                        fontWeight: 600,
-                        textAlign: nameAlign,
-                        flexGrow: 1
+                        height: videoSizes[widthIndex][0],
+                        maxWidth: videoSizes[widthIndex][1],
+                        marginRight: 'auto', marginLeft: 'auto'
                     }}>
-                        <a href={titleLink} target='_blank' rel='noopener noreferrer'
-                           style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
-                            {video.title}
-                        </a>
-                        <div style={{marginTop: 3}}>
+                        <ReactPlayer
+                            url={videoUrl}
+                            width='100%'
+                            height='100%'
+                            light={true}
+                            muted={false}
+                            controls
+                        />
+                    </div>
+                    <div style={headerFlexStyle}>
+                        <div style={{
+                            borderRadius: '50%',
+                            height: avatarSize,
+                            width: avatarSize,
+                            minWidth: avatarSize,
+                            margin: avatarMargin,
+                            verticalAlign: 'center',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignContent: 'center',
+                            flexDirection: 'column'
+                        }}>
                             <a href={channelLink} target='_blank' rel='noopener noreferrer'
-                               style={{color: textColor, textDecoration: 'none', fontSize: '0.9rem', fontWeight: 400}}>
-                                By: {video.channelOwner}
+                               style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
+                                <img src={channel.snippet.thumbnails.default.url} alt='icon' height={avatarSize}
+                                     width={avatarSize}
+                                     style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
                             </a>
                         </div>
+                        <div style={{
+                            fontSize: '1.1rem',
+                            lineHeight: '1.3rem',
+                            fontWeight: 600,
+                            textAlign: nameAlign,
+                            flexGrow: 1
+                        }}>
+                            <a href={titleLink} target='_blank' rel='noopener noreferrer'
+                               style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
+                                {video.title}
+                            </a>
+                            <div style={{marginTop: 3}}>
+                                <a href={channelLink} target='_blank' rel='noopener noreferrer'
+                                   style={{
+                                       color: textColor,
+                                       textDecoration: 'none',
+                                       fontSize: '0.9rem',
+                                       fontWeight: 400
+                                   }}>
+                                    By: {video.channelOwner}
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <CardContent style={{textAlign: 'left', padding: '0px 0px 10px 0px', color: '#fff'}} id='videoStats'>
-                    <VideoStats video={video}/>
-                </CardContent>
-            </Collapse>
-
-
-        </Card>
+                    <CardContent style={{textAlign: 'left', padding: '0px 0px 10px 0px', color: '#fff'}}
+                                 id='videoStats'>
+                        <VideoStats video={video}/>
+                    </CardContent>
+                </Collapse>
+            </Card>
+            <div id='cardEnd'/>
+        </React.Fragment>
     )
 }
 
