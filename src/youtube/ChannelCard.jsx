@@ -12,6 +12,7 @@ import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import Collapse from '@mui/material/Collapse'
 import IconButton from '@mui/material/IconButton'
+import {openInNewTab} from '../util/openInNewTab'
 
 const ExpandMore = styled((props) => {
     const {expand, ...other} = props
@@ -45,7 +46,7 @@ const Channel = ({channel, expanded, onExpand}) => {
             setTimeout(() => {
                 window.scrollTo({
                     left: 0,
-                    top: ref.current.offsetTop - offset*2,
+                    top: ref.current.offsetTop - offset * 2,
                     behavior: isIdFiltered ? 'auto' : 'smooth'
                 })
             }, isIdFiltered ? 0 : 100)
@@ -71,13 +72,16 @@ const Channel = ({channel, expanded, onExpand}) => {
 
     return (
         <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px'}} ref={ref}>
-            <CardContent style={{padding: '15px 5px 0px 5px', textAlign:'center'}}>
+            <CardContent style={{padding: '15px 5px 0px 5px', textAlign: 'center'}}>
                 <div style={headerFlexStyle}>
                     <div style={{height: avatarSize, margin: avatarMargin}}>
-                        <a href={link} target='_blank' rel='noopener noreferrer' style={{color:'#fff', textDecoration:'none'}}>
+                        <a onClick={() => {
+                            openInNewTab(link)
+                        }}
+                           style={{color: '#fff', textDecoration: 'none', cursor: 'pointer'}}>
                             <img
-                            src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
-                            style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
+                                src={channel.thumbnail} alt='icon' height={avatarSize} width={avatarSize}
+                                style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
                         </a>
                     </div>
                     <div style={{
@@ -88,7 +92,10 @@ const Channel = ({channel, expanded, onExpand}) => {
                         overflow: 'hidden',
                         height: '1.5rem'
                     }}>
-                        <a href={link} target='_blank' rel='noopener noreferrer' style={{color:'#fff', textDecoration:'none'}}>
+                        <a onClick={() => {
+                            openInNewTab(link)
+                        }}
+                           style={{color: '#fff', textDecoration: 'none', cursor: 'pointer'}}>
                             {channel.title}
                         </a>
                     </div>
@@ -96,16 +103,16 @@ const Channel = ({channel, expanded, onExpand}) => {
                 </div>
             </CardContent>
             <CardActions sx={{padding: '0px 5px'}}>
-                <div style={{width: '100%', display: 'flex', placeItems:'center'}}>
+                <div style={{width: '100%', display: 'flex', placeItems: 'center'}}>
                     <ChannelStats channel={channel}/>
-                    <ExpandMore style={{height:40}} onClick={handleChange} expand={expanded}>
-                        <ExpandMoreIcon style={{color: expandColor}} />
+                    <ExpandMore style={{height: 40}} onClick={handleChange} expand={expanded}>
+                        <ExpandMoreIcon style={{color: expandColor}}/>
                     </ExpandMore>
                 </div>
             </CardActions>
 
             <Collapse in={expanded} timeout='auto' unmountOnExit>
-                <CardContent style={{textAlign: 'left', padding: 10, color:'#fff'}}>
+                <CardContent style={{textAlign: 'left', padding: 10, color: '#fff'}}>
                     {channel.description &&
                         descriptionLines.map((line, index) =>
                             <div key={index} style={{marginLeft: 5}}>
@@ -118,7 +125,7 @@ const Channel = ({channel, expanded, onExpand}) => {
                             no channel details available<br/>
                         </div>
                     }
-                    <Tracker feature='channel' id={channel.id}/>
+                    <Tracker feature='channelDetails' page={channel.title} id={channel.id}/>
                 </CardContent>
             </Collapse>
         </Card>

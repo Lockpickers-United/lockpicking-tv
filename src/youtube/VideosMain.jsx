@@ -5,7 +5,7 @@ import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
 import VideoCard from './VideoCard.jsx'
-import PlaylistMainVideo from './PlaylistMainVideo.jsx'
+import MainVideoPlayer from './MainVideoPlayer.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import FilterContext from '../context/FilterContext.jsx'
@@ -101,7 +101,7 @@ function VideosMain() {
 
                 {(mainItem?.kind === 'youtube#video') &&
                     <React.Fragment>
-                        <PlaylistMainVideo
+                        <MainVideoPlayer
                             video={mainItem}
                             expanded={expanded}
                             setExpanded={setExpanded}
@@ -147,7 +147,7 @@ function VideosMain() {
                     </div>
                 }
             </div>
-            <Tracker feature='videos' page={pageTitle}/>
+            <Tracker feature='videos' page={page}/>
         </React.Fragment>
     )
 }

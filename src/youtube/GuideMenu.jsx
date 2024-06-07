@@ -13,6 +13,7 @@ import GuideItem from './GuideItem.jsx'
 import dayjs from 'dayjs'
 import FilterContext from '../context/FilterContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import {openInNewTab} from '../util/openInNewTab'
 
 function GuideMenu() {
 
@@ -64,12 +65,13 @@ function GuideMenu() {
                         margin: '0px',
                         backgroundColor: '#292929',
                         borderBottom: '1px solid #000',
-                        display:'flex'
+                        display: 'flex'
                     }}>
-                        <div style={{marginLeft:5}}>
+                        <div style={{marginLeft: 5}}>
                             <LPTVheader fill={'#fff'} style={{width: 110, position: 'relative'}}/>
                         </div>
-                        <div style={{width: 200, marginLeft: 30, marginRight:10, paddingTop: 32, lineHeight: '1.3rem'}}>
+                        <div
+                            style={{width: 200, marginLeft: 30, marginRight: 10, paddingTop: 32, lineHeight: '1.3rem'}}>
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>lockpicking.tv</span><br/>
                             Showcasing video content from across the locksport community.
                         </div>
@@ -77,7 +79,7 @@ function GuideMenu() {
 
                     <div style={{backgroundColor: '#000'}}>
 
-                    <TableContainer>
+                        <TableContainer>
                             <Table style={{backgroundColor: '#000'}} sx={{border: '1px solid #000'}} size='small'>
                                 <TableHead>
                                     <TableRow>
@@ -96,6 +98,7 @@ function GuideMenu() {
                                                 onOpen={setOpenTitle}
                                                 onClose={closeDrawer}
                                                 index={index}
+                                                openInNewTab={openInNewTab}
                                             />
                                         )}
                                 </TableBody>
@@ -106,7 +109,9 @@ function GuideMenu() {
 
                     </div>
                 </Stack>
+                <img alt='LPTV' src='/i/temp.gif' height={0} width={0} id='trackImage'/>
             </SwipeableDrawer>
+
         </React.Fragment>
     )
 }

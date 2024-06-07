@@ -38,7 +38,7 @@ function MenuConfig() {
         {
             title: 'New & Noteworthy',
             icon: <BabyChangingStationIcon fontSize='small'/>,
-            path: '/channels?page=new'
+            path: '/channels?page=newChannels'
         },
         {
             title: 'Full Directory',
@@ -87,12 +87,12 @@ function MenuConfig() {
                     {
                         icon: <OpenInNewIcon fontSize='small' color='disabled'/>,
                         title: 'LPUbelts.com',
-                        path: 'https://lpubelts.com/'
+                        path: 'https://lpubelts.com'
                     },
                     {
                         icon: <OpenInNewIcon fontSize='small' color='disabled'/>,
                         title: 'LPUlocks.com',
-                        path: 'https://lpulocks.com/'
+                        path: 'https://lpulocks.com'
                     },
                     {
                         icon: <OpenInNewIcon fontSize='small' color='disabled'/>,

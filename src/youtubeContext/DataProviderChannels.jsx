@@ -15,7 +15,7 @@ export function DataProvider({children}) {
     const channelSet = page
     const channels = page === 'featured'
         ? featuredChannels
-        : page === 'new'
+        : page === 'newChannels'
             ? newChannels
             : allChannels
 

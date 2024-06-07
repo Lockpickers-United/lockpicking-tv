@@ -6,6 +6,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import VideoStats from './VideoStats.jsx'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import {openInNewTab} from '../util/openInNewTab'
 
 const VideoCard = ({video, handlePlaylistClick, index, playing, listType}) => {
 
@@ -79,7 +80,7 @@ const VideoCard = ({video, handlePlaylistClick, index, playing, listType}) => {
                             {video.title}
                         </a>
                         <div style={{marginTop: 3}}>
-                            <a href={channelLink} target='_blank' rel='noopener noreferrer'
+                            <a onClick={() => {openInNewTab(channelLink)}}
                                style={{color: textColor, textDecoration: 'none', fontSize: '0.83rem', fontWeight: 400}}>
                                 {videoAge}, by <b>{video.channelOwner}</b>
                             </a>

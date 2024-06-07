@@ -6,7 +6,7 @@ import {TableCell, TableRow} from '@mui/material'
 import Button from '@mui/material/Button'
 import FilterContext from '../context/FilterContext.jsx'
 
-function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
+function GuideItem({menuItem, openTitle, onOpen, onClose, child, index, openInNewTab}) {
     const navigate = useNavigate()
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -15,18 +15,12 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
     const {filters} = useContext(FilterContext)
     const {page} = filters
 
-
     const isCurrentPage = path?.includes(page)
 
     const isCurrentPath = location.pathname === path
     const isCurrentParams = Object.keys(params || [])
         .every(key => params[key] === searchParams[key])
     const isCurrentRoute = (isCurrentPath && isCurrentParams) || isCurrentPage
-
-    const openInNewTab = (url) => {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
-    }
 
     const handleClick = useCallback(() => {
         if (children) {
@@ -42,7 +36,7 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
             navigate(url)
             window.scrollTo({top: 0})
         }
-    }, [children, navigate, onClose, onOpen, openTitle, params, path, title])
+    }, [children, navigate, onClose, onOpen, openInNewTab, openTitle, params, path, title])
 
     const color = isCurrentRoute ? '#4691ba' : null
     const backgroundColor = children
@@ -88,7 +82,8 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
                     <Button
                         onClick={handleClick}
                         fullWidth={true}
-                        sx={{
+                        disabled={!!children}
+                        style={{
                             justifyContent: 'flex-start',
                             width: '100%', margin: 0, borderRadius: 0,
                             color: '#fff',
@@ -102,7 +97,6 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
                 </TableCell>
             </TableRow>
 
-
             {children && children.map((childItem, childIndex) =>
                 <GuideItem
                     child
@@ -112,6 +106,7 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index}) {
                     onClose={onClose}
                     key={childIndex}
                     index={childIndex}
+                    openInNewTab={openInNewTab}
                 />
             )}
 

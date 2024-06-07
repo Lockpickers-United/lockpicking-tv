@@ -3,6 +3,7 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import YouTubeIcon from '@mui/icons-material/YouTube'
+import {openInNewTab} from '../util/openInNewTab'
 
 function OpenYouTubeLinkButton({channel, video, fontSize}) {
 
@@ -27,10 +28,8 @@ function OpenYouTubeLinkButton({channel, video, fontSize}) {
         <React.Fragment>
             {link &&
                 <Tooltip title={title} arrow disableFocusListener>
-                    <IconButton onClick={null} style={{height: 40, width: 40}}>
-                        <a href={link} target='_blank' rel='noopener noreferrer' style={{height: 24}}>
+                    <IconButton onClick={() => {openInNewTab(link)}} style={{height: 40, width: 40}}>
                             {icon}
-                        </a>
                     </IconButton>
                 </Tooltip>
             }

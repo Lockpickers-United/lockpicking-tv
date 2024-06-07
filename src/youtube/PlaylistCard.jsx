@@ -7,6 +7,7 @@ import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay'
 import queryString from 'query-string'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {useNavigate} from 'react-router-dom'
+import {openInNewTab} from '../util/openInNewTab'
 
 const PlaylistCard = ({playlist, expanded}) => {
     const navigate = useNavigate()
@@ -117,7 +118,7 @@ const PlaylistCard = ({playlist, expanded}) => {
                             {playlist.title}
                         </a>
                         <div style={{marginTop: 0}}>
-                            <a href={channelUrl} target='_blank' rel='noopener noreferrer'
+                            <a onClick={() => {openInNewTab(channelUrl)}}
                                style={{color: textColor, textDecoration: 'none', fontSize: '0.83rem', fontWeight: 400}}>
                                 By: {channel?.snippet.title}
                             </a>

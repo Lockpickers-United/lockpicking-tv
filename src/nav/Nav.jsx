@@ -6,7 +6,7 @@ import VersionCheckerCode from '../app/VersionCheckerCode.jsx'
 import Tracker from '../app/Tracker.jsx'
 import SearchBox from './SearchBox.jsx'
 import GuideMenu from '../youtube/GuideMenu.jsx'
-import GuideMain from '../youtube/GuideMain.jsx'
+import GuideFull from '../youtube/GuideFull.jsx'
 
 function Nav({extras}) {
 
@@ -39,7 +39,7 @@ function Nav({extras}) {
             <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)', minHeight: 61}}/>
 
             <ScrollToTopButton/>
-            <GuideMain/>
+            <GuideFull/>
 
         </React.Fragment>
     )

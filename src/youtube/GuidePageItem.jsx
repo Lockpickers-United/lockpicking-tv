@@ -6,7 +6,7 @@ import {TableCell, TableRow} from '@mui/material'
 import Button from '@mui/material/Button'
 import FilterContext from '../context/FilterContext.jsx'
 
-function GuidePageItem({menuItem, openTitle, onOpen, onClose, child, index, single}) {
+function GuidePageItem({menuItem, openTitle, onOpen, onClose, child, index, single, openInNewTab}) {
     const navigate = useNavigate()
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -22,11 +22,6 @@ function GuidePageItem({menuItem, openTitle, onOpen, onClose, child, index, sing
         .every(key => params[key] === searchParams[key])
     const isCurrentRoute = (isCurrentPath && isCurrentParams) || isCurrentPage
 
-    const openInNewTab = (url) => {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
-    }
-
     const handleClick = useCallback(() => {
         if (children) {
             const isOpen = openTitle === title
@@ -41,7 +36,7 @@ function GuidePageItem({menuItem, openTitle, onOpen, onClose, child, index, sing
             navigate(url)
             window.scrollTo({top: 0})
         }
-    }, [children, navigate, onClose, onOpen, openTitle, params, path, title])
+    }, [children, navigate, onClose, onOpen, openInNewTab, openTitle, params, path, title])
 
     const color = isCurrentRoute ? '#4691ba' : null
     const backgroundColor = children
@@ -93,7 +88,7 @@ function GuidePageItem({menuItem, openTitle, onOpen, onClose, child, index, sing
                             <Button
                                 onClick={handleClick}
                                 fullWidth={true}
-                                disabled={children}
+                                disabled={!!children}
                                 style={{
                                     justifyContent: 'flex-start',
                                     margin: 0, borderRadius: 0,
@@ -177,6 +172,7 @@ function GuidePageItem({menuItem, openTitle, onOpen, onClose, child, index, sing
                     key={childIndex}
                     index={childIndex}
                     single={single}
+                    openInNewTab={openInNewTab}
                 />
             )}
 

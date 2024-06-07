@@ -10,8 +10,10 @@ import IconButton from '@mui/material/IconButton'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Collapse from '@mui/material/Collapse'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
+import Tracker from '../app/Tracker.jsx'
+import {openInNewTab} from '../util/openInNewTab'
 
-const PlaylistMainVideo = ({video, expanded, setExpanded}) => {
+const MainVideoPlayer = ({video, expanded, setExpanded}) => {
 
     if (!video) {
         return null
@@ -121,12 +123,12 @@ const PlaylistMainVideo = ({video, expanded, setExpanded}) => {
                             textAlign: nameAlign,
                             flexGrow: 1
                         }}>
-                            <a href={titleLink} target='_blank' rel='noopener noreferrer'
+                            <a onClick={() => {openInNewTab(titleLink)}}
                                style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
                                 {video.title}
                             </a>
                             <div style={{marginTop: 3}}>
-                                <a href={channelLink} target='_blank' rel='noopener noreferrer'
+                                <a onClick={() => {openInNewTab(channelLink)}}
                                    style={{
                                        color: textColor,
                                        textDecoration: 'none',
@@ -145,8 +147,10 @@ const PlaylistMainVideo = ({video, expanded, setExpanded}) => {
                 </Collapse>
             </Card>
             <div id='cardEnd'/>
+            <Tracker feature='videoPlayer' page={video.title} videoId={video.id}/>
+
         </React.Fragment>
     )
 }
 
-export default PlaylistMainVideo
+export default MainVideoPlayer

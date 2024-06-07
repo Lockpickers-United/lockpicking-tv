@@ -6,11 +6,10 @@ import {useInterval} from 'usehooks-ts'
 
 function VersionCheckerCode() {
     //if (import.meta.env.DEV) return null
-    const [initial, setInitial] = useState()
-    const [version, setVersion] = useState()
+    const [initial, setInitial] = useState('')
+    const [version, setVersion] = useState('')
 
-    const checkVersion = async first => {
-        //console.log('version: ', version)
+    const checkVersion =  useCallback(async (first) => {
         try {
             const response = await fetch('/versionCode.json', {cache: 'no-cache'})
             const {version: newVersion} = (await response.json())
@@ -22,11 +21,16 @@ function VersionCheckerCode() {
             console.warn('Unable to check version.', e)
             setVersion('error')
         }
-    }
+    },[initial])
 
+    const [init, setInit] = useState(true)
     useEffect(() => {
-        checkVersion(true)
-    })
+        if (init) {
+            checkVersion(true)
+            setInit(false)
+        }
+    },[checkVersion, init])
+
     useInterval(checkVersion, 10 * 60 * 1000) // 10 minutes
 
     const handleClick = useCallback(() => location.reload(), [])

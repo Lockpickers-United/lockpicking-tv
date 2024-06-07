@@ -56,7 +56,7 @@ export default function ChannelsMain() {
     const {filters, setFilters} = useContext(FilterContext)
     const {page} = filters
 
-    const sets = ['featured', 'new', 'full']
+    const sets = ['featured', 'newChannels', 'full']
     let initialIndex = sets.indexOf(page) >0 ? sets.indexOf(page) : 0
 
     const theme = useTheme()
@@ -71,7 +71,7 @@ export default function ChannelsMain() {
 
     const handleChange = useCallback((event, newValue) => {
         setValue(1)
-        const pages = ['featured', 'new', 'full']
+        const pages = ['featured', 'newChannels', 'full']
         setFilters({page: pages[newValue]})
     }, [setFilters])
 
@@ -120,7 +120,7 @@ export default function ChannelsMain() {
                     {(allDataLoaded && visibleChannels) &&
                         <Channels channels={visibleChannels}/>
                     }
-                    <Tracker feature='channels' name={'new'}/>
+                    <Tracker feature='channels' name={'newChannels'}/>
                 </TabPanel>
                 <TabPanel value={value} index={2} dir={theme.direction} style={{padding: 0}}>
                     {!(allDataLoaded && visibleChannels) &&

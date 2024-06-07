@@ -11,10 +11,13 @@ import VideoCard from './VideoCard.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import {useNavigate} from 'react-router-dom'
+import Tracker from '../app/Tracker.jsx'
 
 function PagesMain() {
     const {visibleItems, pageData} = useContext(DataContext)
     const navigate = useNavigate()
+
+    const pageNameParam = pageData?.title.replace(/[\s/]/g, '_').replace(/\W/g, '')
 
     const {getPageFromId, allDataLoaded} = useContext(LoadingContext)
 
@@ -119,6 +122,9 @@ function PagesMain() {
                     </div>
                 </div>
             }
+
+            <Tracker feature='pages' page={pageNameParam}/>
+
         </React.Fragment>
 
     )
