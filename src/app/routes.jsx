@@ -36,6 +36,13 @@ export default [
         }
     },
     {
+        path: '/contact',
+        lazy: async () => {
+            const {default: ContactRoute} = await import('../contact/ContactRoute.jsx')
+            return {element: <ContactRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/videos?page=newVideos&guide=true')
     },

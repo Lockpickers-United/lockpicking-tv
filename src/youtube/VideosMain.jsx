@@ -67,7 +67,7 @@ function VideosMain() {
 
     const playerOnlyHeight = document.getElementById('mainPlayer') ? document.getElementById('mainPlayer').offsetHeight : 1
     const videoStatsHeight = expanded ? 1 : 0
-    const fullHeight = playerOnlyHeight + videoStatsHeight
+    const fullHeight = playerOnlyHeight + videoStatsHeight - 30
 
     if (document.getElementById('spacerDiv') && playerHeight !== fullHeight) {
         setTimeout(() => {

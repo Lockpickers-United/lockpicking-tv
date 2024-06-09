@@ -12,6 +12,7 @@ import Collapse from '@mui/material/Collapse'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import Tracker from '../app/Tracker.jsx'
 import {openInNewTab} from '../util/openInNewTab'
+import Button from '@mui/material/Button'
 
 const MainVideoPlayer = ({video, expanded, setExpanded}) => {
 
@@ -60,6 +61,8 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
 
     const videoUrl = `https://www.youtube.com/embed/${video.id}`
 
+    const buttonText = expanded ? 'hide video player' : 'show video player'
+
     return (
         <React.Fragment>
             <Card id='mainPlayer' style={{
@@ -72,10 +75,9 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
             }}>
                 <CardContent style={{padding: '8px 0px 5px 0px', textAlign: 'center'}} id='playerCard'>
                     <div style={{width: '100%', display: 'flex', placeItems: 'center'}}>
-                        <IconButton onClick={handleChange}>
-                            <PlayCircleOutlineIcon />
-                        </IconButton>
-                        <span style={{marginLeft: 0, fontWeight:500}}>video player</span>
+                        <Button onClick={handleChange} variant='filled' startIcon={<PlayCircleOutlineIcon />} size='small'>
+                            {buttonText}
+                        </Button>
                         <ExpandMore style={{height: 40}} onClick={handleChange} expand={expanded}>
                             <ExpandMoreIcon/>
                         </ExpandMore>

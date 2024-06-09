@@ -72,11 +72,22 @@ function MenuConfig() {
             }
         })
 
+    const siteItems = [
+        {
+            separator: true,
+            title: 'Submit Channel / Opt Out',
+            icon: <GradeIcon fontSize='small'/>,
+            path: '/contact'
+        }
+    ]
+
+
     return (
         [
             ...videoItems,
             ...channelItems,
             ...pageItems,
+            ...siteItems,
             {
                 title: 'More from LPU',
                 icon: <LPU_logo style={{height: 20}}/>,

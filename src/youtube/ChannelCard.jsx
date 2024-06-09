@@ -3,7 +3,6 @@ import queryString from 'query-string'
 import Tracker from '../app/Tracker.jsx'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import useWindowSize from '../util/useWindowSize.jsx'
-import OpenYouTubeLinkButton from './OpenYouTubeLinkButton.jsx'
 import ChannelStats from './ChannelStats.jsx'
 
 import {styled} from '@mui/material/styles'
@@ -62,6 +61,8 @@ const Channel = ({channel, expanded, onExpand}) => {
         ? `https://www.youtube.com/${channel.customUrl}`
         : `https://www.youtube.com/channel/${channel.id}`
 
+    const subscribeLink = `https://www.youtube.com/channel/${channel.id}?view_as=subscriber&sub_confirmation=1`
+
     const {width} = useWindowSize()
     const smallWindow = width <= 500
     const avatarSize = smallWindow ? 40 : 60
@@ -69,6 +70,8 @@ const Channel = ({channel, expanded, onExpand}) => {
 
     const headerFlexStyle = smallWindow ? {display: 'flex', placeItems: 'center'} : {placeItems: 'center'}
     const nameAlign = smallWindow ? 'left' : 'center'
+    const linkDivStyle = smallWindow ? {width: '10%', marginLeft: 65} : {}
+
 
     return (
         <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px'}} ref={ref}>
@@ -99,8 +102,19 @@ const Channel = ({channel, expanded, onExpand}) => {
                             {channel.title}
                         </a>
                     </div>
-                    <OpenYouTubeLinkButton channel={channel} fontSize={'small'}/>
                 </div>
+                <div style={{color: '#ddd', fontSize: '.9rem', marginTop: 8, marginBottom: 5, ...linkDivStyle}}>
+                    <span style={{color: '#bbb'}}>YouTube:</span>&nbsp;
+                    <a onClick={() => {
+                        openInNewTab(link)
+                    }}
+                       style={{color: '#eee', textDecoration: 'none', cursor: 'pointer'}}>View</a>
+                    &nbsp;|&nbsp;
+                    <a onClick={() => {
+                        openInNewTab(subscribeLink)
+                    }} style={{color: '#eee', textDecoration: 'none', cursor: 'pointer'}}>Subscribe</a>
+                </div>
+
             </CardContent>
             <CardActions sx={{padding: '0px 5px'}}>
                 <div style={{width: '100%', display: 'flex', placeItems: 'center'}}>

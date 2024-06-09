@@ -3,13 +3,15 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import ScrollToTopButton from './ScrollToTopButton'
 import VersionCheckerCode from '../app/VersionCheckerCode.jsx'
+import VersionCheckerData from '../app/VersionCheckerData.jsx'
 import Tracker from '../app/Tracker.jsx'
 import SearchBox from './SearchBox.jsx'
 import GuideMenu from '../youtube/GuideMenu.jsx'
 import GuideFull from '../youtube/GuideFull.jsx'
 
-function Nav({extras}) {
+function Nav({extras, noSearch}) {
 
+    const searchBox = noSearch ? null : <SearchBox label=''/>
     return (
         <React.Fragment>
             <AppBar position='fixed' style={{display: 'flex', placeItems: 'center'}} id='appBar'>
@@ -19,12 +21,13 @@ function Nav({extras}) {
                             <GuideMenu/>
                         </div>
                         <div style={{marginRight: 10, flexGrow: 1}}>
-                            <SearchBox label=''/>
+                            {searchBox}
                         </div>
                         <div style={{
                             fontWeight: 500,
                             fontSize: '1.5rem'
                         }}>
+                            <VersionCheckerData/>
                             <VersionCheckerCode/>
                             <Tracker feature='nav'/>
                         </div>

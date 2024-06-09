@@ -48,6 +48,12 @@ const PlaylistCard = ({playlist, expanded}) => {
     }, [expanded, scrolled, playlist.id])
 
     const channel = getChannelFromId(playlist.channelId)
+
+    console.log('playlist', playlist, channel)
+
+
+
+
     const playlistItemText = playlist.itemCount > 1
         ? 'videos'
         : 'video'
