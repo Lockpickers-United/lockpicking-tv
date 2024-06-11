@@ -43,6 +43,13 @@ export default [
         }
     },
     {
+        path: '/reports',
+        lazy: async () => {
+            const {default: ReportsRoute} = await import('../reports/ReportsRoute.jsx')
+            return {element: <ReportsRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/videos?page=newVideos&guide=true')
     },

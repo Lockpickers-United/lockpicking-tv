@@ -20,10 +20,12 @@ export function DataProvider({children}) {
             : allChannels
 
     const mappedChannels = channels.map(channel => {
+        console.log('channel', channel)
+        if (channel.kind !== 'youtube#channel') { return }
         return {
             id: channel.channelId,
             kind: channel.kind,
-            viewCount: parseInt(channel.statistics.viewCount),
+            viewCount: channel?.statistics?.viewCount ? parseInt(channel.statistics.viewCount) : 0,
             subscriberCount: parseInt(channel.statistics.subscriberCount),
             videoCount: parseInt(channel.statistics.videoCount),
             title: channel.snippet.title,

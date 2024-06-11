@@ -3,13 +3,13 @@ import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 
-import ContactMain from './ContactMain.jsx'
+import ReportsMain from './ReportsMain.jsx'
 import {channelFilterFields} from '../data/filterFields'
 import {FilterProvider} from '../context/FilterContext.jsx'
-import {DataProvider} from '../youtubeContext/DataProviderPages.jsx'
+import {DataProvider} from '../youtubeContext/DataProviderChannels.jsx'
 import {ListProvider} from '../context/ListContext.jsx'
 
-function ContactRoute() {
+function ReportsRoute() {
 
     document.title = 'lockpicking.tv - Contact Us'
 
@@ -18,7 +18,7 @@ function ContactRoute() {
             <DataProvider>
                 <ListProvider>
                     <Nav title='Contact' route='co' noSearch={true}/>
-                    <ContactMain/>
+                    <ReportsMain/>
                     <Footer/>
                     <Tracker feature='contact'/>
                 </ListProvider>
@@ -28,4 +28,4 @@ function ContactRoute() {
     )
 }
 
-export default ContactRoute
+export default ReportsRoute
