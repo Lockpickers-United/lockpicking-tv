@@ -13,8 +13,9 @@ export function LoadingProvider({children}) {
     const {pagesData, channelData, videoData} = data || {}
     const jsonLoaded = (!loading && !error && !!data)
 
+    const allPages = pagesData?.allPages
     const pageNavData = useMemo(() => (jsonLoaded
-            ? pagesData?.map(page => {
+            ? allPages.map(page => {
                 return {
                     title: page.title,
                     id: page.sectionId,
@@ -22,28 +23,41 @@ export function LoadingProvider({children}) {
                 }
             })
             : []
-    ), [jsonLoaded, pagesData])
+    ), [jsonLoaded, allPages])
 
     const getPageFromId = useCallback((id) => {
-        return pagesData?.find(page => page.sectionId === id)
-    }, [pagesData])
+        return allPages.find(page => page.sectionId === id)
+    }, [allPages])
 
     const getPlaylistVideoFromId = useCallback((id) => {
-        return videoData?.playlistVideos.find(video => video.id === id)
+        return videoData?.allVideos.find(video => video.id === id)
     }, [videoData])
 
     const getSectionFromPlaylistId = useCallback((id) => {
-        return pagesData?.find(page => page.playlistId === id)
-    }, [pagesData])
+        return allPages.find(page => page.playlistId === id)
+    }, [allPages])
 
-    const featuredChannels = useMemo(() => jsonLoaded ? channelData.featuredChannels : [], [jsonLoaded, channelData])
-    const allChannels = useMemo(() => jsonLoaded ? channelData.fullChannels : [], [jsonLoaded, channelData])
-    const newChannels = useMemo(() => jsonLoaded ? channelData.newChannels : [], [jsonLoaded, channelData])
 
-    const newVideosData = useMemo(() => jsonLoaded ? videoData.newVideos : [], [jsonLoaded, videoData])
-    const popularVideosData = useMemo(() => jsonLoaded ? videoData.popularVideos : [], [jsonLoaded, videoData])
-    const allVideos = useMemo(() => jsonLoaded ? [...newVideosData, ...popularVideosData] : [], [jsonLoaded, newVideosData, popularVideosData])
+    const allChannels = useMemo(() => jsonLoaded ? channelData.allChannels : [], [jsonLoaded, channelData])
+    const featuredChannels = useMemo(() => jsonLoaded
+            ? channelData.allChannels.filter(channel => {
+                return channel.channelFlags.includes('featured')
+            })
+            : [], [jsonLoaded, channelData])
+    const newChannels = useMemo(() => jsonLoaded
+            ? channelData.allChannels.filter(channel => {
+                return channel.channelFlags.includes('new')
+            })
+            : [], [jsonLoaded, channelData])
 
+
+    const newVideosData = useMemo(() => jsonLoaded
+        ? videoData.allVideos.filter(video => video.videoFlags.includes('new') )
+        : [], [jsonLoaded, videoData])
+    const popularVideosData = useMemo(() => jsonLoaded
+        ? videoData.allVideos.filter(video => video.videoFlags.includes('popular') )
+        : [], [jsonLoaded, videoData])
+    const allVideos = useMemo(() => jsonLoaded ? videoData.allVideos : [], [jsonLoaded, videoData])
 
     const sortNewVideos = newVideosData
         .filter(video => {
@@ -65,6 +79,10 @@ export function LoadingProvider({children}) {
         })
     const popularVideos = sortPopularVideos.slice(0, 1000)
 
+    const getVideosFromIds = useCallback(videoIds => {
+        return allVideos.filter(video => videoIds.includes(video.id))
+    },[allVideos])
+
 
     const getChannelFromId = useCallback(channelId => {
         return allChannels?.find(({id}) => id === channelId)
@@ -78,28 +96,30 @@ export function LoadingProvider({children}) {
         featuredChannels,
         newChannels,
         getChannelFromId,
-        pagesData,
+        allPages,
         pageNavData,
         getPageFromId,
         getPlaylistVideoFromId,
         getSectionFromPlaylistId,
         allVideos,
         newVideos,
-        popularVideos
+        popularVideos,
+        getVideosFromIds
     }), [
         allDataLoaded,
         allChannels,
         featuredChannels,
         newChannels,
         getChannelFromId,
-        pagesData,
+        allPages,
         pageNavData,
         getPageFromId,
         getPlaylistVideoFromId,
         getSectionFromPlaylistId,
         allVideos,
         newVideos,
-        popularVideos
+        popularVideos,
+        getVideosFromIds
     ])
 
     return (

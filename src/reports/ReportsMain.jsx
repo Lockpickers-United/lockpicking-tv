@@ -1,8 +1,5 @@
 import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
-import CardHeader from '@mui/material/CardHeader'
-import CardContent from '@mui/material/CardContent'
-import Card from '@mui/material/Card'
 import LoadingContext from '../youtubeContext/LoadingContext.jsx'
 
 import {DataGrid} from '@mui/x-data-grid'
@@ -37,10 +34,10 @@ function ReportsMain() {
             publishedAt: channel.snippet.publishedAt,
             latestVideo: channel.latestVideo,
             channelSet: channel.channelSet,
-            featuredChannel: channel.featuredChannel ? 'featured' : '',
-            newChannel: channel.newChannel ? 'new' : '',
-            playlistChannel: channel.playlistChannel ? 'playlist' : '',
-            subscribedChannel: channel.subscribedChannel ? 'subscribed' : ''
+            featuredChannel: channel.channelFlags.includes('featured') ? 'featured' : '',
+            newChannel: channel.channelFlags.includes('new') ? 'new' : '',
+            playlistChannel: channel.channelFlags.includes('playlist') ? 'playlist' : '',
+            subscribedChannel: channel.channelFlags.includes('subscription') ? 'subscribed' : ''
         }
     }).sort(function (a, b) {
         return a.title.localeCompare(b.title)

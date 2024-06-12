@@ -75,6 +75,7 @@ function MenuConfig() {
     const siteItems = [
         {
             separator: true,
+            full: true,
             title: 'Submit Channel / Opt Out',
             icon: <GradeIcon fontSize='small'/>,
             path: '/contact'

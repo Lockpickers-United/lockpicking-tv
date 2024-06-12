@@ -16,6 +16,7 @@ import Tracker from '../app/Tracker.jsx'
 
 function PlaylistMain() {
     const {visibleItems, pageData} = useContext(DataContext)
+
     const navigate = useNavigate()
     const {filters} = useContext(FilterContext)
     const {page} = filters
@@ -139,13 +140,14 @@ function PlaylistMain() {
 
                             <ThemeProvider theme={theme}>
                                 <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
-                                      style={{}} id='grid'>
+                                      style={{}} id='grid' key='grid'>
                                     {visibleItems.map((item, index) =>
                                         <Grid item xs={4} sm={4} md={4} key={item.id}>
                                             <VideoCard
                                                 video={item}
                                                 handlePlaylistClick={handlePlaylistClick}
                                                 index={index}
+                                                key={index}
                                                 playing={playing}
                                                 setPlaying={setPlaying}
                                                 listType='playlist'

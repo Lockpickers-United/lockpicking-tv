@@ -6,8 +6,8 @@ import VersionCheckerCode from '../app/VersionCheckerCode.jsx'
 import VersionCheckerData from '../app/VersionCheckerData.jsx'
 import Tracker from '../app/Tracker.jsx'
 import SearchBox from './SearchBox.jsx'
-import GuideMenu from '../youtube/GuideMenu.jsx'
-import GuideFull from '../youtube/GuideFull.jsx'
+import GuideMenu from './GuideMenu.jsx'
+import GuideFull from './GuideFull.jsx'
 
 function Nav({extras, noSearch}) {
 

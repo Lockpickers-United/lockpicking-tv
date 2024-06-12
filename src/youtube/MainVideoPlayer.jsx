@@ -54,7 +54,7 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
         : {display: 'flex', placeItems: 'center', padding: 10}
     const nameAlign = smallWindow ? 'left' : 'left'
 
-    const channelLink = `https://www.youtube.com/channel/${channel.id}`
+    const channelLink = `https://www.youtube.com/channel/${channel?.id}`
     const titleLink = `https://www.youtube.com/watch?v=${video.id}`
 
     const textColor = '#fff'
@@ -113,7 +113,7 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
                         }}>
                             <a href={channelLink} target='_blank' rel='noopener noreferrer'
                                style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
-                                <img src={channel.snippet.thumbnails.default.url} alt='icon' height={avatarSize}
+                                <img src={channel?.snippet.thumbnails.default.url} alt='icon' height={avatarSize}
                                      width={avatarSize}
                                      style={{borderRadius: '50%', overflow: 'hidden', fontSize: '.7rem'}}/>
                             </a>

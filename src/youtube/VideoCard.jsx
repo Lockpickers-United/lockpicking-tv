@@ -13,14 +13,14 @@ const VideoCard = ({video, handlePlaylistClick, index, playing, listType}) => {
     const {getChannelFromId, getPlaylistVideoFromId} = useContext(LoadingContext)
     const channel = getChannelFromId(video?.channelId)
     const fullVideo = getPlaylistVideoFromId(video?.id)
-    //console.log(fullVideo)
+   // console.log(video)
 
     const {width} = useWindowSize()
     const smallWindow = width <= 500
     const avatarSize = smallWindow ? 35 : 40
     const avatarMargin = smallWindow ? '3px 15px 0px 0px' : '3px 15px 5px 0px'
 
-    const channelLink = `https://www.youtube.com/channel/${channel.id}`
+    const channelLink = `https://www.youtube.com/channel/${channel?.id}`
     const backgroundColor = playing === video.id ? '#374ca2' : '#1A2027'
     const textColor = '#fff'
 
@@ -38,7 +38,7 @@ const VideoCard = ({video, handlePlaylistClick, index, playing, listType}) => {
                             <a href={channelLink} target='_blank' rel='noopener noreferrer'
                                style={{color: '#fff', textDecoration: 'none'}}>
                                 <img
-                                    src={channel.snippet.thumbnails.default.url} alt='icon' height={avatarSize}
+                                    src={channel?.snippet.thumbnails.default.url} alt='icon' height={avatarSize}
                                     width={avatarSize}
                                     style={{
                                         borderRadius: '50%',

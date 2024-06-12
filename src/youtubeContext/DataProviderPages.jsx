@@ -10,15 +10,22 @@ export function DataProvider({children}) {
 
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, guide, showAll, page, ...filters} = allFilters
-    const {pagesData, getPageFromId, allDataLoaded} = useContext(LoadingContext)
+    const {allPages, getPageFromId, allDataLoaded, getVideosFromIds} = useContext(LoadingContext)
+
+    // need to get videos if items are just IDs
 
     const pageData = allDataLoaded
         ? getPageFromId(page)
             ? getPageFromId(page)
-            : pagesData[1]
+            : allPages[0]
         : null
 
-    const items = allDataLoaded ? pageData.items : []
+    const items = allDataLoaded
+        ? pageData.kind !== 'singleplaylist'
+            ? pageData.items
+            : getVideosFromIds(pageData.items)
+        : []
+
     const mappedItems = items.map((item) => {
         return {
             ...item,
@@ -60,8 +67,6 @@ export function DataProvider({children}) {
                     score: result.score
                 }))
             : filteredItems
-
-        // console.log('searched', searched)
 
         return searched.sort((a, b) => {
             if (sort === 'views') {

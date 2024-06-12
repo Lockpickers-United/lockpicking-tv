@@ -20,7 +20,6 @@ export function DataProvider({children}) {
             : allChannels
 
     const mappedChannels = channels.map(channel => {
-        console.log('channel', channel)
         if (channel.kind !== 'youtube#channel') { return }
         return {
             id: channel.channelId,
@@ -72,8 +71,6 @@ export function DataProvider({children}) {
                     score: result.score
                 }))
             : filteredChannels
-
-        // console.log('searched', searched)
 
         return searched.sort((a, b) => {
                 if (sort === 'views') {
