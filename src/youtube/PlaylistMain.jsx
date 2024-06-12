@@ -134,7 +134,7 @@ function PlaylistMain() {
                             <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>
                                 {parentLink} {pageData.title}
-                            </span><br/>
+                            </span> ({visibleItems.length})<br/>
                                 {pageData.description}
                             </div>
 

@@ -49,11 +49,6 @@ const PlaylistCard = ({playlist, expanded}) => {
 
     const channel = getChannelFromId(playlist.channelId)
 
-    console.log('playlist', playlist, channel)
-
-
-
-
     const playlistItemText = playlist.itemCount > 1
         ? 'videos'
         : 'video'
@@ -102,7 +97,7 @@ const PlaylistCard = ({playlist, expanded}) => {
                                 handleClick()
                             }}
                     >
-                        {playlist.itemCount} {playlistItemText}
+                        {playlistPage.items.length} {playlistItemText}
                     </Button>
                 </div>
                 <div style={headerFlexStyle}>

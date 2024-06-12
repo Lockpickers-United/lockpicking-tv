@@ -81,7 +81,7 @@ const VideoCard = ({video, handlePlaylistClick, index, playing, listType}) => {
                         </a>
                         <div style={{marginTop: 3}}>
                             <a onClick={() => {openInNewTab(channelLink)}}
-                               style={{color: textColor, textDecoration: 'none', fontSize: '0.83rem', fontWeight: 400}}>
+                               style={{color: textColor, textDecoration: 'none', fontSize: '0.83rem', fontWeight: 400, cursor:'pointer'}}>
                                 {videoAge}, by <b>{video.channelOwner}</b>
                             </a>
                         </div>

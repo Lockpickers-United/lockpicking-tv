@@ -123,7 +123,7 @@ function VideosMain() {
 
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>
                                 {pageTitle}
-                            </span><br/>
+                            </span> ({visibleItems.length})<br/>
                                 {pageDescription}
                             </div>
 

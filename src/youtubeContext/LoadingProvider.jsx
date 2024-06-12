@@ -67,7 +67,7 @@ export function LoadingProvider({children}) {
             return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
                 || a.title.localeCompare(b.title)
         })
-    const newVideos = sortNewVideos.slice(0, 75)
+    const newVideos = sortNewVideos.slice(0, 100)
 
     const sortPopularVideos = popularVideosData
         .filter(video => {
@@ -82,7 +82,6 @@ export function LoadingProvider({children}) {
     const getVideosFromIds = useCallback(videoIds => {
         return allVideos.filter(video => videoIds.includes(video.id))
     },[allVideos])
-
 
     const getChannelFromId = useCallback(channelId => {
         return allChannels?.find(({id}) => id === channelId)
