@@ -49,7 +49,7 @@ function GuideMenu() {
                 <Button edge='start' color='inherit' onClick={openDrawer}
                         style={{height: '30px', minWidth: '30px', margin: 0, padding: 0}}
                 >
-                    <LPTVlogo height={40}/>
+                    <LPTVlogo height={40} fill={'#fff'}/>
                 </Button>
             </Tooltip>
 

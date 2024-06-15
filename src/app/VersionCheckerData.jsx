@@ -12,7 +12,7 @@ function VersionCheckerCode() {
     const checkVersion = async first => {
         //console.log('version: ', version)
         try {
-            const response = await fetch('https://beta.lockpicking.tv/data/version.json', {cache: 'no-cache'})
+            const response = await fetch('/data/version.json', {cache: 'no-cache'})
             const {version: newVersion} = (await response.json())
             if (first && !initial) {
                 setInitial(newVersion)

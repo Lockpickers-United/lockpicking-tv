@@ -2,7 +2,7 @@ import React, {useCallback, useMemo} from 'react'
 import useData from '../util/useData'
 import {pagesData, channelData, videoData} from '../data/dataUrls'
 
-import LoadingContext from './LoadingContext.jsx'
+import LoadingContext from '../../context/youtubeContext/LoadingContext.jsx'
 import dayjs from 'dayjs'
 
 const urls = {pagesData, channelData, videoData}
@@ -49,14 +49,31 @@ export function LoadingProvider({children}) {
                 return channel.channelFlags.includes('new')
             })
             : [], [jsonLoaded, channelData])
+    const subscriptionChannels = useMemo(() => jsonLoaded
+            ? channelData.allChannels.filter(channel => {
+                return channel.channelFlags.includes('subscription')
+            })
+            : [], [jsonLoaded, channelData])
 
+    const mainChannels = [
+        ...newChannels,
+        ...featuredChannels,
+        ...subscriptionChannels
+    ]
+
+    const mainChannelIds = mainChannels.map( channel => {
+        return channel.id
+    })
 
     const newVideosData = useMemo(() => jsonLoaded
-        ? videoData.allVideos.filter(video => video.videoFlags.includes('new') )
-        : [], [jsonLoaded, videoData])
+        ? videoData.allVideos
+            .filter(video => video.videoFlags.includes('new'))
+            .filter(video => mainChannelIds.includes(video.channelId))
+        : [], [jsonLoaded, videoData, mainChannelIds])
     const popularVideosData = useMemo(() => jsonLoaded
         ? videoData.allVideos.filter(video => video.videoFlags.includes('popular') )
-        : [], [jsonLoaded, videoData])
+            .filter(video => mainChannelIds.includes(video.channelId))
+        : [], [jsonLoaded, videoData, mainChannelIds])
     const allVideos = useMemo(() => jsonLoaded ? videoData.allVideos : [], [jsonLoaded, videoData])
 
     const sortNewVideos = newVideosData
@@ -74,8 +91,8 @@ export function LoadingProvider({children}) {
             return !!video
         })
         .sort((a, b) => {
-            return parseInt(b.viewCount) - parseInt(a.viewCount)
-                || a.title.localeCompare(b.title)
+            return a.channelOwner.localeCompare(b.channelOwner)
+            || parseInt(b.viewCount) - parseInt(a.viewCount)
         })
     const popularVideos = sortPopularVideos.slice(0, 1000)
 

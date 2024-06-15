@@ -10,6 +10,9 @@ import {useCallback, useContext, useState} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import {openInNewTab} from '../util/openInNewTab'
+import Tooltip from '@mui/material/Tooltip'
+import Button from '@mui/material/Button'
+import LPTVlogo from '../assets/LPTVlogo2-w.jsx'
 
 export default function GuideFull() {
 
@@ -58,84 +61,95 @@ export default function GuideFull() {
     //const handleGuideClose = useCallback(() => setGuideOpen(false),[setGuideOpen])
 
     return (
-        <Drawer
-            anchor='top'
-            open={open}
-            onOpen={openDrawer}
-            onClose={closeDrawer}
-        >
+        <React.Fragment>
+            <Tooltip title='Guide' arrow disableFocusListener>
+                <Button edge='start' color='inherit' onClick={openDrawer}
+                        style={{height: '30px', minWidth: '30px', margin: 0, padding: 0}}
+                >
+                    <LPTVlogo height={40} fill={'#fff'}/>
+                </Button>
+            </Tooltip>
 
-            <Stack direction='column' style={{minWidth: 250}}>
-                <div onClick={closeDrawer} style={{
-                    padding: headerPadding,
-                    margin: '0px',
-                    backgroundColor: '#292929',
-                    borderBottom: '1px solid #000',
-                    display: 'flex',
-                    alignItems: 'center'
-                }}>
-                    <div style={{marginLeft: 5, paddingTop: 0}}>
-                        <LPTVheader style={{width: 110, position: 'relative'}}/>
-                    </div>
-                    <div style={{
-                        width: '100%',
-                        marginLeft: 30,
-                        lineHeight: '1.3rem'
+            <Drawer
+                anchor='top'
+                open={open}
+                onOpen={openDrawer}
+                onClose={closeDrawer}
+            >
+
+                <Stack direction='column' style={{minWidth: 250}}>
+                    <div onClick={closeDrawer} style={{
+                        padding: headerPadding,
+                        margin: '0px',
+                        backgroundColor: '#292929',
+                        borderBottom: '1px solid #000',
+                        display: 'flex',
+                        alignItems: 'center'
                     }}>
-                        <span style={{fontSize: '1.1rem', fontWeight: 600}}>lockpicking.tv</span><br/>
-                        {introCopy}
+                        <div style={{marginLeft: 5, paddingTop: 0}}>
+                            <LPTVheader style={{width: 110, position: 'relative'}}/>
+                        </div>
+                        <div style={{
+                            width: '100%',
+                            marginLeft: 30,
+                            lineHeight: '1.3rem'
+                        }}>
+                            <span style={{fontSize: '1.1rem', fontWeight: 600}}>lockpicking.tv</span><br/>
+                            {introCopy}
+                        </div>
                     </div>
-                </div>
 
-                <div style={{backgroundColor: '#000'}}>
+                    <div style={{backgroundColor: '#000'}}>
 
-                    <TableContainer>
-                        <Table style={{backgroundColor: '#000'}} sx={{border: '1px solid #000'}} size='small'>
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell sx={{padding: '0px 0px 0px 14px', fontWeight: 600}}>Today</TableCell>
-                                    {!single &&
-                                        <TableCell
-                                            sx={{
-                                                padding: '0px 0px 0px 10px',
-                                                fontWeight: 600,
-                                                display: 'flex',
-                                                border: 0
-                                            }}>
-                                            <div style={{width: '25%'}}>{nowString}</div>
-                                            <div style={{width: '25%'}}>{times[0]}</div>
-                                            <div style={{width: '25%'}}>{times[1]}</div>
-                                            <div style={{width: '25%'}}>{times[2]}</div>
-                                        </TableCell>
-                                    }
-                                    {single &&
-                                        <TableCell sx={{padding: '0px 0px 0px 10px', fontWeight: 600, display: 'flex'}}>
-                                            <div style={{width: '100'}}>{nowString}</div>
-                                        </TableCell>
-                                    }
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {menuConfig
-                                    .filter(menuItem => beta || !menuItem.beta)
-                                    .map((menuItem, index) =>
-                                        <GuidePageItem
-                                            key={index}
-                                            menuItem={menuItem}
-                                            openTitle={openTitle}
-                                            onOpen={setOpenTitle}
-                                            onClose={closeDrawer}
-                                            index={index}
-                                            single={single}
-                                            openInNewTab={openInNewTab}
-                                        />
-                                    )}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                    <div style={{height: 6}}/>
-                </div>
-            </Stack>
-        </Drawer>
+                        <TableContainer>
+                            <Table style={{backgroundColor: '#000'}} sx={{border: '1px solid #000'}} size='small'>
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell sx={{padding: '0px 0px 0px 14px', fontWeight: 600}}>Today</TableCell>
+                                        {!single &&
+                                            <TableCell
+                                                sx={{
+                                                    padding: '0px 0px 0px 10px',
+                                                    fontWeight: 600,
+                                                    display: 'flex',
+                                                    border: 0
+                                                }}>
+                                                <div style={{width: '25%'}}>{nowString}</div>
+                                                <div style={{width: '25%'}}>{times[0]}</div>
+                                                <div style={{width: '25%'}}>{times[1]}</div>
+                                                <div style={{width: '25%'}}>{times[2]}</div>
+                                            </TableCell>
+                                        }
+                                        {single &&
+                                            <TableCell
+                                                sx={{padding: '0px 0px 0px 10px', fontWeight: 600, display: 'flex'}}>
+                                                <div style={{width: '100'}}>{nowString}</div>
+                                            </TableCell>
+                                        }
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {menuConfig
+                                        .filter(menuItem => beta || !menuItem.beta)
+                                        .map((menuItem, index) =>
+                                            <GuidePageItem
+                                                key={index}
+                                                menuItem={menuItem}
+                                                openTitle={openTitle}
+                                                onOpen={setOpenTitle}
+                                                onClose={closeDrawer}
+                                                index={index}
+                                                single={single}
+                                                openInNewTab={openInNewTab}
+                                            />
+                                        )}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                        <div style={{height: 6}}/>
+                    </div>
+                </Stack>
+            </Drawer>
+        </React.Fragment>
     )
 }

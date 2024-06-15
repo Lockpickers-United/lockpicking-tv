@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
-import LoadingContext from '../youtubeContext/LoadingContext.jsx'
+import LoadingContext from '../../context/youtubeContext/LoadingContext.jsx'
 
 import {DataGrid} from '@mui/x-data-grid'
 import Box from '@mui/material/Box'
@@ -37,7 +37,7 @@ function ReportsMain() {
             featuredChannel: channel.channelFlags.includes('featured') ? 'featured' : '',
             newChannel: channel.channelFlags.includes('new') ? 'new' : '',
             playlistChannel: channel.channelFlags.includes('playlist') ? 'playlist' : '',
-            subscribedChannel: channel.channelFlags.includes('subscription') ? 'subscribed' : ''
+            subscribedChannel: channel.channelFlags.includes('subscription') ? 'subscription' : ''
         }
     }).sort(function (a, b) {
         return a.title.localeCompare(b.title)

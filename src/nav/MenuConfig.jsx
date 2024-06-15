@@ -76,12 +76,38 @@ function MenuConfig() {
         {
             separator: true,
             full: true,
+            title: 'About lockpicking.tv',
+            icon: <GradeIcon fontSize='small'/>,
+            path: '/about'
+        },
+        {
+            full: true,
             title: 'Submit Channel / Opt Out',
             icon: <GradeIcon fontSize='small'/>,
             path: '/contact'
-        }
+        },
+
     ]
 
+    const moreItems = {
+        title: 'More locksport info',
+        icon: <LPU_logo style={{height: 20}}/>,
+        separator: true,
+        full: true,
+        expanded: true,
+        children: [
+            {
+                icon: <OpenInNewIcon fontSize='small' color='disabled'/>,
+                title: 'LPUbelts.com',
+                path: 'https://lpubelts.com'
+            },
+            {
+                icon: <OpenInNewIcon fontSize='small' color='disabled'/>,
+                title: 'Reddit r/lockpicking',
+                path: 'https://www.reddit.com/r/lockpicking/'
+            }
+        ]
+    }
 
     return (
         [
@@ -89,30 +115,7 @@ function MenuConfig() {
             ...channelItems,
             ...pageItems,
             ...siteItems,
-            {
-                title: 'More from LPU',
-                icon: <LPU_logo style={{height: 20}}/>,
-                separator: true,
-                full: true,
-                expanded: true,
-                children: [
-                    {
-                        icon: <OpenInNewIcon fontSize='small' color='disabled'/>,
-                        title: 'LPUbelts.com',
-                        path: 'https://lpubelts.com'
-                    },
-                    {
-                        icon: <OpenInNewIcon fontSize='small' color='disabled'/>,
-                        title: 'LPUlocks.com',
-                        path: 'https://lpulocks.com'
-                    },
-                    {
-                        icon: <OpenInNewIcon fontSize='small' color='disabled'/>,
-                        title: 'LPU YouTube',
-                        path: 'https://www.youtube.com/channel/UCHEPEHbo6kAxsxvIePE9kRw'
-                    }
-                ]
-            }
+            moreItems
         ]
     )
 }

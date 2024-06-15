@@ -21,6 +21,7 @@ function SearchBox({label, extraFilters = []}) {
     useHotkeys('s', () => inputEl?.current?.focus(), {preventDefault: true})
 
     const handleClear = useCallback(() => {
+        console.log('handleClear')
         window.scrollTo({top: 0})
         setText('')
         removeFilter('search', '')
@@ -53,6 +54,20 @@ function SearchBox({label, extraFilters = []}) {
 
     const [open, setOpen] = useState(false)
     const handleBlur = useCallback(() => setTimeout(() => setOpen(false), 0), [])
+
+    useHotkeys('Escape', () => {
+        window.scrollTo({top: 0})
+        setText('')
+        removeFilter('search', '')
+    })
+
+    const handleKeyDown = useCallback((e) => {
+        if (e.keyCode === 27) {
+            console.log('escape')
+            setText('')
+            removeFilter('search', '')
+        }
+    },[removeFilter])
 
     useEffect(() => {
         const newValue = searchParams.get('search')
@@ -87,6 +102,7 @@ function SearchBox({label, extraFilters = []}) {
         backgroundColor: '#272727'
     } : {}
 
+
     return (
         <div style={{}}>
             <TextField
@@ -109,6 +125,7 @@ function SearchBox({label, extraFilters = []}) {
                 value={text}
                 style={{...style, ...focusStyle}}
                 fullWidth
+                onKeyDown={handleKeyDown}
             />
             <Backdrop
                 invisible
