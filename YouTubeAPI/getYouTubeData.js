@@ -1,3 +1,5 @@
+// Based on the info & code at https://developers.google.com/youtube/v3/quickstart/nodejs
+
 let fs = require('fs')
 let readline = require('readline')
 let {google} = require('googleapis')
@@ -33,7 +35,7 @@ let SCOPES = ['https://www.googleapis.com/auth/youtube.readonly']
 let TOKEN_DIR = `${workDir}/credentials/`
 let TOKEN_PATH = TOKEN_DIR + 'youtube-credentials.json'
 
-// you must put a working copy of your client-secret in 'workDir'
+// you must put a working copy of your client-secret.json in 'workDir'
 fs.readFile(`${workDir}/client_secret.json`, function processClientSecrets(err, content) {
     if (err) {
         console.error('Error loading client secret file: ' + err)
@@ -50,7 +52,7 @@ fs.readFile(`${workDir}/client_secret.json`, function processClientSecrets(err, 
 //   MAIN   //
 //          //
 
-const dev = true
+const dev = true  // log version and statistics to console
 const debug = false
 const debug2 = false
 const lite = false
