@@ -5,6 +5,13 @@ A site that consolidates locksport channels and videos from a single YouTube acc
 ## Contributing
 For code/features, submit an issue and discuss first.
 
+## Get YouTube data
+
+```
+YouTubeAPI/getYouTubeData.js
+```
+**Must be configured for your account/environment**
+
 ## Run locally
 ```
 yarn dev
