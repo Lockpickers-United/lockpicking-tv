@@ -1,5 +1,4 @@
 import React, {useContext} from 'react'
-import LPU_logo from '../assets/LPU_logo'
 import GradeIcon from '@mui/icons-material/Grade'
 import BabyChangingStationIcon from '@mui/icons-material/BabyChangingStation'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
@@ -9,13 +8,40 @@ import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import NewReleasesIcon from '@mui/icons-material/NewReleases'
 import FavoriteIcon from '@mui/icons-material/Favorite'
+import InfoIcon from '@mui/icons-material/Info'
+import MailOutlineIcon from '@mui/icons-material/MailOutline'
+import LockIcon from '@mui/icons-material/Lock'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import config from '../app/config'
 
 function MenuConfig() {
 
     const {pageNavData} = useContext(LoadingContext)
 
-    const videoItems = [
+    const menuSections = {
+        channelItems: [
+            {
+                separator: true,
+                title: 'Featured Channels',
+                icon: <GradeIcon fontSize='small'/>,
+                path: '/channels?page=featured'
+            },
+            {
+                title: 'New & Noteworthy',
+                icon: <BabyChangingStationIcon fontSize='small'/>,
+                path: '/channels?page=newChannels'
+            },
+            {
+                title: 'Full Directory',
+                icon: <MenuBookIcon fontSize='small'/>,
+                path: '/channels?page=full'
+            }
+        ]
+    }
+
+    menuSections.videoItems = [
         {
+            separator: true,
             title: 'New Videos',
             icon: <NewReleasesIcon fontSize='small'/>,
             path: '/videos?page=newVideos'
@@ -25,29 +51,9 @@ function MenuConfig() {
             icon: <FavoriteIcon fontSize='small'/>,
             path: '/videos?page=popular'
         }
-
     ]
 
-    const channelItems = [
-        {
-            separator: true,
-            title: 'Featured Channels',
-            icon: <GradeIcon fontSize='small'/>,
-            path: '/channels?page=featured'
-        },
-        {
-            title: 'New & Noteworthy',
-            icon: <BabyChangingStationIcon fontSize='small'/>,
-            path: '/channels?page=newChannels'
-        },
-        {
-            title: 'Full Directory',
-            icon: <MenuBookIcon fontSize='small'/>,
-            path: '/channels?page=full'
-        }
-    ]
-
-    const pageItems = pageNavData
+    menuSections.pageItems = pageNavData
         .filter(page => {
             return page.id.substring(0, 3) !== 'pl_'
         })
@@ -72,26 +78,31 @@ function MenuConfig() {
             }
         })
 
-    const siteItems = [
+    menuSections.siteItems = [
         {
             separator: true,
             full: true,
             title: 'About lockpicking.tv',
-            icon: <GradeIcon fontSize='small'/>,
+            icon: <InfoIcon fontSize='small'/>,
             path: '/about'
         },
         {
             full: true,
             title: 'Submit Channel / Opt Out',
-            icon: <GradeIcon fontSize='small'/>,
+            icon: <MailOutlineIcon fontSize='small'/>,
             path: '/contact'
         },
-
+        {
+            full: true,
+            title: 'Privacy Policy',
+            icon: <AccountCircleIcon fontSize='small'/>,
+            path: '/privacy'
+        }
     ]
 
-    const moreItems = {
+    menuSections.moreItems = {
         title: 'More locksport info',
-        icon: <LPU_logo style={{height: 20}}/>,
+        icon: <LockIcon fontSize='small'/>,
         separator: true,
         full: true,
         expanded: true,
@@ -109,15 +120,15 @@ function MenuConfig() {
         ]
     }
 
-    return (
-        [
-            ...videoItems,
-            ...channelItems,
-            ...pageItems,
-            ...siteItems,
-            moreItems
-        ]
-    )
+    const menu = config.guide.sections.reduce((acc, sectionName) => {
+        const section = menuSections[sectionName]
+        acc.push(section)
+        return acc
+    }, [])
+    menu[0].separator = false
+
+    return menu.flat()
+
 }
 
 export default MenuConfig

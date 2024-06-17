@@ -12,6 +12,7 @@ import FilterContext from '../context/FilterContext.jsx'
 import SortButton from '../filters/SortButton.jsx'
 import {videoSortFields} from '../data/sortFields'
 import Tracker from '../app/Tracker.jsx'
+import config from '../app/config'
 
 function VideosMain() {
 
@@ -19,18 +20,10 @@ function VideosMain() {
     const {filters} = useContext(FilterContext)
     const {page} = filters
 
-    const pageTitle = page === 'popular'
-        ? 'Popular Videos'
-        : 'New Videos'
-
-    const pageDescription = page === 'popular'
-        ? 'The most popular videos from each of our New & Featured Channels.'
-        : 'The latest videos from our New & Featured Channels.'
-
-    const [currentPage, setCurrentPage] = useState(undefined)
+    const {title,introCopy} = config.pages[page]
 
     const {allDataLoaded} = useContext(LoadingContext)
-
+    const [currentPage, setCurrentPage] = useState(undefined)
     const [mainItem, setMainItem] = useState(visibleItems[0])
     const [index, setIndex] = useState(0)
     const [playing, setPlaying] = useState(mainItem?.id) //eslint-disable-line
@@ -43,7 +36,7 @@ function VideosMain() {
         setExpanded(true)
     }, [])
 
-    document.title = `lockpicking.tv - ${pageTitle}`
+    document.title = `lockpicking.tv - ${title}`
 
     const theme = createTheme({
         breakpoints: {
@@ -122,9 +115,9 @@ function VideosMain() {
                             <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
 
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>
-                                {pageTitle}
+                                {title}
                             </span> ({visibleItems.length})<br/>
-                                {pageDescription}
+                                {introCopy}
                             </div>
 
                             <ThemeProvider theme={theme}>

@@ -34,7 +34,9 @@ function Channels({channels}) {
                 <ThemeProvider theme={theme}>
                     <Grid container spacing={{xs: 1, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
                           style={{marginTop: -10, marginLeft: -10}}>
-                        {channels.map((channel) =>
+                        {channels
+                            .filter(x => x)
+                            .map((channel) =>
                             <Grid item xs={4} sm={4} md={4} key={channel.id}>
                                 <ChannelCard
                                     channel={channel}

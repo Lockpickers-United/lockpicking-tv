@@ -10,14 +10,14 @@ export function DataProvider({children}) {
 
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, guide, showAll, page, ...filters} = allFilters
-    const {allChannels, featuredChannels, newChannels} = useContext(LoadingContext)
+    const {fullDirectoryChannels, featuredChannels, newChannels, allChannels} = useContext(LoadingContext)
 
     const channelSet = page
     const channels = page === 'featured'
         ? featuredChannels
         : page === 'newChannels'
             ? newChannels
-            : allChannels
+            : fullDirectoryChannels
 
     const mappedChannels = channels.map(channel => {
         if (channel.kind !== 'youtube#channel') { return }

@@ -6,8 +6,6 @@ import {openInNewTab} from '../util/openInNewTab'
 
 function Footer({hide, extras}) {
 
-    console.log(hide)
-
     return (
         <React.Fragment>
             {!hide &&
@@ -25,9 +23,9 @@ function Footer({hide, extras}) {
                         Lady Locks
                     </a>
                     &nbsp;•&nbsp;
-                    <a onClick={null} style={{color: '#121212'}}>
+                    <span style={{color: '#121212'}}>
                         mgsecure
-                    </a>
+                    </span>
 
                     {extras}
 
