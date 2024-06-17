@@ -1,5 +1,26 @@
-# Lock Trackers
+# lockpicking.tv
 
-LPUlocks.com
+A site that consolidates locksport channels and videos from a single YouTube account. 
 
-Lock trackers for LPU #lock-bazaar listings and Speed Picks
+## Contributing
+For code/features, submit an issue and discuss first.
+
+## Run locally
+```
+yarn dev
+```
+
+(use 'vite dev --force' to force re-optimization of dependencies)
+
+## Run ESLint
+```
+yarn lint
+```
+
+
+
+## Build for deploy
+
+```
+yarn build
+```

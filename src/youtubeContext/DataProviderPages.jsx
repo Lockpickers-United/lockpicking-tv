@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo, useContext} from 'react'
-import LoadingContext from '../../context/youtubeContext/LoadingContext.jsx'
+import LoadingContext from '../context/LoadingContext.jsx'
 import DataContext from '../app/DataContext.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import fuzzysort from 'fuzzysort'

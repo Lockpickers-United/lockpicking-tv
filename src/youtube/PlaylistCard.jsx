@@ -2,7 +2,7 @@ import React, {useCallback, useContext, useEffect, useRef, useState} from 'react
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import LoadingContext from '../../context/youtubeContext/LoadingContext.jsx'
+import LoadingContext from '../context/LoadingContext.jsx'
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay'
 import queryString from 'query-string'
 import useWindowSize from '../util/useWindowSize.jsx'

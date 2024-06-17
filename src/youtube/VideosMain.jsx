@@ -1,7 +1,7 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react'
 import DataContext from '../app/DataContext.jsx'
 import Grid from '@mui/material/Grid'
-import LoadingContext from '../../context/youtubeContext/LoadingContext.jsx'
+import LoadingContext from '../context/LoadingContext.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
 import VideoCard from './VideoCard.jsx'

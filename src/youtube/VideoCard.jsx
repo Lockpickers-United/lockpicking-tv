@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import LoadingContext from '../../context/youtubeContext/LoadingContext.jsx'
+import LoadingContext from '../context/LoadingContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import VideoStats from './VideoStats.jsx'
 import dayjs from 'dayjs'

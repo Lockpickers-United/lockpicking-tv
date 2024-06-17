@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
-import LoadingContext from '../../context/youtubeContext/LoadingContext.jsx'
+import LoadingContext from '../context/LoadingContext.jsx'
 
 import {DataGrid} from '@mui/x-data-grid'
 import Box from '@mui/material/Box'

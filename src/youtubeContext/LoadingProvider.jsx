@@ -2,7 +2,7 @@ import React, {useCallback, useMemo} from 'react'
 import useData from '../util/useData'
 import {pagesData, channelData, videoData} from '../data/dataUrls'
 const urls = {pagesData, channelData, videoData}
-import LoadingContext from '../../context/youtubeContext/LoadingContext.jsx'
+import LoadingContext from '../context/LoadingContext.jsx'
 import config from '../app/config'
 import dayjs from 'dayjs'
 
