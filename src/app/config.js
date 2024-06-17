@@ -1,4 +1,5 @@
 export default {
+    domain: 'http://beta.lockpicking.tv',
     pages: {
         newVideos: {
             title: 'New Videos',
@@ -20,7 +21,7 @@ export default {
         }
     },
     guide: {
-      sections: ['pageItems', 'channelItems', 'videoItems', 'siteItems', 'moreItems']
+      sections: ['channelItems', 'videoItems', 'siteItems', 'moreItems']
     },
     notUsed: {
         sections: ['pageItems']

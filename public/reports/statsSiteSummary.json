@@ -1,0 +1,328 @@
+{
+   "trafficTotals" : {
+      "platform" : [
+         {
+            "label" : "Mac OS X",
+            "id" : "Mac OS X",
+            "value" : "237"
+         },
+         {
+            "label" : "iOS",
+            "id" : "iOS",
+            "value" : "236"
+         },
+         {
+            "label" : "Win10.0",
+            "value" : "161",
+            "id" : "Win10.0"
+         },
+         {
+            "value" : "99",
+            "id" : "Android",
+            "label" : "Android"
+         },
+         {
+            "id" : "Linux",
+            "value" : "3",
+            "label" : "Linux"
+         },
+         {
+            "id" : "Other",
+            "value" : null,
+            "label" : "Other"
+         }
+      ],
+      "browser" : [
+         {
+            "label" : "Safari",
+            "value" : "309",
+            "id" : "Safari"
+         },
+         {
+            "label" : "Chrome",
+            "id" : "Chrome",
+            "value" : "276"
+         },
+         {
+            "label" : "Firefox",
+            "value" : "129",
+            "id" : "Firefox"
+         },
+         {
+            "label" : "Samsung",
+            "id" : "Samsung",
+            "value" : "17"
+         },
+         {
+            "label" : "Edge",
+            "value" : "5",
+            "id" : "Edge"
+         },
+         {
+            "value" : null,
+            "id" : "Other",
+            "label" : "Other"
+         }
+      ]
+   },
+   "lockViewsByBelt" : {
+      "description" : "Lock Views By Belt"
+   },
+   "dailyAverages" : {
+      "data" : [
+         {
+            "label" : "Visitors",
+            "value" : 3
+         },
+         {
+            "label" : "Visits",
+            "value" : 26
+         },
+         {
+            "label" : "Lock Views",
+            "value" : 1
+         }
+      ],
+      "description" : "Daily Averages"
+   },
+   "pageViews" : [
+      {
+         "data" : [
+            {
+               "y" : null,
+               "x" : "2024-05-27"
+            },
+            {
+               "x" : "2024-06-03",
+               "y" : 699
+            },
+            {
+               "x" : "2024-06-10",
+               "y" : 699
+            }
+         ],
+         "id" : "Page Views"
+      }
+   ],
+   "totals" : {
+      "description" : "Since Launch",
+      "data" : [
+         {
+            "value" : 736,
+            "label" : "Site Vists"
+         },
+         {
+            "label" : "Lock Views",
+            "value" : 15
+         },
+         {
+            "value" : 11,
+            "label" : "Countries"
+         }
+      ]
+   },
+   "hourlyRequests" : [
+      {
+         "data" : [
+            {
+               "y" : "8",
+               "x" : "midnight"
+            },
+            {
+               "x" : "1 am",
+               "y" : "4"
+            },
+            {
+               "x" : "2 am",
+               "y" : "13"
+            },
+            {
+               "x" : "3 am",
+               "y" : "14"
+            },
+            {
+               "x" : "4 am",
+               "y" : "12"
+            },
+            {
+               "y" : "1",
+               "x" : "5 am"
+            },
+            {
+               "x" : "6 am",
+               "y" : "33"
+            },
+            {
+               "y" : "105",
+               "x" : "7 am"
+            },
+            {
+               "y" : "189",
+               "x" : "8 am"
+            },
+            {
+               "y" : "128",
+               "x" : "9 am"
+            },
+            {
+               "x" : "10 am",
+               "y" : "240"
+            },
+            {
+               "y" : "173",
+               "x" : "11 am"
+            },
+            {
+               "y" : "186",
+               "x" : "noon"
+            },
+            {
+               "y" : "71",
+               "x" : "1 pm"
+            },
+            {
+               "y" : "65",
+               "x" : "2 pm"
+            },
+            {
+               "x" : "3 pm",
+               "y" : "72"
+            },
+            {
+               "x" : "4 pm",
+               "y" : "183"
+            },
+            {
+               "y" : "300",
+               "x" : "5 pm"
+            },
+            {
+               "x" : "6 pm",
+               "y" : "137"
+            },
+            {
+               "x" : "7 pm",
+               "y" : "77"
+            },
+            {
+               "x" : "8 pm",
+               "y" : "196"
+            },
+            {
+               "y" : "35",
+               "x" : "9 pm"
+            },
+            {
+               "x" : "10 pm",
+               "y" : "21"
+            },
+            {
+               "y" : "32",
+               "x" : "11 pm"
+            }
+         ],
+         "id" : "User Time"
+      },
+      {
+         "data" : [
+            {
+               "y" : "8",
+               "x" : "midnight"
+            },
+            {
+               "x" : "1 am",
+               "y" : "4"
+            },
+            {
+               "x" : "2 am",
+               "y" : null
+            },
+            {
+               "x" : "3 am",
+               "y" : "8"
+            },
+            {
+               "y" : "6",
+               "x" : "4 am"
+            },
+            {
+               "x" : "5 am",
+               "y" : "4"
+            },
+            {
+               "y" : "33",
+               "x" : "6 am"
+            },
+            {
+               "y" : "101",
+               "x" : "7 am"
+            },
+            {
+               "x" : "8 am",
+               "y" : "178"
+            },
+            {
+               "y" : "139",
+               "x" : "9 am"
+            },
+            {
+               "y" : "267",
+               "x" : "10 am"
+            },
+            {
+               "y" : "200",
+               "x" : "11 am"
+            },
+            {
+               "x" : "noon",
+               "y" : "221"
+            },
+            {
+               "x" : "1 pm",
+               "y" : "72"
+            },
+            {
+               "x" : "2 pm",
+               "y" : "105"
+            },
+            {
+               "y" : "63",
+               "x" : "3 pm"
+            },
+            {
+               "x" : "4 pm",
+               "y" : "130"
+            },
+            {
+               "x" : "5 pm",
+               "y" : "256"
+            },
+            {
+               "x" : "6 pm",
+               "y" : "154"
+            },
+            {
+               "y" : "87",
+               "x" : "7 pm"
+            },
+            {
+               "y" : "173",
+               "x" : "8 pm"
+            },
+            {
+               "y" : "54",
+               "x" : "9 pm"
+            },
+            {
+               "y" : "14",
+               "x" : "10 pm"
+            },
+            {
+               "x" : "11 pm",
+               "y" : "19"
+            }
+         ],
+         "id" : "Server Time"
+      }
+   ]
+}

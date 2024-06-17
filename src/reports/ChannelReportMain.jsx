@@ -6,7 +6,7 @@ import {DataGrid} from '@mui/x-data-grid'
 import Box from '@mui/material/Box'
 import dayjs from 'dayjs'
 
-function ReportsMain() {
+function ChannelReportMain() {
 
     function abbreviate(number) {
         return new Intl.NumberFormat('en-US', {
@@ -16,11 +16,9 @@ function ReportsMain() {
         }).format(number)
     }
 
-    const {allChannels} = useContext(LoadingContext)
+    const {fullDirectoryChannels} = useContext(LoadingContext)
 
-    console.log(allChannels)
-
-    const rows = allChannels.map(channel => {
+    const rows = fullDirectoryChannels.map(channel => {
         return {
             id: channel.channelId,
             kind: channel.kind,
@@ -167,4 +165,4 @@ function ReportsMain() {
     )
 }
 
-export default ReportsMain
+export default ChannelReportMain

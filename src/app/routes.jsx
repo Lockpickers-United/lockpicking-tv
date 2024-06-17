@@ -50,10 +50,17 @@ export default [
         }
     },
     {
-        path: '/reports',
+        path: '/channelreport',
         lazy: async () => {
-            const {default: ReportsRoute} = await import('../reports/ReportsRoute.jsx')
-            return {element: <ReportsRoute/>}
+            const {default: ChannelReportRoute} = await import('../reports/ChannelReportRoute.jsx')
+            return {element: <ChannelReportRoute/>}
+        }
+    },
+    {
+        path: '/sitereport',
+        lazy: async () => {
+            const {default: SiteReportRoute} = await import('../reports/SiteReportRoute.jsx')
+            return {element: <SiteReportRoute/>}
         }
     },
     {
