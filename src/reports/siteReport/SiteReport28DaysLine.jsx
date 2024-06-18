@@ -6,6 +6,10 @@ import useWindowSize from '../../util/useWindowSize'
 const SiteReport28DaysLine = ({lineData}) => {
 
     const fullData = [lineData.traffic28days.data]
+
+    //fullData.columns= fullData.columns.filter(column => column.id !== 'visits')
+
+
     const siteLineData = []
     const visitorsHash = new Map()
     const visitsHash = new Map()
@@ -42,7 +46,7 @@ const SiteReport28DaysLine = ({lineData}) => {
         pageViewsHash['data'] = pageViewsArray
 
         siteLineData.push(visitsHash)
-        siteLineData.push(visitorsHash)
+        //siteLineData.push(visitorsHash)
         siteLineData.push(pageViewsHash)
     })
 
@@ -65,13 +69,13 @@ const SiteReport28DaysLine = ({lineData}) => {
         : {top: 10, right: 20, bottom: 50, left: 50}
 
     return (
-        <div style={{height: chartHeight, width:'100%'}}>
+        <div style={{height: chartHeight, width: '100%'}}>
             <ResponsiveLine
                 theme={primaryTheme}
                 data={siteLineData}
                 enableGridX={false}
                 enableGridY={true}
-                colors={['#5265ed', '#082fd1', '#4fa720']}
+                colors={['#5265ed', '#4fa720', '#082fd1']}
                 lineWidth={3}
                 margin={chartMargin}
                 height={chartHeight}

@@ -1,0 +1,22 @@
+{
+  "version": "2024-06-17T09:08:52-07:00",
+  "totalRequests": 251,
+  "mainVideos": 613,
+  "playlistVideos": 255,
+  "popularVideos": 195,
+  "newVideos": 199,
+  "allchannels": 95,
+  "getSubscriptionsDataRequests": 1,
+  "getPlaylistItemsRequests": 107,
+  "getPlaylistsRequests": 39,
+  "getPlaylistsFromIdsRequests": 13,
+  "getVideosRequests": 88,
+  "allSubscriptionIds": 40,
+  "allFeaturedChannelIds": 9,
+  "allNewChannelIds": 2,
+  "allRecentChannelIds": 2,
+  "allPlaylistChannelIds": 76,
+  "allChannels": 95,
+  "allPlaylistIds": 13,
+  "singlePlaylistVideoIds": 0
+}
