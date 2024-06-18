@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import config from '../app/config'
 import GradeIcon from '@mui/icons-material/Grade'
 import BabyChangingStationIcon from '@mui/icons-material/BabyChangingStation'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
@@ -12,7 +13,8 @@ import InfoIcon from '@mui/icons-material/Info'
 import MailOutlineIcon from '@mui/icons-material/MailOutline'
 import LockIcon from '@mui/icons-material/Lock'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-import config from '../app/config'
+import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined'
+import InsightsIcon from '@mui/icons-material/Insights'
 
 function MenuConfig() {
 
@@ -97,6 +99,24 @@ function MenuConfig() {
             title: 'Privacy Policy',
             icon: <AccountCircleIcon fontSize='small'/>,
             path: '/privacy'
+        }
+    ]
+
+    menuSections.reportItems = [
+        {
+            separator: true,
+            beta: true,
+            full: true,
+            title: 'Channel Report',
+            icon: <InsightsIcon fontSize='small'/>,
+            path: '/channelreport'
+        },
+        {
+            full: true,
+            beta: true,
+            title: 'Site Report',
+            icon: <AssessmentOutlinedIcon fontSize='small'/>,
+            path: '/sitereport'
         }
     ]
 

@@ -11,6 +11,7 @@ import PageTrackingTable from './siteReport/PageTrackingTable'
 import SiteReportSummary from './siteReport/SiteReportSummary'
 import PopularCountries from './siteReport/PopularCountries'
 import TopUrlsTable from './siteReport/TopUrlsTable.jsx'
+import ToggleBetaButton from '../nav/ToggleBetaButton.jsx'
 
 function SiteReportMain() {
     usePageTitle('Site Report')
@@ -44,6 +45,7 @@ function SiteReportMain() {
             fontSize: '1.5rem', lineHeight: 0.8
         }}>
 
+
             {!!siteFull?.firstVistsLastSevenDays?.countryCount &&
                 <React.Fragment>
                     <div style={firstHeaderStyle}>First Visits (Last Seven Days)</div>
@@ -52,6 +54,7 @@ function SiteReportMain() {
             }
 
             <div style={summaryHeaderStyle}>
+                <ToggleBetaButton/><br/>
                 Site Summary<br/>
                 <span style={{fontSize: '0.85rem'}}>{updateTime}</span>
             </div>

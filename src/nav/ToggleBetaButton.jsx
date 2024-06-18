@@ -12,9 +12,9 @@ function ToggleBetaButton() {
     }, [beta, setBeta])
 
     return (
-        <Tooltip title={`Toggle Beta Features ${beta ? 'Off' : 'On'}`} arrow disableFocusListener>
+        <Tooltip title={`Toggle Nav Features ${beta ? 'Off' : 'On'}`} arrow disableFocusListener>
             <IconButton onClick={handleClick}>
-                <BoltIcon fontSize='small' style={{color: beta ? '#459eea' : '#0b0017'}}/>
+                <BoltIcon fontSize='small' style={{color: beta ? '#459eea' : '#60289e'}}/>
             </IconButton>
         </Tooltip>
     )

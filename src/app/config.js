@@ -22,7 +22,7 @@ export default {
     },
     menuStyle: 'simple',
     menu: {
-      sections: ['channelItems', 'videoItems', 'siteItems', 'moreItems']
+      sections: ['channelItems', 'videoItems', 'siteItems', 'reportItems', 'moreItems']
     },
     menuNotUsed: {
         sections: ['pageItems']

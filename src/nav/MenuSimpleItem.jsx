@@ -6,7 +6,7 @@ import {TableCell, TableRow} from '@mui/material'
 import Button from '@mui/material/Button'
 import FilterContext from '../context/FilterContext.jsx'
 
-function MenuSimpleItem({menuItem, openTitle, onOpen, onClose, child, index, openInNewTab}) {
+function MenuSimpleItem({menuItem, openTitle, onOpen, onClose, openInNewTab}) {
     const navigate = useNavigate()
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -44,10 +44,6 @@ function MenuSimpleItem({menuItem, openTitle, onOpen, onClose, child, index, ope
         : isCurrentRoute ? '#2e6787' : '#333'
 
     const hoverColor = isCurrentRoute ? 'inherit' : '#5a5a5a'
-
-    const channelNumber = child || children
-        ? 900 + index
-        : 800 + index
 
     const coloredIcon = icon
         ? React.cloneElement(icon, {style: {color}})
