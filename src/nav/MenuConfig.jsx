@@ -120,7 +120,7 @@ function MenuConfig() {
         ]
     }
 
-    const menu = config.guide.sections.reduce((acc, sectionName) => {
+    const menu = config.menu.sections.reduce((acc, sectionName) => {
         const section = menuSections[sectionName]
         acc.push(section)
         return acc

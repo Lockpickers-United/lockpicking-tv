@@ -6,15 +6,19 @@ import VersionCheckerCode from '../app/VersionCheckerCode.jsx'
 import VersionCheckerData from '../app/VersionCheckerData.jsx'
 import Tracker from '../app/Tracker.jsx'
 import SearchBox from './SearchBox.jsx'
-import GuideMenu from './GuideMenu.jsx'
+import MenuGuide from './MenuGuide.jsx'
+import MenuSimple from './MenuSimple.jsx'
 import GuideFull from './GuideFull.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import config from '../app/config'
 
 function Nav({extras, noSearch}) {
 
+    const {menuStyle} = config
+
     const {width} = useWindowSize()
     const smallWindow = width < 800
-    const showGuideFull = !smallWindow
+    const showGuideFull = !smallWindow && menuStyle === 'guide'
 
     const searchBox = noSearch ? null : <SearchBox label=''/>
     return (
@@ -23,11 +27,14 @@ function Nav({extras, noSearch}) {
                 <div style={{padding: 10, width: '100%', maxWidth: 1200}}>
                     <div style={{display: 'flex', width: '100%', marginTop: 5}}>
                         <div style={{marginRight: 20, marginLeft: 5}}>
-                            { showGuideFull &&
+                            {showGuideFull &&
                                 <GuideFull/>
                             }
-                            { !showGuideFull &&
-                                <GuideMenu/>
+                            {(!showGuideFull && menuStyle === 'guide') &&
+                                <MenuGuide/>
+                            }
+                            {(!showGuideFull && menuStyle !== 'guide') &&
+                                <MenuSimple/>
                             }
                         </div>
                         <div style={{marginRight: 10, flexGrow: 1}}>

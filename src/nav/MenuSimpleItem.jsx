@@ -6,7 +6,7 @@ import {TableCell, TableRow} from '@mui/material'
 import Button from '@mui/material/Button'
 import FilterContext from '../context/FilterContext.jsx'
 
-function GuideItem({menuItem, openTitle, onOpen, onClose, child, index, openInNewTab}) {
+function MenuSimpleItem({menuItem, openTitle, onOpen, onClose, child, index, openInNewTab}) {
     const navigate = useNavigate()
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -38,7 +38,7 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index, openInNe
         }
     }, [children, navigate, onClose, onOpen, openInNewTab, openTitle, params, path, title])
 
-    const color = isCurrentRoute ? '#4691ba' : null
+    const color = isCurrentRoute ? '#fff' : null
     const backgroundColor = children
         ? '#171717'
         : isCurrentRoute ? '#2e6787' : '#333'
@@ -66,23 +66,13 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index, openInNe
             <TableRow
                 key={menuItem}
             >
-                <TableCell component='th' scope='row'
-                           sx={{border: '4px solid #000', width: 80, backgroundColor: '#171717'}}>
-                    <div style={{display: 'flex', width: 65}}>
-                        <b>{channelNumber}</b>
-                        {coloredIcon &&
-                            <ListItemIcon style={{height: 20, marginLeft: 20, width: 40}}>
-                                {coloredIcon}
-                            </ListItemIcon>
-                        }
-                    </div>
-                </TableCell>
-                <TableCell sx={{border: '4px solid #000', borderRight: '8px solid #000', padding: 0}}
+                <TableCell sx={{border: '2px solid #000', borderRight: '1px solid #000', padding: 0}}
                            style={{backgroundColor}}>
                     <Button
                         onClick={handleClick}
                         fullWidth={true}
                         disabled={!!children}
+                        startIcon={<ListItemIcon style={{height: 20, width: 20, minWidth: 20, marginLeft:5}}>{coloredIcon}</ListItemIcon>}
                         style={{
                             justifyContent: 'flex-start',
                             width: '100%', margin: 0, borderRadius: 0,
@@ -98,7 +88,7 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index, openInNe
             </TableRow>
 
             {children && children.map((childItem, childIndex) =>
-                <GuideItem
+                <MenuSimpleItem
                     child
                     menuItem={childItem}
                     openTitle={openTitle}
@@ -114,4 +104,4 @@ function GuideItem({menuItem, openTitle, onOpen, onClose, child, index, openInNe
     )
 }
 
-export default GuideItem
+export default MenuSimpleItem

@@ -8,14 +8,13 @@ import MenuConfig from './MenuConfig.jsx'
 import Button from '@mui/material/Button'
 import LPTVlogo from '../assets/LPTVlogo2-w.jsx'
 import LPTVheader from '../assets/LPTVlogo-tvset.jsx'
-import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
-import GuideItem from './GuideItem.jsx'
-import dayjs from 'dayjs'
+import {Table, TableBody, TableContainer, TableHead} from '@mui/material'
+import MenuSimpleItem from './MenuSimpleItem.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import {openInNewTab} from '../util/openInNewTab'
 
-function GuideMenu() {
+function MenuGuide() {
 
     const menuConfig = MenuConfig()
 
@@ -25,12 +24,11 @@ function GuideMenu() {
     const {width} = useWindowSize()
     const smallWindow = width <= 800
 
-    const showGuide = !!guide && smallWindow
+    const showGuide = (!!guide && smallWindow)
 
     const {beta} = useContext(AppContext)
     const [open, setOpen] = useState(showGuide)
     const [openTitle, setOpenTitle] = useState('More from LPU') // TODO: don't do this once there are more
-    const now = dayjs().format('h:mma')
 
     const handleHotkey = useCallback(() => setOpen(!open), [open])
     useHotkeys('g', handleHotkey)
@@ -82,16 +80,12 @@ function GuideMenu() {
                         <TableContainer>
                             <Table style={{backgroundColor: '#000'}} sx={{border: '1px solid #000'}} size='small'>
                                 <TableHead>
-                                    <TableRow>
-                                        <TableCell sx={{padding: '0px 0px 0px 14px', fontWeight: 600}}>Today</TableCell>
-                                        <TableCell sx={{padding: '0px 0px 0px 10px', fontWeight: 600}}>{now}</TableCell>
-                                    </TableRow>
                                 </TableHead>
                                 <TableBody>
                                     {menuConfig
                                         .filter(menuItem => beta || !menuItem.beta)
                                         .map((menuItem, index) =>
-                                            <GuideItem
+                                            <MenuSimpleItem
                                                 key={index}
                                                 menuItem={menuItem}
                                                 openTitle={openTitle}
@@ -116,4 +110,4 @@ function GuideMenu() {
     )
 }
 
-export default GuideMenu
+export default MenuGuide

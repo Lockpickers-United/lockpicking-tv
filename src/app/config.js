@@ -20,10 +20,11 @@ export default {
             cohorts: ['new', 'featured', 'subscription'],
         }
     },
-    guide: {
+    menuStyle: 'simple',
+    menu: {
       sections: ['channelItems', 'videoItems', 'siteItems', 'moreItems']
     },
-    notUsed: {
+    menuNotUsed: {
         sections: ['pageItems']
     }
 }

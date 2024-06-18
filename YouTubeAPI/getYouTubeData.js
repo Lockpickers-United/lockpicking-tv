@@ -19,7 +19,7 @@ const workDir = env.production()
     ? '/home/dh_wk2wdh/youtube-api'
     : '/Users/nealbayless/Documents/GitHub/lockpicking-tv/YouTubeAPI'
 const serverDir = env.production()
-    ? '/home/dh_wk2wdh/lockpicking.tv/data'
+    ? '/home/dh_wk2wdh/locktrackers.com.channels/data'
     : '/Users/nealbayless/Documents/GitHub/lockpicking-tv/public/data'
 const serverDirBeta = env.production()
     ? '/home/dh_wk2wdh/lockpicking.tv.beta/data'
