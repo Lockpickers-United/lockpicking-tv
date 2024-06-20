@@ -6,11 +6,17 @@ let {google} = require('googleapis')
 let OAuth2 = google.auth.OAuth2
 let auth = ''
 const dayjs = require('dayjs')
+const util = require('util')
+const readFile = util.promisify(fs.readFile)
 
 let primaryAccountId = 'UCUJm-6yXHW28Qiq-SitBMtA' // LockpickingTV
 primaryAccountId = 'UC2jUB2pPoGpPG28j0o3B1ig' // lptv mirror
 //primaryAccountId = 'UC0JPKMvYyewFE0DujaiGpfw' //Neal Bayless
 //primaryAccountId = 'UCijhDLjaLA2um-KF-ijzYWw' //mgsecure
+
+const dev = true  // log version and statistics to console
+const beta = true
+const prod = false
 
 // copy serverEnv-development.js or serverEnv-production.js to serverEnv.js as appropriate
 const env = require('./serverEnv')
@@ -58,9 +64,6 @@ fs.readFile(`${workDir}/client_secret.json`, function processClientSecrets(err, 
 //   MAIN   //
 //          //
 
-const dev = true  // log version and statistics to console
-const beta = true
-const prod = false
 
 const debug = false
 const debug2 = false
@@ -76,6 +79,7 @@ let allRecentChannelIds = []
 let allPlaylistChannelIds = []
 let allChannelIds = []
 let allChannels = []
+let channelIndexAdditions = 0
 
 let allPlaylistIds = []
 
@@ -84,6 +88,7 @@ let allPlaylistVideoIds = []
 let allPlaylistVideos = []
 let allVideos = []
 let mainVideos = []
+let videoIndexAdditions = 0
 let videoData = {}
 
 async function getYouTubeData(auth) {
@@ -97,7 +102,27 @@ async function getYouTubeData(auth) {
         console.log(liveJSON)
         // snippet.liveBroadcastContent: "upcoming"
     }
+
+    await runTest(); return
+    async function runTest() {
+        const missingVideos = ['9UseDvDOMe8', '0EVYGIErBMk', '8byYjtg6bbE', '1elLgHnsBNs', 'JcnzYUb7vpo', 'qC293TOKHtM', 'cBQROkmiyD8', 'ovyv6uDU6UQ', 'dVQ-ytWu8DQ', 'g6PDAX8Zb90', 'Bd9sqfdHm1U', 'RtFQg2egbr8', 'uumypY2NcQM', '7W94fMW8_Bg', 'jvYJBkNbQ8c', 'is2spv6hANk', 'ClG3po-RIIw']
+        const {data} = await getVideos(auth, missingVideos, undefined)
+        const {items} = data
+        let missingvideoEntries = {}
+        items.map(video => {
+            missingvideoEntries[video.id] = {
+                    title: video?.snippet?.title,
+                    channelId: video?.snippet?.channelId,
+                    channelOwner: video?.snippet?.channelTitle,
+                    addedDate: dayjs().format('YYYY-MM-DD')
+            }
+
+        })
+        const liveJSON = JSON.stringify(missingvideoEntries, null, 2)
+        console.log(liveJSON)
+    }
     */
+
 
     // SUBSCRIPTIONS
 
@@ -339,31 +364,84 @@ async function getYouTubeData(auth) {
                     if (debug) console.log(`removed: ${removedItem}`)
                     if (debug) console.log('playlist are now', page.items)
                 }
-
             })
         })
 
+
     if (debug2) console.log('setTimeout')
-    setTimeout(buildMainVideos, 1000)
-    setTimeout(saveData, 2000)
+    buildMainVideos()
+    if (prod) {
+        await updateVideoIndex(serverDir)
+        await updateChannelIndex(serverDir)
+    }
+    if (beta) {
+        await updateVideoIndex(serverDirBeta)
+        await updateChannelIndex(serverDirBeta)
+    }
+    saveData()
+
+    async function updateVideoIndex(directory) {
+        let fileContent
+        fileContent = await readFile(`${directory}/videoIndex.json`)
+        const index = JSON.parse(fileContent.toString())
+
+        mainVideos.map(video => {
+            if (video.id && !index[video.id]) {
+                index[video.id] = {
+                    title: video.title,
+                    channelId: video.channelId,
+                    channelOwner: video.channelOwner,
+                    addedDate: dayjs().format('YYYY-MM-DD')
+                }
+                videoIndexAdditions++
+            } else {
+                if (debug) console.log('already had', video.id, video.title)
+            }
+        })
+
+        const videoIndexJSON = JSON.stringify(index, null, 2)
+        await fs.writeFileSync(`${directory}/videoIndex.json`, videoIndexJSON)
+    }
+
+    async function updateChannelIndex(directory) {
+        const fileContent = await readFile(`${directory}/channelIndex.json`)
+        const index = JSON.parse(fileContent.toString())
+
+        allChannels.map(channel => {
+            if (channel.id && !index[channel.id]) {
+                index[channel.id] = {
+                    title: channel.snippet.title,
+                    addedDate: dayjs().format('YYYY-MM-DD')
+                }
+                channelIndexAdditions++
+            } else {
+                if (debug) console.log('already had', channel.id, channel.snippet.title)
+            }
+        })
+
+        const channelIndexJSON = JSON.stringify(index, null, 2)
+        await fs.writeFileSync(`${directory}/channelIndex.json`, channelIndexJSON)
+    }
 
     function buildMainVideos() {
 
-        const mappedVideos = allVideos.map(video => {
-            return {
-                id: video.id,
-                kind: video.kind,
-                title: video.snippet.title,
-                thumbnail: video.snippet.thumbnails.medium.url,
-                thumbnailHigh: video.snippet.thumbnails.high.url,
-                publishedAt: video.snippet.publishedAt,
-                viewCount: video.statistics.viewCount,
-                likeCount: video.statistics.likeCount,
-                favoriteCount: video.statistics.favoriteCount,
-                commentCount: video.statistics.commentCount,
-                channelId: video.snippet.channelId
-            }
-        })
+        const mappedVideos = allVideos
+            .filter(x => x)
+            .map(video => {
+                return {
+                    id: video.id,
+                    kind: video.kind,
+                    title: video.snippet.title,
+                    thumbnail: video.snippet.thumbnails.medium.url,
+                    thumbnailHigh: video.snippet.thumbnails.high.url,
+                    publishedAt: video.snippet.publishedAt,
+                    viewCount: video.statistics.viewCount,
+                    likeCount: video.statistics.likeCount,
+                    favoriteCount: video.statistics.favoriteCount,
+                    commentCount: video.statistics.commentCount,
+                    channelId: video.snippet.channelId
+                }
+            })
 
         const sortNewVideos = mappedVideos.sort((a, b) => {
             return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
@@ -523,8 +601,16 @@ const buildVersion = (() => {
     versionObj.playlistVideos = playlistVideos.length
     versionObj.popularVideos = popularVideos.length
     versionObj.newVideos = newVideos.length
+    versionObj.videoIndexAdditions = videoIndexAdditions
 
     versionObj.allchannels = allChannels.length
+    versionObj.allSubscriptionIds = allSubscriptionIds.length
+    versionObj.allFeaturedChannelIds = allFeaturedChannelIds.length
+    versionObj.allNewChannelIds = allNewChannelIds.length
+    versionObj.allRecentChannelIds = allRecentChannelIds.length
+    versionObj.allPlaylistChannelIds = allPlaylistChannelIds.length
+    versionObj.channelIndexAdditions = channelIndexAdditions
+
     versionObj.getSubscriptionsDataRequests = getSubscriptionsDataRequests
     versionObj.getPlaylistItemsRequests = getPlaylistItemsRequests
     versionObj.getPlaylistsRequests = getPlaylistsRequests
@@ -533,11 +619,6 @@ const buildVersion = (() => {
     versionObj.getChannelRequests = getChannelRequests
     versionObj.getChannelSectionsRequests = getChannelSectionsRequests
 
-    versionObj.allSubscriptionIds = allSubscriptionIds.length
-    versionObj.allFeaturedChannelIds = allFeaturedChannelIds.length
-    versionObj.allNewChannelIds = allNewChannelIds.length
-    versionObj.allRecentChannelIds = allRecentChannelIds.length
-    versionObj.allPlaylistChannelIds = allPlaylistChannelIds.length
 
     versionObj.allChannels = allChannels.length
 
@@ -657,6 +738,8 @@ const getChannelsFromIds = (async (auth, channelIds) => {
     return channelItems
 })
 
+
+// TODO: duplicate of below??
 const getVideosFromIds = (async (auth, videoIds) => {
     let videoItems = []
     while (videoIds.length > 0) {

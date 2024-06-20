@@ -4,7 +4,7 @@ import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFull, siteSummary} from '../data/dataUrls'
+import {channelIndex, siteFull, siteSummary, videoIndex} from '../data/dataUrls'
 import PageViewsLine from './siteReport/PageViewsLine.jsx'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
 import PageTrackingTable from './siteReport/PageTrackingTable'
@@ -16,13 +16,13 @@ import HourlyRequestsLine from './siteReport/HourlyRequestsLine.jsx'
 import TrafficStats from './siteReport/TrafficStats.jsx'
 import TopVideosTable from './siteReport/TopVideosTable.jsx'
 
-const urls = {siteFull, siteSummary}
+const urls = {siteFull, siteSummary, channelIndex, videoIndex}
 
 function SiteReportMain() {
 
     usePageTitle('Site Report')
     const {data, loading, error} = useData({urls})
-    const {siteFull, siteSummary} = data || {}
+    const {siteFull, siteSummary, channelIndex, videoIndex} = data || {}
     const jsonLoaded = (!loading && !error && !!data)
 
     const {width} = useWindowSize()
@@ -75,7 +75,7 @@ function SiteReportMain() {
             <PageTrackingTable data={siteFull}/>
 
             <div style={headerStyle}>Top Videos</div>
-            <TopVideosTable data={siteFull}/>
+            <TopVideosTable data={siteFull} videoIndex={videoIndex}/>
 
             <div style={headerStyle}>Top Exit URLs</div>
             <TopUrlsTable data={siteFull}/>

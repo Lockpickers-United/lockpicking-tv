@@ -3,25 +3,38 @@ import AdminStatsTable from '../AdminStatsTable'
 import useWindowSize from '../../util/useWindowSize'
 import LoadingContext from '../../youtubeContext/LoadingProvider.jsx'
 
-const Component = ({data}) => {
+const Component = ({data, videoIndex}) => {
     const {watchedVideos} = data
     const {getVideosFromIds} = useContext(LoadingContext)
 
+    let missingVideos = []
     const rows = Object.keys(watchedVideos)
         .map(videoId => {
+            const indexVideo = videoIndex ? videoIndex[videoId] : []
             const [video] = getVideosFromIds(videoId)
 
-            return video
-            ? {
-                title: video.title,
-                channel: video.channelOwner,
-                views: watchedVideos[videoId],
+            if (!indexVideo && !video) {
+                missingVideos.push(videoId)
             }
-            : {
-                    title: `Unknown (id: ${videoId})`,
-                    channel: '',
-                    views: watchedVideos[videoId],
+
+            return video
+                ? {
+                    title: video.title,
+                    channel: video.channelOwner,
+                    views: watchedVideos[videoId]
                 }
+                : indexVideo
+                    ? {
+                        title: indexVideo?.title,
+                        channel: indexVideo?.channelOwner,
+                        views: watchedVideos[videoId]
+                    }
+                    : {
+                        title: `Unknown (id: ${videoId})`,
+                        channel: '',
+                        views: watchedVideos[videoId]
+                    }
+
         })
         .sort((a, b) => {
             return b.views - a.views
@@ -33,6 +46,8 @@ const Component = ({data}) => {
                 rank: index + 1
             }
         })
+
+    console.log('missingVideos', missingVideos)
 
     const columns = [
         {
