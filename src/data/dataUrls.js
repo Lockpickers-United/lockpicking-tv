@@ -10,6 +10,6 @@ export const channelData = '/data/channelData.json'
 export const pagesData = '/data/pagesData.json'
 export const videoData = '/data/videoData.json'
 
+export const channelReportData = '/reports/channelReportData.json'
 export const siteFull = '/reports/statsSiteFull.json'
 export const siteSummary = '/reports/statsSiteSummary.json'
-

@@ -28,6 +28,7 @@ function VideosMain() {
     const [index, setIndex] = useState(0)
     const [playing, setPlaying] = useState(mainItem?.id) //eslint-disable-line
     const [expanded, setExpanded] = useState(false)
+    const [track, setTrack] = useState(true)
 
     const handlePlaylistClick = useCallback((item, index) => {
         setPlaying(item.id)
@@ -76,6 +77,7 @@ function VideosMain() {
             setIndex(0)
             setCurrentPage(page)
             setInit(true)
+            setTrack(false)
         }
     }, [index, init, mainItem, visibleItems, page, currentPage, playerHeight, fullHeight, expanded])
 
@@ -98,6 +100,7 @@ function VideosMain() {
                             video={mainItem}
                             expanded={expanded}
                             setExpanded={setExpanded}
+                            track={track}
                         />
                         <div style={{height: playerHeight, transition: 'all 0.4s'}} id='spacerDiv'/>
                     </React.Fragment>

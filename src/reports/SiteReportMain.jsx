@@ -4,7 +4,7 @@ import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
-import {siteFull} from '../data/dataUrls'
+import {siteFull, siteSummary} from '../data/dataUrls'
 import PageViewsLine from './siteReport/PageViewsLine.jsx'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
 import PageTrackingTable from './siteReport/PageTrackingTable'
@@ -12,11 +12,17 @@ import SiteReportSummary from './siteReport/SiteReportSummary'
 import PopularCountries from './siteReport/PopularCountries'
 import TopUrlsTable from './siteReport/TopUrlsTable.jsx'
 import ToggleBetaButton from '../nav/ToggleBetaButton.jsx'
+import HourlyRequestsLine from './siteReport/HourlyRequestsLine.jsx'
+import TrafficStats from './siteReport/TrafficStats.jsx'
+import TopVideosTable from './siteReport/TopVideosTable.jsx'
+
+const urls = {siteFull, siteSummary}
 
 function SiteReportMain() {
+
     usePageTitle('Site Report')
     const {data, loading, error} = useData({urls})
-    const {siteFull} = data || {}
+    const {siteFull, siteSummary} = data || {}
     const jsonLoaded = (!loading && !error && !!data)
 
     const {width} = useWindowSize()
@@ -34,6 +40,7 @@ function SiteReportMain() {
     const updateTime = loading ? '--'
         : '(updated: ' + dayjs(siteFull?.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${siteFull?.metadata.timezone})`
 
+    const pieWorking = false
 
     if (loading) return <LoadingDisplay/>
     else if (error) return null
@@ -60,11 +67,15 @@ function SiteReportMain() {
             </div>
             <SiteReportSummary data={siteFull}/>
 
+
             <div style={headerStyle}>Weekly Page Views</div>
             <PageViewsLine data={siteFull}/>
 
             <div style={headerStyle}>Page Tracking</div>
             <PageTrackingTable data={siteFull}/>
+
+            <div style={headerStyle}>Top Videos</div>
+            <TopVideosTable data={siteFull}/>
 
             <div style={headerStyle}>Top Exit URLs</div>
             <TopUrlsTable data={siteFull}/>
@@ -76,12 +87,19 @@ function SiteReportMain() {
                 </React.Fragment>
             }
 
+            <div style={headerStyle}>Hourly Traffic</div>
+            <HourlyRequestsLine data={siteSummary}/>
+
+            {pieWorking &&
+                <React.Fragment>
+
+                    <div style={headerStyle}>Visits by Platform & Browser</div>
+                    <TrafficStats data={siteSummary}/>
+                </React.Fragment>
+            }
         </div>
     )
 }
 
-const urls = {
-    siteFull
-}
 
 export default SiteReportMain

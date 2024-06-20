@@ -9,7 +9,7 @@ For code/features, submit an issue and discuss first.
 
 ## Get YouTube data
 ```
-YouTubeAPI/getYouTubeData.js
+node YouTubeAPI/getYouTubeData.js
 ```
 **Must be configured for your account/environment**
 

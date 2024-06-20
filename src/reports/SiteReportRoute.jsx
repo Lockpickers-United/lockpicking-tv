@@ -15,7 +15,6 @@ function SiteReportRoute() {
 
     document.title = 'lockpicking.tv - Site Report'
 
-
     return (
             <FilterProvider filterFields={channelFilterFields}>
                 <DataProvider>

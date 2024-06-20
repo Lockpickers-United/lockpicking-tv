@@ -10,7 +10,6 @@ import IconButton from '@mui/material/IconButton'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Collapse from '@mui/material/Collapse'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
-import Tracker from '../app/Tracker.jsx'
 import {openInNewTab} from '../util/openInNewTab'
 import Button from '@mui/material/Button'
 
@@ -38,6 +37,11 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
         setExpanded(!expanded)
     }, [expanded, setExpanded])
 
+    const randomStuff = (Math.random()).toString(36).substring(2, 10)
+    const handlePlay = useCallback(() => {
+        document.getElementById('trackImage').src = `/i/lptv.gif?trk=videoPlayer&videoId=${video.id}&r=${randomStuff}&w=${screen.width}&ref=${document.location}`
+    }, [randomStuff, video.id])
+
     const {width} = useWindowSize()
     const widths = [440, 600, 800, 1200, 9999]
     const widthIndex = widths.indexOf(widths.find(option => {
@@ -48,20 +52,16 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
     const smallWindow = width <= 600
     const avatarSize = smallWindow ? 50 : 50
     const avatarMargin = smallWindow ? '0px 10px 0px 0px' : '0px 10px 5px 0px'
-
+    const nameAlign = smallWindow ? 'left' : 'left'
     const headerFlexStyle = smallWindow
         ? {display: 'flex', placeItems: 'center', padding: 10}
         : {display: 'flex', placeItems: 'center', padding: 10}
-    const nameAlign = smallWindow ? 'left' : 'left'
 
     const channelLink = `https://www.youtube.com/channel/${channel?.id}`
     const titleLink = `https://www.youtube.com/watch?v=${video.id}`
-
-    const textColor = '#fff'
-
     const videoUrl = `https://www.youtube.com/embed/${video.id}`
-
     const buttonText = expanded ? 'hide video player' : 'show video player'
+    const textColor = '#fff'
 
     return (
         <React.Fragment>
@@ -75,7 +75,8 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
             }}>
                 <CardContent style={{padding: '8px 0px 5px 0px', textAlign: 'center'}} id='playerCard'>
                     <div style={{width: '100%', display: 'flex', placeItems: 'center'}}>
-                        <Button onClick={handleChange} variant='filled' startIcon={<PlayCircleOutlineIcon />} size='small'>
+                        <Button onClick={handleChange} variant='filled' startIcon={<PlayCircleOutlineIcon/>}
+                                size='small'>
                             {buttonText}
                         </Button>
                         <ExpandMore style={{height: 40}} onClick={handleChange} expand={expanded}>
@@ -96,6 +97,7 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
                             //light='/resolution-chart.jpg'
                             muted={false}
                             controls
+                            onPlay={handlePlay}
                         />
                     </div>
                     <div style={headerFlexStyle}>
@@ -125,12 +127,16 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
                             textAlign: nameAlign,
                             flexGrow: 1
                         }}>
-                            <a onClick={() => {openInNewTab(titleLink)}}
+                            <a onClick={() => {
+                                openInNewTab(titleLink)
+                            }}
                                style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
                                 {video.title}
                             </a>
                             <div style={{marginTop: 3}}>
-                                <a onClick={() => {openInNewTab(channelLink)}}
+                                <a onClick={() => {
+                                    openInNewTab(channelLink)
+                                }}
                                    style={{
                                        color: textColor,
                                        textDecoration: 'none',
@@ -149,8 +155,6 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
                 </Collapse>
             </Card>
             <div id='cardEnd'/>
-            <Tracker feature='videoPlayer' page={video.title} videoId={video.id}/>
-
         </React.Fragment>
     )
 }
