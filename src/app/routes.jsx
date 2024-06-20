@@ -1,11 +1,15 @@
 import React from 'react'
 import {redirect} from 'react-router-dom'
 import ErrorBoundary from './ErrorBoundary'
+import config from '../app/config'
+
+const {menuOpen, defaultPage} = config
+const guideParam = menuOpen ? '&guide=true' : ''
 
 export default [
     {
         path: '/',
-        loader: () => redirect('/channels?page=featured')
+        loader: () => redirect(defaultPage + guideParam)
     },
     {
         path: '/channels',
@@ -72,7 +76,7 @@ export default [
     },
     {
         path: '*',
-        loader: () => redirect('/channels?page=featured')
+        loader: () => redirect(defaultPage + '&guide=true')
     },
 ].map(route => ({...route, errorElement: <ErrorBoundary/>}))
 

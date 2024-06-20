@@ -115,7 +115,7 @@ function VideosMain() {
                     }}>
 
                         <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
-                            <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
+                            <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20, marginTop:20}}>
 
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>
                                 {title}

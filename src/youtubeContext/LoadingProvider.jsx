@@ -1,10 +1,11 @@
 import React, {useCallback, useMemo} from 'react'
 import useData from '../util/useData'
 import {pagesData, channelData, videoData} from '../data/dataUrls'
-const urls = {pagesData, channelData, videoData}
 import LoadingContext from '../context/LoadingContext.jsx'
 import config from '../app/config'
 import dayjs from 'dayjs'
+
+const urls = {pagesData, channelData, videoData}
 
 export function LoadingProvider({children}) {
 
@@ -80,7 +81,6 @@ export function LoadingProvider({children}) {
             return acc
         }, []).slice(0, configNew.maxVideos)
 
-
     videoCounts = {}
     const configPopular = config.pages.popular
     const popularVideoChannelIds = allChannels.map(channel => {
@@ -91,8 +91,12 @@ export function LoadingProvider({children}) {
     const popularVideos = allVideos
         .filter(video => popularVideoChannelIds.includes(video.channelId))
         .sort((a, b) => {
-            return a.channelOwner.localeCompare(b.channelOwner)
-                || parseInt(b.viewCount) - parseInt(a.viewCount)
+            if (configPopular.sortBy === 'channelOwner') {
+                return a.channelOwner.localeCompare(b.channelOwner)
+                    || parseInt(b.viewCount) - parseInt(a.viewCount)
+            } else {
+                return parseInt(b.viewCount) - parseInt(a.viewCount)
+            }
         })
         .reduce((acc, video) => {
             if (videoCounts[video.channelId] && videoCounts[video.channelId] < configPopular.videosPerChannel) {

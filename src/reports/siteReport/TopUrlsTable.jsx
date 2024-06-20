@@ -23,7 +23,7 @@ const TopUrlsTable = ({data}) => {
             for (const match of url.matchAll(/www.youtube.com\/channel\/(.*)/g)) {
                 channelId = match[1]
             }
-            channelName = channelId ? getChannelFromId(channelId).snippet?.customUrl : channelName
+            channelName = channelId ? getChannelFromId(channelId)?.snippet?.customUrl : channelName
             const cleanUrl = channelName ? `www.youtube.com/${channelName}` : url
 
             urlViews[cleanUrl] = urlViews[cleanUrl] ? urlViews[cleanUrl] + views : views

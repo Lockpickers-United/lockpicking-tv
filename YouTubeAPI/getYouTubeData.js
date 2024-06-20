@@ -8,6 +8,7 @@ let auth = ''
 const dayjs = require('dayjs')
 
 let primaryAccountId = 'UCUJm-6yXHW28Qiq-SitBMtA' // LockpickingTV
+primaryAccountId = 'UC2jUB2pPoGpPG28j0o3B1ig' // lptv mirror
 //primaryAccountId = 'UC0JPKMvYyewFE0DujaiGpfw' //Neal Bayless
 //primaryAccountId = 'UCijhDLjaLA2um-KF-ijzYWw' //mgsecure
 
@@ -18,14 +19,19 @@ const env = require('./serverEnv')
 const workDir = env.production()
     ? '/home/dh_wk2wdh/youtube-api'
     : '/Users/nealbayless/Documents/GitHub/lockpicking-tv/YouTubeAPI'
+
 const serverDir = env.production()
     ? '/home/dh_wk2wdh/locktrackers.com.channels/data'
     : '/Users/nealbayless/Documents/GitHub/lockpicking-tv/public/data'
 const serverDirBeta = env.production()
     ? '/home/dh_wk2wdh/lockpicking.tv.beta/data'
-    : '/Users/nealbayless/Documents/GitHub/lockpicking-tv/YouTubeAPI/beta-temp'
+    : '/Users/nealbayless/Documents/GitHub/lockpicking-tv/public/data'
+
 const archiveDir = env.production()
-    ? '/home/dh_wk2wdh/youtube-api/archive'
+    ? '/home/dh_wk2wdh/youtube-api/archive-channels'
+    : '/Users/nealbayless/Documents/GitHub/lockpicking-tv/YouTubeAPI/archive'
+const archiveDirBeta = env.production()
+    ? '/home/dh_wk2wdh/youtube-api/archive-beta'
     : '/Users/nealbayless/Documents/GitHub/lockpicking-tv/YouTubeAPI/archive'
 
 
@@ -53,6 +59,9 @@ fs.readFile(`${workDir}/client_secret.json`, function processClientSecrets(err, 
 //          //
 
 const dev = true  // log version and statistics to console
+const beta = true
+const prod = false
+
 const debug = false
 const debug2 = false
 const lite = false
@@ -79,7 +88,8 @@ let videoData = {}
 
 async function getYouTubeData(auth) {
 
-    //await runTest(); return
+    /*
+    await runTest(); return
     async function runTest() {
         const {data} = await getVideos(auth, '7X2PuE6ELmg', undefined)
         const {items} = data
@@ -87,6 +97,7 @@ async function getYouTubeData(auth) {
         console.log(liveJSON)
         // snippet.liveBroadcastContent: "upcoming"
     }
+    */
 
     // SUBSCRIPTIONS
 
@@ -441,23 +452,18 @@ async function getYouTubeData(auth) {
             allChannels: allChannels
         }
         const channelDataJSON = JSON.stringify(channelData, null, 2)
-        fs.writeFileSync(`${serverDir}/channelData.json`, channelDataJSON)
-        fs.writeFileSync(`${serverDirBeta}/channelData.json`, channelDataJSON)
+        if (prod) fs.writeFileSync(`${serverDir}/channelData.json`, channelDataJSON)
+        if (beta) fs.writeFileSync(`${serverDirBeta}/channelData.json`, channelDataJSON)
         const archiveDate = dayjs().format('YYYY-MM-DD')
-        fs.writeFileSync(`${archiveDir}/channelData_${archiveDate}.json`, channelDataJSON)
+        if (prod) fs.writeFileSync(`${archiveDir}/channelData_${archiveDate}.json`, channelDataJSON)
+        if (beta) fs.writeFileSync(`${archiveDirBeta}/channelData_${archiveDate}.json`, channelDataJSON)
 
 
         // write VIDEO DATA to json
 
         const newVideos = mainVideos.filter(video => video.videoFlags?.includes('new'))
-        if (debug) console.log('newVideos', newVideos.length, newVideos[0])
-
         const popularVideos = mainVideos.filter(video => video.videoFlags?.includes('popular'))
-        if (debug) console.log('popularVideos', popularVideos.length, popularVideos[0])
-
         const playlistVideos = mainVideos.filter(video => video.videoFlags?.includes('playlist'))
-        if (debug) console.log('playlistVideos', playlistVideos.length, playlistVideos[0])
-
 
         videoData.allVideos = mainVideos
         videoData.metadata = {
@@ -468,8 +474,10 @@ async function getYouTubeData(auth) {
             playlistVideoCount: playlistVideos.length
         }
         const videoDataJSON = JSON.stringify(videoData, null, 2)
-        fs.writeFileSync(`${serverDir}/videoData.json`, videoDataJSON)
-        fs.writeFileSync(`${serverDirBeta}/videoData.json`, videoDataJSON)
+        if (prod) fs.writeFileSync(`${serverDir}/videoData.json`, videoDataJSON)
+        if (prod) fs.writeFileSync(`${archiveDir}/videoData_${archiveDate}.json`, videoDataJSON)
+        if (beta) fs.writeFileSync(`${serverDirBeta}/videoData.json`, videoDataJSON)
+        if (beta) fs.writeFileSync(`${archiveDirBeta}/videoData_${archiveDate}.json`, videoDataJSON)
 
         // write PAGE DATA to json
         const pagesData = {
@@ -480,14 +488,14 @@ async function getYouTubeData(auth) {
             allPages: allPages
         }
         const pagesDataJSON = JSON.stringify(pagesData, null, 2)
-        fs.writeFileSync(`${serverDir}/pagesData.json`, pagesDataJSON)
-        fs.writeFileSync(`${serverDirBeta}/pagesData.json`, pagesDataJSON)
+        if (prod) fs.writeFileSync(`${serverDir}/pagesData.json`, pagesDataJSON)
+        if (beta) fs.writeFileSync(`${serverDirBeta}/pagesData.json`, pagesDataJSON)
 
         // update version file
         // TODO: only if new data??
         const versionString = buildVersion()
-        fs.writeFileSync(`${serverDir}/version.json`, versionString)
-        fs.writeFileSync(`${serverDirBeta}/version.json`, versionString)
+        if (prod) fs.writeFileSync(`${serverDir}/version.json`, versionString)
+        if (beta) fs.writeFileSync(`${serverDirBeta}/version.json`, versionString)
 
         const sortAllVideos = allVideos.sort((a, b) => {
             return Math.floor(dayjs(b.snippet.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.snippet.publishedAt).valueOf() / 60000) * 60000
@@ -496,8 +504,8 @@ async function getYouTubeData(auth) {
         if (debug2) console.log(sortAllVideos[0])
 
         // write ALL VIDEO DATA to json
-        const allVideoDataJSON = JSON.stringify(sortAllVideos, null, 2)
-        fs.writeFileSync(`${serverDir}/allVideoData.json`, allVideoDataJSON)
+        // const allVideoDataJSON = JSON.stringify(sortAllVideos, null, 2)
+        // if (prod) fs.writeFileSync(`${serverDir}/allVideoData.json`, allVideoDataJSON)
     }
 }
 
@@ -522,6 +530,8 @@ const buildVersion = (() => {
     versionObj.getPlaylistsRequests = getPlaylistsRequests
     versionObj.getPlaylistsFromIdsRequests = getPlaylistsFromIdsRequests
     versionObj.getVideosRequests = getVideosRequests
+    versionObj.getChannelRequests = getChannelRequests
+    versionObj.getChannelSectionsRequests = getChannelSectionsRequests
 
     versionObj.allSubscriptionIds = allSubscriptionIds.length
     versionObj.allFeaturedChannelIds = allFeaturedChannelIds.length
