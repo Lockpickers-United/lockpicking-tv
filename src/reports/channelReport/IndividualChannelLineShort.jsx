@@ -5,15 +5,27 @@ import useWindowSize from '../../util/useWindowSize'
 
 const Component = ({channelData}) => {
 
+    const featuredColor = channelData.featuredLine.reduce((acc, point) => acc + point.y, 0) > 0
+        ? '#3d59de'
+        : '#666'
+
+    const newColor = channelData.newLine.reduce((acc, point) => acc + point.y, 0) > 0
+        ? '#c34343'
+        : '#666'
+
     const channelLineData = [
         {
-            id: 'Daily Views',
-            data: channelData.viewsLine
+            id: 'Daily Videos',
+            data: channelData.videosLine
         },
         {
-            id: 'Daily Subscribers',
-            data: channelData.subscribersLine
+            id: 'Flagged New',
+            data: channelData.newLine
         },
+        {
+            id: 'Flagged Featured',
+            data: channelData.featuredLine
+        }
     ]
 
     const {width} = useWindowSize()
@@ -28,7 +40,7 @@ const Component = ({channelData}) => {
             : mobileMedium ? 200
                 : mobileLarge ? 210
                     : midWindow ? 230
-                        : 350
+                        : 150
 
     const chartMargin = !smallWindow
         ? {top: 10, right: 20, bottom: 80, left: 50}
@@ -40,8 +52,8 @@ const Component = ({channelData}) => {
                 theme={primaryTheme}
                 data={channelLineData}
                 enableGridX={false}
-                enableGridY={true}
-                colors={['#4fa720', '#c7632b', '#3d59de']}
+                enableGridY={false}
+                colors={['#4fa720', newColor, featuredColor]}
                 lineWidth={3}
                 margin={chartMargin}
                 height={chartHeight}
@@ -55,7 +67,7 @@ const Component = ({channelData}) => {
                 }}
                 yFormat=' >-.2f'
                 axisLeft={{
-                    tickValues: 5,
+                    tickValues: 1,
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
@@ -63,7 +75,7 @@ const Component = ({channelData}) => {
                 }}
                 xScale={{
                     type: 'point',
-                    format: '%Y-%m-%d'
+                    format: '%m-%d'
                 }}
                 xFormat='time:%m/%d/%y'
                 axisBottom={{

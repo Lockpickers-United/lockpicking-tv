@@ -8,7 +8,9 @@
     "2024-06-16",
     "2024-06-17",
     "2024-06-18",
-    "2024-06-19"
+    "2024-06-19",
+    "2024-06-20",
+    "2024-06-21"
   ],
   "channelLines": {
     "newChannelLine": [
@@ -46,6 +48,14 @@
       },
       {
         "x": "2024-06-19",
+        "y": 2
+      },
+      {
+        "x": "2024-06-20",
+        "y": 2
+      },
+      {
+        "x": "2024-06-21",
         "y": 2
       }
     ],
@@ -85,6 +95,14 @@
       {
         "x": "2024-06-19",
         "y": 9
+      },
+      {
+        "x": "2024-06-20",
+        "y": 19
+      },
+      {
+        "x": "2024-06-21",
+        "y": 19
       }
     ],
     "subscriptionChannelLine": [
@@ -123,6 +141,14 @@
       {
         "x": "2024-06-19",
         "y": 40
+      },
+      {
+        "x": "2024-06-20",
+        "y": 121
+      },
+      {
+        "x": "2024-06-21",
+        "y": 121
       }
     ],
     "uniqueChannelLine": [
@@ -161,6 +187,14 @@
       {
         "x": "2024-06-19",
         "y": 41
+      },
+      {
+        "x": "2024-06-20",
+        "y": 121
+      },
+      {
+        "x": "2024-06-21",
+        "y": 121
       }
     ]
   },
@@ -195,7 +229,7 @@
     "UCY9Kuua_Yqw2wiR1JHrTRoA": "The Lock Picker 1969",
     "UCht5SSqIBBnZPaCL5-GCsyw": "Dmac",
     "UCSUvMqYICfPDGplqsC34xCg": "Adam Harris",
-    "UCzWBgBzdmqwxtsyjukEaLHA": "XvinityPicksLocks",
+    "UCzWBgBzdmqwxtsyjukEaLHA": "XvinityLockSport",
     "UCMapdYQFmzqCKCokQFMr81g": "chris capune",
     "UCxw7zmwPaUWvE2gS0ugm2CA": "Artichoke2000",
     "UCrpkIsfVR99CbRB7zVSzulg": "skwiggledork",
@@ -260,7 +294,50 @@
     "UCbR934dE1_QA1RfKMAJvwbA": "BrettSucks",
     "UCijhDLjaLA2um-KF-ijzYWw": "mgsecure",
     "UCajJsiIDVbxIqeDAcbozlMQ": "Michael Maynard",
-    "UC1ZPB5vWuL8d6C81ba75yZA": "HVLogic"
+    "UC1ZPB5vWuL8d6C81ba75yZA": "HVLogic",
+    "UC884OIZnE5XbVsyyoWaQKbQ": "Alex Mitchell",
+    "UCLbpSjzrlA4ghkY-aDyhEEw": "Digby Lock and Tool",
+    "UCEVjx1wx19nFC9_VmvahtGw": "Grain ORice",
+    "UCIu0hCqUritt_yy_hk_GoJA": "Oak City Locksport",
+    "UCBLmagWy17WEZdp41Fl-ziw": "Tallan Pick",
+    "UC3Iic6U2ars-1AsIUqNjqWA": "Law Lock Tools",
+    "UC70eFjd4abPhQPj8S0xpMYA": "RubberBanned",
+    "UCBfTXj1xcPIbY66dNZYTt9A": "Picking Time",
+    "UCE6_seJQjgt3IPpUo__jzsg": "PickPals",
+    "UCAkidpWMVqOu7v8426BwR5g": "Jay Dee",
+    "UC4TxX2ujTLThMaFCdFQIfZQ": "Lock kraKen",
+    "UCNWOT1FujUR2XO9GxUcB3rA": "Alpama",
+    "UCV_5T8FxpeBl_0xws3BruSA": "LockMan28",
+    "UCVm4xTsDFm6emRUAlV6GwqQ": "_least",
+    "UCjy83gJX5zaf00ZSUVOL8GA": "SasPes",
+    "UClRzkaalqVQRuZYA_QEluow": "GravityKarma",
+    "UCloiZYbh1p9_itu4gZLv7kg": "Retep Reyem",
+    "UCeUKv46Tv6MKmoGjDBGDNnQ": "Dr Lock",
+    "UCbhOC03UtNLbW-teYgH07SA": "Captain Lock Pick",
+    "UCmIqJOrfQr8NTEDrOU2lF3Q": "Panda-Frog",
+    "UCWRcZvkrVeVtvbOb-nnJxvw": "JM Lockpicking",
+    "UCoIcKc8M8XBJFFbqQSvaNIg": "Leon's lockpad",
+    "UCeAVOjxKK-ocLkp4OejC98Q": "McDonald Poor",
+    "UCpYoz2eMEIoo2SAbOvIm8pQ": "Sisko's Lock Channel",
+    "UCa3tK05ppsmMs-K-xQMDi9w": "GxAxV",
+    "UCdWpMDmubQEJJ9XfXSsNaGA": "DocMachina",
+    "UCZm0TYjhXv_Y5vB6SHywo-A": "Den Brass",
+    "UCZf4lM8vvVQNNZsUAo0Y5SA": "Moon UA",
+    "UCpBTenTScCT-uSDcX4lxCww": "LegalLockPicker",
+    "UCYwfYlpynpOyouGZjWjzDEA": "UK Lockpickers",
+    "UCn4ABm6j_n96KiFAu0F65oA": "Brummie Lock Picker",
+    "UCcJQrK9RyAVU_8aTrtMaoDQ": "Lock Picking Legend",
+    "UCfGx394pe-Q9z85eL8wY3eA": "《THUMPER 》 》Lock Picking《",
+    "UCYDQaOHbK5trRU2CDgb0qSg": "defcon201",
+    "UC2jUB2pPoGpPG28j0o3B1ig": "lockpicking tv",
+    "UCrEt_rDwQj4H0SgU_kitZ8w": "Dogpicking Locksport",
+    "UCr78tH7amK6yXuMgiItBPTg": "Spinning Dials",
+    "UCsOjem8JevW0FKTWvaS6cyw": "BandoPicks ",
+    "UCpysLSEu9KbwHaqWawjZuVQ": "Greenish",
+    "UCtnWifK4c8rMLcVAXgZX-1A": "LockPickingFisherman",
+    "UCxIAPz67pxXyPCw2VKvloLA": "∅",
+    "UCrGYOiIm9QAgkUAQGr19wJw": "LockPickingCuber",
+    "UCtpBhntejC28k47efQ-oSkA": "Culper Woodhull"
   },
   "channelStats": {
     "UC6NPzk0Ix9l476u6CgHwDWg": {
@@ -379,6 +456,34 @@
         "latestVideo": "2023-07-27T14:54:43Z",
         "channelFlags": [
           "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "septclues",
+        "viewCount": "985",
+        "subscriberCount": "70",
+        "videoCount": "11",
+        "latestVideo": "2023-07-27T14:54:43Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "septclues",
+        "viewCount": "985",
+        "subscriberCount": "70",
+        "videoCount": "11",
+        "latestVideo": "2023-07-27T14:54:43Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
         ],
         "dailyViews": 0,
         "dailySubscribers": 0,
@@ -518,6 +623,36 @@
         "dailyViews": 168,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "yabende locksport",
+        "viewCount": "579431",
+        "subscriberCount": "1530",
+        "videoCount": "346",
+        "latestVideo": "2024-06-15T21:49:49Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 155,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "yabende locksport",
+        "viewCount": "579524",
+        "subscriberCount": "1530",
+        "videoCount": "346",
+        "latestVideo": "2024-06-15T21:49:49Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 93,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCm9K6rby98W8JigLoZOh6FQ": {
@@ -644,6 +779,34 @@
         "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "LockPickingLawyer",
+        "viewCount": "1146682343",
+        "subscriberCount": "4490000",
+        "videoCount": "1595",
+        "latestVideo": "2024-05-22T13:00:01Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 160729,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "LockPickingLawyer",
+        "viewCount": "1146783355",
+        "subscriberCount": "4490000",
+        "videoCount": "1595",
+        "latestVideo": "2024-05-22T13:00:01Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 101012,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCsZDdTLANRUuOYelmh4TJCw": {
@@ -765,6 +928,34 @@
         ],
         "dailyViews": 24,
         "dailySubscribers": 1,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "TonySanSan",
+        "viewCount": "644",
+        "subscriberCount": "32",
+        "videoCount": "16",
+        "latestVideo": "2024-06-18T21:24:48Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 28,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "TonySanSan",
+        "viewCount": "648",
+        "subscriberCount": "32",
+        "videoCount": "16",
+        "latestVideo": "2024-06-18T21:24:48Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 4,
+        "dailySubscribers": 0,
         "dailyVideos": 0
       }
     },
@@ -901,6 +1092,36 @@
         "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Lady Locks",
+        "viewCount": "392762",
+        "subscriberCount": "5240",
+        "videoCount": "302",
+        "latestVideo": "2024-06-18T03:38:53Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 640,
+        "dailySubscribers": 10,
+        "dailyVideos": 1
+      },
+      "2024-06-21": {
+        "title": "Lady Locks",
+        "viewCount": "393050",
+        "subscriberCount": "5260",
+        "videoCount": "304",
+        "latestVideo": "2024-06-21T03:37:34Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 288,
+        "dailySubscribers": 20,
+        "dailyVideos": 2
       }
     },
     "UC_P9LyrKDNKI2ETHNE1HmwQ": {
@@ -1019,6 +1240,34 @@
         "latestVideo": "2024-06-05T13:17:48Z",
         "channelFlags": [
           "subscription"
+        ],
+        "dailyViews": 1,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Loose-Shirt",
+        "viewCount": "2017",
+        "subscriberCount": "69",
+        "videoCount": "42",
+        "latestVideo": "2024-06-05T13:17:48Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 5,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Loose-Shirt",
+        "viewCount": "2018",
+        "subscriberCount": "69",
+        "videoCount": "42",
+        "latestVideo": "2024-06-05T13:17:48Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
         ],
         "dailyViews": 1,
         "dailySubscribers": 0,
@@ -1143,6 +1392,34 @@
           "subscription"
         ],
         "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "CajunLockPick",
+        "viewCount": "2183",
+        "subscriberCount": "118",
+        "videoCount": "38",
+        "latestVideo": "2024-01-01T17:18:45Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "CajunLockPick",
+        "viewCount": "2184",
+        "subscriberCount": "118",
+        "videoCount": "38",
+        "latestVideo": "2024-01-01T17:18:45Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 1,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -1271,6 +1548,34 @@
           "new"
         ],
         "dailyViews": 20,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Marson — Locksport",
+        "viewCount": "894",
+        "subscriberCount": "36",
+        "videoCount": "17",
+        "latestVideo": "2024-06-16T17:46:01Z",
+        "channelFlags": [
+          "subscription",
+          "new"
+        ],
+        "dailyViews": 35,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Marson — Locksport",
+        "viewCount": "909",
+        "subscriberCount": "36",
+        "videoCount": "17",
+        "latestVideo": "2024-06-16T17:46:01Z",
+        "channelFlags": [
+          "subscription",
+          "new"
+        ],
+        "dailyViews": 15,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -1402,6 +1707,36 @@
         "dailyViews": 33,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "DoNotDuplicate",
+        "viewCount": "22965",
+        "subscriberCount": "323",
+        "videoCount": "140",
+        "latestVideo": "2024-05-23T10:52:18Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 17,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "DoNotDuplicate",
+        "viewCount": "22987",
+        "subscriberCount": "323",
+        "videoCount": "140",
+        "latestVideo": "2024-05-23T10:52:18Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 22,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCrder9McXu25m8VS0NQZNgA": {
@@ -1530,6 +1865,32 @@
         "dailyViews": 2,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Bandito Brandino07",
+        "viewCount": "10131",
+        "subscriberCount": "174",
+        "videoCount": "50",
+        "latestVideo": "2024-05-25T22:50:09Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Bandito Brandino07",
+        "viewCount": "10147",
+        "subscriberCount": "174",
+        "videoCount": "50",
+        "latestVideo": "2024-05-25T22:50:09Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 16,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UC6j3vY77jqqWclEZ-UkBoQw": {
@@ -1656,6 +2017,34 @@
         "dailyViews": 12,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "CorrectJeans",
+        "viewCount": "52452",
+        "subscriberCount": "732",
+        "videoCount": "50",
+        "latestVideo": "2024-06-13T07:20:54Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 12,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "CorrectJeans",
+        "viewCount": "52459",
+        "subscriberCount": "732",
+        "videoCount": "50",
+        "latestVideo": "2024-06-13T07:20:54Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 7,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCjoYnHtoH9iJg_K9DlnMtMw": {
@@ -1778,6 +2167,34 @@
         "dailyViews": 18,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "NiXXeD",
+        "viewCount": "3833",
+        "subscriberCount": "70",
+        "videoCount": "48",
+        "latestVideo": "2024-06-17T22:29:33Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      },
+      "2024-06-21": {
+        "title": "NiXXeD",
+        "viewCount": "3839",
+        "subscriberCount": "70",
+        "videoCount": "48",
+        "latestVideo": "2024-06-17T22:29:33Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 6,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCQbp7Dr48mLlVkn6oJTVdvw": {
@@ -1896,6 +2313,32 @@
         ],
         "dailyViews": 2,
         "dailySubscribers": 1,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Mokis Locksport",
+        "viewCount": "5737",
+        "subscriberCount": "372",
+        "videoCount": "25",
+        "latestVideo": "2023-03-12T19:54:42Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 2,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Mokis Locksport",
+        "viewCount": "5740",
+        "subscriberCount": "372",
+        "videoCount": "25",
+        "latestVideo": "2023-03-12T19:54:42Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 3,
+        "dailySubscribers": 0,
         "dailyVideos": 0
       }
     },
@@ -2026,6 +2469,36 @@
         "dailyViews": 1586,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Sandman",
+        "viewCount": "362101",
+        "subscriberCount": "4560",
+        "videoCount": "178",
+        "latestVideo": "2024-06-17T18:45:06Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 998,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      },
+      "2024-06-21": {
+        "title": "Sandman",
+        "viewCount": "362624",
+        "subscriberCount": "4580",
+        "videoCount": "179",
+        "latestVideo": "2024-06-20T23:45:03Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 523,
+        "dailySubscribers": 20,
+        "dailyVideos": 1
       }
     },
     "UCRwFgTxCo7hh9cKwmLe6F5A": {
@@ -2146,13 +2619,43 @@
         "title": "Trucking Lock",
         "viewCount": "16211",
         "subscriberCount": "290",
-        "videoCount": "91",
-        "latestVideo": "2024-06-04T20:58:09Z",
+        "videoCount": "92",
+        "latestVideo": "2024-06-19T20:07:33Z",
         "channelFlags": [
           "subscription",
           "playlist"
         ],
         "dailyViews": 41,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      },
+      "2024-06-20": {
+        "title": "Trucking Lock",
+        "viewCount": "16219",
+        "subscriberCount": "291",
+        "videoCount": "92",
+        "latestVideo": "2024-06-19T20:07:33Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 8,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Trucking Lock",
+        "viewCount": "16270",
+        "subscriberCount": "291",
+        "videoCount": "92",
+        "latestVideo": "2024-06-19T20:07:33Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 51,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -2277,6 +2780,34 @@
         "dailyViews": 4,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "PickSmith",
+        "viewCount": "18520",
+        "subscriberCount": "539",
+        "videoCount": "138",
+        "latestVideo": "2024-01-07T22:55:13Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 6,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "PickSmith",
+        "viewCount": "18522",
+        "subscriberCount": "539",
+        "videoCount": "139",
+        "latestVideo": "2024-06-21T03:49:47Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 2,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
       }
     },
     "UCxZRF3OG7gapQ8kacWUwj2A": {
@@ -2401,6 +2932,34 @@
           "playlist"
         ],
         "dailyViews": 69481,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      },
+      "2024-06-20": {
+        "title": "Lock Noob",
+        "viewCount": "150615144",
+        "subscriberCount": "424000",
+        "videoCount": "1591",
+        "latestVideo": "2024-06-19T17:48:40Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 76206,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Lock Noob",
+        "viewCount": "150653487",
+        "subscriberCount": "424000",
+        "videoCount": "1592",
+        "latestVideo": "2024-06-20T17:42:33Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 38343,
         "dailySubscribers": 0,
         "dailyVideos": 1
       }
@@ -2529,6 +3088,34 @@
         "dailyViews": 67,
         "dailySubscribers": 1,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Isaac Hashman",
+        "viewCount": "99791",
+        "subscriberCount": "871",
+        "videoCount": "62",
+        "latestVideo": "2024-03-23T22:12:37Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 79,
+        "dailySubscribers": 2,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Isaac Hashman",
+        "viewCount": "99837",
+        "subscriberCount": "872",
+        "videoCount": "62",
+        "latestVideo": "2024-03-23T22:12:37Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 46,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
       }
     },
     "UCHEPEHbo6kAxsxvIePE9kRw": {
@@ -2655,6 +3242,34 @@
         ],
         "dailyViews": 72,
         "dailySubscribers": 10,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Lock Pickers United",
+        "viewCount": "151275",
+        "subscriberCount": "5280",
+        "videoCount": "161",
+        "latestVideo": "2024-02-02T15:25:51Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 82,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Lock Pickers United",
+        "viewCount": "151318",
+        "subscriberCount": "5280",
+        "videoCount": "161",
+        "latestVideo": "2024-02-02T15:25:51Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 43,
+        "dailySubscribers": 0,
         "dailyVideos": 0
       }
     },
@@ -2788,6 +3403,34 @@
         "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "BosnianBill",
+        "viewCount": "166415032",
+        "subscriberCount": "592000",
+        "videoCount": "1909",
+        "latestVideo": "2021-07-22T20:21:26Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 6847,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "BosnianBill",
+        "viewCount": "166419159",
+        "subscriberCount": "592000",
+        "videoCount": "1909",
+        "latestVideo": "2021-07-22T20:21:26Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 4127,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UC7UO6EE5W_C1S4nnitGsZ_A": {
@@ -2917,6 +3560,36 @@
         "dailyViews": 27,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Reinder Stegen",
+        "viewCount": "41755",
+        "subscriberCount": "418",
+        "videoCount": "369",
+        "latestVideo": "2024-06-05T14:32:01Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 38,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Reinder Stegen",
+        "viewCount": "41771",
+        "subscriberCount": "419",
+        "videoCount": "369",
+        "latestVideo": "2024-06-05T14:32:01Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 16,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
       }
     },
     "UCwiNbjRiBNa3BcE586BC6WQ": {
@@ -3039,6 +3712,34 @@
         "dailyViews": 2,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Axelpanic",
+        "viewCount": "3445",
+        "subscriberCount": "41",
+        "videoCount": "21",
+        "latestVideo": "2024-05-02T04:38:44Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 1,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Axelpanic",
+        "viewCount": "3445",
+        "subscriberCount": "41",
+        "videoCount": "21",
+        "latestVideo": "2024-05-02T04:38:44Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCloseNEb6epWL36Ap_zZmow": {
@@ -3143,6 +3844,34 @@
           "playlist"
         ],
         "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "HelpfulLockPicker",
+        "viewCount": "11226619",
+        "subscriberCount": "84300",
+        "videoCount": "510",
+        "latestVideo": "2023-03-15T20:00:08Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 4085,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "HelpfulLockPicker",
+        "viewCount": "11229014",
+        "subscriberCount": "84300",
+        "videoCount": "510",
+        "latestVideo": "2023-03-15T20:00:08Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 2395,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -3271,6 +4000,32 @@
           "recent"
         ],
         "dailyViews": 2,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Mick777Oz",
+        "viewCount": "110357",
+        "subscriberCount": "142",
+        "videoCount": "104",
+        "latestVideo": "2024-05-08T09:40:12Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 3,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Mick777Oz",
+        "viewCount": "110357",
+        "subscriberCount": "142",
+        "videoCount": "104",
+        "latestVideo": "2024-05-08T09:40:12Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -3402,6 +4157,36 @@
         "dailyViews": 11,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Peaceweapon Picks",
+        "viewCount": "11385",
+        "subscriberCount": "310",
+        "videoCount": "102",
+        "latestVideo": "2024-04-01T00:37:06Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 14,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Peaceweapon Picks",
+        "viewCount": "11399",
+        "subscriberCount": "310",
+        "videoCount": "102",
+        "latestVideo": "2024-04-01T00:37:06Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 14,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UC3lz4hFdwF-Eol1qJoyfMkA": {
@@ -3528,6 +4313,34 @@
         "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "LockpickingDev",
+        "viewCount": "98388",
+        "subscriberCount": "1170",
+        "videoCount": "302",
+        "latestVideo": "2024-02-19T18:05:04Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 117,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "LockpickingDev",
+        "viewCount": "98455",
+        "subscriberCount": "1170",
+        "videoCount": "303",
+        "latestVideo": "2024-06-20T16:53:29Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 67,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
       }
     },
     "UCd2U2lOG9BE3Alh_KJ4lKLA": {
@@ -3653,14 +4466,44 @@
         "title": "Georgia Jim",
         "viewCount": "596452",
         "subscriberCount": "2360",
-        "videoCount": "602",
-        "latestVideo": "2024-06-18T22:00:23Z",
+        "videoCount": "603",
+        "latestVideo": "2024-06-19T22:00:33Z",
         "channelFlags": [
           "subscription",
           "featured",
           "playlist"
         ],
         "dailyViews": 204,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      },
+      "2024-06-20": {
+        "title": "Georgia Jim",
+        "viewCount": "598471",
+        "subscriberCount": "2360",
+        "videoCount": "603",
+        "latestVideo": "2024-06-19T22:00:33Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 2019,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Georgia Jim",
+        "viewCount": "601081",
+        "subscriberCount": "2360",
+        "videoCount": "603",
+        "latestVideo": "2024-06-19T22:00:33Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 2610,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -3783,6 +4626,34 @@
           "subscription"
         ],
         "dailyViews": 130,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "The Lock Picker 1969",
+        "viewCount": "102422",
+        "subscriberCount": "1080",
+        "videoCount": "387",
+        "latestVideo": "2024-05-21T11:36:49Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 112,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "The Lock Picker 1969",
+        "viewCount": "102471",
+        "subscriberCount": "1080",
+        "videoCount": "387",
+        "latestVideo": "2024-05-21T11:36:49Z",
+        "channelFlags": [
+          "subscription",
+          "featured"
+        ],
+        "dailyViews": 49,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -3919,6 +4790,36 @@
         ],
         "dailyViews": 0,
         "dailySubscribers": 100,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Dmac",
+        "viewCount": "2456871",
+        "subscriberCount": "15700",
+        "videoCount": "297",
+        "latestVideo": "2024-06-16T14:19:17Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 8164,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Dmac",
+        "viewCount": "2461557",
+        "subscriberCount": "15700",
+        "videoCount": "297",
+        "latestVideo": "2024-06-16T14:19:17Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 4686,
+        "dailySubscribers": 0,
         "dailyVideos": 0
       }
     },
@@ -4173,6 +5074,34 @@
         "dailyViews": 1,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "XvinityPicksLocks",
+        "viewCount": "198",
+        "subscriberCount": "66",
+        "videoCount": "6",
+        "latestVideo": "2024-06-07T01:57:20Z",
+        "channelFlags": [
+          "subscription",
+          "new"
+        ],
+        "dailyViews": 1,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "XvinityLockSport",
+        "viewCount": "198",
+        "subscriberCount": "67",
+        "videoCount": "6",
+        "latestVideo": "2024-06-07T01:57:20Z",
+        "channelFlags": [
+          "subscription",
+          "new"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
       }
     },
     "UCMapdYQFmzqCKCokQFMr81g": {
@@ -4297,6 +5226,34 @@
           "playlist"
         ],
         "dailyViews": 171,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "chris capune",
+        "viewCount": "346810",
+        "subscriberCount": "1940",
+        "videoCount": "2924",
+        "latestVideo": "2024-06-18T00:44:44Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 122,
+        "dailySubscribers": 0,
+        "dailyVideos": 2
+      },
+      "2024-06-21": {
+        "title": "chris capune",
+        "viewCount": "346866",
+        "subscriberCount": "1940",
+        "videoCount": "2924",
+        "latestVideo": "2024-06-18T00:44:44Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 56,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -4434,6 +5391,36 @@
         "dailyViews": 52,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Artichoke2000",
+        "viewCount": "86405",
+        "subscriberCount": "2300",
+        "videoCount": "37",
+        "latestVideo": "2022-11-19T16:00:20Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 76,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Artichoke2000",
+        "viewCount": "86449",
+        "subscriberCount": "2310",
+        "videoCount": "37",
+        "latestVideo": "2022-11-19T16:00:20Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 44,
+        "dailySubscribers": 10,
+        "dailyVideos": 0
       }
     },
     "UCrpkIsfVR99CbRB7zVSzulg": {
@@ -4558,6 +5545,34 @@
           "playlist"
         ],
         "dailyViews": 3,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "skwiggledork",
+        "viewCount": "4432",
+        "subscriberCount": "114",
+        "videoCount": "112",
+        "latestVideo": "2024-06-10T16:18:26Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 8,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "skwiggledork",
+        "viewCount": "4434",
+        "subscriberCount": "114",
+        "videoCount": "112",
+        "latestVideo": "2024-06-10T16:18:26Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 2,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -4695,6 +5710,36 @@
         "dailyViews": 201,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Michael Gilchrist",
+        "viewCount": "187719",
+        "subscriberCount": "1640",
+        "videoCount": "253",
+        "latestVideo": "2024-06-18T00:41:16Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 181,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      },
+      "2024-06-21": {
+        "title": "Michael Gilchrist",
+        "viewCount": "187989",
+        "subscriberCount": "1650",
+        "videoCount": "254",
+        "latestVideo": "2024-06-20T23:50:43Z",
+        "channelFlags": [
+          "subscription",
+          "playlist",
+          "featured"
+        ],
+        "dailyViews": 270,
+        "dailySubscribers": 10,
+        "dailyVideos": 1
       }
     },
     "UCShAtKvq9U5uEggdwFUrdLQ": {
@@ -4814,6 +5859,32 @@
         "dailyViews": 40,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "j.gabriel",
+        "viewCount": "17845",
+        "subscriberCount": "238",
+        "videoCount": "133",
+        "latestVideo": "2024-06-18T01:37:13Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 65,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      },
+      "2024-06-21": {
+        "title": "j.gabriel",
+        "viewCount": "17854",
+        "subscriberCount": "238",
+        "videoCount": "133",
+        "latestVideo": "2024-06-18T01:37:13Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 9,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCBDpLXSbLHkPVocZgMuBTMw": {
@@ -4905,6 +5976,34 @@
           "playlist"
         ],
         "dailyViews": 253,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Schuyler Towne",
+        "viewCount": "7488294",
+        "subscriberCount": "34300",
+        "videoCount": "76",
+        "latestVideo": "2022-09-15T20:05:24Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 322,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Schuyler Towne",
+        "viewCount": "7488516",
+        "subscriberCount": "34300",
+        "videoCount": "76",
+        "latestVideo": "2022-09-15T20:05:24Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 222,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -5000,6 +6099,34 @@
         "dailyViews": 655,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Lockfall Laboratories",
+        "viewCount": "2212926",
+        "subscriberCount": "19500",
+        "videoCount": "42",
+        "latestVideo": "2020-06-19T17:00:16Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 734,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Lockfall Laboratories",
+        "viewCount": "2213505",
+        "subscriberCount": "19500",
+        "videoCount": "42",
+        "latestVideo": "2020-06-19T17:00:16Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 579,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UChGzhXlxNpNyEw6apxdih1w": {
@@ -5091,6 +6218,34 @@
           "playlist"
         ],
         "dailyViews": 41,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "legendofthesamurai",
+        "viewCount": "64265",
+        "subscriberCount": "2410",
+        "videoCount": "48",
+        "latestVideo": "2021-04-02T23:00:14Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 46,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "legendofthesamurai",
+        "viewCount": "64293",
+        "subscriberCount": "2410",
+        "videoCount": "48",
+        "latestVideo": "2021-04-02T23:00:14Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 28,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -5186,6 +6341,34 @@
         "dailyViews": 11,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "TonyS Locks",
+        "viewCount": "51512",
+        "subscriberCount": "685",
+        "videoCount": "127",
+        "latestVideo": "2020-06-23T17:07:52Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 24,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "TonyS Locks",
+        "viewCount": "51529",
+        "subscriberCount": "685",
+        "videoCount": "127",
+        "latestVideo": "2020-06-23T17:07:52Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 17,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCNMj5TTgFa-nWPylejm2l5g": {
@@ -5279,6 +6462,34 @@
         "dailyViews": 38,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "CaptainHookNumber1",
+        "viewCount": "95622",
+        "subscriberCount": "1440",
+        "videoCount": "28",
+        "latestVideo": "2023-07-03T12:32:43Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 38,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "CaptainHookNumber1",
+        "viewCount": "95634",
+        "subscriberCount": "1440",
+        "videoCount": "28",
+        "latestVideo": "2023-07-03T12:32:43Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 12,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UClQWElRptoG-dssHtO9AArQ": {
@@ -5370,6 +6581,34 @@
           "playlist"
         ],
         "dailyViews": 47,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Jon Lock",
+        "viewCount": "73883",
+        "subscriberCount": "1340",
+        "videoCount": "172",
+        "latestVideo": "2022-12-16T16:08:17Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 58,
+        "dailySubscribers": 10,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Jon Lock",
+        "viewCount": "73926",
+        "subscriberCount": "1340",
+        "videoCount": "172",
+        "latestVideo": "2022-12-16T16:08:17Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 43,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -5481,6 +6720,34 @@
           "playlist"
         ],
         "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "McNallyOfficial",
+        "viewCount": "1740737473",
+        "subscriberCount": "3170000",
+        "videoCount": "178",
+        "latestVideo": "2024-05-07T21:14:14Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 3854732,
+        "dailySubscribers": 10000,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "McNallyOfficial",
+        "viewCount": "1742502781",
+        "subscriberCount": "3170000",
+        "videoCount": "178",
+        "latestVideo": "2024-05-07T21:14:14Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 1765308,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -5596,6 +6863,32 @@
         "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "LockPickingTV",
+        "viewCount": "0",
+        "subscriberCount": "7",
+        "videoCount": "0",
+        "latestVideo": "1970-01-01T00:00:01Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "LockPickingTV",
+        "viewCount": "0",
+        "subscriberCount": "7",
+        "videoCount": "0",
+        "latestVideo": "1970-01-01T00:00:01Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UC7Jf7t6BL4e74O53dL6arSw": {
@@ -5622,6 +6915,32 @@
           "playlist"
         ],
         "dailyViews": 3511,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Blondihacks",
+        "viewCount": "38624500",
+        "subscriberCount": "221000",
+        "videoCount": "299",
+        "latestVideo": "2024-06-15T17:00:11Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Blondihacks",
+        "viewCount": "38633345",
+        "subscriberCount": "221000",
+        "videoCount": "299",
+        "latestVideo": "2024-06-15T17:00:11Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 8845,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -5717,6 +7036,34 @@
         "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "naswek",
+        "viewCount": "92358",
+        "subscriberCount": "1360",
+        "videoCount": "44",
+        "latestVideo": "2023-06-29T05:37:53Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 68,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "naswek",
+        "viewCount": "92407",
+        "subscriberCount": "1370",
+        "videoCount": "44",
+        "latestVideo": "2023-06-29T05:37:53Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 49,
+        "dailySubscribers": 10,
+        "dailyVideos": 0
       }
     },
     "UCAjtdEz1b9dCxnwuxdICTfg": {
@@ -5810,6 +7157,34 @@
         "dailyViews": 102,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "LockDoc",
+        "viewCount": "73371",
+        "subscriberCount": "898",
+        "videoCount": "148",
+        "latestVideo": "2024-06-08T06:03:05Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 103,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "LockDoc",
+        "viewCount": "73425",
+        "subscriberCount": "900",
+        "videoCount": "148",
+        "latestVideo": "2024-06-08T06:03:05Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 54,
+        "dailySubscribers": 2,
+        "dailyVideos": 0
       }
     },
     "UC4FJ9pohHy803O4x_DFs6sA": {
@@ -5894,13 +7269,41 @@
       "2024-06-19": {
         "title": "MrBlack-Magic",
         "viewCount": "35901",
-        "subscriberCount": "843",
+        "subscriberCount": "844",
         "videoCount": "66",
         "latestVideo": "2022-08-21T21:55:30Z",
         "channelFlags": [
           "playlist"
         ],
         "dailyViews": 17,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "MrBlack-Magic",
+        "viewCount": "35924",
+        "subscriberCount": "844",
+        "videoCount": "66",
+        "latestVideo": "2022-08-21T21:55:30Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 23,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "MrBlack-Magic",
+        "viewCount": "35938",
+        "subscriberCount": "844",
+        "videoCount": "66",
+        "latestVideo": "2022-08-21T21:55:30Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 14,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -5996,6 +7399,32 @@
         "dailyViews": 2,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Clay Miller",
+        "viewCount": "45493",
+        "subscriberCount": "258",
+        "videoCount": "36",
+        "latestVideo": "2016-11-22T20:02:35Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 2,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Clay Miller",
+        "viewCount": "45493",
+        "subscriberCount": "258",
+        "videoCount": "36",
+        "latestVideo": "2016-11-22T20:02:35Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCdJlIoWR3mf7apfB1dXS97A": {
@@ -6087,6 +7516,32 @@
           "playlist"
         ],
         "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "TheSmokinApe",
+        "viewCount": "9165492",
+        "subscriberCount": "56700",
+        "videoCount": "795",
+        "latestVideo": "2024-06-13T17:51:29Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 5253,
+        "dailySubscribers": 100,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "TheSmokinApe",
+        "viewCount": "9168846",
+        "subscriberCount": "56700",
+        "videoCount": "795",
+        "latestVideo": "2024-06-13T17:51:29Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 3354,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -6182,6 +7637,34 @@
         "dailyViews": 204,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Wadda-C2",
+        "viewCount": "3550531",
+        "subscriberCount": "9150",
+        "videoCount": "601",
+        "latestVideo": "2024-06-09T21:52:38Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 248,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Wadda-C2",
+        "viewCount": "3550673",
+        "subscriberCount": "9150",
+        "videoCount": "601",
+        "latestVideo": "2024-06-09T21:52:38Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 142,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCTqx8nrTFPiU_c-NS3EQthQ": {
@@ -6275,6 +7758,32 @@
         "dailyViews": 12,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "skippidypicking",
+        "viewCount": "354445",
+        "subscriberCount": "227",
+        "videoCount": "22",
+        "latestVideo": "2011-05-31T22:37:59Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 13,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "skippidypicking",
+        "viewCount": "354453",
+        "subscriberCount": "227",
+        "videoCount": "22",
+        "latestVideo": "2011-05-31T22:37:59Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 8,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UC7xu67fdc05csZUNstB3loA": {
@@ -6359,14 +7868,42 @@
       "2024-06-19": {
         "title": "tumbl3r",
         "viewCount": "604538",
-        "subscriberCount": "4270",
+        "subscriberCount": "4260",
         "videoCount": "68",
         "latestVideo": "2018-11-19T00:01:28Z",
         "channelFlags": [
           "playlist"
         ],
         "dailyViews": 93,
-        "dailySubscribers": 10,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "tumbl3r",
+        "viewCount": "604649",
+        "subscriberCount": "4260",
+        "videoCount": "68",
+        "latestVideo": "2018-11-19T00:01:28Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 111,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "tumbl3r",
+        "viewCount": "604709",
+        "subscriberCount": "4260",
+        "videoCount": "68",
+        "latestVideo": "2018-11-19T00:01:28Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 60,
+        "dailySubscribers": 0,
         "dailyVideos": 0
       }
     },
@@ -6452,6 +7989,32 @@
       "2024-06-19": {
         "title": "Erik-Weisz",
         "viewCount": "15417",
+        "subscriberCount": "78",
+        "videoCount": "10",
+        "latestVideo": "2023-09-19T19:02:44Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 1,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Erik-Weisz",
+        "viewCount": "15418",
+        "subscriberCount": "78",
+        "videoCount": "10",
+        "latestVideo": "2023-09-19T19:02:44Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 1,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Erik-Weisz",
+        "viewCount": "15419",
         "subscriberCount": "78",
         "videoCount": "10",
         "latestVideo": "2023-09-19T19:02:44Z",
@@ -6554,6 +8117,34 @@
         "dailyViews": 240,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Dark Arts Lock Picking",
+        "viewCount": "430706",
+        "subscriberCount": "4570",
+        "videoCount": "686",
+        "latestVideo": "2024-06-20T13:01:57Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 258,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      },
+      "2024-06-21": {
+        "title": "Dark Arts Lock Picking",
+        "viewCount": "430869",
+        "subscriberCount": "4570",
+        "videoCount": "686",
+        "latestVideo": "2024-06-20T13:01:57Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 163,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCZxkC_15-n8bJHZ0JZxk_pg": {
@@ -6645,6 +8236,34 @@
           "playlist"
         ],
         "dailyViews": 291,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Cameron Dunn",
+        "viewCount": "404054",
+        "subscriberCount": "1140",
+        "videoCount": "121",
+        "latestVideo": "2020-01-09T17:16:58Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 380,
+        "dailySubscribers": 10,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Cameron Dunn",
+        "viewCount": "404305",
+        "subscriberCount": "1140",
+        "videoCount": "121",
+        "latestVideo": "2020-01-09T17:16:58Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 251,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -6740,6 +8359,34 @@
         "dailyViews": 3633,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Potti314",
+        "viewCount": "9843668",
+        "subscriberCount": "22000",
+        "videoCount": "789",
+        "latestVideo": "2024-02-25T22:48:26Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 4232,
+        "dailySubscribers": 100,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Potti314",
+        "viewCount": "9846730",
+        "subscriberCount": "22000",
+        "videoCount": "789",
+        "latestVideo": "2024-02-25T22:48:26Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 3062,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UC4dxXZQq-ofAadUWbqhoceQ": {
@@ -6832,6 +8479,32 @@
         ],
         "dailyViews": 0,
         "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "DeviantOllam",
+        "viewCount": "17083778",
+        "subscriberCount": "153000",
+        "videoCount": "531",
+        "latestVideo": "2024-06-17T14:00:04Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 15058,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      },
+      "2024-06-21": {
+        "title": "DeviantOllam",
+        "viewCount": "17091376",
+        "subscriberCount": "154000",
+        "videoCount": "531",
+        "latestVideo": "2024-06-17T14:00:04Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 7598,
+        "dailySubscribers": 1000,
         "dailyVideos": 0
       }
     },
@@ -6926,6 +8599,34 @@
         "dailyViews": 233,
         "dailySubscribers": 1,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "crispix",
+        "viewCount": "131718",
+        "subscriberCount": "772",
+        "videoCount": "49",
+        "latestVideo": "2024-05-07T10:37:02Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 274,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "crispix",
+        "viewCount": "131875",
+        "subscriberCount": "774",
+        "videoCount": "49",
+        "latestVideo": "2024-05-07T10:37:02Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 157,
+        "dailySubscribers": 2,
+        "dailyVideos": 0
       }
     },
     "UCRAMhpiDrCkLmC-V-EamMTA": {
@@ -7017,6 +8718,34 @@
           "playlist"
         ],
         "dailyViews": 4,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Geoffry McGary",
+        "viewCount": "42394",
+        "subscriberCount": "165",
+        "videoCount": "47",
+        "latestVideo": "2023-09-04T18:39:40Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 5,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Geoffry McGary",
+        "viewCount": "42395",
+        "subscriberCount": "165",
+        "videoCount": "47",
+        "latestVideo": "2023-09-04T18:39:40Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 1,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -7112,6 +8841,34 @@
         "dailyViews": 26,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "dirk",
+        "viewCount": "247351",
+        "subscriberCount": "1510",
+        "videoCount": "71",
+        "latestVideo": "2018-02-25T10:00:31Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 18,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "dirk",
+        "viewCount": "247363",
+        "subscriberCount": "1510",
+        "videoCount": "71",
+        "latestVideo": "2018-02-25T10:00:31Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 12,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCE53zbLlZQosuMvQth87e4Q": {
@@ -7203,6 +8960,34 @@
           "playlist"
         ],
         "dailyViews": 42,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "DQ",
+        "viewCount": "112575",
+        "subscriberCount": "423",
+        "videoCount": "212",
+        "latestVideo": "2024-06-06T10:48:39Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 32,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "DQ",
+        "viewCount": "112598",
+        "subscriberCount": "423",
+        "videoCount": "212",
+        "latestVideo": "2024-06-06T10:48:39Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 23,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -7298,6 +9083,32 @@
         "dailyViews": 24,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Roo1",
+        "viewCount": "13788",
+        "subscriberCount": "122",
+        "videoCount": "20",
+        "latestVideo": "2022-05-28T12:32:38Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 22,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Roo1",
+        "viewCount": "13802",
+        "subscriberCount": "122",
+        "videoCount": "20",
+        "latestVideo": "2022-05-28T12:32:38Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 14,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCHyAg2625ZgGgg2Ounfgyyw": {
@@ -7389,6 +9200,34 @@
           "playlist"
         ],
         "dailyViews": 43,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Keymaster",
+        "viewCount": "102627",
+        "subscriberCount": "958",
+        "videoCount": "144",
+        "latestVideo": "2020-11-21T20:38:52Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 45,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Keymaster",
+        "viewCount": "102659",
+        "subscriberCount": "958",
+        "videoCount": "144",
+        "latestVideo": "2020-11-21T20:38:52Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 32,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -7484,6 +9323,34 @@
         "dailyViews": 95,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Every-Lock-Is-Unique",
+        "viewCount": "26910",
+        "subscriberCount": "279",
+        "videoCount": "95",
+        "latestVideo": "2024-06-07T14:00:44Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 106,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Every-Lock-Is-Unique",
+        "viewCount": "26955",
+        "subscriberCount": "280",
+        "videoCount": "96",
+        "latestVideo": "2024-06-21T14:00:42Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 45,
+        "dailySubscribers": 1,
+        "dailyVideos": 1
       }
     },
     "UCQWfAslkbdp6nl0mz8ywCRw": {
@@ -7575,6 +9442,34 @@
           "playlist"
         ],
         "dailyViews": 9,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "AMonitorDarkly",
+        "viewCount": "24538",
+        "subscriberCount": "384",
+        "videoCount": "140",
+        "latestVideo": "2021-11-27T20:08:07Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 7,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "AMonitorDarkly",
+        "viewCount": "24539",
+        "subscriberCount": "384",
+        "videoCount": "140",
+        "latestVideo": "2021-11-27T20:08:07Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 1,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -7670,6 +9565,34 @@
         "dailyViews": 83,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Geo",
+        "viewCount": "1119538",
+        "subscriberCount": "1110",
+        "videoCount": "89",
+        "latestVideo": "2020-12-04T17:57:22Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 186,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Geo",
+        "viewCount": "1119641",
+        "subscriberCount": "1110",
+        "videoCount": "89",
+        "latestVideo": "2020-12-04T17:57:22Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 103,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UC0uDsWpm4sISpzKlB0XVFDw": {
@@ -7761,6 +9684,34 @@
           "playlist"
         ],
         "dailyViews": 40,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "RoonPicker",
+        "viewCount": "163989",
+        "subscriberCount": "583",
+        "videoCount": "286",
+        "latestVideo": "2022-06-05T05:08:31Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 40,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "RoonPicker",
+        "viewCount": "164007",
+        "subscriberCount": "583",
+        "videoCount": "286",
+        "latestVideo": "2022-06-05T05:08:31Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 18,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -7856,6 +9807,34 @@
         "dailyViews": 19,
         "dailySubscribers": 1,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Red Wanderer",
+        "viewCount": "32618",
+        "subscriberCount": "345",
+        "videoCount": "117",
+        "latestVideo": "2024-04-30T21:05:33Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 26,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Red Wanderer",
+        "viewCount": "32636",
+        "subscriberCount": "346",
+        "videoCount": "117",
+        "latestVideo": "2024-04-30T21:05:33Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 18,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
       }
     },
     "UCjMYWOs-Wi2spkCONND8xHQ": {
@@ -7947,6 +9926,34 @@
           "playlist"
         ],
         "dailyViews": 152,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      },
+      "2024-06-20": {
+        "title": "Rook Knight",
+        "viewCount": "148689",
+        "subscriberCount": "1540",
+        "videoCount": "297",
+        "latestVideo": "2024-06-19T19:50:52Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 241,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Rook Knight",
+        "viewCount": "150286",
+        "subscriberCount": "1540",
+        "videoCount": "298",
+        "latestVideo": "2024-06-21T11:00:44Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 1597,
         "dailySubscribers": 0,
         "dailyVideos": 1
       }
@@ -8042,6 +10049,34 @@
         "dailyViews": 1988,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Bored Lock picker",
+        "viewCount": "3189822",
+        "subscriberCount": "15100",
+        "videoCount": "608",
+        "latestVideo": "2024-06-10T07:05:36Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 2359,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Bored Lock picker",
+        "viewCount": "3191123",
+        "subscriberCount": "15100",
+        "videoCount": "608",
+        "latestVideo": "2024-06-10T07:05:36Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 1301,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCpYG4aQaPzdiCSVvFHf6sKA": {
@@ -8135,6 +10170,34 @@
         "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Fish Picks",
+        "viewCount": "542037",
+        "subscriberCount": "8520",
+        "videoCount": "44",
+        "latestVideo": "2021-08-20T11:00:14Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 555,
+        "dailySubscribers": 10,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Fish Picks",
+        "viewCount": "542374",
+        "subscriberCount": "8530",
+        "videoCount": "44",
+        "latestVideo": "2021-08-20T11:00:14Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 337,
+        "dailySubscribers": 10,
+        "dailyVideos": 0
       }
     },
     "UC6DeqsBy9tjZestSiPkx0SA": {
@@ -8226,6 +10289,32 @@
           "playlist"
         ],
         "dailyViews": 33,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "drZongo",
+        "viewCount": "42458",
+        "subscriberCount": "284",
+        "videoCount": "20",
+        "latestVideo": "2023-09-07T17:30:11Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 57,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "drZongo",
+        "viewCount": "42486",
+        "subscriberCount": "284",
+        "videoCount": "20",
+        "latestVideo": "2023-09-07T17:30:11Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 28,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -8321,6 +10410,32 @@
         "dailyViews": 2,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "JustinMcslappy",
+        "viewCount": "16651",
+        "subscriberCount": "168",
+        "videoCount": "115",
+        "latestVideo": "2021-09-14T13:34:42Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 13,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "JustinMcslappy",
+        "viewCount": "16659",
+        "subscriberCount": "168",
+        "videoCount": "115",
+        "latestVideo": "2021-09-14T13:34:42Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 8,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCmBrQYJLqkxLGhYSX0LRyUQ": {
@@ -8412,6 +10527,34 @@
           "playlist"
         ],
         "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Supallama",
+        "viewCount": "19660",
+        "subscriberCount": "502",
+        "videoCount": "86",
+        "latestVideo": "2019-12-28T07:04:44Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Supallama",
+        "viewCount": "19663",
+        "subscriberCount": "502",
+        "videoCount": "86",
+        "latestVideo": "2019-12-28T07:04:44Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 3,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -8507,6 +10650,34 @@
         "dailyViews": 45,
         "dailySubscribers": 0,
         "dailyVideos": 2
+      },
+      "2024-06-20": {
+        "title": "Wyte Lox",
+        "viewCount": "3018",
+        "subscriberCount": "75",
+        "videoCount": "67",
+        "latestVideo": "2024-06-17T03:01:41Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 24,
+        "dailySubscribers": 0,
+        "dailyVideos": 2
+      },
+      "2024-06-21": {
+        "title": "Wyte Lox",
+        "viewCount": "3030",
+        "subscriberCount": "76",
+        "videoCount": "67",
+        "latestVideo": "2024-06-17T03:01:41Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 12,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
       }
     },
     "UCgsNWtGhWOlabLIBzBzbD8A": {
@@ -8599,6 +10770,34 @@
         ],
         "dailyViews": 0,
         "dailySubscribers": 10,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Lock Manipulator",
+        "viewCount": "616807",
+        "subscriberCount": "5970",
+        "videoCount": "16",
+        "latestVideo": "2024-02-01T23:13:26Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 323,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Lock Manipulator",
+        "viewCount": "617014",
+        "subscriberCount": "5970",
+        "videoCount": "16",
+        "latestVideo": "2024-02-01T23:13:26Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 207,
+        "dailySubscribers": 0,
         "dailyVideos": 0
       }
     },
@@ -8693,6 +10892,32 @@
         "dailyViews": 2902,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Wayne Winton",
+        "viewCount": "18357639",
+        "subscriberCount": "38500",
+        "videoCount": "1640",
+        "latestVideo": "2024-06-19T03:59:08Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 3524,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Wayne Winton",
+        "viewCount": "18359769",
+        "subscriberCount": "38500",
+        "videoCount": "1641",
+        "latestVideo": "2024-06-19T03:59:08Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 2130,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
       }
     },
     "UCC_pKsdTXcXaN5WjWZ8st_g": {
@@ -8784,6 +11009,32 @@
           "playlist"
         ],
         "dailyViews": 6,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Average life of prince",
+        "viewCount": "9867",
+        "subscriberCount": "168",
+        "videoCount": "128",
+        "latestVideo": "2022-10-17T17:35:00Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 4,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Average life of prince",
+        "viewCount": "9869",
+        "subscriberCount": "168",
+        "videoCount": "128",
+        "latestVideo": "2022-10-17T17:35:00Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 2,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -8879,6 +11130,32 @@
         "dailyViews": 2,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Texas Jim",
+        "viewCount": "139124",
+        "subscriberCount": "1160",
+        "videoCount": "578",
+        "latestVideo": "2017-09-07T22:58:51Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 2,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Texas Jim",
+        "viewCount": "139128",
+        "subscriberCount": "1160",
+        "videoCount": "578",
+        "latestVideo": "2017-09-07T22:58:51Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 4,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCHkICLEpmqJ28x1kXm81nuQ": {
@@ -8970,6 +11247,32 @@
           "playlist"
         ],
         "dailyViews": 30,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "AlbaZarKft",
+        "viewCount": "116269",
+        "subscriberCount": "155",
+        "videoCount": "25",
+        "latestVideo": "2024-06-03T11:12:11Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 50,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "AlbaZarKft",
+        "viewCount": "116305",
+        "subscriberCount": "155",
+        "videoCount": "25",
+        "latestVideo": "2024-06-03T11:12:11Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 36,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -9065,6 +11368,32 @@
         "dailyViews": 20,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Jamie's Locks",
+        "viewCount": "54306",
+        "subscriberCount": "363",
+        "videoCount": "32",
+        "latestVideo": "2018-07-24T12:51:30Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 19,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Jamie's Locks",
+        "viewCount": "54317",
+        "subscriberCount": "363",
+        "videoCount": "32",
+        "latestVideo": "2018-07-24T12:51:30Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 11,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCJdyxxvvMuV2V0ZeYWQl9Wg": {
@@ -9157,6 +11486,34 @@
         ],
         "dailyViews": 93,
         "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Steve's Lock Picking",
+        "viewCount": "68838",
+        "subscriberCount": "565",
+        "videoCount": "192",
+        "latestVideo": "2024-05-16T01:17:43Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 123,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Steve's Lock Picking",
+        "viewCount": "68881",
+        "subscriberCount": "566",
+        "videoCount": "192",
+        "latestVideo": "2024-05-16T01:17:43Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 43,
+        "dailySubscribers": 1,
         "dailyVideos": 0
       }
     },
@@ -9251,6 +11608,34 @@
         "dailyViews": 1464,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "LockFumbler",
+        "viewCount": "314071",
+        "subscriberCount": "1280",
+        "videoCount": "355",
+        "latestVideo": "2024-06-16T18:57:20Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 1118,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "LockFumbler",
+        "viewCount": "314322",
+        "subscriberCount": "1280",
+        "videoCount": "357",
+        "latestVideo": "2024-06-21T09:24:02Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 251,
+        "dailySubscribers": 0,
+        "dailyVideos": 2
       }
     },
     "UCHG8zIuQ3JJ4J6aeeeGX1DA": {
@@ -9342,6 +11727,32 @@
           "playlist"
         ],
         "dailyViews": 1,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "canadianlockpick",
+        "viewCount": "238861",
+        "subscriberCount": "367",
+        "videoCount": "7",
+        "latestVideo": "2010-04-19T21:35:04Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "canadianlockpick",
+        "viewCount": "238861",
+        "subscriberCount": "367",
+        "videoCount": "7",
+        "latestVideo": "2010-04-19T21:35:04Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -9437,6 +11848,34 @@
         "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Pete Restall",
+        "viewCount": "882418",
+        "subscriberCount": "5820",
+        "videoCount": "326",
+        "latestVideo": "2017-09-14T14:18:56Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 88,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Pete Restall",
+        "viewCount": "882465",
+        "subscriberCount": "5820",
+        "videoCount": "326",
+        "latestVideo": "2017-09-14T14:18:56Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 47,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCpdMakUyLgC-MzrGH1NoH0g": {
@@ -9530,6 +11969,34 @@
         "dailyViews": 3,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Mugatu",
+        "viewCount": "6093",
+        "subscriberCount": "149",
+        "videoCount": "28",
+        "latestVideo": "2023-10-15T20:30:07Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 6,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Mugatu",
+        "viewCount": "6093",
+        "subscriberCount": "150",
+        "videoCount": "28",
+        "latestVideo": "2023-10-15T20:30:07Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
       }
     },
     "UCwGnrdS4TxV8nPpZtG2uHtw": {
@@ -9621,6 +12088,34 @@
           "playlist"
         ],
         "dailyViews": 18,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Affinity",
+        "viewCount": "121713",
+        "subscriberCount": "626",
+        "videoCount": "36",
+        "latestVideo": "2022-04-21T01:41:46Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 36,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Affinity",
+        "viewCount": "121738",
+        "subscriberCount": "626",
+        "videoCount": "36",
+        "latestVideo": "2022-04-21T01:41:46Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 25,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -9716,6 +12211,34 @@
         "dailyViews": 100,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "DoctorHogmaster",
+        "viewCount": "129833",
+        "subscriberCount": "716",
+        "videoCount": "281",
+        "latestVideo": "2024-06-10T13:17:40Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 98,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "DoctorHogmaster",
+        "viewCount": "129924",
+        "subscriberCount": "719",
+        "videoCount": "281",
+        "latestVideo": "2024-06-10T13:17:40Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 91,
+        "dailySubscribers": 3,
+        "dailyVideos": 0
       }
     },
     "UCp082FXe6xY69I6NsN_JjAw": {
@@ -9809,6 +12332,32 @@
         "dailyViews": 0,
         "dailySubscribers": 10,
         "dailyVideos": 2
+      },
+      "2024-06-20": {
+        "title": "Door and lock tips",
+        "viewCount": "421060",
+        "subscriberCount": "1790",
+        "videoCount": "572",
+        "latestVideo": "2024-06-19T14:39:06Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 1163,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Door and lock tips",
+        "viewCount": "421608",
+        "subscriberCount": "1810",
+        "videoCount": "564",
+        "latestVideo": "2024-06-21T03:00:06Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 548,
+        "dailySubscribers": 20,
+        "dailyVideos": 0
       }
     },
     "UCqP38s7_XwQHt3fwoqBvbkg": {
@@ -9900,6 +12449,34 @@
           "playlist"
         ],
         "dailyViews": 563,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Daz Evers",
+        "viewCount": "890885",
+        "subscriberCount": "8290",
+        "videoCount": "302",
+        "latestVideo": "2021-06-19T19:00:08Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 685,
+        "dailySubscribers": 10,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Daz Evers",
+        "viewCount": "891304",
+        "subscriberCount": "8290",
+        "videoCount": "302",
+        "latestVideo": "2021-06-19T19:00:08Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 419,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -9995,6 +12572,34 @@
         "dailyViews": 92,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Charles Builds Crap",
+        "viewCount": "796600",
+        "subscriberCount": "1710",
+        "videoCount": "228",
+        "latestVideo": "2023-02-26T01:58:00Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 126,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Charles Builds Crap",
+        "viewCount": "796666",
+        "subscriberCount": "1710",
+        "videoCount": "228",
+        "latestVideo": "2023-02-26T01:58:00Z",
+        "channelFlags": [
+          "subscription",
+          "playlist"
+        ],
+        "dailyViews": 66,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCbR934dE1_QA1RfKMAJvwbA": {
@@ -10073,6 +12678,32 @@
           "subscription"
         ],
         "dailyViews": 65,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "BrettSucks",
+        "viewCount": "60111",
+        "subscriberCount": "927",
+        "videoCount": "165",
+        "latestVideo": "2024-06-15T01:48:42Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 60,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "BrettSucks",
+        "viewCount": "60140",
+        "subscriberCount": "927",
+        "videoCount": "165",
+        "latestVideo": "2024-06-15T01:48:42Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 29,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }
@@ -10155,6 +12786,32 @@
         "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "mgsecure",
+        "viewCount": "127",
+        "subscriberCount": "23",
+        "videoCount": "7",
+        "latestVideo": "2023-04-30T19:47:01Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "mgsecure",
+        "viewCount": "127",
+        "subscriberCount": "23",
+        "videoCount": "7",
+        "latestVideo": "2023-04-30T19:47:01Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
       }
     },
     "UCajJsiIDVbxIqeDAcbozlMQ": {
@@ -10209,6 +12866,32 @@
         "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "Michael Maynard",
+        "viewCount": "481625",
+        "subscriberCount": "3640",
+        "videoCount": "97",
+        "latestVideo": "2022-11-19T00:23:59Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 140,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Michael Maynard",
+        "viewCount": "481737",
+        "subscriberCount": "3650",
+        "videoCount": "97",
+        "latestVideo": "2022-11-19T00:23:59Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 112,
+        "dailySubscribers": 10,
+        "dailyVideos": 0
       }
     },
     "UC1ZPB5vWuL8d6C81ba75yZA": {
@@ -10261,6 +12944,1236 @@
           "subscription"
         ],
         "dailyViews": 230,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-20": {
+        "title": "HVLogic",
+        "viewCount": "182494",
+        "subscriberCount": "1310",
+        "videoCount": "514",
+        "latestVideo": "2024-06-04T19:00:00Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 271,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "HVLogic",
+        "viewCount": "182683",
+        "subscriberCount": "1310",
+        "videoCount": "514",
+        "latestVideo": "2024-06-04T19:00:00Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 189,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UC884OIZnE5XbVsyyoWaQKbQ": {
+      "2024-06-20": {
+        "title": "Alex Mitchell",
+        "viewCount": "94798636",
+        "subscriberCount": "170000",
+        "videoCount": "141",
+        "latestVideo": "2024-06-19T19:58:29Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Alex Mitchell",
+        "viewCount": "95041313",
+        "subscriberCount": "170000",
+        "videoCount": "142",
+        "latestVideo": "2024-06-20T19:00:24Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 242677,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      }
+    },
+    "UCLbpSjzrlA4ghkY-aDyhEEw": {
+      "2024-06-20": {
+        "title": "Digby Lock and Tool",
+        "viewCount": "190",
+        "subscriberCount": "142",
+        "videoCount": "1",
+        "latestVideo": "2022-09-24T06:53:16Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Digby Lock and Tool",
+        "viewCount": "190",
+        "subscriberCount": "142",
+        "videoCount": "1",
+        "latestVideo": "2022-09-24T06:53:16Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCEVjx1wx19nFC9_VmvahtGw": {
+      "2024-06-20": {
+        "title": "Grain ORice",
+        "viewCount": "31251",
+        "subscriberCount": "370",
+        "videoCount": "19",
+        "latestVideo": "2024-05-13T01:30:11Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Grain ORice",
+        "viewCount": "31267",
+        "subscriberCount": "370",
+        "videoCount": "19",
+        "latestVideo": "2024-05-13T01:30:11Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 16,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCIu0hCqUritt_yy_hk_GoJA": {
+      "2024-06-20": {
+        "title": "Oak City Locksport",
+        "viewCount": "316578",
+        "subscriberCount": "1770",
+        "videoCount": "13",
+        "latestVideo": "2021-07-26T12:30:10Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Oak City Locksport",
+        "viewCount": "316811",
+        "subscriberCount": "1770",
+        "videoCount": "13",
+        "latestVideo": "2021-07-26T12:30:10Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 233,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCBLmagWy17WEZdp41Fl-ziw": {
+      "2024-06-20": {
+        "title": "Tallan Pick",
+        "viewCount": "14870125",
+        "subscriberCount": "89000",
+        "videoCount": "1146",
+        "latestVideo": "2024-06-18T10:09:36Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Tallan Pick",
+        "viewCount": "14873412",
+        "subscriberCount": "89000",
+        "videoCount": "1147",
+        "latestVideo": "2024-06-20T16:13:45Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 3287,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      }
+    },
+    "UC3Iic6U2ars-1AsIUqNjqWA": {
+      "2024-06-20": {
+        "title": "Law Lock Tools",
+        "viewCount": "26561",
+        "subscriberCount": "797",
+        "videoCount": "18",
+        "latestVideo": "2024-05-13T09:11:09Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Law Lock Tools",
+        "viewCount": "26569",
+        "subscriberCount": "797",
+        "videoCount": "19",
+        "latestVideo": "2024-06-20T19:04:10Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 8,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      }
+    },
+    "UC70eFjd4abPhQPj8S0xpMYA": {
+      "2024-06-20": {
+        "title": "RubberBanned",
+        "viewCount": "36562",
+        "subscriberCount": "875",
+        "videoCount": "66",
+        "latestVideo": "2023-07-18T21:59:56Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "RubberBanned",
+        "viewCount": "36593",
+        "subscriberCount": "876",
+        "videoCount": "66",
+        "latestVideo": "2023-07-18T21:59:56Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 31,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      }
+    },
+    "UCBfTXj1xcPIbY66dNZYTt9A": {
+      "2024-06-20": {
+        "title": "Picking Time",
+        "viewCount": "1174",
+        "subscriberCount": "119",
+        "videoCount": "92",
+        "latestVideo": "2024-06-15T23:19:59Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Picking Time",
+        "viewCount": "1174",
+        "subscriberCount": "119",
+        "videoCount": "92",
+        "latestVideo": "2024-06-15T23:19:59Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCE6_seJQjgt3IPpUo__jzsg": {
+      "2024-06-20": {
+        "title": "PickPals",
+        "viewCount": "209358",
+        "subscriberCount": "2050",
+        "videoCount": "58",
+        "latestVideo": "2021-09-23T07:00:11Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "PickPals",
+        "viewCount": "209401",
+        "subscriberCount": "2060",
+        "videoCount": "58",
+        "latestVideo": "2021-09-23T07:00:11Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 43,
+        "dailySubscribers": 10,
+        "dailyVideos": 0
+      }
+    },
+    "UCAkidpWMVqOu7v8426BwR5g": {
+      "2024-06-20": {
+        "title": "Jay Dee",
+        "viewCount": "102033",
+        "subscriberCount": "462",
+        "videoCount": "77",
+        "latestVideo": "2017-04-09T11:10:29Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Jay Dee",
+        "viewCount": "102036",
+        "subscriberCount": "462",
+        "videoCount": "77",
+        "latestVideo": "2017-04-09T11:10:29Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 3,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UC4TxX2ujTLThMaFCdFQIfZQ": {
+      "2024-06-20": {
+        "title": "Lock kraKen",
+        "viewCount": "9800",
+        "subscriberCount": "324",
+        "videoCount": "137",
+        "latestVideo": "2024-01-21T23:45:08Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Lock kraKen",
+        "viewCount": "9802",
+        "subscriberCount": "325",
+        "videoCount": "137",
+        "latestVideo": "2024-01-21T23:45:08Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 2,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      }
+    },
+    "UCNWOT1FujUR2XO9GxUcB3rA": {
+      "2024-06-20": {
+        "title": "Alpama",
+        "viewCount": "36461",
+        "subscriberCount": "423",
+        "videoCount": "55",
+        "latestVideo": "2024-06-10T07:59:11Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Alpama",
+        "viewCount": "36511",
+        "subscriberCount": "423",
+        "videoCount": "55",
+        "latestVideo": "2024-06-10T07:59:11Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 50,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCV_5T8FxpeBl_0xws3BruSA": {
+      "2024-06-20": {
+        "title": "LockMan28",
+        "viewCount": "7078761",
+        "subscriberCount": "24200",
+        "videoCount": "67",
+        "latestVideo": "2018-10-14T18:01:46Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "LockMan28",
+        "viewCount": "7078794",
+        "subscriberCount": "24200",
+        "videoCount": "67",
+        "latestVideo": "2018-10-14T18:01:46Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 33,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCVm4xTsDFm6emRUAlV6GwqQ": {
+      "2024-06-20": {
+        "title": "_least",
+        "viewCount": "23170",
+        "subscriberCount": "229",
+        "videoCount": "60",
+        "latestVideo": "2024-06-05T21:12:38Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "_least",
+        "viewCount": "23185",
+        "subscriberCount": "229",
+        "videoCount": "60",
+        "latestVideo": "2024-06-05T21:12:38Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 15,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCjy83gJX5zaf00ZSUVOL8GA": {
+      "2024-06-20": {
+        "title": "SasPes",
+        "viewCount": "193155",
+        "subscriberCount": "2240",
+        "videoCount": "323",
+        "latestVideo": "2024-06-19T17:24:03Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "SasPes",
+        "viewCount": "193232",
+        "subscriberCount": "2240",
+        "videoCount": "323",
+        "latestVideo": "2024-06-19T17:24:03Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 77,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UClRzkaalqVQRuZYA_QEluow": {
+      "2024-06-20": {
+        "title": "GravityKarma",
+        "viewCount": "3993",
+        "subscriberCount": "135",
+        "videoCount": "51",
+        "latestVideo": "2022-09-19T11:44:58Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "GravityKarma",
+        "viewCount": "3994",
+        "subscriberCount": "135",
+        "videoCount": "51",
+        "latestVideo": "2022-09-19T11:44:58Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 1,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCloiZYbh1p9_itu4gZLv7kg": {
+      "2024-06-20": {
+        "title": "Retep Reyem",
+        "viewCount": "150919",
+        "subscriberCount": "510",
+        "videoCount": "309",
+        "latestVideo": "2024-06-04T18:48:51Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Retep Reyem",
+        "viewCount": "150936",
+        "subscriberCount": "510",
+        "videoCount": "309",
+        "latestVideo": "2024-06-04T18:48:51Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 17,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCeUKv46Tv6MKmoGjDBGDNnQ": {
+      "2024-06-20": {
+        "title": "Dr Lock",
+        "viewCount": "8843171",
+        "subscriberCount": "32400",
+        "videoCount": "1424",
+        "latestVideo": "2024-06-19T08:01:51Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Dr Lock",
+        "viewCount": "8845313",
+        "subscriberCount": "32400",
+        "videoCount": "1425",
+        "latestVideo": "2024-06-19T08:01:51Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 2142,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      }
+    },
+    "UCbhOC03UtNLbW-teYgH07SA": {
+      "2024-06-20": {
+        "title": "Captain Lock Pick",
+        "viewCount": "134307950",
+        "subscriberCount": "337000",
+        "videoCount": "83",
+        "latestVideo": "2022-11-01T19:03:50Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Captain Lock Pick",
+        "viewCount": "134312890",
+        "subscriberCount": "337000",
+        "videoCount": "83",
+        "latestVideo": "2022-11-01T19:03:50Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 4940,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCmIqJOrfQr8NTEDrOU2lF3Q": {
+      "2024-06-20": {
+        "title": "Panda-Frog",
+        "viewCount": "2932323",
+        "subscriberCount": "11700",
+        "videoCount": "1499",
+        "latestVideo": "2024-06-20T16:00:43Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Panda-Frog",
+        "viewCount": "2934859",
+        "subscriberCount": "11700",
+        "videoCount": "1499",
+        "latestVideo": "2024-06-20T16:00:43Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 2536,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCWRcZvkrVeVtvbOb-nnJxvw": {
+      "2024-06-20": {
+        "title": "JM Lockpicking",
+        "viewCount": "3504652",
+        "subscriberCount": "6130",
+        "videoCount": "473",
+        "latestVideo": "2021-12-18T05:00:22Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "JM Lockpicking",
+        "viewCount": "3504760",
+        "subscriberCount": "6130",
+        "videoCount": "473",
+        "latestVideo": "2021-12-18T05:00:22Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 108,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCoIcKc8M8XBJFFbqQSvaNIg": {
+      "2024-06-20": {
+        "title": "Leon's lockpad",
+        "viewCount": "159006",
+        "subscriberCount": "2530",
+        "videoCount": "490",
+        "latestVideo": "2023-06-21T14:14:45Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Leon's lockpad",
+        "viewCount": "159020",
+        "subscriberCount": "2530",
+        "videoCount": "490",
+        "latestVideo": "2023-06-21T14:14:45Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 14,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCeAVOjxKK-ocLkp4OejC98Q": {
+      "2024-06-20": {
+        "title": "McDonald Poor",
+        "viewCount": "525",
+        "subscriberCount": "80",
+        "videoCount": "8",
+        "latestVideo": "2024-06-17T15:55:10Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "McDonald Poor",
+        "viewCount": "539",
+        "subscriberCount": "81",
+        "videoCount": "8",
+        "latestVideo": "2024-06-17T15:55:10Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 14,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      }
+    },
+    "UCpYoz2eMEIoo2SAbOvIm8pQ": {
+      "2024-06-20": {
+        "title": "Sisko's Lock Channel",
+        "viewCount": "713",
+        "subscriberCount": "79",
+        "videoCount": "22",
+        "latestVideo": "2023-11-04T17:23:51Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Sisko's Lock Channel",
+        "viewCount": "713",
+        "subscriberCount": "79",
+        "videoCount": "22",
+        "latestVideo": "2023-11-04T17:23:51Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCa3tK05ppsmMs-K-xQMDi9w": {
+      "2024-06-20": {
+        "title": "GxAxV",
+        "viewCount": "429971",
+        "subscriberCount": "2870",
+        "videoCount": "270",
+        "latestVideo": "2024-05-14T16:38:42Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "GxAxV",
+        "viewCount": "430079",
+        "subscriberCount": "2870",
+        "videoCount": "270",
+        "latestVideo": "2024-05-14T16:38:42Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 108,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCdWpMDmubQEJJ9XfXSsNaGA": {
+      "2024-06-20": {
+        "title": "DocMachina",
+        "viewCount": "13044",
+        "subscriberCount": "77",
+        "videoCount": "29",
+        "latestVideo": "2024-06-20T06:03:33Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "DocMachina",
+        "viewCount": "13091",
+        "subscriberCount": "78",
+        "videoCount": "29",
+        "latestVideo": "2024-06-20T06:03:33Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 47,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      }
+    },
+    "UCZm0TYjhXv_Y5vB6SHywo-A": {
+      "2024-06-20": {
+        "title": "Den Brass",
+        "viewCount": "14988",
+        "subscriberCount": "578",
+        "videoCount": "82",
+        "latestVideo": "2022-04-15T23:16:17Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Den Brass",
+        "viewCount": "14988",
+        "subscriberCount": "578",
+        "videoCount": "82",
+        "latestVideo": "2022-04-15T23:16:17Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCZf4lM8vvVQNNZsUAo0Y5SA": {
+      "2024-06-20": {
+        "title": "Moon UA",
+        "viewCount": "13378",
+        "subscriberCount": "170",
+        "videoCount": "61",
+        "latestVideo": "2023-07-12T23:47:37Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Moon UA",
+        "viewCount": "13395",
+        "subscriberCount": "170",
+        "videoCount": "61",
+        "latestVideo": "2023-07-12T23:47:37Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 17,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCpBTenTScCT-uSDcX4lxCww": {
+      "2024-06-20": {
+        "title": "LegalLockPicker",
+        "viewCount": "435072",
+        "subscriberCount": "4750",
+        "videoCount": "180",
+        "latestVideo": "2021-03-22T15:28:03Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "LegalLockPicker",
+        "viewCount": "435235",
+        "subscriberCount": "4750",
+        "videoCount": "180",
+        "latestVideo": "2021-03-22T15:28:03Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 163,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCYwfYlpynpOyouGZjWjzDEA": {
+      "2024-06-20": {
+        "title": "UK Lockpickers",
+        "viewCount": "146456",
+        "subscriberCount": "2820",
+        "videoCount": "70",
+        "latestVideo": "2023-03-08T13:42:47Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "UK Lockpickers",
+        "viewCount": "146474",
+        "subscriberCount": "2820",
+        "videoCount": "70",
+        "latestVideo": "2023-03-08T13:42:47Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 18,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCn4ABm6j_n96KiFAu0F65oA": {
+      "2024-06-20": {
+        "title": "Brummie Lock Picker",
+        "viewCount": "1605527",
+        "subscriberCount": "6900",
+        "videoCount": "912",
+        "latestVideo": "2024-06-12T14:19:00Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Brummie Lock Picker",
+        "viewCount": "1607566",
+        "subscriberCount": "6910",
+        "videoCount": "913",
+        "latestVideo": "2024-06-21T14:22:40Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 2039,
+        "dailySubscribers": 10,
+        "dailyVideos": 1
+      }
+    },
+    "UCcJQrK9RyAVU_8aTrtMaoDQ": {
+      "2024-06-20": {
+        "title": "Lock Picking Legend",
+        "viewCount": "5227232",
+        "subscriberCount": "15000",
+        "videoCount": "261",
+        "latestVideo": "2024-06-19T15:38:41Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Lock Picking Legend",
+        "viewCount": "5227621",
+        "subscriberCount": "15000",
+        "videoCount": "262",
+        "latestVideo": "2024-06-20T17:34:04Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 389,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      }
+    },
+    "UCfGx394pe-Q9z85eL8wY3eA": {
+      "2024-06-20": {
+        "title": "《THUMPER 》 》Lock Picking《",
+        "viewCount": "56520",
+        "subscriberCount": "756",
+        "videoCount": "920",
+        "latestVideo": "2024-02-10T01:38:39Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "《THUMPER 》 》Lock Picking《",
+        "viewCount": "56522",
+        "subscriberCount": "756",
+        "videoCount": "920",
+        "latestVideo": "2024-02-10T01:38:39Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 2,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCYDQaOHbK5trRU2CDgb0qSg": {
+      "2024-06-20": {
+        "title": "defcon201",
+        "viewCount": "22282",
+        "subscriberCount": "1150",
+        "videoCount": "287",
+        "latestVideo": "2024-02-25T02:11:37Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "defcon201",
+        "viewCount": "22289",
+        "subscriberCount": "1150",
+        "videoCount": "287",
+        "latestVideo": "2024-02-25T02:11:37Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 7,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UC2jUB2pPoGpPG28j0o3B1ig": {
+      "2024-06-20": {
+        "title": "lockpicking tv",
+        "viewCount": "0",
+        "subscriberCount": "1",
+        "videoCount": "0",
+        "latestVideo": "1970-01-01T00:00:01Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "lockpicking tv",
+        "viewCount": "0",
+        "subscriberCount": "1",
+        "videoCount": "0",
+        "latestVideo": "1970-01-01T00:00:01Z",
+        "channelFlags": [
+          "playlist"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCrEt_rDwQj4H0SgU_kitZ8w": {
+      "2024-06-20": {
+        "title": "Dogpicking Locksport",
+        "viewCount": "42339",
+        "subscriberCount": "143",
+        "videoCount": "75",
+        "latestVideo": "2024-06-18T22:28:41Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Dogpicking Locksport",
+        "viewCount": "42364",
+        "subscriberCount": "143",
+        "videoCount": "76",
+        "latestVideo": "2024-06-20T17:27:07Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 25,
+        "dailySubscribers": 0,
+        "dailyVideos": 1
+      }
+    },
+    "UCr78tH7amK6yXuMgiItBPTg": {
+      "2024-06-20": {
+        "title": "Spinning Dials",
+        "viewCount": "29995",
+        "subscriberCount": "590",
+        "videoCount": "21",
+        "latestVideo": "2021-12-23T03:41:35Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Spinning Dials",
+        "viewCount": "30037",
+        "subscriberCount": "591",
+        "videoCount": "21",
+        "latestVideo": "2021-12-23T03:41:35Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 42,
+        "dailySubscribers": 1,
+        "dailyVideos": 0
+      }
+    },
+    "UCsOjem8JevW0FKTWvaS6cyw": {
+      "2024-06-20": {
+        "title": "BandoPicks ",
+        "viewCount": "1864",
+        "subscriberCount": "69",
+        "videoCount": "33",
+        "latestVideo": "2024-06-17T20:36:16Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "BandoPicks ",
+        "viewCount": "1910",
+        "subscriberCount": "69",
+        "videoCount": "33",
+        "latestVideo": "2024-06-17T20:36:16Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 46,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCpysLSEu9KbwHaqWawjZuVQ": {
+      "2024-06-20": {
+        "title": "Greenish",
+        "viewCount": "111270",
+        "subscriberCount": "426",
+        "videoCount": "205",
+        "latestVideo": "2024-04-09T14:59:56Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Greenish",
+        "viewCount": "111288",
+        "subscriberCount": "426",
+        "videoCount": "205",
+        "latestVideo": "2024-04-09T14:59:56Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 18,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCtnWifK4c8rMLcVAXgZX-1A": {
+      "2024-06-20": {
+        "title": "LockPickingFisherman",
+        "viewCount": "5146",
+        "subscriberCount": "121",
+        "videoCount": "37",
+        "latestVideo": "2024-06-13T21:41:59Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "LockPickingFisherman",
+        "viewCount": "5151",
+        "subscriberCount": "121",
+        "videoCount": "37",
+        "latestVideo": "2024-06-13T21:41:59Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 5,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCxIAPz67pxXyPCw2VKvloLA": {
+      "2024-06-20": {
+        "title": "∅",
+        "viewCount": "171296",
+        "subscriberCount": "1190",
+        "videoCount": "166",
+        "latestVideo": "2024-05-24T20:41:12Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "∅",
+        "viewCount": "171373",
+        "subscriberCount": "1190",
+        "videoCount": "166",
+        "latestVideo": "2024-05-24T20:41:12Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 77,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCrGYOiIm9QAgkUAQGr19wJw": {
+      "2024-06-20": {
+        "title": "LockPickingCuber",
+        "viewCount": "659181",
+        "subscriberCount": "2490",
+        "videoCount": "187",
+        "latestVideo": "2024-05-05T16:00:27Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "LockPickingCuber",
+        "viewCount": "660097",
+        "subscriberCount": "2490",
+        "videoCount": "187",
+        "latestVideo": "2024-05-05T16:00:27Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 916,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      }
+    },
+    "UCtpBhntejC28k47efQ-oSkA": {
+      "2024-06-20": {
+        "title": "Culper Woodhull",
+        "viewCount": "14332",
+        "subscriberCount": "297",
+        "videoCount": "104",
+        "latestVideo": "2022-02-15T15:37:33Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
+        "dailySubscribers": 0,
+        "dailyVideos": 0
+      },
+      "2024-06-21": {
+        "title": "Culper Woodhull",
+        "viewCount": "14332",
+        "subscriberCount": "297",
+        "videoCount": "104",
+        "latestVideo": "2022-02-15T15:37:33Z",
+        "channelFlags": [
+          "subscription"
+        ],
+        "dailyViews": 0,
         "dailySubscribers": 0,
         "dailyVideos": 0
       }

@@ -1,18 +1,18 @@
 import React from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
-import {channelReportData} from '../data/dataUrls'
+import {channelReportData, channelIndex} from '../data/dataUrls'
 import useData from '../util/useData.jsx'
 import ChannelDataGrid from './channelReport/ChannelDataGrid.jsx'
 import ChannelReportChannelsLine from './channelReport/ChannelsLine.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import ChannelStats from './channelReport/ChannelStats.jsx'
 
-const urls = {channelReportData}
+const urls = {channelReportData, channelIndex}
 
 function ChannelReportMain() {
 
     const {data, loading, error} = useData({urls})
-    const {channelReportData} = data || {}
+    const {channelReportData, channelIndex} = data || {}
     const jsonLoaded = (!loading && !error && !!data)
 
     // console.log('channelReportData', channelReportData)
@@ -42,7 +42,7 @@ function ChannelReportMain() {
             <ChannelReportChannelsLine lineData={channelLines}/>
 
             <div style={headerStyle}>Individual Channel Stats</div>
-            <ChannelStats channelStats={channelStats} channelTitles={channelTitles}/>
+            <ChannelStats channelStats={channelStats} channelTitles={channelTitles} channelIndex={channelIndex}/>
 
             <div style={headerStyle}>Current Channel Data</div>
             <ChannelDataGrid/>

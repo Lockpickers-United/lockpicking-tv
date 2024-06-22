@@ -22,7 +22,7 @@ function SiteReportMain() {
 
     usePageTitle('Site Report')
     const {data, loading, error} = useData({urls})
-    const {siteFull, siteSummary, channelIndex, videoIndex} = data || {}
+    const {siteFull, siteSummary, videoIndex} = data || {}
     const jsonLoaded = (!loading && !error && !!data)
 
     const {width} = useWindowSize()

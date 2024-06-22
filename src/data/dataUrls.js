@@ -12,6 +12,7 @@ export const videoData = '/data/videoData.json'
 
 export const siteFull = '/reports/statsSiteFull.json'
 export const siteSummary = '/reports/statsSiteSummary.json'
+export const channelReportData = '/reports/channelReportData.json'
 
 export const channelIndex = '/data/channelIndex.json'
 export const videoIndex = '/data/videoIndex.json'
