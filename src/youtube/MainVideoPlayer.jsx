@@ -13,7 +13,6 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import {openInNewTab} from '../util/openInNewTab'
 import Button from '@mui/material/Button'
 
-
 const MainVideoPlayer = ({video, expanded, setExpanded}) => {
 
     const {getChannelFromId} = useContext(LoadingContext)
@@ -45,6 +44,10 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
         document.getElementById('trackImage').src = `/i/played30.gif?trk=played30&videoId=${video.id}&r=${randomStuff}&w=${screen.width}&ref=${document.location}`
     }, [randomStuff, video.id])
 
+    const handlePlayed60 = useCallback(() => {
+        console.log('handlePlayed60')
+        document.getElementById('trackImage').src = `/i/played30.gif?trk=played60&videoId=${video.id}&r=${randomStuff}&w=${screen.width}&ref=${document.location}`
+    }, [randomStuff, video.id])
 
     const {width} = useWindowSize()
     const widths = [440, 600, 800, 1200, 9999]
@@ -67,7 +70,6 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
     const buttonText = expanded ? 'hide video player' : 'show video player'
     const textColor = '#fff'
 
-
     class Player extends Component {
 
         state = {
@@ -83,7 +85,8 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
             duration: 0,
             playbackRate: 1.0,
             loop: false,
-            played30: false
+            played30: false,
+            played60: false
         }
 
         load = url => {
@@ -92,7 +95,8 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
                 played: 0,
                 loaded: 0,
                 pip: false,
-                played30: false
+                played30: false,
+                played60: false
             })
         }
 
@@ -100,6 +104,7 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
             //console.log('onStart')
             handlePlay()
             this.setState({played30: false})
+            this.setState({played60: false})
         }
 
         handleOnPlaybackRateChange = (speed) => {
@@ -123,7 +128,10 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
                 handlePlayed30()
                 this.setState({played30: true})
             }
-
+            if (state.playedSeconds > 60 && !this.state.played60) {
+                handlePlayed60()
+                this.setState({played60: true})
+            }
             // We only want to update time slider if we are not currently seeking
             if (!this.state.seeking) {
                 this.setState(state)

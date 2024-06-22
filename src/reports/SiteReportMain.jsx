@@ -15,6 +15,7 @@ import ToggleBetaButton from '../nav/ToggleBetaButton.jsx'
 import HourlyRequestsLine from './siteReport/HourlyRequestsLine.jsx'
 import TrafficStats from './siteReport/TrafficStats.jsx'
 import TopVideosTable from './siteReport/TopVideosTable.jsx'
+import SiteReportVideosSummary from './siteReport/SiteReportVideosSummary.jsx'
 
 const urls = {siteFull, siteSummary, channelIndex, videoIndex}
 
@@ -73,6 +74,9 @@ function SiteReportMain() {
 
             <div style={headerStyle}>Page Tracking</div>
             <PageTrackingTable data={siteFull}/>
+
+            <div style={headerStyle}>Video Summary</div>
+            <SiteReportVideosSummary data={siteFull}/>
 
             <div style={headerStyle}>Top Videos</div>
             <TopVideosTable data={siteFull} videoIndex={videoIndex}/>

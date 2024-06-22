@@ -13,14 +13,14 @@ const SiteReportSummaryTable = ({fullData}) => {
         return dayjs().subtract(daysToReport + 1, 'day').isBefore(dayjs(row.date))
     }
 
+    console.log(data)
     const tabledata = {
         columns: data.columns
             .filter(column => column.id !== 'weekend')
             .filter(column => column.id !== 'visitors')
-            .filter(column => column.id !== 'lockViews')
-            .filter(column => column.id !== 'watchedVideos')
-            .filter(column => column.id !== 'watchedVideos30')
-            .filter(column => column.id !== 'watchedVideos60'),
+            .filter(column => column.id !== 'visits')
+            .filter(column => column.id !== 'pageViews')
+            .filter(column => column.id !== 'lockViews'),
         data: data.data.filter(lastN)
     }
 
@@ -52,7 +52,7 @@ const SiteReportSummaryTable = ({fullData}) => {
                     : window820 ? '.9rem'
                         : '.85rem'
 
-    const tableWidth = 180
+    const tableWidth = 230
     const tableHeight = 340
 
     return (

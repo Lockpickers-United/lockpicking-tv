@@ -32,7 +32,7 @@ const Component = ({channelData}) => {
 
     const chartMargin = !smallWindow
         ? {top: 10, right: 20, bottom: 80, left: 50}
-        : {top: 10, right: 20, bottom: 60, left: 50}
+        : {top: 10, right: 20, bottom: 80, left: 50}
 
     return !channelLineData ? null : (
         <div style={{height: chartHeight, width: '100%'}}>

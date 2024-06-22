@@ -3,7 +3,44 @@ import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from '../adminChartDefaults'
 import useWindowSize from '../../util/useWindowSize'
 
-const ChannelReportChannelLine = ({lineData}) => {
+const SiteReport28DaysVideosLine = ({lineData}) => {
+
+    const fullData = [lineData.traffic28days.data]
+
+    //fullData.columns= fullData.columns.filter(column => column.id !== 'visits')
+
+
+    const siteLineData = []
+    const watchedHash = new Map()
+    const watched30Hash = new Map()
+
+    fullData.forEach((value) => {
+        const watchedArray = []
+        const watched30Array = []
+
+        for (let i = 0; i < value.length; i++) {
+
+            const dataPoint = new Map()
+            dataPoint['x'] = value[i]['date']
+            dataPoint['y'] = value[i]['visits']
+            watchedArray.push(dataPoint)
+
+            const dataPoint2 = new Map()
+            dataPoint2['x'] = value[i]['date']
+            dataPoint2['y'] = value[i]['watchedVideos30']
+            watched30Array.push(dataPoint2)
+        }
+        watchedHash['id'] = 'Watched Videos'
+        watchedHash['data'] = watchedArray
+
+        watched30Hash['id'] = 'Played > :30'
+        watched30Hash['data'] = watched30Array
+
+        siteLineData.push(watched30Hash)
+        siteLineData.push(watchedHash)
+    })
+
+    console.log(siteLineData)
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -11,26 +48,6 @@ const ChannelReportChannelLine = ({lineData}) => {
     const mobileLarge = width <= 428  // but test also at 412
     const smallWindow = width <= 560
     const midWindow = width <= 820
-
-    const channelLineData = [
-        {
-            id: smallWindow ? 'Unique' : 'Unique Channel Total',
-            data: lineData.uniqueChannelLine
-        },
-        {
-            id: smallWindow ? 'Subscribed' : 'Subscribed Channels',
-            data: lineData.subscriptionChannelLine
-        },
-        {
-            id: smallWindow ? 'Featured' : 'Featured Channels',
-            data: lineData.featuredChannelLine
-        },
-        {
-            id: smallWindow ? 'New' : 'New Channels',
-            data: lineData.newChannelLine
-        }
-    ]
-
 
     const chartHeight =
         mobileSmall ? 200
@@ -40,21 +57,19 @@ const ChannelReportChannelLine = ({lineData}) => {
                         : 350
 
     const chartMargin = !smallWindow
-        ? {top: 10, right: 20, bottom: 80, left: 50}
-        : {top: 10, right: 20, bottom: 80, left: 50}
+        ? {top: 10, right: 20, bottom: 70, left: 50}
+        : {top: 10, right: 20, bottom: 50, left: 50}
 
-    const itemsSpacing = !smallWindow ? 50 : 20
-    const itemWidth = !smallWindow ? 100 : 65
+    const chartWidth = !smallWindow ? '60%' : '100%'
 
-    return !channelLineData ? null : (
-        <div style={{height: chartHeight, width: '100%'}}>
+    return (
+        <div style={{height: chartHeight, width: chartWidth}}>
             <ResponsiveLine
                 theme={primaryTheme}
-                data={channelLineData}
+                data={siteLineData}
                 enableGridX={false}
                 enableGridY={true}
-                //colors={['#1035c7', '#3d59de', '#6d7fed', '#4fa720']}
-                colors={['#4fa720', '#6d7fed', '#3d59de', '#1035c7']}
+                colors={['#5265ed', '#4fa720', '#082fd1']}
                 lineWidth={3}
                 margin={chartMargin}
                 height={chartHeight}
@@ -94,10 +109,10 @@ const ChannelReportChannelLine = ({lineData}) => {
                         itemTextColor: '#aaa',
                         direction: 'row',
                         justify: false,
-                        translateX: -10,
+                        translateX: 0,
                         translateY: 70,
-                        itemsSpacing: itemsSpacing,
-                        itemWidth: itemWidth,
+                        itemsSpacing: 20,
+                        itemWidth: 100,
                         itemHeight: 20,
                         symbolSize: 13,
                         symbolShape: 'circle'
@@ -111,4 +126,4 @@ const ChannelReportChannelLine = ({lineData}) => {
     )
 }
 
-export default ChannelReportChannelLine
+export default SiteReport28DaysVideosLine

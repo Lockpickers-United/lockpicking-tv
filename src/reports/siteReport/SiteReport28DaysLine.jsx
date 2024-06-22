@@ -11,34 +11,25 @@ const SiteReport28DaysLine = ({lineData}) => {
 
 
     const siteLineData = []
-    const visitorsHash = new Map()
     const visitsHash = new Map()
     const pageViewsHash = new Map()
 
     fullData.forEach((value) => {
-        const visitorsArray = []
         const visitsArray = []
         const pageViewsArray = []
 
         for (let i = 0; i < value.length; i++) {
+
             const dataPoint = new Map()
             dataPoint['x'] = value[i]['date']
-            dataPoint['y'] = value[i]['visitors']
-            visitorsArray.push(dataPoint)
+            dataPoint['y'] = value[i]['visits']
+            visitsArray.push(dataPoint)
 
             const dataPoint2 = new Map()
             dataPoint2['x'] = value[i]['date']
-            dataPoint2['y'] = value[i]['visits']
-            visitsArray.push(dataPoint2)
-
-            const dataPoint3 = new Map()
-            dataPoint3['x'] = value[i]['date']
-            dataPoint3['y'] = value[i]['pageViews']
-            pageViewsArray.push(dataPoint3)
+            dataPoint2['y'] = value[i]['pageViews']
+            pageViewsArray.push(dataPoint2)
         }
-        visitorsHash['id'] = 'Visitors'
-        visitorsHash['data'] = visitorsArray
-
         visitsHash['id'] = 'Visits'
         visitsHash['data'] = visitsArray
 
@@ -46,7 +37,6 @@ const SiteReport28DaysLine = ({lineData}) => {
         pageViewsHash['data'] = pageViewsArray
 
         siteLineData.push(visitsHash)
-        //siteLineData.push(visitorsHash)
         siteLineData.push(pageViewsHash)
     })
 
@@ -68,8 +58,11 @@ const SiteReport28DaysLine = ({lineData}) => {
         ? {top: 10, right: 20, bottom: 70, left: 50}
         : {top: 10, right: 20, bottom: 50, left: 50}
 
+    const chartWidth = !smallWindow ? '80%' : '100%'
+
+
     return (
-        <div style={{height: chartHeight, width: '100%'}}>
+        <div style={{height: chartHeight, width: chartWidth}}>
             <ResponsiveLine
                 theme={primaryTheme}
                 data={siteLineData}
@@ -112,7 +105,7 @@ const SiteReport28DaysLine = ({lineData}) => {
                 legends={[
                     {
                         anchor: 'bottom',
-                        itemTextColor: '#444',
+                        itemTextColor: '#aaa',
                         direction: 'row',
                         justify: false,
                         translateX: 0,
