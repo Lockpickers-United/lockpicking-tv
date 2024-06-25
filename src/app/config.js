@@ -26,9 +26,9 @@ export default {
     menuOpen: true,
     menuStyle: 'guide',
     menu: {
-      sections: ['channelItems', 'videoItems', 'pageItems', 'siteItems', 'reportItems', 'moreItems']
+      sections: ['videoItems', 'channelItems', 'pageItems', 'siteItems', 'reportItems', 'moreItems']
     },
     menuNotUsed: {
-        sections: ['pageItems']
+        allSections: ['videoItems', 'channelItems', 'pageItems', 'siteItems', 'reportItems', 'moreItems']
     }
 }

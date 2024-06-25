@@ -1,119 +1,156 @@
 {
-   "dailyAverages" : {
-      "description" : "Daily Averages",
-      "data" : [
-         {
-            "label" : "Visitors",
-            "value" : 4
-         },
-         {
-            "value" : 32,
-            "label" : "Visits"
-         },
-         {
-            "label" : "Lock Views",
-            "value" : 1
-         }
-      ]
-   },
    "totals" : {
       "data" : [
          {
-            "label" : "Site Vists",
-            "value" : 899
+            "value" : 926,
+            "label" : "Site Vists"
          },
          {
             "value" : 15,
             "label" : "Lock Views"
          },
          {
-            "label" : "Countries",
-            "value" : 12
+            "value" : 13,
+            "label" : "Countries"
          }
       ],
       "description" : "Since Launch"
    },
-   "pageViews" : [
-      {
-         "id" : "Page Views",
-         "data" : [
-            {
-               "x" : "2024-06-03",
-               "y" : 699
-            },
-            {
-               "x" : "2024-06-10",
-               "y" : 699
-            }
-         ]
-      }
-   ],
+   "lockViewsByBelt" : {
+      "description" : "Lock Views By Belt"
+   },
+   "trafficTotals" : {
+      "platform" : [
+         {
+            "label" : "Mac OS X",
+            "value" : "348",
+            "id" : "Mac OS X"
+         },
+         {
+            "value" : "259",
+            "id" : "iOS",
+            "label" : "iOS"
+         },
+         {
+            "value" : "178",
+            "label" : "Win10.0",
+            "id" : "Win10.0"
+         },
+         {
+            "value" : "135",
+            "id" : "Android",
+            "label" : "Android"
+         },
+         {
+            "label" : "Linux",
+            "value" : "6",
+            "id" : "Linux"
+         },
+         {
+            "value" : null,
+            "id" : "Other",
+            "label" : "Other"
+         }
+      ],
+      "browser" : [
+         {
+            "value" : "367",
+            "label" : "Chrome",
+            "id" : "Chrome"
+         },
+         {
+            "value" : "367",
+            "id" : "Safari",
+            "label" : "Safari"
+         },
+         {
+            "value" : "170",
+            "id" : "Firefox",
+            "label" : "Firefox"
+         },
+         {
+            "label" : "Samsung",
+            "value" : "17",
+            "id" : "Samsung"
+         },
+         {
+            "label" : "Edge",
+            "value" : "5",
+            "id" : "Edge"
+         },
+         {
+            "value" : null,
+            "id" : "Other",
+            "label" : "Other"
+         }
+      ]
+   },
    "hourlyRequests" : [
       {
          "id" : "User Time",
          "data" : [
             {
-               "y" : "37",
-               "x" : "midnight"
+               "x" : "midnight",
+               "y" : "37"
             },
             {
                "x" : "1 am",
                "y" : "14"
             },
             {
-               "y" : "13",
-               "x" : "2 am"
+               "x" : "2 am",
+               "y" : "13"
             },
             {
                "x" : "3 am",
                "y" : "14"
             },
             {
-               "x" : "4 am",
-               "y" : "12"
+               "y" : "12",
+               "x" : "4 am"
             },
             {
                "y" : "11",
                "x" : "5 am"
             },
             {
-               "x" : "6 am",
-               "y" : "37"
+               "y" : "44",
+               "x" : "6 am"
             },
             {
-               "x" : "7 am",
-               "y" : "126"
+               "y" : "133",
+               "x" : "7 am"
             },
             {
-               "y" : "221",
+               "y" : "224",
                "x" : "8 am"
             },
             {
-               "y" : "188",
-               "x" : "9 am"
+               "x" : "9 am",
+               "y" : "191"
             },
             {
-               "x" : "10 am",
-               "y" : "243"
+               "y" : "255",
+               "x" : "10 am"
             },
             {
                "x" : "11 am",
-               "y" : "187"
+               "y" : "196"
             },
             {
-               "y" : "216",
-               "x" : "noon"
+               "x" : "noon",
+               "y" : "219"
             },
             {
                "x" : "1 pm",
                "y" : "83"
             },
             {
-               "y" : "94",
-               "x" : "2 pm"
+               "x" : "2 pm",
+               "y" : "97"
             },
             {
-               "y" : "138",
+               "y" : "139",
                "x" : "3 pm"
             },
             {
@@ -121,19 +158,19 @@
                "y" : "195"
             },
             {
-               "x" : "5 pm",
-               "y" : "317"
+               "y" : "324",
+               "x" : "5 pm"
             },
             {
                "x" : "6 pm",
                "y" : "148"
             },
             {
-               "x" : "7 pm",
-               "y" : "132"
+               "y" : "143",
+               "x" : "7 pm"
             },
             {
-               "y" : "208",
+               "y" : "210",
                "x" : "8 pm"
             },
             {
@@ -142,11 +179,11 @@
             },
             {
                "x" : "10 pm",
-               "y" : "21"
+               "y" : "25"
             },
             {
-               "y" : "62",
-               "x" : "11 pm"
+               "x" : "11 pm",
+               "y" : "62"
             }
          ]
       },
@@ -165,44 +202,44 @@
                "y" : null
             },
             {
-               "x" : "3 am",
-               "y" : "8"
+               "y" : "8",
+               "x" : "3 am"
             },
             {
-               "x" : "4 am",
-               "y" : "6"
+               "y" : "6",
+               "x" : "4 am"
             },
             {
-               "y" : "14",
-               "x" : "5 am"
+               "x" : "5 am",
+               "y" : "14"
             },
             {
                "x" : "6 am",
-               "y" : "37"
+               "y" : "44"
             },
             {
-               "y" : "122",
-               "x" : "7 am"
+               "x" : "7 am",
+               "y" : "129"
             },
             {
-               "y" : "210",
+               "y" : "213",
                "x" : "8 am"
             },
             {
                "x" : "9 am",
-               "y" : "206"
+               "y" : "209"
             },
             {
                "x" : "10 am",
-               "y" : "270"
+               "y" : "282"
             },
             {
-               "y" : "217",
+               "y" : "226",
                "x" : "11 am"
             },
             {
-               "y" : "251",
-               "x" : "noon"
+               "x" : "noon",
+               "y" : "254"
             },
             {
                "y" : "84",
@@ -213,112 +250,79 @@
                "x" : "2 pm"
             },
             {
-               "x" : "3 pm",
-               "y" : "129"
+               "y" : "132",
+               "x" : "3 pm"
             },
             {
                "y" : "142",
                "x" : "4 pm"
             },
             {
-               "y" : "270",
-               "x" : "5 pm"
+               "x" : "5 pm",
+               "y" : "277"
             },
             {
-               "x" : "6 pm",
-               "y" : "165"
+               "y" : "165",
+               "x" : "6 pm"
             },
             {
-               "x" : "7 pm",
-               "y" : "142"
+               "y" : "154",
+               "x" : "7 pm"
             },
             {
-               "y" : "179",
+               "y" : "181",
                "x" : "8 pm"
             },
             {
-               "x" : "9 pm",
-               "y" : "60"
+               "y" : "60",
+               "x" : "9 pm"
             },
             {
-               "y" : "14",
+               "y" : "18",
                "x" : "10 pm"
             },
             {
-               "y" : "48",
-               "x" : "11 pm"
+               "x" : "11 pm",
+               "y" : "48"
             }
          ],
          "id" : "Server Time"
       }
    ],
-   "lockViewsByBelt" : {
-      "description" : "Lock Views By Belt"
-   },
-   "trafficTotals" : {
-      "platform" : [
+   "dailyAverages" : {
+      "data" : [
          {
-            "value" : "335",
-            "label" : "Mac OS X",
-            "id" : "Mac OS X"
+            "label" : "Visitors",
+            "value" : 5
          },
          {
-            "id" : "iOS",
-            "label" : "iOS",
-            "value" : "258"
+            "value" : 33,
+            "label" : "Visits"
          },
          {
-            "label" : "Win10.0",
-            "value" : "177",
-            "id" : "Win10.0"
-         },
-         {
-            "id" : "Android",
-            "value" : "123",
-            "label" : "Android"
-         },
-         {
-            "label" : "Linux",
-            "value" : "6",
-            "id" : "Linux"
-         },
-         {
-            "id" : "Other",
-            "value" : null,
-            "label" : "Other"
+            "value" : 1,
+            "label" : "Lock Views"
          }
       ],
-      "browser" : [
-         {
-            "id" : "Chrome",
-            "value" : "364",
-            "label" : "Chrome"
-         },
-         {
-            "id" : "Safari",
-            "label" : "Safari",
-            "value" : "355"
-         },
-         {
-            "id" : "Firefox",
-            "label" : "Firefox",
-            "value" : "158"
-         },
-         {
-            "id" : "Samsung",
-            "label" : "Samsung",
-            "value" : "17"
-         },
-         {
-            "label" : "Edge",
-            "value" : "5",
-            "id" : "Edge"
-         },
-         {
-            "label" : "Other",
-            "value" : null,
-            "id" : "Other"
-         }
-      ]
-   }
+      "description" : "Daily Averages"
+   },
+   "pageViews" : [
+      {
+         "id" : "Page Views",
+         "data" : [
+            {
+               "x" : "2024-06-03",
+               "y" : 699
+            },
+            {
+               "y" : 699,
+               "x" : "2024-06-10"
+            },
+            {
+               "y" : 251,
+               "x" : "2024-06-17"
+            }
+         ]
+      }
+   ]
 }

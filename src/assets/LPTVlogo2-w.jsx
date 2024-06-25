@@ -5,6 +5,7 @@ const SvgComponent = (props) => (
         id='Layer_1'
         data-name='Layer 1'
         viewBox='0 0 95.4 94.6'
+        fill='#fff'
         {...props}
     >
         <defs>

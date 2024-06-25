@@ -1,24 +1,27 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import ScrollToTopButton from './ScrollToTopButton'
 import VersionCheckerCode from '../app/VersionCheckerCode.jsx'
 import VersionCheckerData from '../app/VersionCheckerData.jsx'
-import Tracker from '../app/Tracker.jsx'
 import SearchBox from './SearchBox.jsx'
 import MenuGuide from './MenuGuide.jsx'
 import MenuSimple from './MenuSimple.jsx'
 import GuideFull from './GuideFull.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import config from '../app/config'
+import FilterContext from '../context/FilterContext.jsx'
 
 function Nav({extras, noSearch}) {
 
     const {menuStyle} = config
 
+    const {filters} = useContext(FilterContext)
+    const {guide} = filters
+
     const {width} = useWindowSize()
     const smallWindow = width < 800
-    const showGuideFull = !smallWindow && menuStyle === 'guide'
+    const showGuideFull = !smallWindow && menuStyle === 'guide' && !guide
 
     const searchBox = noSearch ? null : <SearchBox label=''/>
     return (
@@ -46,7 +49,6 @@ function Nav({extras, noSearch}) {
                         }}>
                             <VersionCheckerData/>
                             <VersionCheckerCode/>
-                            <Tracker feature='nav'/>
                         </div>
                         <div style={{}}>
                             {extras}

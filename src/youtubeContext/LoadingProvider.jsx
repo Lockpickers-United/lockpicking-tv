@@ -1,9 +1,10 @@
-import React, {useCallback, useMemo} from 'react'
+import React, {useCallback, useEffect, useMemo, useState} from 'react'
 import useData from '../util/useData'
 import {pagesData, channelData, videoData} from '../data/dataUrls'
 import LoadingContext from '../context/LoadingContext.jsx'
 import config from '../app/config'
 import dayjs from 'dayjs'
+import {useInterval} from 'usehooks-ts'
 
 const urls = {pagesData, channelData, videoData}
 
@@ -124,6 +125,62 @@ export function LoadingProvider({children}) {
         return allChannels?.find(({id}) => id === channelId)
     }, [allChannels])
 
+    // Version Checker for new code
+    const [initial, setInitial] = useState('')
+    const [version, setVersion] = useState('')
+    const [newCode, setNewCode] = useState(false)
+    const checkVersion =  useCallback(async (first) => {
+        try {
+            const response = await fetch('/versionCode.json', {cache: 'no-cache'})
+            const {version: newVersion} = (await response.json())
+            if (first && !initial) {
+                setInitial(newVersion)
+            }
+            setVersion(newVersion)
+        } catch (e) {
+            console.warn('Unable to check version.', e)
+            setVersion('error')
+        }
+    },[initial])
+    const [init, setInit] = useState(true)
+    useEffect(() => {
+        if (init) {
+            checkVersion(true)
+            setInit(false)
+        }
+    },[checkVersion, init])
+    useInterval(checkVersion, 10 * 60 * 1000) // 10 minutes
+
+    if (initial !== version && !newCode) setNewCode(true)
+
+
+    // Version Checker for new data
+    const [initialData, setInitialData] = useState('')
+    const [versionData, setVersionData] = useState('')
+    const [newData, setNewData] = useState(false)
+
+    const checkVersionData = async first => {
+        //console.log('version: ', version)
+        try {
+            const response = await fetch('/data/version.json', {cache: 'no-cache'})
+            const {version: newVersion} = (await response.json())
+            if (first && !initialData) {
+                setInitialData(newVersion)
+            }
+            setVersionData(newVersion)
+        } catch (e) {
+            console.warn('Unable to check version.', e)
+            setVersionData('error')
+        }
+    }
+    useEffect(() => {
+        checkVersionData(true)
+    })
+    useInterval(checkVersionData, 10 * 60 * 1000) // 10 minutes
+
+    if (initialData !== versionData && !newData) setNewData(true)
+
+
     const value = useMemo(() => ({
         allDataLoaded,
         allChannels,
@@ -140,7 +197,9 @@ export function LoadingProvider({children}) {
         allVideos,
         newVideos,
         popularVideos,
-        getVideosFromIds
+        getVideosFromIds,
+        newCode,
+        newData
     }), [
         allDataLoaded,
         allChannels,
@@ -157,7 +216,9 @@ export function LoadingProvider({children}) {
         allVideos,
         newVideos,
         popularVideos,
-        getVideosFromIds
+        getVideosFromIds,
+        newCode,
+        newData
     ])
 
     return (

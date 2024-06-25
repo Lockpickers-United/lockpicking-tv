@@ -1,38 +1,18 @@
-import React, {useCallback, useState, useEffect} from 'react'
+import React, {useCallback, useContext} from 'react'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
-import {useInterval} from 'usehooks-ts'
 import CachedIcon from '@mui/icons-material/Cached'
+import LoadingContext from '../context/LoadingContext.jsx'
 
-function VersionCheckerCode() {
+function VersionCheckerData() {
     //if (import.meta.env.DEV) return null
-    const [initial, setInitial] = useState('')
-    const [version, setVersion] = useState('')
-
-    const checkVersion = async first => {
-        //console.log('version: ', version)
-        try {
-            const response = await fetch('/data/version.json', {cache: 'no-cache'})
-            const {version: newVersion} = (await response.json())
-            if (first && !initial) {
-                setInitial(newVersion)
-            }
-            setVersion(newVersion)
-        } catch (e) {
-            console.warn('Unable to check version.', e)
-            setVersion('error')
-        }
-    }
-
-    useEffect(() => {
-        checkVersion(true)
-    })
-    useInterval(checkVersion, 10 * 60 * 1000) // 10 minutes
     const handleClick = useCallback(() => location.reload(), [])
 
-    if (!initial || !version || initial === version) return null
+    const {newData} = useContext(LoadingContext)
+    if (!newData) return null
+
     return (
-        <Tooltip title='New Listings Available' arrow disableFocusListener>
+        <Tooltip title='Click to load new videos' arrow disableFocusListener>
             <IconButton onClick={handleClick} style={{color: '#7272ce', marginLeft: 0}}>
                 <CachedIcon/>
             </IconButton>
@@ -40,4 +20,4 @@ function VersionCheckerCode() {
     )
 }
 
-export default VersionCheckerCode
+export default VersionCheckerData

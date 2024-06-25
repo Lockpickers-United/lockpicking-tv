@@ -28,12 +28,12 @@ function PageViewsLine({data}) {
                 xFormat='time:%m/%d/%y'
                 yScale={{
                     type: 'linear',
-                    min: 'auto',
+                    min: 0,
                     max: 'auto',
                     stacked: true,
                     reverse: false
                 }}
-                curve='natural'
+                curve='basis'
                 axisBottom={{
                     format: '%b %d',
                     tickValues: 'every 1 week',

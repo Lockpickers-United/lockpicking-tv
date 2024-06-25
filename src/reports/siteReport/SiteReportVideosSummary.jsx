@@ -2,7 +2,6 @@ import React from 'react'
 import useWindowSize from '../../util/useWindowSize'
 import SiteReport28DaysVideosLine from './SiteReport28DaysVideosLine.jsx'
 import SiteReportVideosSummaryTable from './SiteReportVideosSummaryTable.jsx'
-import SiteReportSummaryTable from './SiteReportSummaryTable'
 
 function Component({data}) {
     const {width} = useWindowSize()

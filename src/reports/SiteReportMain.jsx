@@ -48,7 +48,7 @@ function SiteReportMain() {
     else if (jsonLoaded) return (
         <div style={{
             minWidth: '320px', maxWidth: 1000, height: '100%',
-            padding: pagePadding, backgroundColor: '#292929',
+            padding: pagePadding, backgroundColor: '#223',
             marginLeft: 'auto', marginRight: 'auto',
             fontSize: '1.5rem', lineHeight: 0.8
         }}>

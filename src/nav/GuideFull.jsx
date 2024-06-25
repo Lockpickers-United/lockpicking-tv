@@ -8,7 +8,6 @@ import GuidePageItem from './GuidePageItem.jsx'
 import dayjs from 'dayjs'
 import {useCallback, useContext, useState} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
-import FilterContext from '../context/FilterContext.jsx'
 import {openInNewTab} from '../util/openInNewTab'
 import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
@@ -20,14 +19,10 @@ export default function GuideFull() {
     const {beta} = useContext(AppContext)
     const [openTitle, setOpenTitle] = useState('More from LPU') // TODO: don't do this once there are more
 
-    const {filters} = useContext(FilterContext)
-    const {guide} = filters
-
     const {width} = useWindowSize()
     const smallWindow = width <= 800
-    const showGuide = !!guide && !smallWindow
 
-    const [open, setOpen] = useState(showGuide)
+    const [open, setOpen] = useState(false)
 
     const openDrawer = useCallback(() => {
         setOpen(true)

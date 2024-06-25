@@ -12,6 +12,7 @@ import Collapse from '@mui/material/Collapse'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import {openInNewTab} from '../util/openInNewTab'
 import Button from '@mui/material/Button'
+import MainVideoPlayed30Button from './MainVideoPlayed30Button.jsx'
 
 const MainVideoPlayer = ({video, expanded, setExpanded}) => {
 
@@ -38,6 +39,7 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
         console.log('handlePlay')
         document.getElementById('trackImage').src = `/i/lptv.gif?trk=videoPlayer&videoId=${video.id}&r=${randomStuff}&w=${screen.width}&ref=${document.location}`
     }, [randomStuff, video.id])
+
 
     const handlePlayed30 = useCallback(() => {
         console.log('handlePlayed30')
@@ -183,11 +185,16 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
                         borderRadius: 0
                     }}>
                         <CardContent style={{padding: '8px 0px 5px 0px', textAlign: 'center'}} id='playerCard'>
-                            <div style={{width: '100%', display: 'flex', placeItems: 'center'}}>
-                                <Button onClick={handleChange} variant='filled' startIcon={<PlayCircleOutlineIcon/>}
-                                        size='small'>
-                                    {buttonText}
-                                </Button>
+                            <div style={{width: '100%', display: 'flex', alignItems: 'center', justifyItems: 'start'}}>
+                                <div style={{width: '100%', textAlign: 'left', flexGrow: 1}}>
+                                    <Button onClick={handleChange} variant='filled' startIcon={<PlayCircleOutlineIcon/>}
+                                            size='small'>
+                                        {buttonText}
+                                    </Button>
+                                </div>
+                                {expanded &&
+                                    <MainVideoPlayed30Button played30={this.state.played30}/>
+                                }
                                 <ExpandMore style={{height: 40}} onClick={handleChange} expand={expanded}>
                                     <ExpandMoreIcon/>
                                 </ExpandMore>

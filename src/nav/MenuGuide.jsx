@@ -12,7 +12,6 @@ import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '
 import MenuGuideItem from './MenuGuideItem.jsx'
 import dayjs from 'dayjs'
 import FilterContext from '../context/FilterContext.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
 import {openInNewTab} from '../util/openInNewTab'
 
 function MenuGuide() {
@@ -22,10 +21,7 @@ function MenuGuide() {
     const {filters} = useContext(FilterContext)
     const {guide} = filters
 
-    const {width} = useWindowSize()
-    const smallWindow = width <= 800
-
-    const showGuide = !!guide && smallWindow
+    const showGuide = guide
 
     const {beta} = useContext(AppContext)
     const [open, setOpen] = useState(showGuide)
@@ -49,7 +45,7 @@ function MenuGuide() {
                 <Button edge='start' color='inherit' onClick={openDrawer}
                         style={{height: '30px', minWidth: '30px', margin: 0, padding: 0}}
                 >
-                    <LPTVlogo height={40} fill={'#fff'}/>
+                    <LPTVlogo height={40} fill={'#fff'} color={'#fff'}/>
                 </Button>
             </Tooltip>
 
@@ -68,7 +64,7 @@ function MenuGuide() {
                         display: 'flex'
                     }}>
                         <div style={{marginLeft: 5}}>
-                            <LPTVheader fill={'#fff'} style={{width: 110, position: 'relative'}}/>
+                            <LPTVheader fill={'#fff'} color={'#fff'} style={{color:'#fff', width: 110, position: 'relative'}}/>
                         </div>
                         <div
                             style={{width: 200, marginLeft: 30, marginRight: 10, paddingTop: 32, lineHeight: '1.3rem'}}>
