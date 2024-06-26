@@ -7,6 +7,8 @@ const Component = ({data, videoIndex}) => {
     const {watchedVideos} = data
     const {getVideosFromIds} = useContext(LoadingContext)
 
+    const topN = 25
+
     let missingVideos = []
     const rows = Object.keys(watchedVideos)
         .map(videoId => {
@@ -39,7 +41,7 @@ const Component = ({data, videoIndex}) => {
         .sort((a, b) => {
             return b.views - a.views
         })
-        .slice(0, 50)
+        .slice(0, topN)
         .map((row, index) => {
             return {
                 ...row,

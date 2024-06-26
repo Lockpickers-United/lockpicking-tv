@@ -60,7 +60,7 @@ const SiteReport28DaysVideosLine = ({lineData}) => {
         ? {top: 10, right: 20, bottom: 70, left: 50}
         : {top: 10, right: 20, bottom: 50, left: 50}
 
-    const chartWidth = !smallWindow ? '60%' : '100%'
+    const chartWidth = !smallWindow ? '70%' : '100%'
 
     return (
         <div style={{height: chartHeight, width: chartWidth}}>

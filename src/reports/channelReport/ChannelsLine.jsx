@@ -2,6 +2,7 @@ import React from 'react'
 import {ResponsiveLine} from '@nivo/line'
 import {primaryTheme} from '../adminChartDefaults'
 import useWindowSize from '../../util/useWindowSize'
+import dayjs from 'dayjs'
 
 const ChannelReportChannelLine = ({lineData}) => {
 
@@ -12,22 +13,39 @@ const ChannelReportChannelLine = ({lineData}) => {
     const smallWindow = width <= 560
     const midWindow = width <= 820
 
+    console.log('lineData', lineData)
+
+    const newLineData = {}
+
+    Object.keys(lineData)
+        .map(lineName => {
+            newLineData[lineName] = []
+            lineData[lineName].map(dayData => {
+                const dateString = dayjs(dayData.x).format('MMM DD')
+                newLineData[lineName].push({x: dateString, y: dayData.y})
+            })
+        })
+
+    console.log('newLineData', newLineData)
+
+
+
     const channelLineData = [
         {
             id: smallWindow ? 'Unique' : 'Unique Channel Total',
-            data: lineData.uniqueChannelLine
+            data: newLineData.uniqueChannelLine
         },
         {
             id: smallWindow ? 'Subscribed' : 'Subscribed Channels',
-            data: lineData.subscriptionChannelLine
+            data: newLineData.subscriptionChannelLine
         },
         {
             id: smallWindow ? 'Featured' : 'Featured Channels',
-            data: lineData.featuredChannelLine
+            data: newLineData.featuredChannelLine
         },
         {
             id: smallWindow ? 'New' : 'New Channels',
-            data: lineData.newChannelLine
+            data: newLineData.newChannelLine
         }
     ]
 
@@ -66,7 +84,7 @@ const ChannelReportChannelLine = ({lineData}) => {
                     stacked: false,
                     reverse: false
                 }}
-                yFormat=' >-.2f'
+                //yFormat=' >-.2f'
                 axisLeft={{
                     tickValues: 5,
                     tickSize: 5,
@@ -75,12 +93,12 @@ const ChannelReportChannelLine = ({lineData}) => {
                     format: ','
                 }}
                 xScale={{
-                    type: 'time',
+                    type: 'point',
                     format: '%Y-%m-%d'
                 }}
-                xFormat='time:%m/%d/%y'
+                //xFormat='time:%m/%d/%y'
                 axisBottom={{
-                    format: '%b %d',
+                    //format: '%b %d',
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: -45,

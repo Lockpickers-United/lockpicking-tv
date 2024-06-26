@@ -5,8 +5,9 @@ import LoadingContext from '../../youtubeContext/LoadingProvider.jsx'
 
 const TopUrlsTable = ({data}) => {
     const {openedUrls} = data
-
     const {getChannelFromId} = useContext(LoadingContext)
+
+    const topN = 25
 
     let urlViews = {}
     let urlSubscribes = {}
@@ -45,7 +46,7 @@ const TopUrlsTable = ({data}) => {
         .sort((a, b) => {
             return b.views - a.views
         })
-        .slice(0, 50)
+        .slice(0, topN)
         .map((row, index) => {
             return {
                 ...row,

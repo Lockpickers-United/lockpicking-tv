@@ -8,7 +8,6 @@ function TrafficStats({data}) {
 
     console.log(platform, browser)
 
-
     const platformColors = ['#007de2', '#0367ba', '#005ba0', '#004fa4',
         '#063b87', '#062f6b']
 
@@ -32,8 +31,6 @@ function TrafficStats({data}) {
         ...divFlexStyle
     }
 
-    //                     <TrafficPie dataset={browser} pieColors={browserColors}/>
-    //                     <TrafficPie dataset={platform} pieColors={platformColors}/>
     return (
         <React.Fragment>
             <div style={{textAlign: 'center'}}>

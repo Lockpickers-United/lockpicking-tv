@@ -5,8 +5,6 @@ import useWindowSize from '../../util/useWindowSize'
 
 const TrafficPie = ({dataset, pieColors}) => {
 
-    console.log(dataset, pieColors)
-
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
     const mobileMedium = width <= 395
@@ -15,9 +13,9 @@ const TrafficPie = ({dataset, pieColors}) => {
 
     const chartMargin = smallWindow
         ? {top: 20, right: 50, bottom: 20, left: 80}
-        : {top: -50, right: 50, bottom: 20, left: 80}
+        : {top: 20, right: 50, bottom: 20, left: 80}
 
-    let chartHeight = 320
+    let chartHeight = 260
     if (mobileSmall) {
         chartHeight = 165
     } else if (mobileMedium) {
@@ -34,7 +32,7 @@ const TrafficPie = ({dataset, pieColors}) => {
 
     return (
         <div key='pie'
-             style={{height: chartHeight, padding: '0px 8px 0px 8px', width: '100%', backgroundColor: '#000'}}
+             style={{height: chartHeight, padding: '0px 8px 0px 8px', width: '100%'}}
         >
             <ResponsivePie
                 data={dataset}

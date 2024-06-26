@@ -91,6 +91,8 @@ let mainVideos = []
 let videoIndexAdditions = 0
 let videoData = {}
 
+let pageIndexAdditions = 0
+
 async function getYouTubeData(auth) {
 
     /*
@@ -373,10 +375,12 @@ async function getYouTubeData(auth) {
     if (prod) {
         await updateVideoIndex(serverDir)
         await updateChannelIndex(serverDir)
+        await updatePageIndex(serverDir)
     }
     if (beta) {
         await updateVideoIndex(serverDirBeta)
         await updateChannelIndex(serverDirBeta)
+        await updatePageIndex(serverDirBeta)
     }
     saveData()
 
@@ -384,7 +388,6 @@ async function getYouTubeData(auth) {
         let fileContent
         fileContent = await readFile(`${directory}/videoIndex.json`)
         const index = JSON.parse(fileContent.toString())
-
         mainVideos.map(video => {
             if (video.id && !index[video.id]) {
                 index[video.id] = {
@@ -402,6 +405,33 @@ async function getYouTubeData(auth) {
         const videoIndexJSON = JSON.stringify(index, null, 2)
         await fs.writeFileSync(`${directory}/videoIndex.json`, videoIndexJSON)
     }
+
+
+    async function updatePageIndex(directory) {
+        let fileContent
+        fileContent = await readFile(`${directory}/pageIndex.json`)
+        const index = JSON.parse(fileContent.toString())
+        allPages.map(page => {
+            if (page.sectionId && !index[page.sectionId]) {
+                index[page.sectionId] = {
+                    title: page.title,
+                    type: page.type,
+                    sectionId: page.sectionId,
+                    playlistId: page.playlistId ? page.playlistId : '',
+                    parentId: page.parentId ? page.parentId : '',
+                    channelId: page.channelId,
+                    addedDate: dayjs().format('YYYY-MM-DD')
+                }
+                pageIndexAdditions++
+            } else {
+                console.log('already had', page.sectionId, page.title)
+            }
+        })
+
+        const pageIndexJSON = JSON.stringify(index, null, 2)
+        await fs.writeFileSync(`${directory}/pageIndex.json`, pageIndexJSON)
+    }
+
 
     async function updateChannelIndex(directory) {
         const fileContent = await readFile(`${directory}/channelIndex.json`)
@@ -610,6 +640,8 @@ const buildVersion = (() => {
     versionObj.allRecentChannelIds = allRecentChannelIds.length
     versionObj.allPlaylistChannelIds = allPlaylistChannelIds.length
     versionObj.channelIndexAdditions = channelIndexAdditions
+
+    versionObj.pageIndexAdditions = pageIndexAdditions
 
     versionObj.getSubscriptionsDataRequests = getSubscriptionsDataRequests
     versionObj.getPlaylistItemsRequests = getPlaylistItemsRequests

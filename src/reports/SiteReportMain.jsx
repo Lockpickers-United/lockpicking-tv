@@ -41,8 +41,6 @@ function SiteReportMain() {
     const updateTime = loading ? '--'
         : '(updated: ' + dayjs(siteFull?.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${siteFull?.metadata.timezone})`
 
-    const pieWorking = false
-
     if (loading) return <LoadingDisplay/>
     else if (error) return null
     else if (jsonLoaded) return (
@@ -94,13 +92,9 @@ function SiteReportMain() {
             <div style={headerStyle}>Hourly Traffic</div>
             <HourlyRequestsLine data={siteSummary}/>
 
-            {pieWorking &&
-                <React.Fragment>
+            <div style={headerStyle}>Visits by Platform & Browser</div>
+            <TrafficStats data={siteSummary}/>
 
-                    <div style={headerStyle}>Visits by Platform & Browser</div>
-                    <TrafficStats data={siteSummary}/>
-                </React.Fragment>
-            }
         </div>
     )
 }

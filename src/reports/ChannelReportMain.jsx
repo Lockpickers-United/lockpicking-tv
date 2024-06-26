@@ -3,7 +3,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import {channelReportData, channelIndex} from '../data/dataUrls'
 import useData from '../util/useData.jsx'
 import ChannelDataGrid from './channelReport/ChannelDataGrid.jsx'
-import ChannelReportChannelsLine from './channelReport/ChannelsLine.jsx'
+import ChannelsLine from './channelReport/ChannelsLine.jsx'
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import ChannelStats from './channelReport/ChannelStats.jsx'
 
@@ -39,7 +39,7 @@ function ChannelReportMain() {
             fontSize: '1.5rem', lineHeight: 0.8, textAlign: 'center'
         }}>
             <div style={headerStyle}>Channel Counts</div>
-            <ChannelReportChannelsLine lineData={channelLines}/>
+            <ChannelsLine lineData={channelLines}/>
 
             <div style={headerStyle}>Individual Channel Stats</div>
             <ChannelStats channelStats={channelStats} channelTitles={channelTitles} channelIndex={channelIndex}/>
