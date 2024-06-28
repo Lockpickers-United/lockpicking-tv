@@ -1,128 +1,345 @@
 {
-   "playlistViews" : {
-      "White_Belt" : 5,
-      "" : 23,
-      "LPU_Setup" : 2,
-      "Locks_Basic_operation_and_manipulation" : 4,
-      "Training_Tuesday" : 20,
-      "Slaying_Saturday" : 1,
-      "Black_Belt" : 1,
-      "HeLPs_Progressive_Lock_List" : 3,
-      "Introducing_LPU" : 5,
-      "Through_The_Belts" : 2,
-      "Safecracking_for_Everyone" : 1,
-      "Dimple_Locks" : 4,
-      "Mentorship_Monday" : 4,
-      "LPU_Teardown" : 2,
-      "Orange_Belt" : 1,
-      "Yellow_Belt" : 1,
-      "Blue_Belt" : 1
-   },
-   "metadata" : {
-      "updatedDateTime" : "2024-06-26T16:32:20",
-      "timezone" : "EDT"
-   },
-   "watchedVideos30" : {
-      "uXSjyOp7Vzo" : 1,
-      "JAW_rHHIs9o" : 1,
-      "TXTAeT53ZBc" : 1,
-      "Wwql5PbdpcQ" : 1,
-      "35V0UVOKoDg" : 1,
-      "MJKKajiZqzA" : 1
-   },
-   "screenWidths" : {
+   "traffic28days" : {
       "data" : [
          {
-            "width" : 390,
-            "lockViews" : 9,
-            "welcomeViews" : 81
+            "watchedVideos60" : 0,
+            "watchedVideos" : 0,
+            "dateString" : "06/03",
+            "visitors" : 1,
+            "pageViews" : 31,
+            "date" : "2024-06-03",
+            "watchedVideos30" : 0,
+            "weekend" : 0,
+            "visits" : 60
          },
          {
-            "width" : 2560,
-            "lockViews" : 3,
-            "welcomeViews" : 183
+            "weekend" : 0,
+            "visits" : 64,
+            "watchedVideos30" : 0,
+            "watchedVideos60" : 0,
+            "watchedVideos" : 0,
+            "pageViews" : 30,
+            "date" : "2024-06-04",
+            "visitors" : 2,
+            "dateString" : "06/04"
          },
          {
-            "width" : 1920,
-            "lockViews" : 2,
-            "welcomeViews" : 27
+            "watchedVideos" : 0,
+            "watchedVideos60" : 0,
+            "dateString" : "06/05",
+            "visitors" : 2,
+            "pageViews" : 13,
+            "date" : "2024-06-05",
+            "watchedVideos30" : 0,
+            "weekend" : 0,
+            "visits" : 32
          },
          {
-            "width" : 448,
-            "welcomeViews" : 6,
-            "lockViews" : 1
+            "watchedVideos60" : 0,
+            "watchedVideos" : 0,
+            "pageViews" : 20,
+            "date" : "2024-06-06",
+            "dateString" : "06/06",
+            "visitors" : 13,
+            "weekend" : 0,
+            "visits" : 45,
+            "watchedVideos30" : 0
+         },
+         {
+            "weekend" : 0,
+            "visits" : 49,
+            "watchedVideos30" : 0,
+            "date" : "2024-06-07",
+            "pageViews" : 107,
+            "dateString" : "06/07",
+            "visitors" : 10,
+            "watchedVideos60" : 0,
+            "watchedVideos" : 36
+         },
+         {
+            "weekend" : 1,
+            "visits" : 70,
+            "watchedVideos30" : 0,
+            "date" : "2024-06-08",
+            "pageViews" : 157,
+            "dateString" : "06/08",
+            "visitors" : 14,
+            "watchedVideos" : 38,
+            "watchedVideos60" : 0
+         },
+         {
+            "dateString" : "06/09",
+            "visitors" : 23,
+            "date" : "2024-06-09",
+            "pageViews" : 341,
+            "watchedVideos" : 112,
+            "watchedVideos60" : 0,
+            "watchedVideos30" : 0,
+            "visits" : 135,
+            "weekend" : 1
+         },
+         {
+            "watchedVideos30" : 0,
+            "visits" : 38,
+            "weekend" : 0,
+            "visitors" : 9,
+            "dateString" : "06/10",
+            "date" : "2024-06-10",
+            "pageViews" : 89,
+            "watchedVideos60" : 0,
+            "watchedVideos" : 30
+         },
+         {
+            "watchedVideos60" : 0,
+            "watchedVideos" : 7,
+            "date" : "2024-06-11",
+            "pageViews" : 14,
+            "visitors" : 4,
+            "dateString" : "06/11",
+            "weekend" : 0,
+            "visits" : 6,
+            "watchedVideos30" : 0
+         },
+         {
+            "weekend" : 0,
+            "visits" : 45,
+            "watchedVideos30" : 0,
+            "date" : "2024-06-12",
+            "pageViews" : 102,
+            "visitors" : 4,
+            "dateString" : "06/12",
+            "watchedVideos60" : 0,
+            "watchedVideos" : 42
+         },
+         {
+            "visitors" : 4,
+            "dateString" : "06/13",
+            "date" : "2024-06-13",
+            "pageViews" : 259,
+            "watchedVideos60" : 0,
+            "watchedVideos" : 80,
+            "watchedVideos30" : 0,
+            "weekend" : 0,
+            "visits" : 113
+         },
+         {
+            "watchedVideos" : 7,
+            "watchedVideos60" : 0,
+            "pageViews" : 112,
+            "date" : "2024-06-14",
+            "visitors" : 2,
+            "dateString" : "06/14",
+            "visits" : 17,
+            "weekend" : 0,
+            "watchedVideos30" : 0
+         },
+         {
+            "weekend" : 1,
+            "visits" : 34,
+            "watchedVideos30" : 0,
+            "watchedVideos" : 27,
+            "watchedVideos60" : 0,
+            "date" : "2024-06-15",
+            "pageViews" : 66,
+            "dateString" : "06/15",
+            "visitors" : 3
+         },
+         {
+            "watchedVideos30" : 0,
+            "visits" : 26,
+            "weekend" : 1,
+            "watchedVideos" : 15,
+            "watchedVideos60" : 0,
+            "visitors" : 3,
+            "dateString" : "06/16",
+            "date" : "2024-06-16",
+            "pageViews" : 57
+         },
+         {
+            "pageViews" : 83,
+            "date" : "2024-06-17",
+            "visitors" : 12,
+            "dateString" : "06/17",
+            "watchedVideos" : 15,
+            "watchedVideos60" : 0,
+            "visits" : 50,
+            "weekend" : 0,
+            "watchedVideos30" : 0
+         },
+         {
+            "visits" : 22,
+            "weekend" : 0,
+            "watchedVideos30" : 0,
+            "pageViews" : 32,
+            "date" : "2024-06-18",
+            "dateString" : "06/18",
+            "visitors" : 4,
+            "watchedVideos" : 8,
+            "watchedVideos60" : 0
+         },
+         {
+            "weekend" : 0,
+            "visits" : 22,
+            "watchedVideos30" : 0,
+            "date" : "2024-06-19",
+            "pageViews" : 27,
+            "dateString" : "06/19",
+            "visitors" : 2,
+            "watchedVideos60" : 0,
+            "watchedVideos" : 1
+         },
+         {
+            "visits" : 22,
+            "weekend" : 0,
+            "watchedVideos30" : 0,
+            "date" : "2024-06-20",
+            "pageViews" : 24,
+            "visitors" : 5,
+            "dateString" : "06/20",
+            "watchedVideos" : 0,
+            "watchedVideos60" : 0
+         },
+         {
+            "watchedVideos30" : 0,
+            "weekend" : 0,
+            "visits" : 39,
+            "watchedVideos60" : 0,
+            "watchedVideos" : 5,
+            "dateString" : "06/21",
+            "visitors" : 4,
+            "pageViews" : 53,
+            "date" : "2024-06-21"
+         },
+         {
+            "watchedVideos" : 7,
+            "watchedVideos60" : 1,
+            "visitors" : 2,
+            "dateString" : "06/22",
+            "date" : "2024-06-22",
+            "pageViews" : 24,
+            "watchedVideos30" : 5,
+            "weekend" : 1,
+            "visits" : 14
+         },
+         {
+            "watchedVideos30" : 0,
+            "visits" : 7,
+            "weekend" : 1,
+            "watchedVideos60" : 0,
+            "watchedVideos" : 0,
+            "visitors" : 3,
+            "dateString" : "06/23",
+            "date" : "2024-06-23",
+            "pageViews" : 8
+         },
+         {
+            "watchedVideos30" : 0,
+            "weekend" : 0,
+            "visits" : 16,
+            "visitors" : 3,
+            "dateString" : "06/24",
+            "pageViews" : 24,
+            "date" : "2024-06-24",
+            "watchedVideos" : 0,
+            "watchedVideos60" : 0
+         },
+         {
+            "watchedVideos" : 1,
+            "watchedVideos60" : 1,
+            "dateString" : "06/25",
+            "visitors" : 4,
+            "date" : "2024-06-25",
+            "pageViews" : 31,
+            "watchedVideos30" : 1,
+            "visits" : 16,
+            "weekend" : 0
+         },
+         {
+            "visits" : 32,
+            "weekend" : 0,
+            "watchedVideos30" : 2,
+            "date" : "2024-06-26",
+            "pageViews" : 126,
+            "visitors" : 3,
+            "dateString" : "06/26",
+            "watchedVideos" : 3,
+            "watchedVideos60" : 1
+         },
+         {
+            "visitors" : 5,
+            "dateString" : "06/27",
+            "date" : "2024-06-27",
+            "pageViews" : 12,
+            "watchedVideos60" : 0,
+            "watchedVideos" : 0,
+            "watchedVideos30" : 0,
+            "visits" : 2,
+            "weekend" : 0
          }
       ],
       "title" : "",
       "columns" : [
          {
-            "name" : "Screen Width",
-            "id" : "width",
+            "align" : "hidden",
+            "name" : "Weekend",
+            "id" : "weekend"
+         },
+         {
+            "name" : "Date",
+            "align" : "left",
+            "id" : "date"
+         },
+         {
+            "id" : "dateString",
+            "name" : "Date",
             "align" : "left"
          },
          {
-            "id" : "lockViews",
-            "name" : "Lock Views",
+            "name" : "Visitors",
+            "align" : "center",
+            "id" : "visitors"
+         },
+         {
+            "id" : "visits",
+            "name" : "Visits",
             "align" : "center"
          },
          {
             "align" : "center",
-            "name" : "Welcome Views",
-            "id" : "welcomeViews"
+            "name" : "Videos",
+            "id" : "watchedVideos"
+         },
+         {
+            "name" : "> :30",
+            "align" : "center",
+            "id" : "watchedVideos30"
+         },
+         {
+            "name" : "> :60",
+            "align" : "center",
+            "id" : "watchedVideos60"
+         },
+         {
+            "id" : "pageViews",
+            "align" : "center",
+            "name" : "Views"
          }
       ]
    },
-   "firstVistsLastSevenDays" : {
-      "countryCount" : 1,
-      "title" : "",
-      "columns" : [
-         {
-            "align" : "left",
-            "id" : "country",
-            "name" : "Country"
-         },
-         {
-            "align" : "center",
-            "name" : "First Visit",
-            "id" : "firstVisit"
-         },
-         {
-            "align" : "center",
-            "id" : "visits",
-            "name" : "Visits"
-         }
-      ],
-      "data" : [
-         {
-            "country" : "Mexico",
-            "visits" : 1,
-            "firstVisit" : "06/24/24"
-         }
-      ]
+   "metadata" : {
+      "timezone" : "EDT",
+      "updatedDateTime" : "2024-06-28T17:42:49"
+   },
+   "watchedVideos60" : {
+      "A5mc7vJ_-nE" : 1,
+      "MJKKajiZqzA" : 1,
+      "Wwql5PbdpcQ" : 1
    },
    "popularCountries1" : {
-      "title" : "",
-      "columns" : [
-         {
-            "id" : "rank",
-            "name" : "Rank",
-            "align" : "center"
-         },
-         {
-            "align" : "left",
-            "id" : "area",
-            "name" : "Area"
-         },
-         {
-            "align" : "center",
-            "name" : "Visits",
-            "id" : "visits"
-         }
-      ],
       "data" : [
          {
             "area" : "United States",
-            "visits" : 845,
+            "visits" : 879,
             "rank" : 1
          },
          {
@@ -137,23 +354,41 @@
          },
          {
             "rank" : 4,
-            "area" : "Australia",
-            "visits" : 13
+            "visits" : 13,
+            "area" : "Australia"
          },
          {
-            "rank" : 5,
+            "visits" : 11,
             "area" : "Netherlands",
-            "visits" : 11
+            "rank" : 5
          },
          {
-            "rank" : 6,
+            "area" : "Canada",
             "visits" : 9,
-            "area" : "Canada"
+            "rank" : 6
          },
          {
-            "visits" : 8,
             "area" : "Slovakia",
+            "visits" : 8,
             "rank" : 7
+         }
+      ],
+      "title" : "",
+      "columns" : [
+         {
+            "id" : "rank",
+            "name" : "Rank",
+            "align" : "center"
+         },
+         {
+            "align" : "left",
+            "name" : "Area",
+            "id" : "area"
+         },
+         {
+            "id" : "visits",
+            "align" : "center",
+            "name" : "Visits"
          }
       ]
    },
@@ -165,24 +400,24 @@
             "rank" : 8
          },
          {
-            "area" : "Czech Republic",
+            "rank" : 9,
             "visits" : 1,
-            "rank" : 9
+            "area" : "Czech Republic"
          },
          {
-            "visits" : 1,
             "area" : "France",
+            "visits" : 1,
             "rank" : 10
          },
          {
             "rank" : 11,
-            "visits" : 1,
-            "area" : "Mexico"
+            "area" : "Mexico",
+            "visits" : 1
          },
          {
-            "visits" : 1,
+            "rank" : 12,
             "area" : "New Zealand",
-            "rank" : 12
+            "visits" : 1
          },
          {
             "area" : "Poland",
@@ -190,9 +425,9 @@
             "rank" : 13
          },
          {
-            "rank" : 14,
+            "visits" : 1,
             "area" : "Romania",
-            "visits" : 1
+            "rank" : 14
          }
       ],
       "columns" : [
@@ -203,609 +438,47 @@
          },
          {
             "align" : "left",
-            "id" : "area",
-            "name" : "Area"
+            "name" : "Area",
+            "id" : "area"
          },
          {
-            "align" : "center",
-            "name" : "Visits",
-            "id" : "visits"
-         }
-      ]
-   },
-   "topLocks" : {
-      "data" : [],
-      "title" : "Most Popular Locks",
-      "columns" : [
-         {
-            "align" : "center",
-            "id" : "rank",
-            "name" : "Rank"
-         },
-         {
-            "name" : "Name",
-            "id" : "name",
-            "align" : "left"
-         },
-         {
-            "id" : "version",
-            "name" : "Version",
-            "align" : "left"
-         },
-         {
-            "name" : "Views",
-            "id" : "views",
-            "align" : "center"
-         }
-      ]
-   },
-   "watchedVideos60" : {
-      "Wwql5PbdpcQ" : 1,
-      "MJKKajiZqzA" : 1
-   },
-   "traffic28days" : {
-      "title" : "",
-      "columns" : [
-         {
-            "align" : "hidden",
-            "name" : "Weekend",
-            "id" : "weekend"
-         },
-         {
-            "align" : "left",
-            "id" : "date",
-            "name" : "Date"
-         },
-         {
-            "align" : "left",
-            "id" : "dateString",
-            "name" : "Date"
-         },
-         {
-            "id" : "visitors",
-            "name" : "Visitors",
-            "align" : "center"
-         },
-         {
-            "name" : "Visits",
             "id" : "visits",
-            "align" : "center"
-         },
-         {
             "align" : "center",
-            "id" : "watchedVideos",
-            "name" : "Videos"
-         },
-         {
-            "id" : "watchedVideos30",
-            "name" : "> :30",
-            "align" : "center"
-         },
-         {
-            "id" : "watchedVideos60",
-            "name" : "> :60",
-            "align" : "center"
-         },
-         {
-            "align" : "center",
-            "name" : "Views",
-            "id" : "pageViews"
-         }
-      ],
-      "data" : [
-         {
-            "watchedVideos" : 0,
-            "date" : "2024-06-03",
-            "visits" : 60,
-            "pageViews" : 31,
-            "visitors" : 1,
-            "weekend" : 0,
-            "watchedVideos30" : 0,
-            "dateString" : "06/03",
-            "watchedVideos60" : 0
-         },
-         {
-            "watchedVideos" : 0,
-            "date" : "2024-06-04",
-            "visits" : 64,
-            "pageViews" : 30,
-            "visitors" : 2,
-            "weekend" : 0,
-            "watchedVideos30" : 0,
-            "dateString" : "06/04",
-            "watchedVideos60" : 0
-         },
-         {
-            "visitors" : 2,
-            "weekend" : 0,
-            "watchedVideos30" : 0,
-            "dateString" : "06/05",
-            "watchedVideos60" : 0,
-            "watchedVideos" : 0,
-            "date" : "2024-06-05",
-            "visits" : 32,
-            "pageViews" : 13
-         },
-         {
-            "weekend" : 0,
-            "watchedVideos30" : 0,
-            "visitors" : 13,
-            "watchedVideos60" : 0,
-            "dateString" : "06/06",
-            "watchedVideos" : 0,
-            "date" : "2024-06-06",
-            "pageViews" : 20,
-            "visits" : 45
-         },
-         {
-            "weekend" : 0,
-            "watchedVideos30" : 0,
-            "visitors" : 10,
-            "watchedVideos60" : 0,
-            "dateString" : "06/07",
-            "watchedVideos" : 36,
-            "date" : "2024-06-07",
-            "pageViews" : 107,
-            "visits" : 49
-         },
-         {
-            "date" : "2024-06-08",
-            "watchedVideos" : 38,
-            "visits" : 70,
-            "pageViews" : 157,
-            "visitors" : 14,
-            "watchedVideos30" : 0,
-            "weekend" : 1,
-            "dateString" : "06/08",
-            "watchedVideos60" : 0
-         },
-         {
-            "watchedVideos30" : 0,
-            "weekend" : 1,
-            "visitors" : 23,
-            "watchedVideos60" : 0,
-            "dateString" : "06/09",
-            "date" : "2024-06-09",
-            "watchedVideos" : 112,
-            "pageViews" : 341,
-            "visits" : 135
-         },
-         {
-            "pageViews" : 89,
-            "visits" : 38,
-            "watchedVideos" : 30,
-            "date" : "2024-06-10",
-            "watchedVideos60" : 0,
-            "dateString" : "06/10",
-            "watchedVideos30" : 0,
-            "weekend" : 0,
-            "visitors" : 9
-         },
-         {
-            "visitors" : 4,
-            "weekend" : 0,
-            "watchedVideos30" : 0,
-            "dateString" : "06/11",
-            "watchedVideos60" : 0,
-            "watchedVideos" : 7,
-            "date" : "2024-06-11",
-            "visits" : 6,
-            "pageViews" : 14
-         },
-         {
-            "visits" : 45,
-            "pageViews" : 102,
-            "date" : "2024-06-12",
-            "watchedVideos" : 42,
-            "dateString" : "06/12",
-            "watchedVideos60" : 0,
-            "visitors" : 4,
-            "watchedVideos30" : 0,
-            "weekend" : 0
-         },
-         {
-            "date" : "2024-06-13",
-            "watchedVideos" : 80,
-            "visits" : 113,
-            "pageViews" : 259,
-            "visitors" : 4,
-            "watchedVideos30" : 0,
-            "weekend" : 0,
-            "dateString" : "06/13",
-            "watchedVideos60" : 0
-         },
-         {
-            "watchedVideos" : 7,
-            "date" : "2024-06-14",
-            "pageViews" : 112,
-            "visits" : 17,
-            "weekend" : 0,
-            "watchedVideos30" : 0,
-            "visitors" : 2,
-            "watchedVideos60" : 0,
-            "dateString" : "06/14"
-         },
-         {
-            "watchedVideos60" : 0,
-            "dateString" : "06/15",
-            "watchedVideos30" : 0,
-            "weekend" : 1,
-            "visitors" : 3,
-            "pageViews" : 66,
-            "visits" : 34,
-            "watchedVideos" : 27,
-            "date" : "2024-06-15"
-         },
-         {
-            "pageViews" : 57,
-            "visits" : 26,
-            "watchedVideos" : 15,
-            "date" : "2024-06-16",
-            "watchedVideos60" : 0,
-            "dateString" : "06/16",
-            "watchedVideos30" : 0,
-            "weekend" : 1,
-            "visitors" : 3
-         },
-         {
-            "dateString" : "06/17",
-            "watchedVideos60" : 0,
-            "visitors" : 12,
-            "watchedVideos30" : 0,
-            "weekend" : 0,
-            "visits" : 50,
-            "pageViews" : 83,
-            "date" : "2024-06-17",
-            "watchedVideos" : 15
-         },
-         {
-            "weekend" : 0,
-            "watchedVideos30" : 0,
-            "visitors" : 4,
-            "watchedVideos60" : 0,
-            "dateString" : "06/18",
-            "watchedVideos" : 8,
-            "date" : "2024-06-18",
-            "pageViews" : 32,
-            "visits" : 22
-         },
-         {
-            "watchedVideos30" : 0,
-            "weekend" : 0,
-            "visitors" : 2,
-            "watchedVideos60" : 0,
-            "dateString" : "06/19",
-            "watchedVideos" : 1,
-            "date" : "2024-06-19",
-            "pageViews" : 27,
-            "visits" : 22
-         },
-         {
-            "dateString" : "06/20",
-            "watchedVideos60" : 0,
-            "visitors" : 5,
-            "weekend" : 0,
-            "watchedVideos30" : 0,
-            "visits" : 22,
-            "pageViews" : 24,
-            "date" : "2024-06-20",
-            "watchedVideos" : 0
-         },
-         {
-            "watchedVideos60" : 0,
-            "dateString" : "06/21",
-            "watchedVideos30" : 0,
-            "weekend" : 0,
-            "visitors" : 4,
-            "pageViews" : 53,
-            "visits" : 39,
-            "date" : "2024-06-21",
-            "watchedVideos" : 5
-         },
-         {
-            "visits" : 14,
-            "pageViews" : 24,
-            "date" : "2024-06-22",
-            "watchedVideos" : 7,
-            "dateString" : "06/22",
-            "watchedVideos60" : 1,
-            "visitors" : 2,
-            "watchedVideos30" : 5,
-            "weekend" : 1
-         },
-         {
-            "dateString" : "06/23",
-            "watchedVideos60" : 0,
-            "visitors" : 3,
-            "weekend" : 1,
-            "watchedVideos30" : 0,
-            "visits" : 7,
-            "pageViews" : 8,
-            "date" : "2024-06-23",
-            "watchedVideos" : 0
-         },
-         {
-            "dateString" : "06/24",
-            "watchedVideos60" : 0,
-            "visitors" : 3,
-            "watchedVideos30" : 0,
-            "weekend" : 0,
-            "visits" : 16,
-            "pageViews" : 24,
-            "date" : "2024-06-24",
-            "watchedVideos" : 0
-         },
-         {
-            "watchedVideos" : 1,
-            "date" : "2024-06-25",
-            "pageViews" : 31,
-            "visits" : 16,
-            "watchedVideos30" : 1,
-            "weekend" : 0,
-            "visitors" : 4,
-            "watchedVideos60" : 1,
-            "dateString" : "06/25"
+            "name" : "Visits"
          }
       ]
    },
    "pageTracking" : {
-      "data" : [
-         {
-            "date" : "06/12/24",
-            "pages" : 6,
-            "other" : 0,
-            "total" : 102,
-            "channels" : 12,
-            "page" : 0,
-            "contact" : 1,
-            "openURL" : 1,
-            "about" : 0,
-            "error" : 0,
-            "videoPlayer" : 42,
-            "videos" : 36,
-            "playlist" : 4
-         },
-         {
-            "videos" : 70,
-            "playlist" : 8,
-            "videoPlayer" : 80,
-            "error" : 0,
-            "about" : 0,
-            "openURL" : 5,
-            "channels" : 72,
-            "contact" : 5,
-            "page" : 0,
-            "date" : "06/13/24",
-            "other" : 0,
-            "pages" : 19,
-            "total" : 259
-         },
-         {
-            "total" : 112,
-            "date" : "06/14/24",
-            "other" : 0,
-            "pages" : 6,
-            "contact" : 0,
-            "page" : 0,
-            "channels" : 9,
-            "videoPlayer" : 7,
-            "error" : 0,
-            "openURL" : 82,
-            "about" : 0,
-            "playlist" : 3,
-            "videos" : 5
-         },
-         {
-            "videos" : 24,
-            "playlist" : 0,
-            "error" : 0,
-            "videoPlayer" : 27,
-            "about" : 3,
-            "openURL" : 1,
-            "channels" : 11,
-            "contact" : 0,
-            "page" : 0,
-            "other" : 0,
-            "pages" : 0,
-            "date" : "06/15/24",
-            "total" : 66
-         },
-         {
-            "playlist" : 0,
-            "videos" : 14,
-            "openURL" : 1,
-            "about" : 2,
-            "videoPlayer" : 15,
-            "error" : 0,
-            "page" : 0,
-            "contact" : 0,
-            "channels" : 25,
-            "total" : 57,
-            "pages" : 0,
-            "other" : 0,
-            "date" : "06/16/24"
-         },
-         {
-            "page" : 0,
-            "contact" : 1,
-            "channels" : 39,
-            "total" : 83,
-            "pages" : 2,
-            "other" : 6,
-            "date" : "06/17/24",
-            "playlist" : 0,
-            "videos" : 14,
-            "openURL" : 5,
-            "about" : 1,
-            "videoPlayer" : 15,
-            "error" : 0
-         },
-         {
-            "contact" : 4,
-            "page" : 0,
-            "channels" : 5,
-            "total" : 32,
-            "date" : "06/18/24",
-            "other" : 7,
-            "pages" : 0,
-            "playlist" : 0,
-            "videos" : 8,
-            "videoPlayer" : 8,
-            "error" : 0,
-            "about" : 0,
-            "openURL" : 0
-         },
-         {
-            "openURL" : 0,
-            "about" : 0,
-            "videoPlayer" : 1,
-            "error" : 4,
-            "playlist" : 1,
-            "videos" : 7,
-            "total" : 27,
-            "pages" : 1,
-            "other" : 3,
-            "date" : "06/19/24",
-            "page" : 0,
-            "contact" : 3,
-            "channels" : 7
-         },
-         {
-            "total" : 24,
-            "pages" : 1,
-            "other" : 1,
-            "date" : "06/20/24",
-            "page" : 0,
-            "contact" : 4,
-            "channels" : 3,
-            "about" : 0,
-            "openURL" : 0,
-            "error" : 0,
-            "videoPlayer" : 0,
-            "playlist" : 0,
-            "videos" : 15
-         },
-         {
-            "playlist" : 13,
-            "videos" : 10,
-            "videoPlayer" : 5,
-            "error" : 2,
-            "about" : 0,
-            "openURL" : 1,
-            "contact" : 4,
-            "page" : 0,
-            "channels" : 3,
-            "total" : 53,
-            "other" : 4,
-            "pages" : 11,
-            "date" : "06/21/24"
-         },
-         {
-            "error" : 0,
-            "videoPlayer" : 7,
-            "about" : 0,
-            "openURL" : 1,
-            "videos" : 8,
-            "playlist" : 2,
-            "other" : 1,
-            "pages" : 0,
-            "date" : "06/22/24",
-            "total" : 24,
-            "channels" : 2,
-            "contact" : 3,
-            "page" : 0
-         },
-         {
-            "contact" : 2,
-            "page" : 0,
-            "channels" : 1,
-            "total" : 8,
-            "date" : "06/23/24",
-            "other" : 1,
-            "pages" : 0,
-            "playlist" : 0,
-            "videos" : 4,
-            "videoPlayer" : 0,
-            "error" : 0,
-            "about" : 0,
-            "openURL" : 0
-         },
-         {
-            "about" : 0,
-            "openURL" : 0,
-            "videoPlayer" : 0,
-            "error" : 0,
-            "playlist" : 20,
-            "videos" : 1,
-            "total" : 24,
-            "date" : "06/24/24",
-            "pages" : 0,
-            "other" : 2,
-            "page" : 0,
-            "contact" : 1,
-            "channels" : 0
-         },
-         {
-            "playlist" : 9,
-            "videos" : 9,
-            "openURL" : 0,
-            "about" : 0,
-            "error" : 0,
-            "videoPlayer" : 1,
-            "page" : 0,
-            "contact" : 3,
-            "channels" : 0,
-            "total" : 31,
-            "date" : "06/25/24",
-            "pages" : 0,
-            "other" : 9
-         },
-         {
-            "videoPlayer" : 208,
-            "error" : 12,
-            "openURL" : 97,
-            "about" : 6,
-            "playlist" : 60,
-            "videos" : 225,
-            "total" : 1804,
-            "date" : "total",
-            "other" : 34,
-            "pages" : 46,
-            "contact" : 31,
-            "page" : 0,
-            "channels" : 189
-         }
-      ],
       "columns" : [
          {
             "align" : "left",
-            "id" : "date",
-            "name" : "Date"
+            "name" : "Date",
+            "id" : "date"
          },
          {
-            "id" : "total",
+            "align" : "center",
             "name" : "Total",
-            "align" : "center"
+            "id" : "total"
          },
          {
-            "name" : "Video Player",
             "id" : "videoPlayer",
+            "name" : "Video Player",
             "align" : "center"
          },
          {
+            "name" : "Videos",
             "align" : "center",
-            "id" : "videos",
-            "name" : "Videos"
+            "id" : "videos"
          },
          {
-            "name" : "Channels",
             "id" : "channels",
-            "align" : "center"
+            "align" : "center",
+            "name" : "Channels"
          },
          {
+            "name" : "Open URL",
             "align" : "center",
-            "id" : "openURL",
-            "name" : "Open URL"
+            "id" : "openURL"
          },
          {
             "id" : "pages",
@@ -813,29 +486,29 @@
             "align" : "center"
          },
          {
+            "id" : "playlist",
+            "name" : "Playlist",
+            "align" : "center"
+         },
+         {
             "name" : "Page",
-            "id" : "page",
+            "align" : "center",
+            "id" : "page"
+         },
+         {
+            "id" : "other",
+            "name" : "Other",
             "align" : "center"
          },
          {
             "align" : "center",
-            "name" : "Playlist",
-            "id" : "playlist"
+            "name" : "Error",
+            "id" : "error"
          },
          {
-            "align" : "center",
-            "name" : "Other",
-            "id" : "other"
-         },
-         {
-            "align" : "center",
             "name" : "Contact",
-            "id" : "contact"
-         },
-         {
             "align" : "center",
-            "id" : "error",
-            "name" : "Error"
+            "id" : "contact"
          },
          {
             "id" : "about",
@@ -843,20 +516,516 @@
             "align" : "center"
          },
          {
-            "id" : "error",
+            "align" : "center",
             "name" : "Error",
-            "align" : "center"
+            "id" : "error"
          },
          {
+            "align" : "center",
             "name" : "Total",
-            "id" : "total",
-            "align" : "center"
+            "id" : "total"
          }
       ],
-      "title" : ""
+      "title" : "",
+      "data" : [
+         {
+            "pages" : 6,
+            "total" : 112,
+            "channels" : 9,
+            "error" : 0,
+            "contact" : 0,
+            "date" : "06/14/24",
+            "videos" : 5,
+            "videoPlayer" : 7,
+            "openURL" : 82,
+            "other" : 0,
+            "playlist" : 3,
+            "about" : 0,
+            "page" : 0
+         },
+         {
+            "videoPlayer" : 27,
+            "playlist" : 0,
+            "other" : 0,
+            "openURL" : 1,
+            "page" : 0,
+            "about" : 3,
+            "error" : 0,
+            "channels" : 11,
+            "total" : 66,
+            "pages" : 0,
+            "date" : "06/15/24",
+            "contact" : 0,
+            "videos" : 24
+         },
+         {
+            "videos" : 14,
+            "contact" : 0,
+            "date" : "06/16/24",
+            "channels" : 25,
+            "error" : 0,
+            "pages" : 0,
+            "total" : 57,
+            "about" : 2,
+            "page" : 0,
+            "playlist" : 0,
+            "other" : 0,
+            "openURL" : 1,
+            "videoPlayer" : 15
+         },
+         {
+            "error" : 0,
+            "channels" : 39,
+            "total" : 83,
+            "pages" : 2,
+            "videos" : 14,
+            "date" : "06/17/24",
+            "contact" : 1,
+            "videoPlayer" : 15,
+            "page" : 0,
+            "about" : 1,
+            "playlist" : 0,
+            "openURL" : 5,
+            "other" : 6
+         },
+         {
+            "videos" : 8,
+            "date" : "06/18/24",
+            "contact" : 4,
+            "error" : 0,
+            "channels" : 5,
+            "total" : 32,
+            "pages" : 0,
+            "page" : 0,
+            "about" : 0,
+            "playlist" : 0,
+            "other" : 7,
+            "openURL" : 0,
+            "videoPlayer" : 8
+         },
+         {
+            "playlist" : 1,
+            "other" : 3,
+            "openURL" : 0,
+            "about" : 0,
+            "page" : 0,
+            "videoPlayer" : 1,
+            "contact" : 3,
+            "date" : "06/19/24",
+            "videos" : 7,
+            "channels" : 7,
+            "error" : 4,
+            "pages" : 1,
+            "total" : 27
+         },
+         {
+            "videoPlayer" : 0,
+            "about" : 0,
+            "page" : 0,
+            "openURL" : 0,
+            "other" : 1,
+            "playlist" : 0,
+            "pages" : 1,
+            "total" : 24,
+            "channels" : 3,
+            "error" : 0,
+            "videos" : 15,
+            "contact" : 4,
+            "date" : "06/20/24"
+         },
+         {
+            "videoPlayer" : 5,
+            "about" : 0,
+            "page" : 0,
+            "other" : 4,
+            "openURL" : 1,
+            "playlist" : 13,
+            "pages" : 11,
+            "total" : 53,
+            "channels" : 3,
+            "error" : 2,
+            "videos" : 10,
+            "contact" : 4,
+            "date" : "06/21/24"
+         },
+         {
+            "page" : 0,
+            "about" : 0,
+            "playlist" : 2,
+            "other" : 1,
+            "openURL" : 1,
+            "videoPlayer" : 7,
+            "videos" : 8,
+            "date" : "06/22/24",
+            "contact" : 3,
+            "error" : 0,
+            "channels" : 2,
+            "total" : 24,
+            "pages" : 0
+         },
+         {
+            "videoPlayer" : 0,
+            "page" : 0,
+            "about" : 0,
+            "playlist" : 0,
+            "openURL" : 0,
+            "other" : 1,
+            "error" : 0,
+            "channels" : 1,
+            "total" : 8,
+            "pages" : 0,
+            "videos" : 4,
+            "date" : "06/23/24",
+            "contact" : 2
+         },
+         {
+            "total" : 24,
+            "pages" : 0,
+            "error" : 0,
+            "channels" : 0,
+            "videos" : 1,
+            "date" : "06/24/24",
+            "contact" : 1,
+            "videoPlayer" : 0,
+            "page" : 0,
+            "about" : 0,
+            "other" : 2,
+            "openURL" : 0,
+            "playlist" : 20
+         },
+         {
+            "videoPlayer" : 1,
+            "playlist" : 9,
+            "other" : 9,
+            "openURL" : 0,
+            "page" : 0,
+            "about" : 0,
+            "error" : 0,
+            "channels" : 0,
+            "total" : 31,
+            "pages" : 0,
+            "date" : "06/25/24",
+            "contact" : 3,
+            "videos" : 9
+         },
+         {
+            "other" : 6,
+            "openURL" : 3,
+            "playlist" : 27,
+            "page" : 0,
+            "about" : 0,
+            "videoPlayer" : 3,
+            "date" : "06/26/24",
+            "contact" : 6,
+            "videos" : 6,
+            "total" : 126,
+            "pages" : 31,
+            "error" : 32,
+            "channels" : 12
+         },
+         {
+            "videos" : 3,
+            "contact" : 1,
+            "date" : "06/27/24",
+            "channels" : 3,
+            "error" : 0,
+            "pages" : 1,
+            "total" : 12,
+            "about" : 0,
+            "page" : 0,
+            "playlist" : 2,
+            "other" : 2,
+            "openURL" : 0,
+            "videoPlayer" : 0
+         },
+         {
+            "channels" : 120,
+            "error" : 76,
+            "pages" : 53,
+            "total" : 1358,
+            "videos" : 128,
+            "contact" : 32,
+            "date" : "total",
+            "videoPlayer" : 89,
+            "about" : 6,
+            "page" : 0,
+            "playlist" : 77,
+            "other" : 42,
+            "openURL" : 94
+         }
+      ]
+   },
+   "screenWidths" : {
+      "title" : "",
+      "data" : [
+         {
+            "welcomeViews" : 81,
+            "width" : 390,
+            "lockViews" : 9
+         },
+         {
+            "width" : 2560,
+            "lockViews" : 3,
+            "welcomeViews" : 183
+         },
+         {
+            "welcomeViews" : 27,
+            "lockViews" : 2,
+            "width" : 1920
+         },
+         {
+            "welcomeViews" : 6,
+            "lockViews" : 1,
+            "width" : 448
+         }
+      ],
+      "columns" : [
+         {
+            "id" : "width",
+            "name" : "Screen Width",
+            "align" : "left"
+         },
+         {
+            "id" : "lockViews",
+            "align" : "center",
+            "name" : "Lock Views"
+         },
+         {
+            "id" : "welcomeViews",
+            "name" : "Welcome Views",
+            "align" : "center"
+         }
+      ]
+   },
+   "openedUrls" : {
+      "www.youtube.com/@chriscapune7873" : 1,
+      "www.youtube.com/channel/UCgsNWtGhWOlabLIBzBzbD8A" : 1,
+      "www.youtube.com/channel/UCAjtdEz1b9dCxnwuxdICTfg?view_as=subscriber" : 1,
+      "www.youtube.com/@picksmith122" : 2,
+      "www.youtube.com/@_least7808" : 2,
+      "www.youtube.com/@thecompguy" : 3,
+      "www.youtube.com/channel/UCBSesEUOjcn4_CW_-q5lImA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCBGVa07P4ofJ8HaCzAtAB4A?view_as=subscriber" : 1,
+      "www.youtube.com/@-dq-" : 1,
+      "www.youtube.com/@axelpanic" : 1,
+      "www.youtube.com/channel/UCHEPEHbo6kAxsxvIePE9kRw" : 7,
+      "www.youtube.com/channel/UC6j3vY77jqqWclEZ-UkBoQw?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UClQWElRptoG-dssHtO9AArQ?view_as=subscriber" : 1,
+      "www.youtube.com/@captainlockpick" : 1,
+      "www.youtube.com/channel/UCAc5qoOTWW-7VTo8nZqGJLA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UC4FJ9pohHy803O4x_DFs6sA?view_as=subscriber" : 1,
+      "www.youtube.com/watch?v=A5mc7vJ_-nE" : 2,
+      "www.youtube.com/channel/UCZxkC_15-n8bJHZ0JZxk_pg?view_as=subscriber" : 1,
+      "www.youtube.com/@lockpickingtv" : 2,
+      "www.youtube.com/channel/UC3lz4hFdwF-Eol1qJoyfMkA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCX56O2bbhq0E-EzXrztA7VA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UC7UO6EE5W_C1S4nnitGsZ_A?view_as=subscriber" : 1,
+      "www.youtube.com/@truckinglock" : 2,
+      "www.youtube.com/channel/UCU9Hwfmn-H8PHD874kTMMAw?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCHEPEHbo6kAxsxvIePE9kRw?view_as=subscriber" : 1,
+      "www.youtube.com/@amonitordarkly" : 1,
+      "www.youtube.com/channel/UCfFT2uibPuoj_Vq8uzGUN-w?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCSUvMqYICfPDGplqsC34xCg?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCpYG4aQaPzdiCSVvFHf6sKA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCZjDlgup9oX6P4C7PJ3Sgwg?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCKdlgO_jR6G5Zf2b3rWRdEA" : 2,
+      "www.youtube.com/channel/UCShAtKvq9U5uEggdwFUrdLQ?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCm9K6rby98W8JigLoZOh6FQ?view_as=subscriber" : 1,
+      "www.youtube.com/@albazarkft" : 1,
+      "www.youtube.com/channel/UCrder9McXu25m8VS0NQZNgA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCotHe-s6FDnGwbQAlcqxpHA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCsZDdTLANRUuOYelmh4TJCw?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCAjtdEz1b9dCxnwuxdICTfg" : 1,
+      "www.youtube.com/@senorsilky" : 1,
+      "www.youtube.com/channel/UCNMj5TTgFa-nWPylejm2l5g?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCBDpLXSbLHkPVocZgMuBTMw?view_as=subscriber" : 1,
+      "www.youtube.com/@thelockpicker1969" : 2,
+      "www.youtube.com/@donotduplicate" : 1,
+      "www.youtube.com/@artichoketwothousand" : 1,
+      "www.youtube.com/@bobbykeyz1263" : 1,
+      "www.youtube.com/@LockPickersUnited" : 1,
+      "www.youtube.com/channel/UCxZRF3OG7gapQ8kacWUwj2A?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCLh3mi0cpZKLhYuQhoA7K9w?view_as=subscriber" : 1,
+      "www.youtube.com/@affinity3470" : 2,
+      "www.youtube.com/@xvinty" : 2,
+      "www.youtube.com/channel/UC_PyPUk9mBRmDAicJI-03Eg?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UC7xu67fdc05csZUNstB3loA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UC0hS4z3VCga51rgb0uE44qw?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UClXLxqirpN4bDNNhAyrOneA?view_as=subscriber" : 1,
+      "www.youtube.com/watch?v=uumypY2NcQM" : 1,
+      "www.youtube.com/@septclues" : 1,
+      "www.youtube.com/channel/UCloseNEb6epWL36Ap_zZmow?view_as=subscriber" : 1,
+      "www.youtube.com/@thenixxed" : 1,
+      "www.youtube.com/@cajunlockpick8318" : 1,
+      "www.youtube.com/channel/UClYCcqqjCUIeCSiEkezW42A?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCyrgpMw8rL2JXdt0zLPzTLA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCJ8vYSynDrUp72PoGqPCjhg?view_as=subscriber" : 1,
+      "www.youtube.com/@marson440" : 4,
+      "www.youtube.com/channel/UC0uDsWpm4sISpzKlB0XVFDw?view_as=subscriber" : 1,
+      "www.youtube.com/@sandman_locksport" : 2,
+      "www.youtube.com/channel/UCBfuitaQZGgAvaaqiDqTvFA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCmBrQYJLqkxLGhYSX0LRyUQ?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCRAMhpiDrCkLmC-V-EamMTA?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCdJlIoWR3mf7apfB1dXS97A" : 1,
+      "www.youtube.com/channel/UCqP38s7_XwQHt3fwoqBvbkg?view_as=subscriber" : 1,
+      "www.youtube.com/@blondihacks" : 1,
+      "www.youtube.com/channel/UChGzhXlxNpNyEw6apxdih1w?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCjMYWOs-Wi2spkCONND8xHQ?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCsvr-zYHwi1FmHp8ZE1WQIQ?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCCp4RkH5WGovfLcA9o0jt8Q?view_as=subscriber" : 1,
+      "lpubelts.com" : 5,
+      "www.youtube.com/channel/UCwGnrdS4TxV8nPpZtG2uHtw?view_as=subscriber" : 1,
+      "www.youtube.com/@averagelifeofprince7871" : 2,
+      "www.youtube.com/@ladylocks" : 1,
+      "www.youtube.com/channel/UCQbp7Dr48mLlVkn6oJTVdvw?view_as=subscriber" : 1,
+      "www.youtube.com/@georgiajim2260" : 1,
+      "www.youtube.com/@reinderstegen" : 1,
+      "www.youtube.com/channel/UClkrPzzdljmX_LqIh-1Uhdg?view_as=subscriber" : 1,
+      "www.youtube.com/@hvlogic" : 1,
+      "www.youtube.com/channel/UCMapdYQFmzqCKCokQFMr81g?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCgsNWtGhWOlabLIBzBzbD8A?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCp1orOGJwZvjLAvckyxC4Nw?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCltnYRAdwa9Ty7es4k4VP5A?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCHyAg2625ZgGgg2Ounfgyyw?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCpdMakUyLgC-MzrGH1NoH0g?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCvja5R4RQtefsk38b726piQ?view_as=subscriber" : 1,
+      "www.youtube.com/@tonysansan" : 3,
+      "www.youtube.com/channel/UCht5SSqIBBnZPaCL5-GCsyw?view_as=subscriber" : 1,
+      "www.youtube.com/channel/UCQWfAslkbdp6nl0mz8ywCRw?view_as=subscriber" : 1,
+      "www.youtube.com/@drlockshop" : 1,
+      "www.youtube.com/@peaceweaponpt" : 1,
+      "www.youtube.com/@dmaclocksport" : 3,
+      "www.youtube.com/channel/UCSCUS_rVVks_NKookFW9m4A?view_as=subscriber" : 1,
+      "www.youtube.com/@loose-shirt6551" : 1,
+      "www.youtube.com/channel/UCJdyxxvvMuV2V0ZeYWQl9Wg?view_as=subscriber" : 1,
+      "www.youtube.com/@claymiller7532" : 1,
+      "www.youtube.com/@jackthepicker" : 1,
+      "www.youtube.com/channel/UCrpkIsfVR99CbRB7zVSzulg?view_as=subscriber" : 1,
+      "lpulocks.com" : 1,
+      "www.youtube.com/channel/UCE53zbLlZQosuMvQth87e4Q?view_as=subscriber" : 1,
+      "www.youtube.com/@norlin76" : 2,
+      "www.youtube.com/@yabende" : 1,
+      "www.reddit.com/r/lockpicking/" : 1
+   },
+   "watchedVideos30" : {
+      "35V0UVOKoDg" : 1,
+      "uXSjyOp7Vzo" : 1,
+      "JthzTdV8yYE" : 1,
+      "A5mc7vJ_-nE" : 1,
+      "TXTAeT53ZBc" : 1,
+      "MJKKajiZqzA" : 1,
+      "JAW_rHHIs9o" : 1,
+      "Wwql5PbdpcQ" : 1
+   },
+   "playlistViews" : {
+      "PLd05gZIjxH9tJRuevTnOQKRAos4dbQDEM" : 1,
+      "Through_The_Belts" : 3,
+      "Black_Belt" : 1,
+      "Blue_Belt" : 1,
+      "Locks_Basic_operation_and_manipulation" : 4,
+      "White_Belt" : 5,
+      "UC2jUB2pPoGpPG28j0o3B1ig.nGzAI5pLbMY&PLd05gZIjxH9tJRuevTnOQKRAos4dbQDEM" : 2,
+      "Mentorship_Monday" : 4,
+      "UC2jUB2pPoGpPG28j0o3B1ig.jNQXAC9IVRw&PLXEKjbsZ2ZW5zjNlIDNMaFB007CKtMT2H" : 1,
+      "Safecracking_for_Everyone" : 1,
+      "UC2jUB2pPoGpPG28j0o3B1ig.nGzAI5pLbMY&PLd05gZIjxH9v-gWkJO4a6V6VcmOrlJiRZ" : 1,
+      "UC2jUB2pPoGpPG28j0o3B1ig.nGzAI5pLbMY&PLd05gZIjxH9vcbtE3VcQW_0zLac5u8iL4" : 1,
+      "Popular_Videos_by_Belt" : 1,
+      "HeLPs_Progressive_Lock_List" : 3,
+      "UC2jUB2pPoGpPG28j0o3B1ig.jNQXAC9IVRw&PLd05gZIjxH9vcbtE3VcQW_0zLac5u8iL4" : 4,
+      "LPU_Teardown" : 2,
+      "UC2jUB2pPoGpPG28j0o3B1ig.nGzAI5pLbMY&PL66CD42F86F3A1F85" : 1,
+      "PLXEKjbsZ2ZW5zjNlIDNMaFB007CKtMT2H" : 1,
+      "Training_Tuesday" : 23,
+      "LPU_Setup" : 2,
+      "UC2jUB2pPoGpPG28j0o3B1ig.jNQXAC9IVRw&PLXEKjbsZ2ZW4dnnAAXPGJV1azy55RF_xo" : 1,
+      "PL66CD42F86F3A1F85" : 1,
+      "UC2jUB2pPoGpPG28j0o3B1ig.jNQXAC9IVRw&PLXEKjbsZ2ZW6gMUcx2Thrppx0HI-atA20" : 1,
+      "Slaying_Saturday" : 1,
+      "Introducing_LPU" : 5,
+      "Yellow_Belt" : 1,
+      "PLd05gZIjxH9vcbtE3VcQW_0zLac5u8iL4" : 4,
+      "" : 28,
+      "Orange_Belt" : 1,
+      "Dimple_Locks" : 4
+   },
+   "watchedVideos" : {
+      "CjoiZvzFHgU" : 2,
+      "is2spv6hANk" : 6,
+      "kq8fggryWSc" : 1,
+      "L2WQl0_3SE8" : 1,
+      "n9XbQiIjhHg" : 1,
+      "ystyerICMJY" : 2,
+      "7W94fMW8_Bg" : 1,
+      "H6o73IX-KfA" : 5,
+      "QRmXHRnsMV0" : 1,
+      "jj80-I2w-8g" : 1,
+      "XA2wApBOTlU" : 1,
+      "cQorO3W8Sfg" : 13,
+      "VVSL0liiWoc" : 4,
+      "RtFQg2egbr8" : 1,
+      "ovyv6uDU6UQ" : 12,
+      "uumypY2NcQM" : 46,
+      "U1md90e7NHA" : 52,
+      "BfpKHjwmfa8" : 1,
+      "JthzTdV8yYE" : 3,
+      "RKs21AuSxI0" : 1,
+      "jvYJBkNbQ8c" : 44,
+      "dVQ-ytWu8DQ" : 8,
+      "qC293TOKHtM" : 2,
+      "KbWfSOioCP4" : 4,
+      "1elLgHnsBNs" : 4,
+      "dvMyBSS_Jj0" : 6,
+      "35V0UVOKoDg" : 3,
+      "ClG3po-RIIw" : 4,
+      "JAW_rHHIs9o" : 3,
+      "MJKKajiZqzA" : 1,
+      "gTZddvAws9M" : 4,
+      "RF98_NLA96U" : 1,
+      "A5mc7vJ_-nE" : 4,
+      "rICzAJtjo0w" : 8,
+      "0EVYGIErBMk" : 1,
+      "znqmYuupvGg" : 2,
+      "KGjOo2VPZFw" : 5,
+      "Wwql5PbdpcQ" : 1,
+      "pDFHqhhZgUI" : 1,
+      "AWBhlGhthOk" : 2,
+      "wUkzrZ9DNPc" : 6,
+      "DNpAIZl4krc" : 1,
+      "iWOTKzepshc" : 1,
+      "9UseDvDOMe8" : 1,
+      "3_V4Pk2gGQg" : 2,
+      "RCoEIS1vTdo" : 1,
+      "hgEflYksZgs" : 21,
+      "AeHJoTlOYyU" : 9,
+      "QsW4If-pijw" : 1,
+      "g6PDAX8Zb90" : 1,
+      "WOQO5fzTG9A" : 1,
+      "U3cFFsg_u3E" : 4,
+      "NMu1oQkSj0g" : 4,
+      "f4IPsd9MDGM" : 1,
+      "WtVfAcLbPsE" : 1,
+      "JcnzYUb7vpo" : 23,
+      "8byYjtg6bbE" : 1,
+      "R2r07NN21vM" : 2,
+      "EXaSJJ3dOMc" : 1,
+      "AFSNKQyk9B0" : 10,
+      "9g-7LrdTjS4" : 1,
+      "_jpcqQgHMR4" : 1,
+      "TXTAeT53ZBc" : 1,
+      "EnkbKJKSjpA" : 7,
+      "Bd9sqfdHm1U" : 41,
+      "836uI94dAN4" : 4,
+      "QG4VS-lBjDM" : 3,
+      "w_SGPrxvRY0" : 4,
+      "tJI2e8V1tNI" : 2,
+      "cBQROkmiyD8" : 3,
+      "Fs4WAn4lw1w" : 11,
+      "uXSjyOp7Vzo" : 1
    },
    "pageViews" : [
       {
+         "id" : "Page Views",
          "data" : [
             {
                "x" : "2024-06-03",
@@ -867,193 +1036,64 @@
                "y" : 699
             },
             {
-               "y" : 251,
-               "x" : "2024-06-17"
+               "x" : "2024-06-17",
+               "y" : 251
             }
-         ],
-         "id" : "Page Views"
+         ]
       }
    ],
-   "openedUrls" : {
-      "www.youtube.com/@thecompguy" : 3,
-      "www.youtube.com/@yabende" : 1,
-      "www.youtube.com/channel/UCht5SSqIBBnZPaCL5-GCsyw?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UC4FJ9pohHy803O4x_DFs6sA?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCpdMakUyLgC-MzrGH1NoH0g?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCLh3mi0cpZKLhYuQhoA7K9w?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UC0uDsWpm4sISpzKlB0XVFDw?view_as=subscriber" : 1,
-      "www.youtube.com/@claymiller7532" : 1,
-      "www.youtube.com/channel/UCE53zbLlZQosuMvQth87e4Q?view_as=subscriber" : 1,
-      "www.youtube.com/@bobbykeyz1263" : 1,
-      "www.youtube.com/channel/UCBGVa07P4ofJ8HaCzAtAB4A?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCxZRF3OG7gapQ8kacWUwj2A?view_as=subscriber" : 1,
-      "www.youtube.com/@donotduplicate" : 1,
-      "www.youtube.com/watch?v=uumypY2NcQM" : 1,
-      "www.youtube.com/channel/UCrder9McXu25m8VS0NQZNgA?view_as=subscriber" : 1,
-      "www.youtube.com/@-dq-" : 1,
-      "www.youtube.com/channel/UCrpkIsfVR99CbRB7zVSzulg?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCJdyxxvvMuV2V0ZeYWQl9Wg?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCgsNWtGhWOlabLIBzBzbD8A" : 1,
-      "www.youtube.com/channel/UCAjtdEz1b9dCxnwuxdICTfg?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCdJlIoWR3mf7apfB1dXS97A" : 1,
-      "www.youtube.com/channel/UCBfuitaQZGgAvaaqiDqTvFA?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCQWfAslkbdp6nl0mz8ywCRw?view_as=subscriber" : 1,
-      "www.youtube.com/@amonitordarkly" : 1,
-      "www.youtube.com/channel/UCJ8vYSynDrUp72PoGqPCjhg?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCpYG4aQaPzdiCSVvFHf6sKA?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCZxkC_15-n8bJHZ0JZxk_pg?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCloseNEb6epWL36Ap_zZmow?view_as=subscriber" : 1,
-      "www.youtube.com/@artichoketwothousand" : 1,
-      "www.youtube.com/@averagelifeofprince7871" : 2,
-      "www.youtube.com/channel/UCSCUS_rVVks_NKookFW9m4A?view_as=subscriber" : 1,
-      "www.youtube.com/@hvlogic" : 1,
-      "www.youtube.com/channel/UClXLxqirpN4bDNNhAyrOneA?view_as=subscriber" : 1,
-      "lpubelts.com" : 5,
-      "www.youtube.com/channel/UCjMYWOs-Wi2spkCONND8xHQ?view_as=subscriber" : 1,
-      "www.youtube.com/@dmaclocksport" : 3,
-      "www.youtube.com/channel/UCSUvMqYICfPDGplqsC34xCg?view_as=subscriber" : 1,
-      "www.youtube.com/@cajunlockpick8318" : 1,
-      "www.youtube.com/channel/UClYCcqqjCUIeCSiEkezW42A?view_as=subscriber" : 1,
-      "www.youtube.com/@captainlockpick" : 1,
-      "www.youtube.com/@ladylocks" : 1,
-      "www.youtube.com/channel/UCm9K6rby98W8JigLoZOh6FQ?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCgsNWtGhWOlabLIBzBzbD8A?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCQbp7Dr48mLlVkn6oJTVdvw?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UC7UO6EE5W_C1S4nnitGsZ_A?view_as=subscriber" : 1,
-      "lpulocks.com" : 1,
-      "www.youtube.com/@affinity3470" : 2,
-      "www.youtube.com/@truckinglock" : 2,
-      "www.youtube.com/channel/UCMapdYQFmzqCKCokQFMr81g?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCAjtdEz1b9dCxnwuxdICTfg" : 1,
-      "www.youtube.com/channel/UChGzhXlxNpNyEw6apxdih1w?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCZjDlgup9oX6P4C7PJ3Sgwg?view_as=subscriber" : 1,
-      "www.youtube.com/@tonysansan" : 3,
-      "www.youtube.com/@_least7808" : 2,
-      "www.youtube.com/@blondihacks" : 1,
-      "www.youtube.com/channel/UCAc5qoOTWW-7VTo8nZqGJLA?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UC7xu67fdc05csZUNstB3loA?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCBDpLXSbLHkPVocZgMuBTMw?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCShAtKvq9U5uEggdwFUrdLQ?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UC0hS4z3VCga51rgb0uE44qw?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UC6j3vY77jqqWclEZ-UkBoQw?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCmBrQYJLqkxLGhYSX0LRyUQ?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCltnYRAdwa9Ty7es4k4VP5A?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCBSesEUOjcn4_CW_-q5lImA?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCX56O2bbhq0E-EzXrztA7VA?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCKdlgO_jR6G5Zf2b3rWRdEA" : 2,
-      "www.youtube.com/channel/UCNMj5TTgFa-nWPylejm2l5g?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCqP38s7_XwQHt3fwoqBvbkg?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCHyAg2625ZgGgg2Ounfgyyw?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCsvr-zYHwi1FmHp8ZE1WQIQ?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCvja5R4RQtefsk38b726piQ?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UC_PyPUk9mBRmDAicJI-03Eg?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCHEPEHbo6kAxsxvIePE9kRw?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCHEPEHbo6kAxsxvIePE9kRw" : 7,
-      "www.youtube.com/channel/UCCp4RkH5WGovfLcA9o0jt8Q?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCwGnrdS4TxV8nPpZtG2uHtw?view_as=subscriber" : 1,
-      "www.youtube.com/@LockPickersUnited" : 1,
-      "www.youtube.com/@axelpanic" : 1,
-      "www.youtube.com/channel/UCyrgpMw8rL2JXdt0zLPzTLA?view_as=subscriber" : 1,
-      "www.youtube.com/@septclues" : 1,
-      "www.youtube.com/@jackthepicker" : 1,
-      "www.youtube.com/@chriscapune7873" : 1,
-      "www.youtube.com/channel/UCRAMhpiDrCkLmC-V-EamMTA?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCU9Hwfmn-H8PHD874kTMMAw?view_as=subscriber" : 1,
-      "www.youtube.com/@thenixxed" : 1,
-      "www.youtube.com/@georgiajim2260" : 1,
-      "www.youtube.com/@loose-shirt6551" : 1,
-      "www.youtube.com/channel/UClQWElRptoG-dssHtO9AArQ?view_as=subscriber" : 1,
-      "www.youtube.com/@senorsilky" : 1,
-      "www.youtube.com/channel/UCp1orOGJwZvjLAvckyxC4Nw?view_as=subscriber" : 1,
-      "www.youtube.com/@sandman_locksport" : 2,
-      "www.youtube.com/@reinderstegen" : 1,
-      "www.youtube.com/@xvinty" : 2,
-      "www.youtube.com/channel/UClkrPzzdljmX_LqIh-1Uhdg?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UCsZDdTLANRUuOYelmh4TJCw?view_as=subscriber" : 1,
-      "www.youtube.com/@albazarkft" : 1,
-      "www.youtube.com/channel/UCfFT2uibPuoj_Vq8uzGUN-w?view_as=subscriber" : 1,
-      "www.youtube.com/channel/UC3lz4hFdwF-Eol1qJoyfMkA?view_as=subscriber" : 1,
-      "www.youtube.com/@lockpickingtv" : 2,
-      "www.reddit.com/r/lockpicking/" : 1,
-      "www.youtube.com/channel/UCotHe-s6FDnGwbQAlcqxpHA?view_as=subscriber" : 1,
-      "www.youtube.com/@norlin76" : 2,
-      "www.youtube.com/@marson440" : 4,
-      "www.youtube.com/@thelockpicker1969" : 2,
-      "www.youtube.com/@picksmith122" : 2,
-      "www.youtube.com/@peaceweaponpt" : 1
+   "firstVistsLastSevenDays" : {
+      "data" : [
+         {
+            "firstVisit" : "06/24/24",
+            "visits" : 1,
+            "country" : "Mexico"
+         }
+      ],
+      "title" : "",
+      "columns" : [
+         {
+            "id" : "country",
+            "name" : "Country",
+            "align" : "left"
+         },
+         {
+            "id" : "firstVisit",
+            "align" : "center",
+            "name" : "First Visit"
+         },
+         {
+            "name" : "Visits",
+            "align" : "center",
+            "id" : "visits"
+         }
+      ],
+      "countryCount" : 1
    },
-   "watchedVideos" : {
-      "8byYjtg6bbE" : 1,
-      "gTZddvAws9M" : 4,
-      "RCoEIS1vTdo" : 1,
-      "ovyv6uDU6UQ" : 12,
-      "QRmXHRnsMV0" : 1,
-      "EXaSJJ3dOMc" : 1,
-      "U3cFFsg_u3E" : 4,
-      "JthzTdV8yYE" : 2,
-      "is2spv6hANk" : 6,
-      "TXTAeT53ZBc" : 1,
-      "U1md90e7NHA" : 52,
-      "NMu1oQkSj0g" : 4,
-      "9g-7LrdTjS4" : 1,
-      "R2r07NN21vM" : 2,
-      "iWOTKzepshc" : 1,
-      "CjoiZvzFHgU" : 2,
-      "wUkzrZ9DNPc" : 6,
-      "DNpAIZl4krc" : 1,
-      "jvYJBkNbQ8c" : 44,
-      "A5mc7vJ_-nE" : 2,
-      "dvMyBSS_Jj0" : 6,
-      "qC293TOKHtM" : 2,
-      "VVSL0liiWoc" : 4,
-      "hgEflYksZgs" : 21,
-      "1elLgHnsBNs" : 4,
-      "MJKKajiZqzA" : 1,
-      "WtVfAcLbPsE" : 1,
-      "836uI94dAN4" : 4,
-      "L2WQl0_3SE8" : 1,
-      "ystyerICMJY" : 2,
-      "rICzAJtjo0w" : 8,
-      "znqmYuupvGg" : 2,
-      "ClG3po-RIIw" : 4,
-      "AFSNKQyk9B0" : 10,
-      "EnkbKJKSjpA" : 7,
-      "JAW_rHHIs9o" : 3,
-      "_jpcqQgHMR4" : 1,
-      "KbWfSOioCP4" : 4,
-      "9UseDvDOMe8" : 1,
-      "AeHJoTlOYyU" : 9,
-      "dVQ-ytWu8DQ" : 8,
-      "RF98_NLA96U" : 1,
-      "n9XbQiIjhHg" : 1,
-      "cQorO3W8Sfg" : 13,
-      "QsW4If-pijw" : 1,
-      "uXSjyOp7Vzo" : 1,
-      "pDFHqhhZgUI" : 1,
-      "RKs21AuSxI0" : 1,
-      "kq8fggryWSc" : 1,
-      "KGjOo2VPZFw" : 5,
-      "3_V4Pk2gGQg" : 2,
-      "AWBhlGhthOk" : 2,
-      "7W94fMW8_Bg" : 1,
-      "WOQO5fzTG9A" : 1,
-      "uumypY2NcQM" : 46,
-      "RtFQg2egbr8" : 1,
-      "35V0UVOKoDg" : 3,
-      "QG4VS-lBjDM" : 3,
-      "0EVYGIErBMk" : 1,
-      "w_SGPrxvRY0" : 4,
-      "H6o73IX-KfA" : 5,
-      "jj80-I2w-8g" : 1,
-      "f4IPsd9MDGM" : 1,
-      "cBQROkmiyD8" : 3,
-      "BfpKHjwmfa8" : 1,
-      "JcnzYUb7vpo" : 23,
-      "Wwql5PbdpcQ" : 1,
-      "g6PDAX8Zb90" : 1,
-      "XA2wApBOTlU" : 1,
-      "Fs4WAn4lw1w" : 11,
-      "tJI2e8V1tNI" : 2,
-      "Bd9sqfdHm1U" : 41
+   "topLocks" : {
+      "columns" : [
+         {
+            "id" : "rank",
+            "align" : "center",
+            "name" : "Rank"
+         },
+         {
+            "align" : "left",
+            "name" : "Name",
+            "id" : "name"
+         },
+         {
+            "align" : "left",
+            "name" : "Version",
+            "id" : "version"
+         },
+         {
+            "align" : "center",
+            "name" : "Views",
+            "id" : "views"
+         }
+      ],
+      "data" : [],
+      "title" : "Most Popular Locks"
    }
 }

@@ -35,6 +35,7 @@ const TopUrlsTable = ({data}) => {
                 : urlSubscribes[cleanUrl]
         })
 
+    // TODO: add channel name column
     const rows = Object.keys(urlViews)
         .map(url => {
             return {

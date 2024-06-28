@@ -17,6 +17,7 @@ import Tracker from '../app/Tracker.jsx'
 function PlaylistMain() {
     const {visibleItems, pageData} = useContext(DataContext)
 
+    console.log('pageData', pageData)
     const navigate = useNavigate()
     const {filters} = useContext(FilterContext)
     const {page} = filters
@@ -160,7 +161,7 @@ function PlaylistMain() {
                     </div>
                 }
             </div>
-            <Tracker feature='playlist' page={pageNameParam} id={pageData.playlistId}/>
+            <Tracker feature='playlist' page={pageNameParam} id={pageData.playlistId} parentId={pageData.parentId}/>
         </React.Fragment>
     )
 }

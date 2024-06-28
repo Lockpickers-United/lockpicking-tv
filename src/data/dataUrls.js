@@ -16,3 +16,4 @@ export const channelReportData = '/reports/channelReportData.json'
 
 export const channelIndex = '/data/channelIndex.json'
 export const videoIndex = '/data/videoIndex.json'
+export const pageIndex = '/data/pageIndex.json'

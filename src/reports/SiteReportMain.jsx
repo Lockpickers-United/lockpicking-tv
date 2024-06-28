@@ -1,10 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import LoadingDisplay from '../util/LoadingDisplay'
-import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import useWindowSize from '../util/useWindowSize'
 import dayjs from 'dayjs'
-import {channelIndex, siteFull, siteSummary, videoIndex} from '../data/dataUrls'
 import PageViewsLine from './siteReport/PageViewsLine.jsx'
 import FirstVisitsLastSevenTable from './siteReport/FirstVisitsLastSevenTable'
 import PageTrackingTable from './siteReport/PageTrackingTable'
@@ -16,15 +14,17 @@ import HourlyRequestsLine from './siteReport/HourlyRequestsLine.jsx'
 import TrafficStats from './siteReport/TrafficStats.jsx'
 import TopVideosTable from './siteReport/TopVideosTable.jsx'
 import SiteReportVideosSummary from './siteReport/SiteReportVideosSummary.jsx'
+import ReportingContext from '../youtubeContext/ReportingProvider.jsx'
+import TopPlaylistsTable from './siteReport/TopPlaylistsTable.jsx'
 
-const urls = {siteFull, siteSummary, channelIndex, videoIndex}
 
 function SiteReportMain() {
 
     usePageTitle('Site Report')
-    const {data, loading, error} = useData({urls})
-    const {siteFull, siteSummary, videoIndex} = data || {}
-    const jsonLoaded = (!loading && !error && !!data)
+
+    const {siteFull, siteSummary, videoIndex, allDataLoaded} = useContext(ReportingContext)
+
+    const loading = !allDataLoaded
 
     const {width} = useWindowSize()
     const smallWindow = width < 560
@@ -42,15 +42,14 @@ function SiteReportMain() {
         : '(updated: ' + dayjs(siteFull?.metadata.updatedDateTime).format('MM/DD/YY hh:mm') + ` ${siteFull?.metadata.timezone})`
 
     if (loading) return <LoadingDisplay/>
-    else if (error) return null
-    else if (jsonLoaded) return (
+
+    else if (!loading) return (
         <div style={{
             minWidth: '320px', maxWidth: 1000, height: '100%',
             padding: pagePadding, backgroundColor: '#223',
             marginLeft: 'auto', marginRight: 'auto',
-            fontSize: '1.5rem', lineHeight: 0.8
+            fontSize: '1.5rem', lineHeight: 0.8, marginTop:0
         }}>
-
 
             {!!siteFull?.firstVistsLastSevenDays?.countryCount &&
                 <React.Fragment>
@@ -78,6 +77,9 @@ function SiteReportMain() {
 
             <div style={headerStyle}>Top Videos</div>
             <TopVideosTable data={siteFull} videoIndex={videoIndex}/>
+
+            <div style={headerStyle}>Top Playlists</div>
+            <TopPlaylistsTable data={siteFull}/>
 
             <div style={headerStyle}>Top Exit URLs</div>
             <TopUrlsTable data={siteFull}/>

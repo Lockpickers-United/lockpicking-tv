@@ -26,7 +26,7 @@ function Nav({extras, noSearch, noMenu}) {
     const searchBox = noSearch ? null : <SearchBox label=''/>
     return (
         <React.Fragment>
-            <AppBar position='fixed' style={{display: 'flex', placeItems: 'center'}} id='appBar'>
+            <AppBar position='fixed' style={{display: 'flex', placeItems: 'center', minHeight:61}} id='appBar'>
                 <div style={{padding: 10, width: '100%', maxWidth: 1200}}>
                     <div style={{display: 'flex', width: '100%', marginTop: 5}}>
                         {!noMenu &&

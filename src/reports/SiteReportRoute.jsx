@@ -10,22 +10,25 @@ import {DataProvider} from '../youtubeContext/DataProviderChannels.jsx'
 import {ListProvider} from '../context/ListContext.jsx'
 
 import SiteReportMain from './SiteReportMain.jsx'
+import {ReportingProvider} from '../youtubeContext/ReportingProvider.jsx'
 
 function SiteReportRoute() {
 
     document.title = 'lockpicking.tv - Site Report'
 
     return (
-            <FilterProvider filterFields={channelFilterFields}>
-                <DataProvider>
-                    <ListProvider>
+        <FilterProvider filterFields={channelFilterFields}>
+            <DataProvider>
+                <ListProvider>
+                    <ReportingProvider>
                         <Nav title='Site Report' route='rep'/>
                         <SiteReportMain/>
                         <Footer/>
                         <Tracker feature='sitereport'/>
-                    </ListProvider>
-                </DataProvider>
-            </FilterProvider>
+                    </ReportingProvider>
+                </ListProvider>
+            </DataProvider>
+        </FilterProvider>
     )
 }
 
