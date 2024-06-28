@@ -1,8 +1,5 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useMemo} from 'react'
 import useData from '../util/useData'
-import config from '../app/config'
-import dayjs from 'dayjs'
-import {useInterval} from 'usehooks-ts'
 
 import {siteFull, siteSummary, channelReportData, channelIndex, videoIndex, pageIndex} from '../data/dataUrls'
 const urls = {siteFull, siteSummary, channelReportData, channelIndex, videoIndex, pageIndex}
