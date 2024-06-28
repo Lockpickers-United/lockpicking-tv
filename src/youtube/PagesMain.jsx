@@ -14,12 +14,11 @@ import {useNavigate} from 'react-router-dom'
 import Tracker from '../app/Tracker.jsx'
 
 function PagesMain() {
-    const {visibleItems, pageData} = useContext(DataContext)
     const navigate = useNavigate()
+    const {visibleItems, pageData} = useContext(DataContext)
+    const {getPageFromId, allDataLoaded} = useContext(LoadingContext)
 
     const pageNameParam = pageData?.title.replace(/[\s/]/g, '_').replace(/\W/g, '')
-
-    const {getPageFromId, allDataLoaded} = useContext(LoadingContext)
 
     const parent = pageData?.parentId
         ? getPageFromId(pageData.parentId)
@@ -123,7 +122,7 @@ function PagesMain() {
                 </div>
             }
 
-            <Tracker feature='pages' page={pageNameParam}/>
+            <Tracker feature='pages' page={pageNameParam} id={pageData.sectionId}/>
 
         </React.Fragment>
 

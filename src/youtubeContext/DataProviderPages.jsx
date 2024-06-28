@@ -29,7 +29,8 @@ export function DataProvider({children}) {
     const mappedItems = items.map((item) => {
         return {
             ...item,
-            fuzzy: item.title
+            fuzzy: item.title,
+            currentPage: page
         }
     })
 

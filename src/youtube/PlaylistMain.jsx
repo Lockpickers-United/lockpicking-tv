@@ -22,7 +22,6 @@ function PlaylistMain() {
     const {page} = filters
 
     const [currentPage, setCurrentPage] = useState(undefined)
-
     const {getPageFromId, allDataLoaded} = useContext(LoadingContext)
 
     const pageNameParam = pageData?.title.replace(/[\s/]/g, '_').replace(/\W/g, '')
@@ -127,7 +126,7 @@ function PlaylistMain() {
                     <div style={{
                         minWidth: '320px', height: '100%',
                         padding: pagePadding,
-                        marginLeft: 'auto', marginRight: 'auto', marginTop: 0
+                        marginLeft: 'auto', marginRight: 'auto', marginTop: 30
                     }}>
 
                         <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
@@ -161,7 +160,7 @@ function PlaylistMain() {
                     </div>
                 }
             </div>
-            <Tracker feature='playlist' page={pageNameParam}/>
+            <Tracker feature='playlist' page={pageNameParam} id={pageData.playlistId}/>
         </React.Fragment>
     )
 }

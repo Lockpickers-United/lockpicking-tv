@@ -14,7 +14,6 @@ function App() {
 
                     <AppProvider>
                         <LoadingProvider>
-
                             <AppRoutes/>
                         </LoadingProvider>
                     </AppProvider>

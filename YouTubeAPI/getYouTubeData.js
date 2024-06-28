@@ -14,7 +14,7 @@ primaryAccountId = 'UC2jUB2pPoGpPG28j0o3B1ig' // lptv mirror
 //primaryAccountId = 'UC0JPKMvYyewFE0DujaiGpfw' //Neal Bayless
 //primaryAccountId = 'UCijhDLjaLA2um-KF-ijzYWw' //mgsecure
 
-const dev = true  // log version and statistics to console
+const dev = false  // log version and statistics to console
 const beta = true
 const prod = false
 
@@ -424,7 +424,7 @@ async function getYouTubeData(auth) {
                 }
                 pageIndexAdditions++
             } else {
-                console.log('already had', page.sectionId, page.title)
+                if (debug) console.log('already had', page.sectionId, page.title)
             }
         })
 
@@ -707,7 +707,7 @@ const buildPlaylistPseudoPage = (async (auth, playlistId, sectionId) => {
     if (debug) console.log('buildPlaylistPseudoPage playlist', playlist)
 
     const section = {
-        id: 'pl_' + playlist.snippet.channelId + '_' + playlist.id,
+        id: 'pl_' + sectionId + '_' + playlist.id,
         snippet: {
             type: 'singleplaylist',
             kind: 'singleplaylist',

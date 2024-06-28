@@ -11,6 +11,8 @@ import {useDebounce} from 'usehooks-ts'
 import FilterContext from '../context/FilterContext'
 import useWindowSize from '../util/useWindowSize'
 import {useHotkeys} from 'react-hotkeys-hook'
+import {ThemeProvider, createTheme} from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
 
 function SearchBox({label, extraFilters = []}) {
     const [searchParams] = useSearchParams()
@@ -86,7 +88,6 @@ function SearchBox({label, extraFilters = []}) {
         </InputAdornment>
     ) : null
 
-
     const style = isMobile
         ? {maxWidth: 300}
         : {maxWidth: 350}
@@ -102,9 +103,19 @@ function SearchBox({label, extraFilters = []}) {
         backgroundColor: '#272727'
     } : {}
 
+    const darkTheme = createTheme({
+        palette: {
+            mode: 'dark'
+        }
+    })
+
 
     return (
-        <div style={{}}>
+        <ThemeProvider theme={darkTheme}>
+            <CssBaseline/>
+
+
+            <div style={{}}>
             <TextField
                 placeholder={`Search ${label}`}
                 InputProps={{
@@ -113,13 +124,13 @@ function SearchBox({label, extraFilters = []}) {
                     },
                     startAdornment: (
                         <InputAdornment position='start'>
-                            <SearchIcon/>
+                            <SearchIcon style={{color:'#fff'}}/>
                         </InputAdornment>
                     ),
                     endAdornment
                 }}
                 variant='standard'
-                color='secondary'
+                color='info'
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={text}
@@ -133,6 +144,7 @@ function SearchBox({label, extraFilters = []}) {
                 onClick={handleBlur}
             />
         </div>
+        </ThemeProvider>
     )
 }
 

@@ -19,6 +19,13 @@ export default [
         }
     },
     {
+        path: '/chan',
+        lazy: async () => {
+            const {default: ChannelsTableRoute} = await import('../youtube/ChannelsTableRoute.jsx')
+            return {element: <ChannelsTableRoute/>}
+        }
+    },
+    {
         path: '/pages',
         lazy: async () => {
             const {default: PagesRoute} = await import('../youtube/PagesRoute.jsx')

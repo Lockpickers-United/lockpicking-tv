@@ -12,8 +12,12 @@ import {openInNewTab} from '../util/openInNewTab'
 const PlaylistCard = ({playlist, expanded}) => {
     const navigate = useNavigate()
 
-    const {getSectionFromPlaylistId, getChannelFromId} = useContext(LoadingContext)
-    const playlistPage = getSectionFromPlaylistId(playlist.id)
+   const playlistPageId = playlist.currentPage
+       ? 'pl_' + playlist.currentPage + '_' + playlist.id
+       : playlist.id
+
+    const {getChannelFromId, getPageFromId} = useContext(LoadingContext)
+    const playlistPage = getPageFromId(playlistPageId)
 
     const playlistPageUrl = playlistPage?.parentId
         ? `/playlist?page=${playlistPage.sectionId}&name=${playlistPage.sectionName}`

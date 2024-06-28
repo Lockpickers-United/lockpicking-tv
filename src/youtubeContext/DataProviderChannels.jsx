@@ -76,15 +76,36 @@ export function DataProvider({children}) {
                 if (sort === 'views') {
                     return b.viewCount - a.viewCount
                         || a.title.localeCompare(b.title)
+                } else if (sort === 'viewsAsc') {
+                    return a.viewCount - b.viewCount
+                        || a.title.localeCompare(b.title)
+
                 } else if (sort === 'videos') {
                     return b.videoCount - a.videoCount
                         || a.title.localeCompare(b.title)
+                } else if (sort === 'videosAsc') {
+                    return a.videoCount - b.videoCount
+                        || a.title.localeCompare(b.title)
+
                 } else if (sort === 'subscribers') {
                     return b.subscriberCount - a.subscriberCount
                         || a.title.localeCompare(b.title)
+                } else if (sort === 'subscribersAsc') {
+                    return a.subscriberCount - b.subscriberCount
+                        || a.title.localeCompare(b.title)
+
                 } else if (sort === 'new') {
                     return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
                         || a.title.localeCompare(b.title)
+                } else if (sort === 'newAsc') {
+                    return Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000
+                        || a.title.localeCompare(b.title)
+
+                } else if (sort === 'name') {
+                    return a.title.localeCompare(b.title)
+                } else if (sort === 'nameDesc') {
+                    return b.title.localeCompare(a.title)
+
                 } else if (sort === 'latest') {
                     return Math.floor(dayjs(b.latestVideo).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.latestVideo).valueOf() / 60000) * 60000
                         || a.title.localeCompare(b.title)

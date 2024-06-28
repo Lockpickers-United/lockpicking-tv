@@ -12,7 +12,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import config from '../app/config'
 import FilterContext from '../context/FilterContext.jsx'
 
-function Nav({extras, noSearch}) {
+function Nav({extras, noSearch, noMenu}) {
 
     const {menuStyle} = config
 
@@ -29,17 +29,19 @@ function Nav({extras, noSearch}) {
             <AppBar position='fixed' style={{display: 'flex', placeItems: 'center'}} id='appBar'>
                 <div style={{padding: 10, width: '100%', maxWidth: 1200}}>
                     <div style={{display: 'flex', width: '100%', marginTop: 5}}>
-                        <div style={{marginRight: 20, marginLeft: 5}}>
-                            {showGuideFull &&
-                                <GuideFull/>
-                            }
-                            {(!showGuideFull && menuStyle === 'guide') &&
-                                <MenuGuide/>
-                            }
-                            {(!showGuideFull && menuStyle !== 'guide') &&
-                                <MenuSimple/>
-                            }
-                        </div>
+                        {!noMenu &&
+                            <div style={{marginRight: 20, marginLeft: 5}}>
+                                {showGuideFull &&
+                                    <GuideFull/>
+                                }
+                                {(!showGuideFull && menuStyle === 'guide') &&
+                                    <MenuGuide/>
+                                }
+                                {(!showGuideFull && menuStyle !== 'guide') &&
+                                    <MenuSimple/>
+                                }
+                            </div>
+                        }
                         <div style={{marginRight: 10, flexGrow: 1}}>
                             {searchBox}
                         </div>
