@@ -18,8 +18,6 @@ export function ReportingProvider({children}) {
         return pageIds.find(id => id.includes(pageId))
     }, [pageIndex])
 
-
-
     const value = useMemo(() => ({
         allDataLoaded,
         siteFull,

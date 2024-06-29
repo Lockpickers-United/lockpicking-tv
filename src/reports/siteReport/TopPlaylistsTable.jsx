@@ -49,17 +49,21 @@ const SiteComponent = ({data}) => {
                 ? {
                     title: playlistTitle,
                     channel: channelIndex[thisPlaylist.channelId].title,
-                    views: playlistViews[playlistIdString]
+                    views: playlistViews[playlistIdString],
+                    hasTitle: 1
                 }
                 : {
                     title: `(${unknownString})`,
                     channel: '',
-                    views: playlistViews[playlistIdString]
+                    views: playlistViews[playlistIdString],
+                    hasTitle: 0
                 }
 
         })
         .sort((a, b) => {
-            return b.views - a.views
+            return b.views - a.views ||
+                b.hasTitle - a.hasTitle ||
+                a.title.localeCompare(b.title)
         })
         .slice(0, topN)
         .map((row, index) => {
