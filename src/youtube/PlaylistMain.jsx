@@ -17,7 +17,6 @@ import Tracker from '../app/Tracker.jsx'
 function PlaylistMain() {
     const {visibleItems, pageData} = useContext(DataContext)
 
-    console.log('pageData', pageData)
     const navigate = useNavigate()
     const {filters} = useContext(FilterContext)
     const {page} = filters

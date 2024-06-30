@@ -21,7 +21,7 @@ export function DataProvider({children}) {
         : null
 
     const items = allDataLoaded
-        ? pageData.kind !== 'singleplaylist'
+        ? pageData.kind !== 'singleplaylist' && pageData.type !== 'singleplaylist'
             ? pageData.items
             : getVideosFromIds(pageData.items)
         : []
@@ -85,12 +85,15 @@ export function DataProvider({children}) {
             } else if (sort === 'new') {
                 return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
                     || a.title.localeCompare(b.title)
+            } else if (page === 'UC2jUB2pPoGpPG28j0o3B1ig.MykmTeTiooA') {
+                return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
+                    || a.title.localeCompare(b.title)
             } else {
                 return 1
             }
         })
 
-    }, [search, filteredItems, sort])
+    }, [search, filteredItems, sort, page])
 
 
     const getItemFromId = useCallback(channelId => {

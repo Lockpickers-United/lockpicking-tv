@@ -221,11 +221,11 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
                                     playbackRate={playbackRate}
                                     volume={volume}
                                     muted={muted}
-                                    onReady={() => console.log('onReady')}
+                                    onReady={undefined}
                                     onStart={this.handleStart}
                                     onPlay={this.handlePlay}
                                     onPause={this.handlePause}
-                                    onBuffer={() => console.log('onBuffer')}
+                                    onBuffer={undefined}
                                     onPlaybackRateChange={this.handleOnPlaybackRateChange}
                                     onSeek={e => console.log('onSeek', e)}
                                     onEnded={this.handleEnded}
@@ -299,6 +299,5 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
     }
 
     return <Player/>
-
 }
 export default MainVideoPlayer

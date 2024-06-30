@@ -18,7 +18,7 @@ function MainVideoPlayed30Button({played30}) {
     return (
         <React.Fragment>
             <Button onClick={handleClick} style={{minWidth:30}}>
-                <div style={{color: played30 ? '#49c725' : '#777'}}>:30</div>
+                <div style={{color: played30 ? '#48cc23' : '#777', fontWeight: played30 ? 600 : 400}}>:30</div>
             </Button>
             <Popover
                 id={id}
