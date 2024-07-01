@@ -16,7 +16,7 @@ function Nav({extras, noSearch, noMenu}) {
 
     const {menuStyle} = config
 
-    const {filters} = useContext(FilterContext)
+    const {filters = {}} = useContext(FilterContext)
     const {guide} = filters
 
     const {width} = useWindowSize()

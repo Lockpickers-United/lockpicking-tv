@@ -4,7 +4,7 @@ import {useSearchParams} from 'react-router-dom'
 const FilterContext = React.createContext({})
 
 export function FilterProvider({children, filterFields = []}) {
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams, setSearchParams] = useSearchParams({})
 
     const filters = useMemo(() => {
         const keys = Array.from(searchParams.keys())
@@ -25,7 +25,6 @@ export function FilterProvider({children, filterFields = []}) {
             })
        if (sort) { newFilters.sort = sort }
         setSearchParams(newFilters)
-
     }, [filters, setSearchParams])
 
     const addFilters = useCallback((keyValues, replace) => {

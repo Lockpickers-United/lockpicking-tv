@@ -99,6 +99,14 @@ function PlaylistMain() {
 
     const navExtras = <SortButton sortValues={videoSortFields}/>
 
+    if (!allDataLoaded || !visibleItems) {
+        return (
+            <div style={{marginTop: 30}}>
+                <LoadingDisplay/>
+            </div>
+        )
+    }
+
     return (
         <React.Fragment>
             <div id='fullPage'>
@@ -115,52 +123,44 @@ function PlaylistMain() {
                     </React.Fragment>
                 }
 
-                {(!allDataLoaded || !visibleItems) &&
-                    <div style={{marginTop: 30}}>
-                        <LoadingDisplay/>
-                    </div>
-                }
-
-                {(allDataLoaded && visibleItems) &&
-
-                    <div style={{
-                        minWidth: '320px', height: '100%',
-                        padding: pagePadding,
-                        marginLeft: 'auto', marginRight: 'auto', marginTop: 30
-                    }}>
-
-                        <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
-                            <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
+                <div style={{
+                    minWidth: '320px', height: '100%',
+                    padding: pagePadding,
+                    marginLeft: 'auto', marginRight: 'auto', marginTop: 30
+                }}>
+                    <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
+                        <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20}}>
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>
                                 {parentLink} {pageData.title}
                             </span> ({visibleItems.length})<br/>
-                                {pageData.description}
-                            </div>
-
-                            <ThemeProvider theme={theme}>
-                                <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
-                                      style={{}} id='grid' key='grid'>
-                                    {visibleItems.map((item, index) =>
-                                        <Grid item xs={4} sm={4} md={4} key={item.id}>
-                                            <VideoCard
-                                                video={item}
-                                                handlePlaylistClick={handlePlaylistClick}
-                                                index={index}
-                                                key={index}
-                                                playing={playing}
-                                                setPlaying={setPlaying}
-                                                listType='playlist'
-                                            />
-                                        </Grid>
-                                    )}
-                                </Grid>
-                            </ThemeProvider>
-                            <div style={{display: 'block', clear: 'both'}}/>
+                            {pageData.description}
                         </div>
+
+                        <ThemeProvider theme={theme}>
+                            <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
+                                  style={{}} id='grid' key='grid'>
+                                {visibleItems.map((item, index) =>
+                                    <Grid item xs={4} sm={4} md={4} key={item.id}>
+                                        <VideoCard
+                                            video={item}
+                                            handlePlaylistClick={handlePlaylistClick}
+                                            index={index}
+                                            key={index}
+                                            playing={playing}
+                                            setPlaying={setPlaying}
+                                            listType='playlist'
+                                        />
+                                    </Grid>
+                                )}
+                            </Grid>
+                        </ThemeProvider>
+                        <div style={{display: 'block', clear: 'both'}}/>
                     </div>
-                }
+                </div>
             </div>
+
             <Tracker feature='playlist' page={pageNameParam} id={pageData.playlistId} parentId={pageData.parentId}/>
+
         </React.Fragment>
     )
 }

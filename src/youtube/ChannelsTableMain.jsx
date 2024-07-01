@@ -1,32 +1,26 @@
 import * as React from 'react'
 import {useCallback, useContext} from 'react'
 
-import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
 import DataContext from '../app/DataContext.jsx'
-import LoadingDisplay from '../util/LoadingDisplay.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
-import TableContainer from '@mui/material/TableContainer'
+import LoadingContext from '../youtubeContext/LoadingProvider.jsx'
+import LoadingDisplay from '../util/LoadingDisplay.jsx'
+import Nav from '../nav/Nav.jsx'
 import Paper from '@mui/material/Paper'
 import Table from '@mui/material/Table'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
-import TableCell from '@mui/material/TableCell'
 import TableBody from '@mui/material/TableBody'
-import dayjs from 'dayjs'
-import Nav from '../nav/Nav.jsx'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableHeaderButton from './TableHeaderButton.jsx'
+import TableRow from '@mui/material/TableRow'
+import useWindowSize from '../util/useWindowSize.jsx'
 import {openInNewTab} from '../util/openInNewTab'
-import Button from '@mui/material/Button'
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
-import Blank24x24 from '../assets/Blank24x24.jsx'
 
 export default function ChannelsTableMain() {
 
     const {allDataLoaded, getChannelFromId} = useContext(LoadingContext)
     const {visibleChannels} = useContext(DataContext)
-
-    console.log(visibleChannels)
 
     const mappedChannels = allDataLoaded
         ? visibleChannels?.map(channel => {
@@ -40,16 +34,14 @@ export default function ChannelsTableMain() {
                 newChannel: fullChannel.channelFlags.includes('new') ? 'N' : '',
                 playlistChannel: fullChannel.channelFlags.includes('playlist') ? 'P' : '',
                 subscribedChannel: fullChannel.channelFlags.includes('subscription') ? 'S' : '',
-                link: link
+                link: link,
+                name: channel.title
             }
         })
         : []
 
-
     const {filters, addFilter} = useContext(FilterContext)
     const {sort} = filters
-
-    //     const addFilter = useCallback((keyToAdd, valueToAdd, replace) => {
 
     const handleSort = useCallback((field, reverse) => {
         const sortValue = sort === field
@@ -57,30 +49,6 @@ export default function ChannelsTableMain() {
             : field
         addFilter('sort', sortValue, true)
     }, [addFilter, sort])
-
-    const channelIcon = sort === 'name'
-        ? <ArrowDropUpIcon/>
-        : sort === 'nameDesc'
-            ? <ArrowDropDownIcon/>
-            : <Blank24x24/>
-
-    const videosIcon = sort === 'videos'
-        ? <ArrowDropDownIcon/>
-        : sort === 'videosAsc'
-            ? <ArrowDropUpIcon/>
-            : <Blank24x24/>
-
-    const viewsIcon = sort === 'views'
-        ? <ArrowDropDownIcon/>
-        : sort === 'viewsAsc'
-            ? <ArrowDropUpIcon/>
-            : <Blank24x24/>
-
-    const subscribersIcon = sort === 'subscribers'
-        ? <ArrowDropDownIcon/>
-        : sort === 'subscribersAsc'
-            ? <ArrowDropUpIcon/>
-            : <Blank24x24/>
 
     function abbreviate(number) {
         return new Intl.NumberFormat('en-US', {
@@ -97,31 +65,28 @@ export default function ChannelsTableMain() {
     const pagePadding = !smallWindow
         ? '20px 24px 32px 24px'
         : '12px 4px 32px 4px'
-
     const whiteSpace = smallWindow ? 'inherit' : 'nowrap'
-
     const headerStyle = !smallWindow
         ? {textAlign: 'left', fontSize: '1rem', lineHeight: '1.1rem', padding: '8px 0px 8px 0px'}
-        : {textAlign: 'left', fontSize: '0.9rem', lineHeight: '1.1rem', padding: '8px 0px 8px 0px'}
+        : {textAlign: 'left', fontSize: '0.8rem', lineHeight: '1.1rem', padding: '8px 0px 8px 0px'}
     const cellStyle = !smallWindow
-        ? {textAlign: 'left', fontSize: '0.9rem', whiteSpace: whiteSpace, padding: '8px 8px 8px 26px', border: 0}
-        : {textAlign: 'left', fontSize: '0.87rem', whiteSpace: whiteSpace, padding: '8px 8px 8px 8px', border: 0}
-    const showDetails = false
+        ? {textAlign: 'left', fontSize: '0.9rem', whiteSpace: whiteSpace, padding: '6px 8px 6px 26px', border: 0}
+        : {textAlign: 'left', fontSize: '0.83rem', whiteSpace: whiteSpace, padding: '6px 2px 6px 8px', border: 0}
+
 
     const extras = null
+
+    if (!allDataLoaded || !visibleChannels) {
+        return (
+            <div style={{marginTop: 30}}>
+                <LoadingDisplay/>
+            </div>
+        )
+    }
 
     return (
         <React.Fragment>
             <Nav title='YouTube Directory' route='channels' extras={extras} noMenu={true}/>
-
-            {(!allDataLoaded) &&
-                <div style={{marginTop: 30}}>
-                    <LoadingDisplay/>
-                </div>
-            }
-
-            {(allDataLoaded) &&
-
                 <div style={{
                     minWidth: '320px', height: '100%',
                     padding: pagePadding,
@@ -146,66 +111,21 @@ export default function ChannelsTableMain() {
                                             width:'18px'
                                         }, }}>
                                         <TableCell sx={{...headerStyle, textAlign: 'left'}} component='th' scope='row'>
-                                            <Button variant='text' startIcon={channelIcon} size='small'
-                                                    onClick={() => {
-                                                        handleSort('name', 'Desc')
-                                                    }}
-                                            >
-                                                Channel
-                                            </Button>
+                                            <TableHeaderButton handleSort={handleSort} column='name' reverse='Desc' sort={sort}/>
                                         </TableCell>
                                         <TableCell sx={{...headerStyle, textAlign: 'center'}} component='th'
                                                    scope='row'>
-                                            <Button variant='text' startIcon={videosIcon} size='small'
-                                                    onClick={() => {
-                                                        handleSort('videos', 'Asc')
-                                                    }}
-                                            style={{padding:0}}>
-                                                Videos
-                                            </Button>
+                                            <TableHeaderButton handleSort={handleSort} column='videos' reverse='Asc' sort={sort}/>
                                         </TableCell>
                                         <TableCell sx={{...headerStyle, textAlign: 'center'}} component='th'
                                                    scope='row'>
-                                            <Button variant='text' startIcon={viewsIcon} size='small'
-                                                    onClick={() => {
-                                                        handleSort('views', 'Asc')
-                                                    }}
-                                                    style={{padding:0}}>
-                                            Views
-                                            </Button>
+                                            <TableHeaderButton handleSort={handleSort} column='views' reverse='Asc' sort={sort}/>
                                         </TableCell>
                                         <TableCell sx={{...headerStyle, textAlign: 'center'}} component='th'
                                                    scope='row'>
-                                            <Button variant='text' startIcon={subscribersIcon} size='small'
-                                                    onClick={() => {
-                                                        handleSort('subscribers', 'Asc')
-                                                    }}
-                                                    style={{padding:0}}>
-                                                Subscr.
-                                            </Button>
+                                            <TableHeaderButton handleSort={handleSort} column='subscribers' reverse='Asc' sort={sort}/>
                                         </TableCell>
 
-                                        {showDetails &&
-                                            <React.Fragment>
-                                                <TableCell sx={{...headerStyle, textAlign: 'center'}} component='th'
-                                                           scope='row'>
-                                                    Launched
-                                                </TableCell>
-
-                                                <TableCell sx={{...headerStyle, textAlign: 'center'}} component='th'
-                                                           scope='row'>
-                                                    New
-                                                </TableCell>
-                                                <TableCell sx={{...headerStyle, textAlign: 'center'}} component='th'
-                                                           scope='row'>
-                                                    Feat.
-                                                </TableCell>
-                                                <TableCell sx={{...headerStyle, textAlign: 'center'}} component='th'
-                                                           scope='row'>
-                                                    Subscr.
-                                                </TableCell>
-                                            </React.Fragment>
-                                        }
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -221,9 +141,8 @@ export default function ChannelsTableMain() {
                                                 <a onClick={() => {
                                                     openInNewTab(channel.link)
                                                 }} style={{color: '#3d70a5', fontWeight: 500}}>
-                                                    {channel.title}
+                                                    {channel.name}
                                                 </a>
-
                                             </TableCell>
                                             <TableCell sx={{...cellStyle, textAlign: 'center'}} component='th'
                                                        scope='row'>
@@ -237,31 +156,6 @@ export default function ChannelsTableMain() {
                                                        scope='row'>
                                                 {abbreviate(channel.subscriberCount)}
                                             </TableCell>
-
-                                            {showDetails &&
-                                                <React.Fragment>
-                                                    <TableCell sx={{...cellStyle, textAlign: 'center'}} component='th'
-                                                               scope='row'>
-                                                        {dayjs(channel.publishedAt).format('MMM YYYY')}
-                                                    </TableCell>
-
-                                                    <TableCell sx={{...cellStyle, textAlign: 'center', fontWeight: 600}}
-                                                               component='th'
-                                                               scope='row'>
-                                                        {channel.newChannel}
-                                                    </TableCell>
-                                                    <TableCell sx={{...cellStyle, textAlign: 'center', fontWeight: 600}}
-                                                               component='th'
-                                                               scope='row'>
-                                                        {channel.featuredChannel}
-                                                    </TableCell>
-                                                    <TableCell sx={{...cellStyle, textAlign: 'center', fontWeight: 600}}
-                                                               component='th'
-                                                               scope='row'>
-                                                        {channel.subscribedChannel}
-                                                    </TableCell>
-                                                </React.Fragment>
-                                            }
                                         </TableRow>
                                     )}
 
@@ -272,7 +166,6 @@ export default function ChannelsTableMain() {
                         </TableContainer>
                     </div>
                 </div>
-            }
         </React.Fragment>
     )
 }

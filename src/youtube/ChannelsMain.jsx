@@ -14,6 +14,9 @@ import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Tracker from '../app/Tracker.jsx'
 import FilterContext from '../context/FilterContext.jsx'
+import Nav from '../nav/Nav.jsx'
+import SortButton from '../filters/SortButton.jsx'
+import {channelSortFields} from '../data/sortFields'
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props
@@ -57,7 +60,7 @@ export default function ChannelsMain() {
     const {page} = filters
 
     const sets = ['featured', 'newChannels', 'full']
-    let initialIndex = sets.indexOf(page) >0 ? sets.indexOf(page) : 0
+    let initialIndex = sets.indexOf(page) > 0 ? sets.indexOf(page) : 0
 
     const theme = useTheme()
     const [value, setValue] = React.useState(initialIndex)
@@ -83,55 +86,68 @@ export default function ChannelsMain() {
     const featuredName = smallWindow ? 'Featured' : 'Featured Channels'
     const fullName = smallWindow ? 'Full List' : 'Full Directory'
 
-    return (
-        <div style={{backgroundColor: '#2a2a2a', width: '100%', paddingTop: tabPadding}}>
-            <div>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    indicatorColor='secondary'
-                    textColor='inherit'
-                    aria-label='full width tabs example'
-                    style={{}}
-                    selectionFollowsFocus
-                    centered
-                >
-                    <Tab label={featuredName} {...a11yProps(0)} style={{margin: '0px 5px'}}/>
-                    <Tab label={newName}{...a11yProps(1)} style={{margin: '0px 5px'}}/>
-                    <Tab label={fullName} {...a11yProps(2)} style={{margin: '0px 5px'}}/>
-                </Tabs>
+    const extras = <SortButton sortValues={channelSortFields}/>
+
+    if (!allDataLoaded || !visibleChannels) {
+        return (
+            <div style={{marginTop: 30}}>
+                <LoadingDisplay/>
             </div>
-            <div style={{padding: '0', backgroundColor: '#ccc'}}>
-                <TabPanel value={value} index={0} dir={theme.direction} style={{padding: 0}}>
-                    <React.Fragment>
+        )
+    }
+
+    return (
+        <React.Fragment>
+            <Nav title='YouTube Directory' route='channels' extras={extras}/>
+            <div style={{backgroundColor: '#2a2a2a', width: '100%', paddingTop: tabPadding}}>
+                <div>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        indicatorColor='secondary'
+                        textColor='inherit'
+                        aria-label='full width tabs example'
+                        style={{}}
+                        selectionFollowsFocus
+                        centered
+                    >
+                        <Tab label={featuredName} {...a11yProps(0)} style={{margin: '0px 5px'}}/>
+                        <Tab label={newName}{...a11yProps(1)} style={{margin: '0px 5px'}}/>
+                        <Tab label={fullName} {...a11yProps(2)} style={{margin: '0px 5px'}}/>
+                    </Tabs>
+                </div>
+                <div style={{padding: '0', backgroundColor: '#ccc'}}>
+                    <TabPanel value={value} index={0} dir={theme.direction} style={{padding: 0}}>
+                        <React.Fragment>
+                            {!(allDataLoaded && visibleChannels) &&
+                                <LoadingDisplay/>
+                            }
+                            {(allDataLoaded && visibleChannels) &&
+                                <Channels channels={visibleChannels}/>
+                            }
+                            <Tracker feature='channels' name={'featured'}/>
+                        </React.Fragment>
+                    </TabPanel>
+                    <TabPanel value={value} index={1} dir={theme.direction} style={{padding: 0}}>
                         {!(allDataLoaded && visibleChannels) &&
                             <LoadingDisplay/>
                         }
                         {(allDataLoaded && visibleChannels) &&
                             <Channels channels={visibleChannels}/>
                         }
-                        <Tracker feature='channels' name={'featured'}/>
-                    </React.Fragment>
-                </TabPanel>
-                <TabPanel value={value} index={1} dir={theme.direction} style={{padding: 0}}>
-                    {!(allDataLoaded && visibleChannels) &&
-                        <LoadingDisplay/>
-                    }
-                    {(allDataLoaded && visibleChannels) &&
-                        <Channels channels={visibleChannels}/>
-                    }
-                    <Tracker feature='channels' name={'newChannels'}/>
-                </TabPanel>
-                <TabPanel value={value} index={2} dir={theme.direction} style={{padding: 0}}>
-                    {!(allDataLoaded && visibleChannels) &&
-                        <LoadingDisplay/>
-                    }
-                    {(allDataLoaded && visibleChannels) &&
-                        <Channels channels={visibleChannels}/>
-                    }
-                    <Tracker feature='channels' name={'full'}/>
-                </TabPanel>
+                        <Tracker feature='channels' name={'newChannels'}/>
+                    </TabPanel>
+                    <TabPanel value={value} index={2} dir={theme.direction} style={{padding: 0}}>
+                        {!(allDataLoaded && visibleChannels) &&
+                            <LoadingDisplay/>
+                        }
+                        {(allDataLoaded && visibleChannels) &&
+                            <Channels channels={visibleChannels}/>
+                        }
+                        <Tracker feature='channels' name={'full'}/>
+                    </TabPanel>
+                </div>
             </div>
-        </div>
+        </React.Fragment>
     )
 }

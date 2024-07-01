@@ -11,13 +11,13 @@ function App() {
     return (
         <ColorModeProvider>
             <SnackbarProvider>
-
                     <AppProvider>
+
                         <LoadingProvider>
                             <AppRoutes/>
                         </LoadingProvider>
-                    </AppProvider>
 
+                    </AppProvider>
             </SnackbarProvider>
         </ColorModeProvider>
     )

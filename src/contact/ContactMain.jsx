@@ -48,7 +48,7 @@ function ContactMain() {
                             marginTop: 30,
                         marginBottom: 15
                     }}>
-                        <a href='mailto:lockpickingtv@gmail.com'>lockpickingtv@gmail.com</a>
+                        <a href='contact@lockpicking.tv'>contact@lockpicking.tv</a>
                     </div>
                 </CardContent>
             </Card>

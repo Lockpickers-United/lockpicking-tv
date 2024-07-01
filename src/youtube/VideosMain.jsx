@@ -20,7 +20,7 @@ function VideosMain() {
     const {filters} = useContext(FilterContext)
     const {page} = filters
 
-    const {title,introCopy} = config.pages[page]
+    const {title, introCopy} = config.pages[page]
 
     const {allDataLoaded} = useContext(LoadingContext)
     const [currentPage, setCurrentPage] = useState(undefined)
@@ -83,16 +83,18 @@ function VideosMain() {
 
     const navExtras = <SortButton sortValues={videoSortFields}/>
 
+    if (!allDataLoaded || !visibleItems) {
+        return (
+            <div style={{marginTop: 30}}>
+                <LoadingDisplay/>
+            </div>
+        )
+    }
+
     return (
         <React.Fragment>
             <div id='fullPage'>
                 <Nav title='lockpicking.tv - {pageData.title}' route='vid' extras={navExtras}/>
-
-                {(!allDataLoaded || !visibleItems) &&
-                    <div style={{marginTop: 30}}>
-                        <LoadingDisplay/>
-                    </div>
-                }
 
                 {(mainItem?.kind === 'youtube#video') &&
                     <React.Fragment>
@@ -106,42 +108,39 @@ function VideosMain() {
                     </React.Fragment>
                 }
 
-                {(allDataLoaded && visibleItems) &&
+                <div style={{
+                    minWidth: '320px', height: '100%',
+                    padding: pagePadding,
+                    marginLeft: 'auto', marginRight: 'auto', marginTop: 0
+                }}>
 
-                    <div style={{
-                        minWidth: '320px', height: '100%',
-                        padding: pagePadding,
-                        marginLeft: 'auto', marginRight: 'auto', marginTop: 0
-                    }}>
-
-                        <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
-                            <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20, marginTop:20}}>
+                    <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
+                        <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20, marginTop: 20}}>
 
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>
                                 {title}
                             </span> ({visibleItems.length})<br/>
-                                {introCopy}
-                            </div>
-
-                            <ThemeProvider theme={theme}>
-                                <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
-                                      style={{}} id='grid'>
-                                    {visibleItems.map((item, index) =>
-                                        <Grid item xs={4} sm={4} md={4} key={item.id}>
-                                            <VideoCard
-                                                video={item}
-                                                handlePlaylistClick={handlePlaylistClick}
-                                                index={index}
-                                                listType='videos'
-                                            />
-                                        </Grid>
-                                    )}
-                                </Grid>
-                            </ThemeProvider>
-                            <div style={{display: 'block', clear: 'both'}}/>
+                            {introCopy}
                         </div>
+
+                        <ThemeProvider theme={theme}>
+                            <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
+                                  style={{}} id='grid'>
+                                {visibleItems.map((item, index) =>
+                                    <Grid item xs={4} sm={4} md={4} key={item.id}>
+                                        <VideoCard
+                                            video={item}
+                                            handlePlaylistClick={handlePlaylistClick}
+                                            index={index}
+                                            listType='videos'
+                                        />
+                                    </Grid>
+                                )}
+                            </Grid>
+                        </ThemeProvider>
+                        <div style={{display: 'block', clear: 'both'}}/>
                     </div>
-                }
+                </div>
             </div>
             <Tracker feature='videos' page={page}/>
         </React.Fragment>
