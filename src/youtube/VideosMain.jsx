@@ -2,8 +2,11 @@ import React, {useCallback, useContext, useEffect, useState} from 'react'
 import DataContext from '../app/DataContext.jsx'
 import Grid from '@mui/material/Grid'
 import LoadingContext from '../context/LoadingContext.jsx'
+import TagsProvider from '../youtubeContext/TagsProvider.jsx'
+
 import LoadingDisplay from '../util/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
+import NavCloud from '../nav/NavCloud.jsx'
 import VideoCard from './VideoCard.jsx'
 import MainVideoPlayer from './MainVideoPlayer.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -16,19 +19,26 @@ import config from '../app/config'
 
 function VideosMain() {
 
-    const {visibleItems} = useContext(DataContext)
+    let {visibleItems} = useContext(DataContext)
     const {filters} = useContext(FilterContext)
-    const {page} = filters
+    const {page, make} = filters
+    const {tagCounts, makeNames} = useContext(TagsProvider)
 
-    const {title, introCopy} = config.pages[page]
+    let {title, introCopy} = config.pages[page] ? config.pages[page] : {}
+    if (page==='brands' && !!make) {
+        title = makeNames[make]
+    }
 
     const {allDataLoaded} = useContext(LoadingContext)
-    const [currentPage, setCurrentPage] = useState(undefined)
     const [mainItem, setMainItem] = useState(visibleItems[0])
     const [index, setIndex] = useState(0)
     const [playing, setPlaying] = useState(mainItem?.id) //eslint-disable-line
     const [expanded, setExpanded] = useState(false)
     const [track, setTrack] = useState(true)
+
+    if (allDataLoaded && page === 'brands' && !make) {
+        visibleItems = []
+    }
 
     const handlePlaylistClick = useCallback((item, index) => {
         setPlaying(item.id)
@@ -68,18 +78,21 @@ function VideosMain() {
             setPlayerHeight(fullHeight)
         }, 500)
     }
+    const [currentPage, setCurrentPage] = useState(undefined)
+    const [currentMake, setCurrentMake] = useState(make)
 
     const [init, setInit] = useState(false)
     useEffect(() => {
-        if (!init || !mainItem || (currentPage !== page)) {
+        if (!init || !mainItem || (currentPage !== page) || (currentMake !== make)) {
             setMainItem(visibleItems[0])
             setPlaying(visibleItems[0]?.id)
             setIndex(0)
             setCurrentPage(page)
+            setCurrentMake(make)
             setInit(true)
             setTrack(false)
         }
-    }, [index, init, mainItem, visibleItems, page, currentPage, playerHeight, fullHeight, expanded])
+    }, [index, init, mainItem, visibleItems, page, currentPage, make, currentMake, playerHeight, fullHeight, expanded])
 
     const navExtras = <SortButton sortValues={videoSortFields}/>
 
@@ -94,8 +107,15 @@ function VideosMain() {
     return (
         <React.Fragment>
             <div id='fullPage'>
-                <Nav title='lockpicking.tv - {pageData.title}' route='vid' extras={navExtras}/>
-
+                {page === 'brands' &&
+                    <NavCloud title='lockpicking.tv - {pageData.title}'
+                              tagData={tagCounts} mainItem={mainItem}
+                              expanded={expanded} setExpanded={setExpanded}
+                              track={track} playerHeight={playerHeight} extras={navExtras}/>
+                }
+                {page !== 'brands' &&
+                    <Nav title='lockpicking.tv - {pageData.title}' route='vid' extras={navExtras}/>
+                }
                 {(mainItem?.kind === 'youtube#video') &&
                     <React.Fragment>
                         <MainVideoPlayer
@@ -116,7 +136,6 @@ function VideosMain() {
 
                     <div style={{maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto'}}>
                         <div style={{color: '#222', lineHeight: '1.3rem', marginBottom: 20, marginTop: 20}}>
-
                             <span style={{fontSize: '1.1rem', fontWeight: 600}}>
                                 {title}
                             </span> ({visibleItems.length})<br/>

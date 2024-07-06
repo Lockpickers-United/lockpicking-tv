@@ -2,6 +2,8 @@ import React, {useCallback, useMemo, useContext} from 'react'
 import LoadingContext from './LoadingProvider.jsx'
 import DataContext from '../app/DataContext.jsx'
 import FilterContext from '../context/FilterContext.jsx'
+import TagsContext from './TagsProvider.jsx'
+
 import fuzzysort from 'fuzzysort'
 import removeAccents from 'remove-accents'
 import dayjs from 'dayjs'
@@ -10,11 +12,14 @@ export function DataProvider({children, channelSet}) {
 
     const {filters: allFilters} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, guide, showAll, page, ...filters} = allFilters
-    const {newVideos,popularVideos} = useContext(LoadingContext)
+    const {newVideos, popularVideos} = useContext(LoadingContext)
+    const {taggedVideos} = useContext(TagsContext)
 
     const currentVideos = page === 'popular'
         ? [...popularVideos]
-        : [...newVideos]
+        : page === 'brands'
+            ? [...taggedVideos]
+            : [...newVideos]
 
     const mappedItems = currentVideos.map((item) => {
         return {
@@ -61,25 +66,25 @@ export function DataProvider({children, channelSet}) {
         // console.log('searched', searched)
 
         return searched.sort((a, b) => {
-                if (sort === 'views') {
-                    return parseInt(b.viewCount) - parseInt(a.viewCount)
-                        || a.title.localeCompare(b.title)
-                } else if (sort === 'likes') {
-                    return parseInt(b.likeCount) - parseInt(a.likeCount)
-                        || a.title.localeCompare(b.title)
-                } else if (sort === 'comments') {
-                    return parseInt(b.commentCount) - parseInt(a.commentCount)
-                        || a.title.localeCompare(b.title)
-                } else if (sort === 'channel') {
-                    return a.channelOwner.localeCompare(b.channelOwner)
+            if (sort === 'views') {
+                return parseInt(b.viewCount) - parseInt(a.viewCount)
+                    || a.title.localeCompare(b.title)
+            } else if (sort === 'likes') {
+                return parseInt(b.likeCount) - parseInt(a.likeCount)
+                    || a.title.localeCompare(b.title)
+            } else if (sort === 'comments') {
+                return parseInt(b.commentCount) - parseInt(a.commentCount)
+                    || a.title.localeCompare(b.title)
+            } else if (sort === 'channel') {
+                return a.channelOwner.localeCompare(b.channelOwner)
                     || parseInt(b.commentCount) - parseInt(a.commentCount)
-                } else if (sort === 'new') {
-                    return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
-                        || a.title.localeCompare(b.title)
-                } else {
-                    return 1
-                }
-            })
+            } else if (sort === 'new') {
+                return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
+                    || a.title.localeCompare(b.title)
+            } else {
+                return 1
+            }
+        })
 
     }, [search, filteredItems, sort])
 

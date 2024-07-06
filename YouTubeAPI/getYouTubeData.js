@@ -91,6 +91,8 @@ let mainVideos = []
 let videoIndexAdditions = 0
 let videoData = {}
 
+let tagCounts = []
+
 let pageIndexAdditions = 0
 
 async function getYouTubeData(auth) {
@@ -370,7 +372,6 @@ async function getYouTubeData(auth) {
         })
 
 
-    if (debug2) console.log('setTimeout')
     buildMainVideos()
     if (prod) {
         await updateVideoIndex(serverDir)
@@ -531,11 +532,71 @@ async function getYouTubeData(auth) {
         })
         flagVideoIds(popularVideoIds, 'popular')
 
+
+        // PROCESS TAGS
+
+        let videoCount = 0
+        const makeNames = {}
+
+        const taggedVideos = mappedVideos
+            ? mappedVideos.map(video => {
+
+                if (video.viewCount < 700) { return }
+
+                let makes = []
+                let videoTagCount = 0
+
+                const titleTags = makeList.reduce((acc, make) => {
+                    const cleanTitle = sanitize(video.title)
+
+                    const reString = '(\\s|$)' + make.toLowerCase() + '(\\s|^)'
+                    let regex = new RegExp(reString, 'g')
+
+                    if (cleanTitle.toLowerCase().match(regex)) {
+                        acc.push(make)
+                        const makeValue = make.replace(' ', '')
+                        makes.push(makeValue)
+                        makeNames[makeValue] = make
+                        videoTagCount++
+                    }
+                    return acc
+                }, [])
+
+                if (videoTagCount > 0) {
+                    videoCount++
+                }
+
+                return {...video, titleTags: titleTags, make: makes}
+
+            }).filter(x => x)
+            : []
+
+        const allTags = taggedVideos?.reduce((acc, video) => {
+            video.titleTags?.map(tag => {
+                acc[tag] = acc[tag] ? acc[tag] + 1 : 1
+            })
+            return acc
+        }, {})
+
+        tagCounts = Object.keys(allTags).map(tag => {
+            return {value: tag, count: allTags[tag]}
+        })
+            .sort((a, b) => {
+                return parseInt(b.count) - parseInt(a.count)
+            })
+
+        mainVideos.push(...taggedVideos)
+        const taggedVideosIds = taggedVideos.map(video => {
+            return video.id
+        })
+        flagVideoIds(taggedVideosIds, 'tagged')
+
+
         const mainVideoIds = Object.keys(videoFlags)
         if (debug) console.log('mainVideoIds', mainVideoIds.length, mainVideoIds)
 
         mainVideos = mainVideoIds.map(videoId => {
-            const video = mappedVideos.find(video => video.id === videoId)
+            const video = taggedVideos.find(video => video.id === videoId)
             const channel = allChannels.find(channel => channel.id === video?.channelId)
             return {
                 ...video,
@@ -573,6 +634,7 @@ async function getYouTubeData(auth) {
         const popularVideos = mainVideos.filter(video => video.videoFlags?.includes('popular'))
         const playlistVideos = mainVideos.filter(video => video.videoFlags?.includes('playlist'))
 
+        videoData.tagCounts = tagCounts
         videoData.allVideos = mainVideos
         videoData.metadata = {
             dateTime: dateTime,
@@ -581,6 +643,7 @@ async function getYouTubeData(auth) {
             newVideoCount: newVideos.length,
             playlistVideoCount: playlistVideos.length
         }
+        //const videoDataJSON = JSON.stringify(videoData, null, 0).replace(/\\n/g, '')
         const videoDataJSON = JSON.stringify(videoData, null, 2)
         if (prod) fs.writeFileSync(`${serverDir}/videoData.json`, videoDataJSON)
         if (prod) fs.writeFileSync(`${archiveDir}/videoData_${archiveDate}.json`, videoDataJSON)
@@ -1017,3 +1080,265 @@ function storeToken(token) {
     })
 }
 
+
+///////////////
+// tag cleanup
+///////////////
+
+function sanitize(string) {
+    if (string) {
+        // remove HTML
+        let cleaned = string.replace(/(<([^>]+)>)/gi, '')
+        cleaned = cleaned.replace(/javascript:*\/*/gi, '')
+
+        //chomp leading & trailing spaces
+        cleaned = cleaned.replace(/(^\s*|\s*$)/g, '')
+
+        //common misspellings
+        cleaned = canonize(cleaned, 'Master Lock', ['master', 'masterlock'])
+        cleaned = canonize(cleaned, 'American Lock', ['american'])
+
+        // make sure there's a string left
+        cleaned = /\w+/.test(cleaned)
+            ? cleaned
+            : ''
+
+        return cleaned
+
+    } else return ''
+}
+
+function canonize(string, proper, variants) {
+    if (!!string && !!proper && !!variants) {
+        return variants.includes(string.toLowerCase()) ? proper : string
+    }
+    return string
+}
+
+const makeList = ['A.S.I. Inc.',
+    'ABA',
+    'Abloy',
+    'ABUS',
+    'ACE',
+    'Agent',
+    'Aldon Corporation',
+    'Alfa',
+    'ALPHA',
+    'American Lock',
+    'An Jia Bao',
+    'Anbo',
+    'Anchor Las',
+    'Ankerslot',
+    'Antoniolini',
+    //'Any',
+    'Apec',
+    'Arrow',
+    'ASEC',
+    'ASSA',
+    'Australian Lock Co.',
+    'Avocet',
+    'AXA',
+    'Bab IKON',
+    'Banham',
+    'BASI',
+    'Baton',
+    'BHP',
+    'BKS',
+    'Bowley',
+    'Brady',
+    'Bramah',
+    'Bricard',
+    'Brinks',
+    'Brüder Mannesmann',
+    'Burg Wächter',
+    'Cantol',
+    'Capitol',
+    'CATU',
+    'CAVEO',
+    'Cavers',
+    'CAWI',
+    'CCL',
+    'CEI',
+    'CES',
+    'Chateau',
+    'Chubb',
+    'CISA',
+    'CISM',
+    'Clavis',
+    'Clover',
+    'Cobra',
+    'Cocraft',
+    'Codkey',
+    'Commando',
+    'CompX Chicago',
+    'Corbin',
+    'Corbin Russwin',
+    'Corona',
+    'Crown',
+    'DAlembert Métal',
+    'DAF Kilit',
+    'DeGuard',
+    'Dejo',
+    'Dény',
+    'Dierre',
+    'Digby Lock and Tool',
+    'DOM',
+    'Dorma',
+    'Dulimex',
+    'Eagle',
+    'Eclipse',
+    'Egret',
+    //'Elite',
+    'Elzett',
+    'ERA',
+    'Eurospec (E*S)',
+    'EVVA',
+    'Ezcurra',
+    'FAB',
+    'Fanal',
+    'Federal Lock',
+    'Federal Locks',
+    'Fichet',
+    'Fichet-Bauche',
+    'FJM',
+    'Folger Adam',
+    'Fontaine',
+    'Forte',
+    'FTH Thirard',
+    'Fuki',
+    'Garrison',
+    'Gege',
+    'Generic/Unknown',
+    'Gera',
+    'Gerda',
+    'GLK',
+    'GOAL',
+    'Godrej',
+    'GTV',
+    'Guard',
+    'Heracles',
+    'Hobbs',
+    'Hong Dun',
+    'Hori',
+    'HPP',
+    'HQ',
+    'IFAM',
+    'IKON',
+    'Illinois',
+    'iNAHO',
+    'Inceca',
+    'Ingersoll',
+    'ISEO',
+    'JPM',
+    'Kaba',
+    'Kaken',
+    'Kale Kilit',
+    'Kasp',
+    'Kawaha',
+    'Keiden',
+    'Kenaurd',
+    'Keso',
+    'Kibb',
+    'Kromer',
+    'Kryptonite',
+    'Kwikset',
+    'La Gard',
+    'Laperche',
+    'Legge',
+    'Lex',
+    'Lince',
+    'LIPS',
+    'Liquidonics',
+    'Lockman',
+    'Locksys',
+    'Lockwood',
+    'Lowe and Fletcher',
+    'Lucznik',
+    'M&C',
+    'Magmaus',
+    'Magnum',
+    'Mailboss',
+    //'Make',
+    'MAKO',
+    'Marks',
+    'Master Lock',
+    'Mauer',
+    'MCM',
+    'Medeco',
+    'Metal',
+    'MG Serrature',
+    'Mila',
+    'Milencio',
+    'Mindy',
+    'Ming Gao',
+    'MIWA',
+    'MIWA/Anker',
+    'Morgan',
+    'Mottura',
+    'Mul-T-Lock',
+    'Nagasawa',
+    'NATO',
+    'Nemef',
+    'Omellow',
+    'Opnus',
+    'PACLOCK',
+    'Picard',
+    'Picard CR Serrature',
+    'Pisla',
+    'Pollux',
+    'Rav Bariach',
+    'Ri-Key',
+    'Rielda',
+    'Robur',
+    'Rosengrens',
+    'Ross',
+    'Ruko',
+    'S&G',
+    'SAG',
+    'Sargent',
+    'Schlage',
+    'Scorpion',
+    'SEA',
+    'Securemme',
+    'Securit',
+    'Segal',
+    'Sémag',
+    'Sepa',
+    'Smith and Locke',
+    'SOL',
+    'Solon Super-Lock Company',
+    'Squire',
+    'Stanley',
+    'STUV',
+    'Takigen',
+    'Tann',
+    'TESA',
+    'Thirard',
+    'Timpson',
+    'Titan',
+    'Tokoz',
+    'Tostem',
+    'Trelock',
+    'TrioVing',
+    'U-Shin',
+    'UCEM',
+    'Union',
+    'Unity',
+    'UrbanAlps',
+    'US Star Tech',
+    'Vachette',
+    'Viro',
+    'Voga',
+    'VSR',
+    'Walsall Locks',
+    'WEST',
+    'Western Electric',
+    'Wetzel',
+    'Wilka',
+    'Wilson',
+    'Winkhaus',
+    'Yale',
+    'Yanai',
+    'Yardeni',
+    'Yuema',
+    'Zarker']

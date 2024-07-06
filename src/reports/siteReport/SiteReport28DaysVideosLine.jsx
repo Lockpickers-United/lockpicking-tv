@@ -22,7 +22,7 @@ const SiteReport28DaysVideosLine = ({lineData}) => {
 
             const dataPoint = new Map()
             dataPoint['x'] = value[i]['date']
-            dataPoint['y'] = value[i]['visits']
+            dataPoint['y'] = value[i]['watchedVideos']
             watchedArray.push(dataPoint)
 
             const dataPoint2 = new Map()

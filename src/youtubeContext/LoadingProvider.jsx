@@ -117,6 +117,11 @@ export function LoadingProvider({children}) {
         }
     }).filter(x => x)
 
+
+    // VIDEO TAGS
+
+    const tagCounts = useMemo(() => jsonLoaded ? videoData.tagCounts : [], [jsonLoaded, videoData])
+
     const getVideosFromIds = useCallback(videoIds => {
         return allVideos.filter(video => videoIds.includes(video.id))
     }, [allVideos])
@@ -198,6 +203,7 @@ export function LoadingProvider({children}) {
         newVideos,
         popularVideos,
         getVideosFromIds,
+        tagCounts,
         newCode,
         newData
     }), [
@@ -217,6 +223,7 @@ export function LoadingProvider({children}) {
         newVideos,
         popularVideos,
         getVideosFromIds,
+        tagCounts,
         newCode,
         newData
     ])

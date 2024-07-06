@@ -19,16 +19,20 @@ export default {
             maxVideos: 1000,
             sortBy: 'NOTchannelOwner'
         },
+        brands: {
+            title: 'Brand Cloud',
+            introCopy: 'Choose a Brand above to view videos.'
+        },
         fullDirectory: {
-            cohorts: ['new', 'featured', 'subscription', 'playlist'],
+            cohorts: ['new', 'featured', 'subscription', 'playlist']
         }
     },
     menuOpen: true,
     menuStyle: 'guide',
     menu: {
-      sections: ['videoItems', 'channelItems', 'pageItems', 'siteItems', 'reportItems', 'moreItems']
+        sections: ['videoItems', 'channelItems', 'pageItems', 'siteItems', 'reportItems', 'moreItems']
     },
-    menuNotUsed: {
+    menuAllSections: {
         allSections: ['videoItems', 'channelItems', 'pageItems', 'siteItems', 'reportItems', 'moreItems']
     }
 }

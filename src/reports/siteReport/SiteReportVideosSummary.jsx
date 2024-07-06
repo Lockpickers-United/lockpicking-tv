@@ -3,7 +3,7 @@ import useWindowSize from '../../util/useWindowSize'
 import SiteReport28DaysVideosLine from './SiteReport28DaysVideosLine.jsx'
 import SiteReportVideosSummaryTable from './SiteReportVideosSummaryTable.jsx'
 
-function Component({data}) {
+export default function SiteReportVideosSummary({data}) {
     const {width} = useWindowSize()
     const smallWindow = width <= 560
 
@@ -28,5 +28,3 @@ function Component({data}) {
         </React.Fragment>
     )
 }
-
-export default Component

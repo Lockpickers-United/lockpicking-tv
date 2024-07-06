@@ -5,3 +5,8 @@ export const channelFilterFields = [
     {label: 'Picker', fieldName: 'pickerName'},
     {label: 'Rank', fieldName: 'rank'}
 ]
+
+export const videoFilterFields = [
+    {label: 'Makes', fieldName: 'makes'},
+    {label: 'Make', fieldName: 'make'},
+]

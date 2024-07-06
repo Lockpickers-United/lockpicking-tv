@@ -47,6 +47,13 @@ export default [
         }
     },
     {
+        path: '/brands',
+        lazy: async () => {
+            const {default: BrandCloudRoute} = await import('../youtube/BrandCloudRoute.jsx')
+            return {element: <BrandCloudRoute/>}
+        }
+    },
+    {
         path: '/contact',
         lazy: async () => {
             const {default: ContactRoute} = await import('../contact/ContactRoute.jsx')

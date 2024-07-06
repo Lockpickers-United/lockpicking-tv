@@ -1,0 +1,159 @@
+import React, {useCallback, useContext, useEffect, useState} from 'react'
+import DataContext from '../app/DataContext.jsx'
+import Grid from '@mui/material/Grid'
+import LoadingContext from '../context/LoadingContext.jsx'
+import LoadingDisplay from '../util/LoadingDisplay.jsx'
+import NavCloud from '../nav/NavCloud.jsx'
+import VideoCard from './VideoCard.jsx'
+import MainVideoPlayer from './MainVideoPlayer.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
+import {createTheme, ThemeProvider} from '@mui/material/styles'
+import FilterContext from '../context/FilterContext.jsx'
+import SortButton from '../filters/SortButton.jsx'
+import {videoSortFields} from '../data/sortFields'
+import Tracker from '../app/Tracker.jsx'
+import config from '../app/config'
+
+import TagsProvider from '../youtubeContext/TagsProvider.jsx'
+import TagCloudDisplay from './TagCloudDisplay.jsx'
+
+import {TagCloud} from 'react-tagcloud'
+import Box from '@mui/material/Box'
+
+
+export default function BrandCloudMain() {
+
+    const {allDataLoaded, allVideos} = useContext(LoadingContext)
+
+    const {taggedVideos, tagCounts} = useContext(TagsProvider)
+    const data = tagCounts
+
+    const [tag, setTag] = useState('Master Lock')
+    const filteredVideos = taggedVideos.filter(video => video.titleTags?.includes(tag))
+
+    const [currentPage, setCurrentPage] = useState(undefined)
+    const [mainItem, setMainItem] = useState(filteredVideos[0])
+    const [index, setIndex] = useState(0)
+    const [playing, setPlaying] = useState(mainItem?.id) //eslint-disable-line
+    const [expanded, setExpanded] = useState(false)
+    const [track, setTrack] = useState(true)
+
+    const handlePlaylistClick = useCallback((item, index) => {
+        setPlaying(item.id)
+        setMainItem(item)
+        setIndex(index)
+        setExpanded(true)
+    }, [])
+
+    document.title = 'lockpicking.tv - brand cloud'
+
+    const theme = createTheme({
+        breakpoints: {
+            values: {
+                xs: 0,
+                sm: 600,
+                md: 800,
+                lg: 1200,
+                xl: 1536
+            }
+        }
+    })
+
+    const [playerHeight, setPlayerHeight] = useState(0)
+
+    const playerOnlyHeight = document.getElementById('mainPlayer') ? document.getElementById('mainPlayer').offsetHeight : 1
+    const videoStatsHeight = expanded ? 1 : 0
+    const fullHeight = playerOnlyHeight + videoStatsHeight
+
+    if (document.getElementById('spacerDiv') && playerHeight !== fullHeight) {
+        setTimeout(() => {
+            setPlayerHeight(fullHeight)
+        }, 500)
+    }
+
+    const [init, setInit] = useState(false)
+    useEffect(() => {
+        if (!init || !mainItem) {
+            setMainItem(filteredVideos[0])
+            setPlaying(filteredVideos[0]?.id)
+            setIndex(0)
+            setInit(true)
+            setTrack(false)
+        }
+    }, [index, init, mainItem, filteredVideos, currentPage, playerHeight, fullHeight, expanded])
+
+    const handleTagClick = useCallback(tag => {
+        setTag(tag)
+    }, [])
+
+
+
+    const {width} = useWindowSize()
+    const smallWindow = width <= 600
+    const pagePadding = !smallWindow
+        ? '24px 24px 32px 24px'
+        : '28px 8px 32px 8px'
+
+    if (!allDataLoaded) {
+        return (
+            <div style={{marginTop: 30}}>
+                <LoadingDisplay/>
+            </div>
+        )
+    }
+
+    return (
+        <div id='fullPage'>
+            <NavCloud title='lockpicking.tv - {pageData.title}'  tagData={tagCounts} handleTagClick={handleTagClick}/>
+
+            {(mainItem?.kind === 'youtube#video') &&
+                <React.Fragment>
+                    <MainVideoPlayer
+                        video={mainItem}
+                        expanded={expanded}
+                        setExpanded={setExpanded}
+                        track={track}
+                    />
+                    <div style={{height: playerHeight, transition: 'all 0.4s'}} id='spacerDiv'/>
+                </React.Fragment>
+            }
+
+
+            <div style={{
+                minWidth: '320px', height: '100%',
+                padding: pagePadding,
+                marginLeft: 'auto', marginRight: 'auto', marginTop: 0
+            }}>
+
+                <div style={{
+                    maxWidth: 1200,
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    marginBottom: 20,
+                    backgroundColor: '#1A2027',
+                    padding: 10,
+                    textAlign: 'left'
+                }}
+                >
+
+                </div>
+                <ThemeProvider theme={theme}>
+                    <Grid container spacing={{xs: 2, sm: 2, md: 2}} columns={{xs: 4, sm: 8, md: 12}}
+                          style={{}} id='grid'>
+                        {filteredVideos.map((item, index) =>
+                            <Grid item xs={4} sm={4} md={4} key={item.id}>
+                                <VideoCard
+                                    video={item}
+                                    handlePlaylistClick={handlePlaylistClick}
+                                    index={index}
+                                    listType='videos'
+                                />
+                            </Grid>
+                        )}
+                    </Grid>
+                </ThemeProvider>
+                <div style={{display: 'block', clear: 'both'}}/>
+            </div>
+        </div>
+    )
+}

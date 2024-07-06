@@ -69,6 +69,12 @@ export function DataProvider({children}) {
                 }))
             : filteredItems
 
+
+        function sortNew(a, b) {
+            return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
+                || a.title.localeCompare(b.title)
+        }
+
         return searched.sort((a, b) => {
             if (sort === 'views') {
                 return parseInt(b.viewCount) - parseInt(a.viewCount)
@@ -83,11 +89,11 @@ export function DataProvider({children}) {
                 return a.channelOwner.localeCompare(b.channelOwner)
                     || parseInt(b.commentCount) - parseInt(a.commentCount)
             } else if (sort === 'new') {
-                return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
-                    || a.title.localeCompare(b.title)
+                return sortNew(a, b)
             } else if (page === 'UC2jUB2pPoGpPG28j0o3B1ig.MykmTeTiooA') {
-                return Math.floor(dayjs(b.publishedAt).valueOf() / 60000) * 60000 - Math.floor(dayjs(a.publishedAt).valueOf() / 60000) * 60000
-                    || a.title.localeCompare(b.title)
+                return sortNew(a, b)
+            } else if (page === 'UC2jUB2pPoGpPG28j0o3B1ig.iJLXf_7B368') {
+                return sortNew(a, b)
             } else {
                 return 1
             }
