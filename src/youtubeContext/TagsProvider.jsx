@@ -19,12 +19,19 @@ export function TagsProvider({children}) {
             return parseInt(b.count) - parseInt(a.count)
         })
         //.slice(0, 75)
-        .sort((a, b) => {return a.value.localeCompare(b.value)})
+        .sort((a, b) => {
+            return a.value.localeCompare(b.value)
+        })
 
     const taggedVideos = allVideos.filter(video => {
-           return video.videoFlags?.includes('tagged')
+            return video.videoFlags?.includes('tagged')
         }
-    ).filter(x => x)
+    )
+        .filter(x => x)
+        .sort((a, b) => {
+            return parseInt(b.likeCount) - parseInt(a.likeCount)
+                || a.title.localeCompare(b.title)
+        })
 
     const value = useMemo(() => ({
         taggedVideos,

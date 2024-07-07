@@ -22,7 +22,7 @@ export default function NavCloud({noMenu, extras}) {
     const {tagCountData} = useContext(TagsProvider)
 
     const handleTagClick = useCallback(tag => {
-        const filterValue=tag.replace(' ','')
+        const filterValue = tag.replace(' ', '')
         addFilters([
             {key: 'make', value: filterValue}
         ], true)
@@ -36,9 +36,9 @@ export default function NavCloud({noMenu, extras}) {
     return (
         <React.Fragment>
             <AppBar position='sticky' style={{display: 'flex', placeItems: 'center'}} id='appBar'>
-                <Toolbar style={{padding: 0}}>
-                    <div style={{padding: 10, width: '100%', maxWidth: 1200}}>
-                        <div style={{width: '100%', marginTop: 5}}>
+                <Toolbar style={{padding: 0, display:'block'}}>
+                    <div style={{display: 'flex', padding: 10, width: '100%', maxWidth: 1200}}>
+                        <div style={{ width: '100%', marginTop: 5}}>
                             {!noMenu &&
                                 <div style={{marginRight: 20, marginLeft: 5, float: 'left'}}>
                                     {showGuideFull &&
@@ -54,9 +54,6 @@ export default function NavCloud({noMenu, extras}) {
                             }
 
                             <TagCloudDisplay tagData={tagCountData} handleTagClick={handleTagClick}/>
-                            <div style={{float: 'right'}}>
-                                {extras}
-                            </div>
                             <div style={{
                                 fontWeight: 500,
                                 fontSize: '1.5rem'
@@ -65,6 +62,9 @@ export default function NavCloud({noMenu, extras}) {
                                 <VersionCheckerCode/>
                             </div>
 
+                        </div>
+                        <div style={{display: 'inline-block', alignSelf: 'flex-end'}}>
+                            {extras}
                         </div>
                     </div>
                 </Toolbar>

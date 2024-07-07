@@ -4,7 +4,6 @@ import CardContent from '@mui/material/CardContent'
 import LoadingContext from '../context/LoadingContext.jsx'
 import ReactPlayer from 'react-player/youtube'
 import VideoStats from './VideoStats.jsx'
-import useWindowSize from '../util/useWindowSize.jsx'
 import {styled} from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -13,6 +12,7 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 import {openInNewTab} from '../util/openInNewTab'
 import Button from '@mui/material/Button'
 import MainVideoPlayed30Button from './MainVideoPlayed30Button.jsx'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 const MainVideoPlayer = ({video, expanded, setExpanded}) => {
 
@@ -38,18 +38,18 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
     const handlePlay = useCallback(() => {
         console.log('handlePlay')
         document.getElementById('trackImage').src = `/i/lptv.gif?trk=videoPlayer&videoId=${video.id}&r=${randomStuff}&w=${screen.width}&ref=${document.location}`
-    }, [randomStuff, video.id])
+    }, [randomStuff, video?.id])
 
 
     const handlePlayed30 = useCallback(() => {
         console.log('handlePlayed30')
         document.getElementById('trackImage').src = `/i/played30.gif?trk=played30&videoId=${video.id}&r=${randomStuff}&w=${screen.width}&ref=${document.location}`
-    }, [randomStuff, video.id])
+    }, [randomStuff, video?.id])
 
     const handlePlayed60 = useCallback(() => {
         console.log('handlePlayed60')
         document.getElementById('trackImage').src = `/i/played30.gif?trk=played60&videoId=${video.id}&r=${randomStuff}&w=${screen.width}&ref=${document.location}`
-    }, [randomStuff, video.id])
+    }, [randomStuff, video?.id])
 
     const {width} = useWindowSize()
     const widths = [440, 600, 800, 1200, 9999]
@@ -67,8 +67,8 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
         : {display: 'flex', placeItems: 'center', padding: 10}
 
     const channelLink = `https://www.youtube.com/channel/${channel?.id}`
-    const titleLink = `https://www.youtube.com/watch?v=${video.id}`
-    const videoUrl = `https://www.youtube.com/embed/${video.id}`
+    const titleLink = `https://www.youtube.com/watch?v=${video?.id}`
+    const videoUrl = `https://www.youtube.com/embed/${video?.id}`
     const buttonText = expanded ? 'hide video player' : 'show video player'
     const textColor = '#fff'
 
@@ -269,7 +269,7 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
                                         openInNewTab(titleLink)
                                     }}
                                        style={{color: textColor, textDecoration: 'none', fontSize: '1.0rem'}}>
-                                        {video.title}
+                                        {video?.title}
                                     </a>
                                     <div style={{marginTop: 3}}>
                                         <a onClick={() => {
@@ -281,7 +281,7 @@ const MainVideoPlayer = ({video, expanded, setExpanded}) => {
                                                fontSize: '0.9rem',
                                                fontWeight: 400
                                            }}>
-                                            By: {video.channelOwner}
+                                            By: {video?.channelOwner}
                                         </a>
                                     </div>
                                 </div>

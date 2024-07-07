@@ -15,6 +15,7 @@ import LockIcon from '@mui/icons-material/Lock'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined'
 import InsightsIcon from '@mui/icons-material/Insights'
+import SellIcon from '@mui/icons-material/Sell'
 
 function MenuConfig() {
 
@@ -52,8 +53,15 @@ function MenuConfig() {
             title: 'Popular Videos',
             icon: <FavoriteIcon fontSize='small'/>,
             path: '/videos?page=popular'
+        },
+        {
+            title: 'Videos by Brand',
+            icon: <SellIcon fontSize='small'/>,
+            path: '/videos?page=brands'
         }
     ]
+
+
 
     menuSections.pageItems = pageNavData
         .filter(page => {
