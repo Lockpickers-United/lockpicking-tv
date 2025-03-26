@@ -7,7 +7,7 @@ import VersionCheckerData from '../app/VersionCheckerData.jsx'
 import SearchBox from './SearchBox.jsx'
 import MenuGuide from './MenuGuide.jsx'
 import MenuSimple from './MenuSimple.jsx'
-import GuideFull from './GuideFull.jsx'
+//import GuideFull from './GuideFull.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import config from '../app/config'
 import FilterContext from '../context/FilterContext.jsx'
@@ -32,7 +32,7 @@ function Nav({extras, noSearch, noMenu}) {
                         {!noMenu &&
                             <div style={{marginRight: 20, marginLeft: 5}}>
                                 {showGuideFull &&
-                                    <GuideFull/>
+                                    <MenuGuide/>
                                 }
                                 {(!showGuideFull && menuStyle === 'guide') &&
                                     <MenuGuide/>

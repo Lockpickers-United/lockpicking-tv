@@ -41,6 +41,7 @@ export function LoadingProvider({children}) {
 
     const allVideos = useMemo(() => jsonLoaded ? videoData.allVideos : [], [jsonLoaded, videoData])
     const allChannels = useMemo(() => jsonLoaded ? channelData.allChannels : [], [jsonLoaded, channelData])
+
     const featuredChannels = useMemo(() => jsonLoaded
         ? channelData.allChannels.filter(channel => {
             return channel.channelFlags.includes('featured')
@@ -57,7 +58,6 @@ export function LoadingProvider({children}) {
         })
         : [], [jsonLoaded, channelData])
 
-
     let videoCounts = {}
     const configNew = config.pages.newVideos
     const newVideoChannelIds = allChannels.map(channel => {
@@ -65,6 +65,7 @@ export function LoadingProvider({children}) {
             return channel.id
         }
     }).filter(x => x)
+
     const newVideos = allVideos
         .filter(video => newVideoChannelIds.includes(video.channelId))
         .filter(video => dayjs(video.publishedAt).isAfter(dayjs().subtract(configNew.maxAge, 'day')))
@@ -117,9 +118,7 @@ export function LoadingProvider({children}) {
         }
     }).filter(x => x)
 
-
     // VIDEO TAGS
-
     const tagCounts = useMemo(() => jsonLoaded ? videoData.tagCounts : [], [jsonLoaded, videoData])
 
     const getVideosFromIds = useCallback(videoIds => {

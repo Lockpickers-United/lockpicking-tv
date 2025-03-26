@@ -150,7 +150,7 @@ function VideosMain() {
                                         <VideoCard
                                             video={item}
                                             handlePlaylistClick={handlePlaylistClick}
-                                            index={index}
+                                            key={index}
                                             listType='videos'
                                         />
                                     </Grid>

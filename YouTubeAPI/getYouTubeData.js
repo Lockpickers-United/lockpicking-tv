@@ -14,7 +14,7 @@ primaryAccountId = 'UC2jUB2pPoGpPG28j0o3B1ig' // lptv mirror
 //primaryAccountId = 'UC0JPKMvYyewFE0DujaiGpfw' //Neal Bayless
 //primaryAccountId = 'UCijhDLjaLA2um-KF-ijzYWw' //mgsecure
 
-const dev = false  // log version and statistics to console
+const dev = true  // log version and statistics to console
 const beta = true
 const prod = false
 
@@ -547,12 +547,13 @@ async function getYouTubeData(auth) {
                 let videoTagCount = 0
 
                 const titleTags = makeList.reduce((acc, make) => {
-                    const cleanTitle = sanitize(video.title)
+                    let cleanTitle = sanitize(video.title)
+                    cleanTitle = cleanTitle.toLowerCase().replace('masterlock', 'master lock')
 
                     const reString = '(\\s|$)' + make.toLowerCase() + '(\\s|^)'
                     let regex = new RegExp(reString, 'g')
 
-                    if (cleanTitle.toLowerCase().match(regex)) {
+                    if (cleanTitle.match(regex)) {
                         acc.push(make)
                         const makeValue = make.replace(' ', '')
                         makes.push(makeValue)

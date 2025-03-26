@@ -18,7 +18,7 @@ export function TagsProvider({children}) {
         .sort((a, b) => {
             return parseInt(b.count) - parseInt(a.count)
         })
-        //.slice(0, 75)
+        .slice(0, 999)
         .sort((a, b) => {
             return a.value.localeCompare(b.value)
         })

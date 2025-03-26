@@ -19,6 +19,7 @@ const VideoCard = ({video, handlePlaylistClick, index, playing, listType}) => {
     const smallWindow = width <= 500
     const avatarSize = smallWindow ? 35 : 40
     const avatarMargin = smallWindow ? '3px 15px 0px 0px' : '3px 15px 5px 0px'
+    const cardHeight = smallWindow ? 40 : 240
 
     const channelLink = `https://www.youtube.com/channel/${channel?.id}`
     const backgroundColor = playing === video.id ? '#374ca2' : '#1A2027'
@@ -30,7 +31,7 @@ const VideoCard = ({video, handlePlaylistClick, index, playing, listType}) => {
     const videoAge = videoAgeString.replace(/^(an|a)/, '1')
 
     return (
-        <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px', color: textColor}}>
+        <Card style={{backgroundColor: '#1A2027', boxShadow: 'unset', padding: '0px', color: textColor, minHeight:cardHeight}} key={video?.id}>
             <CardContent style={{padding: '5px 0px 5px 0px', textAlign: 'center'}}>
                 <div style={{display: 'flex', padding: 10}}>
                     {listType === 'videos' &&
